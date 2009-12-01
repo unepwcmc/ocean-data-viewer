@@ -1,4 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
+  map.root :controller => "static_contents", :action => :index
+  map.about '/about', :controller => "static_contents", :action => "about"
+  
+  map.resources :datasets, :only => [:index, :show]
+  map.resources :customers, :only => :new
+  
+  map.namespace(:admin) do |admin| 
+    admin.resources :customers
+    admin.resources :licences
+    admin.resources :datasets
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

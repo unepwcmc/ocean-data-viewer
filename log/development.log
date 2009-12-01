@@ -1,0 +1,1016 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [4;35;1mSQL (1.9ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDatasets (20091201165947)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.6ms)[0m   [0;1mCREATE TABLE "datasets" ("id" serial primary key, "title" character varying(255), "short_desc" text, "long_desc" text, "metadata_description" text, "shp_download" character varying(255), "wms" character varying(255), "wfs" character varying(255), "meta_download" character varying(255), "licence_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091201165947')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateLicences (20091201170016)
+  [4;35;1mSQL (0.5ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mCREATE TABLE "licences" ("id" serial primary key, "title" character varying(255), "body" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091201170016')[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateCustomers (20091201170450)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (8.8ms)[0m   [0;1mCREATE TABLE "customers" ("id" serial primary key, "title" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "email" character varying(255), "institution" text, "intended_use" text, "licence_agreed" boolean DEFAULT 'f', "licence_id" integer, "dataset_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091201170450')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:07:21) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/datasets
+Rendering datasets/index
+Completed in 27ms (View: 22, DB: 1) | 200 OK [http://localhost/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDatasets (20091201165947)
+Migrating to CreateLicences (20091201170016)
+Migrating to CreateCustomers (20091201170450)
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StaticContentsController#index (for 127.0.0.1 at 2009-12-01 17:20:27) [GET]
+Rendering template within layouts/client
+Rendering static_contents/index
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:20:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing StaticContentsController#about (for 127.0.0.1 at 2009-12-01 17:20:33) [GET]
+Rendering template within layouts/client
+Rendering static_contents/about
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/about]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:20:33) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:20:38) [GET]
+
+NameError (uninitialized constant AdminController):
+  app/controllers/datasets_controller.rb:1
+
+Rendered rescues/_trace (32.3ms)
+Rendered rescues/_request_and_response (1.1ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:20:57) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+
+ActionView::TemplateError (undefined local variable or method `new_dataset_path' for #<ActionView::Base:0x1034e7b50>) on line #34 of app/views/datasets/index.html.erb:
+31: 
+32: <br />
+33: 
+34: <%= link_to 'New dataset', new_dataset_path %>
+
+    app/views/datasets/index.html.erb:34
+    app/controllers/datasets_controller.rb:7:in `index'
+
+Rendered rescues/_trace (121.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:26:32) [GET]
+  [4;35;1mDataset Load (1.6ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+Completed in 28ms (View: 11, DB: 2) | 200 OK [http://localhost/datasets/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:26:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:26:46) [GET]
+
+NameError (uninitialized constant AdminController):
+  app/controllers/admin/datasets_controller.rb:1
+
+Rendered rescues/_trace (28.7ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:27:19) [GET]
+  [4;36;1mDataset Load (1.4ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+
+ActionView::TemplateError (undefined local variable or method `new_dataset_path' for #<ActionView::Base:0x10381ec88>) on line #34 of app/views/admin/datasets/index.html.erb:
+31: 
+32: <br />
+33: 
+34: <%= link_to 'New dataset', new_dataset_path %>
+
+    app/views/admin/datasets/index.html.erb:34
+    app/controllers/admin/datasets_controller.rb:7:in `index'
+
+Rendered rescues/_trace (39.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:28:18) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/admin/datasets/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:28:18) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-01 17:28:23) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+Completed in 24ms (View: 15, DB: 0) | 200 OK [http://localhost/admin/datasets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:28:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-01 17:30:05) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;36;1mLicence Load (0.8ms)[0m   [0;1mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:05) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:30:16) [GET]
+  [4;35;1mDataset Load (1.4ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+Completed in 66ms (View: 1, DB: 2) | 200 OK [http://localhost/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:16) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:30:27) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+Completed in 7ms (View: 1, DB: 1) | 200 OK [http://localhost/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:27) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-01 17:30:29) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;35;1mLicence Load (0.8ms)[0m   [0mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:29) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:30:30) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+Completed in 7ms (View: 1, DB: 1) | 200 OK [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:30) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-01 17:30:32) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;35;1mLicence Load (0.9ms)[0m   [0mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 26ms (View: 14, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:32) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-01 17:30:35) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "dataset"=>{"licence_id"=>"", "long_desc"=>"", "meta_download"=>"", "title"=>"", "shp_download"=>"", "metadata_description"=>"", "wfs"=>"", "wms"=>"", "short_desc"=>""}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;36;1mLicence Load (0.8ms)[0m   [0;1mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 37ms (View: 26, DB: 1) | 200 OK [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:35) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:30:42) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+Completed in 7ms (View: 1, DB: 2) | 200 OK [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:30:42) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#index (for 127.0.0.1 at 2009-12-01 17:30:51) [GET]
+  [4;36;1mLicence Load (1.2ms)[0m   [0;1mSELECT * FROM "licences" [0m
+Rendering template within layouts/admin
+Rendering admin/licences/index
+
+ActionView::TemplateError (undefined local variable or method `new_licence_path' for #<ActionView::Base:0x1036cd320>) on line #22 of app/views/admin/licences/index.html.erb:
+19: 
+20: <br />
+21: 
+22: <%= link_to 'New licence', new_licence_path %>
+
+    app/views/admin/licences/index.html.erb:22
+    app/controllers/admin/licences_controller.rb:7:in `index'
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#index (for 127.0.0.1 at 2009-12-01 17:31:23) [GET]
+  [4;35;1mLicence Load (1.3ms)[0m   [0mSELECT * FROM "licences" [0m
+Rendering template within layouts/admin
+Rendering admin/licences/index
+Completed in 11ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/licences]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:31:23) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#new (for 127.0.0.1 at 2009-12-01 17:31:26) [GET]
+Rendering template within layouts/admin
+Rendering admin/licences/new
+
+ActionView::TemplateError (undefined method `licences_path' for #<ActionView::Base:0x103679680>) on line #3 of app/views/admin/licences/new.html.erb:
+1: <h1>New licence</h1>
+2: 
+3: <% form_for(@licence) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/admin/licences/new.html.erb:3
+    app/controllers/admin/licences_controller.rb:29:in `new'
+
+Rendered rescues/_trace (40.8ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#new (for 127.0.0.1 at 2009-12-01 17:31:40) [GET]
+Rendering template within layouts/admin
+Rendering admin/licences/new
+Completed in 16ms (View: 7, DB: 0) | 200 OK [http://localhost/admin/licences/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:31:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#create (for 127.0.0.1 at 2009-12-01 17:34:28) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "licence"=>{"body"=>"Terms and Conditions of Use of the World Database on Protected Areas\r\n\r\nAccess to all WDPA data (or the \"WDPA materials\") is provided on the understanding that the end-user read and consents to be bound to the terms outlined in these Terms and Conditions of Use.\r\n\r\nPLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. IF YOU DO NOT AGREE TO ANY OF THE TERMS AND CONDITIONS DO NOT DOWNLOAD\r\n\r\nNO COMMERCIAL USE\r\nThe WDPA and any derivatives must not be used or made available for any Commercial Purpose without permission. Any use of WDPA content by an individual or entity operating within or on behalf of or to the benefit of any organisation other than a not-for-profit organisation will be deemed to be for a Commercial Purpose and will constitute a breach of the Terms and Conditions. To apply for permission for commercial use please send an email to wdpacommercial@unep-wcmc.org outlining your needs.\r\n\r\nNO SUB-LICENSING OR REDISTRIBUTING OF WDPA DATA\r\nThe WDPA may not be sub-licensed in whole or in part without permission. You may not redistribute the attributes or spatial data contained in the WDPA in whole or in part by any means including (but not limited to) digitally, via web downloads, through web services, interactive web maps or file transfer protocols. If you know of others who wish to use the WDPA we suggest you refer them to this website. If you wish to provide a service through which the attributes and/or spatial data of the WDPA are downloadable or otherwise made available for redistribution please contact protectedareas@unep-wcmc.org for further guidance.\r\n\r\nPUBLISHING THE WDPA\r\nYou may publish the WDPA in whole or in part, including on-line, providing the attributes and spatial data are not downloadable. You must ensure that the latest released version of the WDPA Materials is being used and the year of release is visible. Material published online must provide a clear link to the original WDPA and the attribution below must be clearly visible in all publications. We recommend that you have the material reviewed by UNEP-WCMC and/or the IUCN-WCPA prior to publication and we require two copies of all published materials be lodged free of charge with the supplier of the dataset, preferably in electronic format via: protectedareas@unep-wcmc.org\r\n\r\nATTRIBUTION\r\nYou must ensure that the attribution set out below is always clearly reproduced in the use of any part of the WDPA in any format, so that individual users are made aware of it:\r\n\r\nWorld Database on Protected Areas (WDPA) Annual Release 2009 (web download version), February 2009. The WDPA is a joint product of UNEP and IUCN, prepared by UNEP-WCMC, supported by IUCN WCPA and working with Governments, the Secretariats of MEAs and collaborating NGOs. For further information protectedareas@unep-wcmc.org\r\n\r\nWDPA UPDATES\r\nUnless required to do so for specific analyses, you should not use any version of the WDPA after it has been superseded by a subsequent version. It is your responsibility to check if an update of the WDPA is available.\r\n\r\nNO WARRANTY AND WAIVER OF LIABILITY\r\nThe WDPA is provided to you ‘as is’, and no warranty of any kind is given. In consideration of the rights granted in this download, you hereby waive and release UNEP, IUCN and WCMC 2000 from any liability whatsoever and howsoever arising in connection with use of the WDPA. You agree that this waiver and release is effective in any and every jurisdiction in the world. UNEP, IUCN and WCMC 2000 will not be responsible for negligence, strict liability or otherness in the use of WDPA data by you or other users as a result of WDPA data being posted on any website following this download. You download the WDPA at your own discretion and risk and are solely responsible in the event of any damage occurring to computer systems as a result of attempts to download WDPA data.\r\n\r\nFEEDBACK AND REVISED INFORMATION\r\nIn order to keep the WDPA up to date, UNEP and IUCN would like you to provide feedback on the quality, reliability and accuracy of the WDPA. We also welcome revised information on the WDPA in the form of GIS data, electronic images, paper maps, tables, GPS coordinates, and/or in any other useable format. Such contributions should be free of restrictions. The objective is to improve the WDPA for the benefit of the global conservation community. You can register to submit electronic protected area data via the WDPA website.\r\n\r\nLAW AND JURISDICTION\r\nAny dispute arising out of or in connection with this download and the subsequent use of the WDPA shall be settled by amicable negotiation between you and the supplier of the dataset. Should attempts at amicable negotiation fail, any such dispute shall, upon request by either you or the supplier of the WDPA, be referred to arbitration in accordance with the UNCITRAL arbitration rules then prevailing.\r\n\r\nCOMMUNICATION\r\nAny communication with respect to these Terms and Conditions and any issue arising from them shall be in writing, in English, and sent by email. The address for communication with the WDPA supplier is:protectedareas@unep-wcmc.org", "title"=>"WDPA v1"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (4.5ms)[0m   [0mINSERT INTO "licences" ("created_at", "title", "body", "updated_at") VALUES('2009-12-01 17:34:28.454170', E'WDPA v1', E'Terms and Conditions of Use of the World Database on Protected Areas
+
+Access to all WDPA data (or the "WDPA materials") is provided on the understanding that the end-user read and consents to be bound to the terms outlined in these Terms and Conditions of Use.
+
+PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. IF YOU DO NOT AGREE TO ANY OF THE TERMS AND CONDITIONS DO NOT DOWNLOAD
+
+NO COMMERCIAL USE
+The WDPA and any derivatives must not be used or made available for any Commercial Purpose without permission. Any use of WDPA content by an individual or entity operating within or on behalf of or to the benefit of any organisation other than a not-for-profit organisation will be deemed to be for a Commercial Purpose and will constitute a breach of the Terms and Conditions. To apply for permission for commercial use please send an email to wdpacommercial@unep-wcmc.org outlining your needs.
+
+NO SUB-LICENSING OR REDISTRIBUTING OF WDPA DATA
+The WDPA may not be sub-licensed in whole or in part without permission. You may not redistribute the attributes or spatial data contained in the WDPA in whole or in part by any means including (but not limited to) digitally, via web downloads, through web services, interactive web maps or file transfer protocols. If you know of others who wish to use the WDPA we suggest you refer them to this website. If you wish to provide a service through which the attributes and/or spatial data of the WDPA are downloadable or otherwise made available for redistribution please contact protectedareas@unep-wcmc.org for further guidance.
+
+PUBLISHING THE WDPA
+You may publish the WDPA in whole or in part, including on-line, providing the attributes and spatial data are not downloadable. You must ensure that the latest released version of the WDPA Materials is being used and the year of release is visible. Material published online must provide a clear link to the original WDPA and the attribution below must be clearly visible in all publications. We recommend that you have the material reviewed by UNEP-WCMC and/or the IUCN-WCPA prior to publication and we require two copies of all published materials be lodged free of charge with the supplier of the dataset, preferably in electronic format via: protectedareas@unep-wcmc.org
+
+ATTRIBUTION
+You must ensure that the attribution set out below is always clearly reproduced in the use of any part of the WDPA in any format, so that individual users are made aware of it:
+
+World Database on Protected Areas (WDPA) Annual Release 2009 (web download version), February 2009. The WDPA is a joint product of UNEP and IUCN, prepared by UNEP-WCMC, supported by IUCN WCPA and working with Governments, the Secretariats of MEAs and collaborating NGOs. For further information protectedareas@unep-wcmc.org
+
+WDPA UPDATES
+Unless required to do so for specific analyses, you should not use any version of the WDPA after it has been superseded by a subsequent version. It is your responsibility to check if an update of the WDPA is available.
+
+NO WARRANTY AND WAIVER OF LIABILITY
+The WDPA is provided to you ‘as is’, and no warranty of any kind is given. In consideration of the rights granted in this download, you hereby waive and release UNEP, IUCN and WCMC 2000 from any liability whatsoever and howsoever arising in connection with use of the WDPA. You agree that this waiver and release is effective in any and every jurisdiction in the world. UNEP, IUCN and WCMC 2000 will not be responsible for negligence, strict liability or otherness in the use of WDPA data by you or other users as a result of WDPA data being posted on any website following this download. You download the WDPA at your own discretion and risk and are solely responsible in the event of any damage occurring to computer systems as a result of attempts to download WDPA data.
+
+FEEDBACK AND REVISED INFORMATION
+In order to keep the WDPA up to date, UNEP and IUCN would like you to provide feedback on the quality, reliability and accuracy of the WDPA. We also welcome revised information on the WDPA in the form of GIS data, electronic images, paper maps, tables, GPS coordinates, and/or in any other useable format. Such contributions should be free of restrictions. The objective is to improve the WDPA for the benefit of the global conservation community. You can register to submit electronic protected area data via the WDPA website.
+
+LAW AND JURISDICTION
+Any dispute arising out of or in connection with this download and the subsequent use of the WDPA shall be settled by amicable negotiation between you and the supplier of the dataset. Should attempts at amicable negotiation fail, any such dispute shall, upon request by either you or the supplier of the WDPA, be referred to arbitration in accordance with the UNCITRAL arbitration rules then prevailing.
+
+COMMUNICATION
+Any communication with respect to these Terms and Conditions and any issue arising from them shall be in writing, in English, and sent by email. The address for communication with the WDPA supplier is:protectedareas@unep-wcmc.org', '2009-12-01 17:34:28.454170') RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+
+NoMethodError (undefined method `licence_url' for #<Admin::LicencesController:0x1035b8b38>):
+  app/controllers/admin/licences_controller.rb:48:in `create'
+  app/controllers/admin/licences_controller.rb:45:in `create'
+
+Rendered rescues/_trace (94.0ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#create (for 127.0.0.1 at 2009-12-01 17:35:32) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "licence"=>{"body"=>"Terms and Conditions of Use of the World Database on Protected Areas\r\n\r\nAccess to all WDPA data (or the \"WDPA materials\") is provided on the understanding that the end-user read and consents to be bound to the terms outlined in these Terms and Conditions of Use.\r\n\r\nPLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. IF YOU DO NOT AGREE TO ANY OF THE TERMS AND CONDITIONS DO NOT DOWNLOAD\r\n\r\nNO COMMERCIAL USE\r\nThe WDPA and any derivatives must not be used or made available for any Commercial Purpose without permission. Any use of WDPA content by an individual or entity operating within or on behalf of or to the benefit of any organisation other than a not-for-profit organisation will be deemed to be for a Commercial Purpose and will constitute a breach of the Terms and Conditions. To apply for permission for commercial use please send an email to wdpacommercial@unep-wcmc.org outlining your needs.\r\n\r\nNO SUB-LICENSING OR REDISTRIBUTING OF WDPA DATA\r\nThe WDPA may not be sub-licensed in whole or in part without permission. You may not redistribute the attributes or spatial data contained in the WDPA in whole or in part by any means including (but not limited to) digitally, via web downloads, through web services, interactive web maps or file transfer protocols. If you know of others who wish to use the WDPA we suggest you refer them to this website. If you wish to provide a service through which the attributes and/or spatial data of the WDPA are downloadable or otherwise made available for redistribution please contact protectedareas@unep-wcmc.org for further guidance.\r\n\r\nPUBLISHING THE WDPA\r\nYou may publish the WDPA in whole or in part, including on-line, providing the attributes and spatial data are not downloadable. You must ensure that the latest released version of the WDPA Materials is being used and the year of release is visible. Material published online must provide a clear link to the original WDPA and the attribution below must be clearly visible in all publications. We recommend that you have the material reviewed by UNEP-WCMC and/or the IUCN-WCPA prior to publication and we require two copies of all published materials be lodged free of charge with the supplier of the dataset, preferably in electronic format via: protectedareas@unep-wcmc.org\r\n\r\nATTRIBUTION\r\nYou must ensure that the attribution set out below is always clearly reproduced in the use of any part of the WDPA in any format, so that individual users are made aware of it:\r\n\r\nWorld Database on Protected Areas (WDPA) Annual Release 2009 (web download version), February 2009. The WDPA is a joint product of UNEP and IUCN, prepared by UNEP-WCMC, supported by IUCN WCPA and working with Governments, the Secretariats of MEAs and collaborating NGOs. For further information protectedareas@unep-wcmc.org\r\n\r\nWDPA UPDATES\r\nUnless required to do so for specific analyses, you should not use any version of the WDPA after it has been superseded by a subsequent version. It is your responsibility to check if an update of the WDPA is available.\r\n\r\nNO WARRANTY AND WAIVER OF LIABILITY\r\nThe WDPA is provided to you ‘as is’, and no warranty of any kind is given. In consideration of the rights granted in this download, you hereby waive and release UNEP, IUCN and WCMC 2000 from any liability whatsoever and howsoever arising in connection with use of the WDPA. You agree that this waiver and release is effective in any and every jurisdiction in the world. UNEP, IUCN and WCMC 2000 will not be responsible for negligence, strict liability or otherness in the use of WDPA data by you or other users as a result of WDPA data being posted on any website following this download. You download the WDPA at your own discretion and risk and are solely responsible in the event of any damage occurring to computer systems as a result of attempts to download WDPA data.\r\n\r\nFEEDBACK AND REVISED INFORMATION\r\nIn order to keep the WDPA up to date, UNEP and IUCN would like you to provide feedback on the quality, reliability and accuracy of the WDPA. We also welcome revised information on the WDPA in the form of GIS data, electronic images, paper maps, tables, GPS coordinates, and/or in any other useable format. Such contributions should be free of restrictions. The objective is to improve the WDPA for the benefit of the global conservation community. You can register to submit electronic protected area data via the WDPA website.\r\n\r\nLAW AND JURISDICTION\r\nAny dispute arising out of or in connection with this download and the subsequent use of the WDPA shall be settled by amicable negotiation between you and the supplier of the dataset. Should attempts at amicable negotiation fail, any such dispute shall, upon request by either you or the supplier of the WDPA, be referred to arbitration in accordance with the UNCITRAL arbitration rules then prevailing.\r\n\r\nCOMMUNICATION\r\nAny communication with respect to these Terms and Conditions and any issue arising from them shall be in writing, in English, and sent by email. The address for communication with the WDPA supplier is:protectedareas@unep-wcmc.org", "title"=>"WDPA v1"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mINSERT INTO "licences" ("created_at", "title", "body", "updated_at") VALUES('2009-12-01 17:35:32.568139', E'WDPA v1', E'Terms and Conditions of Use of the World Database on Protected Areas
+
+Access to all WDPA data (or the "WDPA materials") is provided on the understanding that the end-user read and consents to be bound to the terms outlined in these Terms and Conditions of Use.
+
+PLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. IF YOU DO NOT AGREE TO ANY OF THE TERMS AND CONDITIONS DO NOT DOWNLOAD
+
+NO COMMERCIAL USE
+The WDPA and any derivatives must not be used or made available for any Commercial Purpose without permission. Any use of WDPA content by an individual or entity operating within or on behalf of or to the benefit of any organisation other than a not-for-profit organisation will be deemed to be for a Commercial Purpose and will constitute a breach of the Terms and Conditions. To apply for permission for commercial use please send an email to wdpacommercial@unep-wcmc.org outlining your needs.
+
+NO SUB-LICENSING OR REDISTRIBUTING OF WDPA DATA
+The WDPA may not be sub-licensed in whole or in part without permission. You may not redistribute the attributes or spatial data contained in the WDPA in whole or in part by any means including (but not limited to) digitally, via web downloads, through web services, interactive web maps or file transfer protocols. If you know of others who wish to use the WDPA we suggest you refer them to this website. If you wish to provide a service through which the attributes and/or spatial data of the WDPA are downloadable or otherwise made available for redistribution please contact protectedareas@unep-wcmc.org for further guidance.
+
+PUBLISHING THE WDPA
+You may publish the WDPA in whole or in part, including on-line, providing the attributes and spatial data are not downloadable. You must ensure that the latest released version of the WDPA Materials is being used and the year of release is visible. Material published online must provide a clear link to the original WDPA and the attribution below must be clearly visible in all publications. We recommend that you have the material reviewed by UNEP-WCMC and/or the IUCN-WCPA prior to publication and we require two copies of all published materials be lodged free of charge with the supplier of the dataset, preferably in electronic format via: protectedareas@unep-wcmc.org
+
+ATTRIBUTION
+You must ensure that the attribution set out below is always clearly reproduced in the use of any part of the WDPA in any format, so that individual users are made aware of it:
+
+World Database on Protected Areas (WDPA) Annual Release 2009 (web download version), February 2009. The WDPA is a joint product of UNEP and IUCN, prepared by UNEP-WCMC, supported by IUCN WCPA and working with Governments, the Secretariats of MEAs and collaborating NGOs. For further information protectedareas@unep-wcmc.org
+
+WDPA UPDATES
+Unless required to do so for specific analyses, you should not use any version of the WDPA after it has been superseded by a subsequent version. It is your responsibility to check if an update of the WDPA is available.
+
+NO WARRANTY AND WAIVER OF LIABILITY
+The WDPA is provided to you ‘as is’, and no warranty of any kind is given. In consideration of the rights granted in this download, you hereby waive and release UNEP, IUCN and WCMC 2000 from any liability whatsoever and howsoever arising in connection with use of the WDPA. You agree that this waiver and release is effective in any and every jurisdiction in the world. UNEP, IUCN and WCMC 2000 will not be responsible for negligence, strict liability or otherness in the use of WDPA data by you or other users as a result of WDPA data being posted on any website following this download. You download the WDPA at your own discretion and risk and are solely responsible in the event of any damage occurring to computer systems as a result of attempts to download WDPA data.
+
+FEEDBACK AND REVISED INFORMATION
+In order to keep the WDPA up to date, UNEP and IUCN would like you to provide feedback on the quality, reliability and accuracy of the WDPA. We also welcome revised information on the WDPA in the form of GIS data, electronic images, paper maps, tables, GPS coordinates, and/or in any other useable format. Such contributions should be free of restrictions. The objective is to improve the WDPA for the benefit of the global conservation community. You can register to submit electronic protected area data via the WDPA website.
+
+LAW AND JURISDICTION
+Any dispute arising out of or in connection with this download and the subsequent use of the WDPA shall be settled by amicable negotiation between you and the supplier of the dataset. Should attempts at amicable negotiation fail, any such dispute shall, upon request by either you or the supplier of the WDPA, be referred to arbitration in accordance with the UNCITRAL arbitration rules then prevailing.
+
+COMMUNICATION
+Any communication with respect to these Terms and Conditions and any issue arising from them shall be in writing, in English, and sent by email. The address for communication with the WDPA supplier is:protectedareas@unep-wcmc.org', '2009-12-01 17:35:32.568139') RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/licences/2
+Completed in 18ms (DB: 2) | 302 Found [http://localhost/admin/licences]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#show (for 127.0.0.1 at 2009-12-01 17:35:32) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mLicence Load (0.9ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/licences/show
+
+ActionView::TemplateError (undefined method `edit_licence_path' for #<ActionView::Base:0x10367e8b0>) on line #12 of app/views/admin/licences/show.html.erb:
+9: </p>
+10: 
+11: 
+12: <%= link_to 'Edit', edit_licence_path(@licence) %> |
+13: <%= link_to 'Back', licences_path %>
+
+    app/views/admin/licences/show.html.erb:12
+    app/controllers/admin/licences_controller.rb:18:in `show'
+
+Rendered rescues/_trace (104.3ms)
+Rendered rescues/_request_and_response (0.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#show (for 127.0.0.1 at 2009-12-01 17:35:47) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/licences/show
+Completed in 15ms (View: 6, DB: 1) | 200 OK [http://localhost/admin/licences/2]
+  [4;36;1mSQL (2.0ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:35:47) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#edit (for 127.0.0.1 at 2009-12-01 17:35:51) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mLicence Load (0.5ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/licences/edit
+
+ActionView::TemplateError (undefined method `licence_path' for #<ActionView::Base:0x1035b4a88>) on line #3 of app/views/admin/licences/edit.html.erb:
+1: <h1>Editing licence</h1>
+2: 
+3: <% form_for(@licence) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    app/views/admin/licences/edit.html.erb:3
+
+Rendered rescues/_trace (99.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#edit (for 127.0.0.1 at 2009-12-01 17:36:08) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/licences/edit
+Completed in 16ms (View: 8, DB: 1) | 200 OK [http://localhost/admin/licences/2/edit]
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:36:08) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#update (for 127.0.0.1 at 2009-12-01 17:36:09) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "id"=>"2", "licence"=>{"body"=>"Terms and Conditions of Use of the World Database on Protected Areas\r\n\r\nAccess to all WDPA data (or the \"WDPA materials\") is provided on the understanding that the end-user read and consents to be bound to the terms outlined in these Terms and Conditions of Use.\r\n\r\nPLEASE READ THESE TERMS AND CONDITIONS CAREFULLY. IF YOU DO NOT AGREE TO ANY OF THE TERMS AND CONDITIONS DO NOT DOWNLOAD\r\n\r\nNO COMMERCIAL USE\r\nThe WDPA and any derivatives must not be used or made available for any Commercial Purpose without permission. Any use of WDPA content by an individual or entity operating within or on behalf of or to the benefit of any organisation other than a not-for-profit organisation will be deemed to be for a Commercial Purpose and will constitute a breach of the Terms and Conditions. To apply for permission for commercial use please send an email to wdpacommercial@unep-wcmc.org outlining your needs.\r\n\r\nNO SUB-LICENSING OR REDISTRIBUTING OF WDPA DATA\r\nThe WDPA may not be sub-licensed in whole or in part without permission. You may not redistribute the attributes or spatial data contained in the WDPA in whole or in part by any means including (but not limited to) digitally, via web downloads, through web services, interactive web maps or file transfer protocols. If you know of others who wish to use the WDPA we suggest you refer them to this website. If you wish to provide a service through which the attributes and/or spatial data of the WDPA are downloadable or otherwise made available for redistribution please contact protectedareas@unep-wcmc.org for further guidance.\r\n\r\nPUBLISHING THE WDPA\r\nYou may publish the WDPA in whole or in part, including on-line, providing the attributes and spatial data are not downloadable. You must ensure that the latest released version of the WDPA Materials is being used and the year of release is visible. Material published online must provide a clear link to the original WDPA and the attribution below must be clearly visible in all publications. We recommend that you have the material reviewed by UNEP-WCMC and/or the IUCN-WCPA prior to publication and we require two copies of all published materials be lodged free of charge with the supplier of the dataset, preferably in electronic format via: protectedareas@unep-wcmc.org\r\n\r\nATTRIBUTION\r\nYou must ensure that the attribution set out below is always clearly reproduced in the use of any part of the WDPA in any format, so that individual users are made aware of it:\r\n\r\nWorld Database on Protected Areas (WDPA) Annual Release 2009 (web download version), February 2009. The WDPA is a joint product of UNEP and IUCN, prepared by UNEP-WCMC, supported by IUCN WCPA and working with Governments, the Secretariats of MEAs and collaborating NGOs. For further information protectedareas@unep-wcmc.org\r\n\r\nWDPA UPDATES\r\nUnless required to do so for specific analyses, you should not use any version of the WDPA after it has been superseded by a subsequent version. It is your responsibility to check if an update of the WDPA is available.\r\n\r\nNO WARRANTY AND WAIVER OF LIABILITY\r\nThe WDPA is provided to you ‘as is’, and no warranty of any kind is given. In consideration of the rights granted in this download, you hereby waive and release UNEP, IUCN and WCMC 2000 from any liability whatsoever and howsoever arising in connection with use of the WDPA. You agree that this waiver and release is effective in any and every jurisdiction in the world. UNEP, IUCN and WCMC 2000 will not be responsible for negligence, strict liability or otherness in the use of WDPA data by you or other users as a result of WDPA data being posted on any website following this download. You download the WDPA at your own discretion and risk and are solely responsible in the event of any damage occurring to computer systems as a result of attempts to download WDPA data.\r\n\r\nFEEDBACK AND REVISED INFORMATION\r\nIn order to keep the WDPA up to date, UNEP and IUCN would like you to provide feedback on the quality, reliability and accuracy of the WDPA. We also welcome revised information on the WDPA in the form of GIS data, electronic images, paper maps, tables, GPS coordinates, and/or in any other useable format. Such contributions should be free of restrictions. The objective is to improve the WDPA for the benefit of the global conservation community. You can register to submit electronic protected area data via the WDPA website.\r\n\r\nLAW AND JURISDICTION\r\nAny dispute arising out of or in connection with this download and the subsequent use of the WDPA shall be settled by amicable negotiation between you and the supplier of the dataset. Should attempts at amicable negotiation fail, any such dispute shall, upon request by either you or the supplier of the WDPA, be referred to arbitration in accordance with the UNCITRAL arbitration rules then prevailing.\r\n\r\nCOMMUNICATION\r\nAny communication with respect to these Terms and Conditions and any issue arising from them shall be in writing, in English, and sent by email. The address for communication with the WDPA supplier is:protectedareas@unep-wcmc.org", "title"=>"WDPA v1"}}
+  [4;36;1mLicence Load (0.5ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/licences/2
+Completed in 12ms (DB: 1) | 302 Found [http://localhost/admin/licences/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#show (for 127.0.0.1 at 2009-12-01 17:36:09) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/licences/show
+Completed in 11ms (View: 3, DB: 1) | 200 OK [http://localhost/admin/licences/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:36:09) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::LicencesController#index (for 127.0.0.1 at 2009-12-01 17:36:11) [GET]
+  [4;36;1mLicence Load (1.5ms)[0m   [0;1mSELECT * FROM "licences" [0m
+Rendering template within layouts/admin
+Rendering admin/licences/index
+Completed in 78ms (View: 72, DB: 2) | 200 OK [http://localhost/admin/licences]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:36:12) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.4ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:36:24) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+Completed in 7ms (View: 1, DB: 2) | 200 OK [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:36:24) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-01 17:36:25) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;36;1mLicence Load (1.1ms)[0m   [0;1mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 24ms (View: 15, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:36:25) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-01 17:37:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "dataset"=>{"licence_id"=>"1", "long_desc"=>"This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease", "meta_download"=>"", "title"=>"Coral disease", "shp_download"=>"http://www.unep-wcmc.org/download.shp", "metadata_description"=>"This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease", "wfs"=>"", "wms"=>"", "short_desc"=>"This is a dataaset abotu the coral disease"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLicence Load (0.5ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;36;1mLicence Load (0.7ms)[0m   [0;1mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 90ms (View: 13, DB: 2) | 200 OK [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:37:00) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-01 17:37:33) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "dataset"=>{"licence_id"=>"1", "long_desc"=>"This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease", "meta_download"=>"", "title"=>"Coral disease", "shp_download"=>"http://www.unep-wcmc.org/download.shp", "metadata_description"=>"This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease", "wfs"=>"", "wms"=>"", "short_desc"=>"This is a dataaset abotu the coral disease"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLicence Load (0.6ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "datasets" ("long_desc", "licence_id", "created_at", "title", "meta_download", "metadata_description", "shp_download", "updated_at", "wfs", "wms", "short_desc") VALUES(E'This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease', 1, '2009-12-01 17:37:33.307901', E'Coral disease', E'', E'This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease', E'http://www.unep-wcmc.org/download.shp', '2009-12-01 17:37:33.307901', E'', E'', E'This is a dataaset abotu the coral disease') RETURNING "id"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/datasets/1
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x10351cd50>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (101.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x103638c20>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (39.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDataset Load (0.6ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x10381f430>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (39.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x103428cc8>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (103.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x1035621c0>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (106.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x10378a128>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (38.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:37:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+
+ActionView::TemplateError (undefined method `edit_dataset_path' for #<ActionView::Base:0x103385848>) on line #42 of app/views/datasets/show.html.erb:
+39: </p>
+40: 
+41: 
+42: <%= link_to 'Edit', edit_dataset_path(@dataset) %> |
+43: <%= link_to 'Back', datasets_path %>
+
+    app/views/datasets/show.html.erb:42
+    app/controllers/datasets_controller.rb:18:in `show'
+
+Rendered rescues/_trace (41.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:38:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+Completed in 15ms (View: 7, DB: 1) | 200 OK [http://localhost/datasets/1]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:38:03) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#edit (for 127.0.0.1 at 2009-12-01 17:38:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/edit
+Completed in 94ms (View: 86, DB: 1) | 200 OK [http://localhost/admin/datasets/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:38:06) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-01 17:38:38) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "dataset"=>{"licence_id"=>"1", "long_desc"=>"This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease", "meta_download"=>"", "title"=>"Coral disease", "shp_download"=>"http://www.unep-wcmc.org/download.shp", "metadata_description"=>"This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease", "wfs"=>"", "wms"=>"", "short_desc"=>"This is a dataaset abotu the coral disease"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLicence Load (0.6ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "datasets" ("long_desc", "licence_id", "created_at", "title", "meta_download", "metadata_description", "shp_download", "updated_at", "wfs", "wms", "short_desc") VALUES(E'This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease', 1, '2009-12-01 17:38:38.027205', E'Coral disease', E'', E'This is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral diseaseThis is a dataaset abotu the coral disease', E'http://www.unep-wcmc.org/download.shp', '2009-12-01 17:38:38.027205', E'', E'', E'This is a dataaset abotu the coral disease') RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/datasets/2
+Completed in 22ms (DB: 2) | 302 Found [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#show (for 127.0.0.1 at 2009-12-01 17:38:38) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/show
+Completed in 16ms (View: 7, DB: 1) | 200 OK [http://localhost/admin/datasets/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:38:38) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:38:40) [GET]
+  [4;35;1mDataset Load (1.4ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+Completed in 16ms (View: 11, DB: 2) | 200 OK [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:38:40) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#destroy (for 127.0.0.1 at 2009-12-01 17:38:44) [DELETE]
+  Parameters: {"authenticity_token"=>"UYB+QjR15UI/8QI5Mzyrc2wTgbKatKXDPlDJqZ70f4g=", "id"=>"2"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mDataset Destroy (0.2ms)[0m   [0;1mDELETE FROM "datasets" WHERE "id" = 2[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/datasets
+Completed in 12ms (DB: 3) | 302 Found [http://localhost/admin/datasets/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-01 17:38:44) [GET]
+  [4;36;1mDataset Load (1.4ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+Completed in 15ms (View: 9, DB: 2) | 200 OK [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-01 17:38:44) [GET]
+
+ActionController::RoutingError (No route matches "/stylesheets/scaffold.css" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

@@ -1,0 +1,18 @@
+<h1>Datasets at WCMC</h1>
+
+<% @datasets.each do |dataset| %>
+  <tr>
+    <td><%=h dataset.title %></td>
+    <td><%=h dataset.short_desc %></td>
+    <td><%=h dataset.long_desc %></td>
+    <td><%=h dataset.metadata_description %></td>
+    <td><%=h dataset.shp_download %></td>
+    <td><%=h dataset.wms %></td>
+    <td><%=h dataset.wfs %></td>
+    <td><%=h dataset.meta_download %></td>
+    <td><%= link_to 'Show', dataset %></td>
+  </tr>
+<% end %>
+</table>
+
+

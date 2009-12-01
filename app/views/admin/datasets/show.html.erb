@@ -1,0 +1,43 @@
+<p>
+  <b>Title:</b>
+  <%=h @dataset.title %>
+</p>
+
+<p>
+  <b>Short desc:</b>
+  <%=h @dataset.short_desc %>
+</p>
+
+<p>
+  <b>Long desc:</b>
+  <%=h @dataset.long_desc %>
+</p>
+
+<p>
+  <b>Metadata description:</b>
+  <%=h @dataset.metadata_description %>
+</p>
+
+<p>
+  <b>Shp download:</b>
+  <%=h @dataset.shp_download %>
+</p>
+
+<p>
+  <b>Wms:</b>
+  <%=h @dataset.wms %>
+</p>
+
+<p>
+  <b>Wfs:</b>
+  <%=h @dataset.wfs %>
+</p>
+
+<p>
+  <b>Meta download:</b>
+  <%=h @dataset.meta_download %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_dataset_path(@dataset) %> |
+<%= link_to 'Back', admin_datasets_path %>

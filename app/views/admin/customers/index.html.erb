@@ -1,0 +1,33 @@
+<h1>Listing Downloaders</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Email</th>
+    <th>Institution</th>
+    <th>Intended use</th>
+    <th>Licence agreed</th>
+    <th>Licence</th>
+    <th>Dataset</th>
+  </tr>
+
+<% @customers.each do |customer| %>
+  <tr>
+    <td><%=h customer.title %></td>
+    <td><%=h customer.first_name %></td>
+    <td><%=h customer.last_name %></td>
+    <td><%=h customer.email %></td>
+    <td><%=h customer.institution %></td>
+    <td><%=h customer.intended_use %></td>
+    <td><%=h customer.licence_agreed %></td>
+    <td><%=h Licence.find(customer.licence_id).title %></td>
+    <td><%=h Dataset.find(customer.dataset_id).title %></td>
+    <td><%= link_to 'Show', [:admin,customer] %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+

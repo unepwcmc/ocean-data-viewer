@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @licence.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @licence.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_licence_path(@licence) %> |
+<%= link_to 'Back', admin_licences_path %>

@@ -1,43 +1,94 @@
-<p>
-  <b>Title:</b>
-  <%=h @dataset.title %>
-</p>
+<% content_for :map do%>
+	<%= swf_tag "map", :height => 400 %>
+<% end -%>
 
-<p>
-  <b>Short desc:</b>
-  <%=h @dataset.short_desc %>
-</p>
+<div class="span-16 datasets">
+	
+	
+	<h2 style="font-size:30px;"><%= @dataset.title %> <span class="quiet small" style="font-size:0.5em;">updated <%= @dataset.updated_at.to_date.to_s(:long)%></span></h2>
+	
+	<p><%= RedCloth.new(@dataset.long_desc).to_html %></p>
+	
+	
+	<h3>Metadata description</h3>
+	<p><%= RedCloth.new(@dataset.metadata_description).to_html %></p>
+	
+	
+	
+	<div class="data_panel">
+		<h4>Downloads available</h4>
+		
+		<% if session["dataset_#{@dataset.id}"] == "agreed" %>
+		
+		<%= link_to "Shapefile", @dataset.shp_download, :id => "tipsy", :title => "Download ESRI shapefile" if !@dataset.shp_download.blank? %>
+		<%= link_to "WMS", @dataset.wms, :id => "tipsy", :title => "Access online WMS service" if !@dataset.wms.blank? %>
+		<%= link_to "WFS", @dataset.wfs, :id => "tipsy", :title => "Access online WFS service" if !@dataset.wfs.blank? %>
+		<%= link_to "Metadata", @dataset.meta_download, :id => "tipsy", :title => "Download full metadata" if !@dataset.meta_download.blank? %>
+		<% else -%>
+		Please <%= link_to "register", "#registration", :rel => "facebox", :style=>"color:white;" %> to access this dataset.
 
-<p>
-  <b>Long desc:</b>
-  <%=h @dataset.long_desc %>
-</p>
+		<div id="registration" style="display:none;width:500px;">
+		<h1>New data registrant</h1>
 
-<p>
-  <b>Metadata description:</b>
-  <%=h @dataset.metadata_description %>
-</p>
+		<% form_for([@dataset, @customer]) do |f| %>
+		  <%= f.error_messages %>
 
-<p>
-  <b>Shp download:</b>
-  <%=h @dataset.shp_download %>
-</p>
+		  <p>
+		    <%= f.label :title %><br />
+		<%= f.select :title, [["Mr", "Mr"],["Mrs", "Mrs"],["Ms", "Ms"],["Miss", "Miss"],["Dr", "Dr"],["Prof", "Prof"]], {:include_blank => true} %>
+		  </p>
+		  <p>
+		    <%= f.label :first_name %><br />
+		    <%= f.text_field :first_name, :class => "text"%>
+		  </p>
+		  <p>
+		    <%= f.label :last_name %><br />
+		    <%= f.text_field :last_name,:class => "text" %>
+		  </p>
+		  <p>
+		    <%= f.label :email %><br />
+		    <%= f.text_field :email,:class => "text" %>
+		  </p>
+		  <p>
+		    <%= f.label :institution %><br />
+		    <%= f.text_area :institution,:class => "text" %>
+		  </p>
+		  <p>
+		    <%= f.label :intended_use %><br />
+		    <%= f.text_area :intended_use %>
+		  </p>
+		  <p>
+		    <%= f.label 'I agree to the data licence (' + link_to('click to read more',  '', :id => 'close_fb') + ')' %><br />
+		    <%= f.check_box :licence_agreed %>
+		  </p>
+		  <p>
+		    <%= f.submit 'Register' %>
+		  </p>
+		<% end %>
+		</div>
+		<% end -%>
+	</div>
+	
+</div>	
 
-<p>
-  <b>Wms:</b>
-  <%=h @dataset.wms %>
-</p>
-
-<p>
-  <b>Wfs:</b>
-  <%=h @dataset.wfs %>
-</p>
-
-<p>
-  <b>Meta download:</b>
-  <%=h @dataset.meta_download %>
-</p>
 
 
-<%= link_to 'Edit', edit_admin_dataset_path(@dataset) %> |
-<%= link_to 'Back', admin_datasets_path %>
+
+
+<div class="span-7 last">
+	<div class="about">
+	<h3>Licence information</h3>
+	<p>The <%= @dataset.title %> dataset is licenced under the <%= @dataset.licence.title %> licence.</p>
+	
+	<p><%= @dataset.licence.short_desc %></p>
+	
+	<p><%= link_to "Read more", "#licence", :rel => "facebox" %> about this licence.</p>	
+	</div>
+	<div id="licence" style="display:none;">
+		<h5 style="font-size:1.2em;"><%=@dataset.licence.title %></h5>
+		<%= RedCloth.new(@dataset.licence.body).to_html %>
+	</div>
+	
+</div>	 
+	
+

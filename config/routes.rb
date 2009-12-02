@@ -1,11 +1,11 @@
 ActionController::Routing::Routes.draw do |map|
-  map.root :controller => "static_contents", :action => :index
+  map.root :controller => :datasets, :action => :index
   map.about '/about', :controller => "static_contents", :action => "about"
   
-  map.resources :datasets, :only => [:index, :show]
-  map.resources :customers, :only => :new
+  map.resources :datasets, :only => [:index, :show], :has_many => :customers
   
   map.namespace(:admin) do |admin| 
+    admin.root :controller => "datasets", :action => "index"
     admin.resources :customers
     admin.resources :licences
     admin.resources :datasets

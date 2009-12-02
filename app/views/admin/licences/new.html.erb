@@ -7,6 +7,11 @@
     <%= f.label :title %><br />
     <%= f.text_field :title %>
   </p>
+
+	<p>
+    <%= f.label :short_desc %><br />
+    <%= f.text_area :short_desc %>
+  </p>
   <p>
     <%= f.label :body %><br />
     <%= f.text_area :body %>
@@ -16,4 +21,4 @@
   </p>
 <% end %>
 
-<%= link_to 'Back', admin_licences_path %>
+<%= link_to 'Back', admin_licences_path, :class=> "button" %>

@@ -1,6 +1,6 @@
 <h1>Editing dataset</h1>
 
-<% form_for(@dataset) do |f| %>
+<% form_for([:admin,@dataset]) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -35,10 +35,15 @@
     <%= f.label :meta_download %><br />
     <%= f.text_field :meta_download %>
   </p>
+
+	<p>
+    <%= f.label :licence %><br />
+    <%= collection_select(:dataset, :licence_id, Licence.all(:order => "title ASC"), :id, :title, {:prompt => true})%>
+  </p>
   <p>
     <%= f.submit 'Update' %>
   </p>
 <% end %>
 
-<%= link_to 'Show', @dataset %> |
-<%= link_to 'Back', datasets_path %>
+<%= link_to 'Show', @dataset, :class=> "button" %>
+<%= link_to 'Back', datasets_path, :class=> "button" %>

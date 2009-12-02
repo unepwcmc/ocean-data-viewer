@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20091201170450) do
 
   create_table "licences", :force => true do |t|
     t.string   "title"
+    t.text     "short_desc"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"

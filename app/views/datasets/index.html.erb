@@ -1,18 +1,40 @@
-<h1>Datasets at WCMC</h1>
+<% content_for :map do%>
+	<%= swf_tag "map", :height => 400 %>
+<% end -%>
 
-<% @datasets.each do |dataset| %>
-  <tr>
-    <td><%=h dataset.title %></td>
-    <td><%=h dataset.short_desc %></td>
-    <td><%=h dataset.long_desc %></td>
-    <td><%=h dataset.metadata_description %></td>
-    <td><%=h dataset.shp_download %></td>
-    <td><%=h dataset.wms %></td>
-    <td><%=h dataset.wfs %></td>
-    <td><%=h dataset.meta_download %></td>
-    <td><%= link_to 'Show', dataset %></td>
-  </tr>
+<div class="span-16 datasets">
+	<h2 style="font-size:30px;">Our Marine Datasets</h2>
+	
+<% @datasets.each do |dataset| %>  
+<div style="margin-bottom:2em;border-bottom:1px solid #eee;" class="span-8 <%= cycle ('', 'last') %>">
+	<h3><%= link_to dataset.title, dataset %></h3>
+	<p><%=h dataset.short_desc %>. <%= link_to "more..", dataset %></p>
+	
+	<div class="data_panel">
+		<h4>Downloads available</h4>
+		<%= link_to "Shapefile", dataset, :id => "tipsy", :title => "Download ESRI shapefile" if !dataset.shp_download.blank? %>
+		<%= link_to "WMS", dataset, :id => "tipsy", :title => "Access online WMS service" if !dataset.wms.blank? %>
+		<%= link_to "WFS", dataset, :id => "tipsy", :title => "Access online WFS service" if !dataset.wfs.blank? %>
+		<%= link_to "Metadata", dataset, :id => "tipsy", :title => "Download full metadata" if !dataset.meta_download.blank? %>
+	</div>
+</div>
 <% end %>
-</table>
+</div>
+
+
+
+
+
+<div class="span-7 last">
+	<div class="about">
+	<h3>About this site</h3>
+	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
+	<p><%= link_to "One Ocean Programme", "http://www.unep-wcmc.org/oneocean/" %> at <%= link_to "UNEP-WCMC", "http://www.unep-wcmc.org" %> seeks to synthesise, analyse and disseminate marine and coastal biodiversity knowledge.</p>
+		
+	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal)%>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
+	<p>For more information on the One Oceans team, <%= link_to "click here", "http://www.unep-wcmc.org/oneocean/" %>.</p>
+	</div>
+</div>
+
 
 

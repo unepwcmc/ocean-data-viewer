@@ -2,6 +2,10 @@
   <b>Title:</b>
   <%=h @licence.title %>
 </p>
+<p>
+  <b>Short Description:</b>
+  <%=h @licence.short_desc %>
+</p>
 
 <p>
   <b>Body:</b>
@@ -9,5 +13,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_admin_licence_path(@licence) %> |
-<%= link_to 'Back', admin_licences_path %>
+<%= link_to 'Edit', edit_admin_licence_path(@licence), :class=> "button" %> 
+<%= link_to 'Back', admin_licences_path, :class=> "button" %>

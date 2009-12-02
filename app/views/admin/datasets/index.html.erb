@@ -4,24 +4,13 @@
   <tr>
     <th>Title</th>
     <th>Short desc</th>
-    <th>Long desc</th>
-    <th>Metadata description</th>
-    <th>Shp download</th>
-    <th>Wms</th>
-    <th>Wfs</th>
-    <th>Meta download</th>
+    <th>&nbsp;</th>
   </tr>
 
 <% @datasets.each do |dataset| %>
   <tr>
     <td><%=h dataset.title %></td>
-    <td><%=h dataset.short_desc %></td>
-    <td><%=h dataset.long_desc %></td>
-    <td><%=h dataset.metadata_description %></td>
-    <td><%=h dataset.shp_download %></td>
-    <td><%=h dataset.wms %></td>
-    <td><%=h dataset.wfs %></td>
-    <td><%=h dataset.meta_download %></td>
+    <td><%=h truncate(dataset.short_desc,200) %></td>
     <td><%= link_to 'Show', [:admin, dataset] %></td>
     <td><%= link_to 'Edit', edit_admin_dataset_path(dataset) %></td>
     <td><%= link_to 'Destroy', [:admin,dataset], :confirm => 'Are you sure?', :method => :delete %></td>
@@ -31,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New dataset', new_admin_dataset_path %>
+<%= link_to 'New dataset', new_admin_dataset_path, :class=> "button" %>

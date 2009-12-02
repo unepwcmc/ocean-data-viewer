@@ -9,7 +9,7 @@
 <% @licences.each do |licence| %>
   <tr>
     <td><%=h licence.title %></td>
-    <td><%=h licence.body %></td>
+    <td><%=h truncate(licence.body, 300) %></td>
     <td><%= link_to 'Show', [:admin,licence] %></td>
     <td><%= link_to 'Edit', edit_admin_licence_path(licence) %></td>
     <td><%= link_to 'Destroy', [:admin,licence], :confirm => 'Are you sure?', :method => :delete %></td>
@@ -19,4 +19,4 @@
 
 <br />
 
-<%= link_to 'New licence', new_admin_licence_path %>
+<%= link_to 'New licence', new_admin_licence_path, :class=> "button" %>

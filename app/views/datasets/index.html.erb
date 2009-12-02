@@ -8,7 +8,7 @@
 <% @datasets.each do |dataset| %>  
 <div style="margin-bottom:2em;border-bottom:1px solid #eee;" class="span-8 <%= cycle ('', 'last') %>">
 	<h3><%= link_to dataset.title, dataset %></h3>
-	<p><%=h dataset.short_desc %>. <%= link_to "more..", dataset %></p>
+	<p><%=h truncate(dataset.short_desc,20) %> <%= link_to "more..", dataset %></p>
 	
 	<div class="data_panel">
 		<h4>Downloads available</h4>

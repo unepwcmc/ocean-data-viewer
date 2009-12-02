@@ -10683,3 +10683,15 @@ ActionController::RoutingError (No route matches "/images/loading.gif" with {:me
   
 
 Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-02 09:25:51) [GET]
+  [4;35;1mDataset Load (1.7ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 101ms (View: 93, DB: 4) | 200 OK [http://localhost/]

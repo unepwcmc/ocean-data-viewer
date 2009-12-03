@@ -1,0 +1,94 @@
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateDatasets (20091201165947)
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (94.3ms)[0m   [0;1mCREATE TABLE "datasets" ("id" serial primary key, "title" character varying(255), "short_desc" text, "long_desc" text, "metadata_description" text, "shp_download" character varying(255), "wms" character varying(255), "wfs" character varying(255), "meta_download" character varying(255), "licence_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (8.9ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091201165947')[0m
+  [4;36;1mSQL (13.8ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateLicences (20091201170016)
+  [4;35;1mSQL (0.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mCREATE TABLE "licences" ("id" serial primary key, "title" character varying(255), "short_desc" text, "body" text, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091201170016')[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Migrating to CreateCustomers (20091201170450)
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1mCREATE TABLE "customers" ("id" serial primary key, "title" character varying(255), "first_name" character varying(255), "last_name" character varying(255), "email" character varying(255), "institution" text, "intended_use" text, "licence_agreed" boolean DEFAULT 'f', "licence_id" integer, "dataset_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091201170450')[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-02 09:57:11) [GET]
+  [4;36;1mDataset Load (1.2ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+  [4;35;1mSQL (45.3ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.6ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `updated_at' for nil:NilClass) on line #34 of app/views/datasets/index.html.erb:
+31: 	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
+32: 	<p><%= link_to "One Ocean Programme", "http://www.unep-wcmc.org/oneocean/" %> at <%= link_to "UNEP-WCMC", "http://www.unep-wcmc.org" %> seeks to synthesise, analyse and disseminate marine and coastal biodiversity knowledge.</p>
+33: 		
+34: 	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal)%>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
+35: 	<p>For more information on the One Oceans team, <%= link_to "click here", "http://www.unep-wcmc.org/oneocean/" %>.</p>
+36: 	</div>
+37: </div>
+
+    app/views/datasets/index.html.erb:34
+
+Rendered rescues/_trace (91.2ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-03 22:11:56) [GET]
+  [4;36;1mDataset Load (78.5ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+  [4;35;1mSQL (2.2ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `updated_at' for nil:NilClass) on line #34 of app/views/datasets/index.html.erb:
+31: 	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
+32: 	<p><%= link_to "One Ocean Programme", "http://www.unep-wcmc.org/oneocean/" %> at <%= link_to "UNEP-WCMC", "http://www.unep-wcmc.org" %> seeks to synthesise, analyse and disseminate marine and coastal biodiversity knowledge.</p>
+33: 		
+34: 	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal)%>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
+35: 	<p>For more information on the One Oceans team, <%= link_to "click here", "http://www.unep-wcmc.org/oneocean/" %>.</p>
+36: 	</div>
+37: </div>
+
+    app/views/datasets/index.html.erb:34
+
+Rendered rescues/_trace (90.6ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-03 22:20:25) [GET]
+  [4;36;1mDataset Load (1.2ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.8ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+
+ActionView::TemplateError (undefined method `updated_at' for nil:NilClass) on line #34 of app/views/datasets/index.html.erb:
+31: 	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
+32: 	<p><%= link_to "One Ocean Programme", "http://www.unep-wcmc.org/oneocean/" %> at <%= link_to "UNEP-WCMC", "http://www.unep-wcmc.org" %> seeks to synthesise, analyse and disseminate marine and coastal biodiversity knowledge.</p>
+33: 		
+34: 	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal)%>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
+35: 	<p>For more information on the One Oceans team, <%= link_to "click here", "http://www.unep-wcmc.org/oneocean/" %>.</p>
+36: 	</div>
+37: </div>
+
+    app/views/datasets/index.html.erb:34
+
+Rendered rescues/_trace (90.2ms)
+Rendered rescues/_request_and_response (2.9ms)
+Rendering rescues/layout (internal_server_error)

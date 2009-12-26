@@ -1,0 +1,22 @@
+<div class="span-16 datasets">	
+	<h2 style="font-size:30px;"><%= @licence.title %> <span class="quiet small" style="font-size:0.5em;">updated <%= @licence.updated_at.to_date.to_s(:long)%></span></h2>
+	
+	<p><%= RedCloth.new(@licence.body).to_html %></p>
+		
+</div>	
+
+
+
+
+
+<div class="span-7 last">
+	<div class="about">
+	<h3>Datasets under this licence</h3>
+	<ul>
+		<% @licence.datasets.each do |ds|%>
+			<li><%= link_to ds.title, ds %></li>
+		<% end -%>
+	</div>
+</div>	 
+	
+

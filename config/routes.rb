@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.about '/about', :controller => "static_contents", :action => "about"
   
   map.resources :datasets, :only => [:index, :show], :has_many => :customers
+  map.resources :licences, :only => :show
   
   map.namespace(:admin) do |admin| 
     admin.root :controller => "datasets", :action => "index"

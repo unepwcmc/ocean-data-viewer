@@ -2,34 +2,54 @@
 	<%= swf_tag "map", :height => 400 %>
 <% end -%>
 
-<div class="span-16 datasets">
-	<h2 style="font-size:30px;">Our Marine Datasets</h2>
+<div class="span-24 datasets">
+	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
 	
-<% @datasets.each do |dataset| %>  
-<div style="margin-bottom:2em;border-bottom:1px solid #eee;" class="span-8 <%= cycle ('', 'last') %>">
+<% @datasets.each_with_index do |dataset,i| %>  
+<div style="margin-bottom:2em;margin-right:10px;width:220px;border-bottom:1px solid #eee;" class="span-6 <%= "last" if (i+1) % 4 == 0 %>">
 	<h3><%= link_to dataset.title, dataset %></h3>
 	<p><%=h truncate(dataset.short_desc,80) %> <%= link_to "more..", dataset %></p>
 	
 	<div class="data_panel">
-		<h4>Downloads available</h4>
+		<h4>Data access available</h4>
+		<%= link_to "Click for information", dataset, :id => "tipsy", :title => "more information" %>
+		<!-- 
 		<%= link_to "Shapefile", dataset, :id => "tipsy", :title => "Download ESRI shapefile" if !dataset.shp_download.blank? %>
 		<%= link_to "WMS", dataset, :id => "tipsy", :title => "Access online WMS service" if !dataset.wms.blank? %>
 		<%= link_to "WFS", dataset, :id => "tipsy", :title => "Access online WFS service" if !dataset.wfs.blank? %>
 		<%= link_to "Metadata", dataset, :id => "tipsy", :title => "Download full metadata" if !dataset.meta_download.blank? %>
+		-->
 	</div>
 </div>
 <% end %>
 </div>
 
+<h2 style="font-size:20px;">Other One Oceans Sites</h2>
+<div class="span-17 datasets">
+	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
+	
+
+<div style="margin-bottom:2em;border-bottom:1px solid #eee;margin-right:30px;" class="span-8">
+	<h3>WDPA Marine</h3>
+	<p>The World Database on Protected Areas Marine is a foundation dataset for conservation decision making.</p>
+	
+	<p>The UNEP-WCMC Protected Areas Data Unit was set up in 1981 to compile information on the world's protected areas, and to be a resource for those requiring such information.
+	<%= link_to "more..", "http://www.wdpa-marine.org" %></p>	
+</div>
+
+<div style="margin-bottom:2em;border-bottom:1px solid #eee;" class="span-8">
+	<h3>Coral Disease Database</h3>
+	<p>The first version of the GCDD was launched in 2000 and was populated with some 2000 points of data from 155 references, mostly peer reviewed scientific literature. <%= link_to "more..", "http://www.gcdd.org" %></p>	
+</div>
+</div>
 
 
 
-
-<div class="span-7 last">
+<div class="span-6 last">
 	<div class="about">
-	<h3>About this site</h3>
+	<h3>One Oceans</h3>
 	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
-	<p><%= link_to "One Ocean Programme", "http://www.unep-wcmc.org/oneocean/" %> at <%= link_to "UNEP-WCMC", "http://www.unep-wcmc.org" %> seeks to synthesise, analyse and disseminate marine and coastal biodiversity knowledge.</p>
+	<p>Synthesis, analysis and dissemination of marine and coastal biodiversity knowledge.</p>
 		
 	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal)%>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
 	<p>For more information on the One Oceans team, <%= link_to "click here", "http://www.unep-wcmc.org/oneocean/" %>.</p>

@@ -92,3 +92,1429 @@ ActionView::TemplateError (undefined method `updated_at' for nil:NilClass) on li
 Rendered rescues/_trace (90.2ms)
 Rendered rescues/_request_and_response (2.9ms)
 Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-10 16:24:50) [GET]
+  [4;36;1mDataset Load (6.8ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (2.1ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (1.4ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 203ms (View: 177, DB: 12) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-10 16:24:54) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (2.3ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (3.4ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 73ms (View: 53, DB: 6) | 200 OK [http://localhost/datasets/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 16:24:54) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 16:24:54) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 16:24:58) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CustomersController#create (for 127.0.0.1 at 2009-12-10 16:25:07) [POST]
+  Parameters: {"commit"=>"Register", "dataset_id"=>"1", "authenticity_token"=>"sDXqqC4gBBqCjbtZ9NfjZ8mhe5XHvAUTbobxJLCNlzc=", "customer"=>{"institution"=>"bb,mnb,m", "title"=>"Mr", "licence_agreed"=>"1", "last_name"=>"nbkjhjkh", "intended_use"=>",nbv,mnbmnb", "email"=>"gnn,bnmbn", "first_name"=>"asdfas"}}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Redirected to http://localhost:3000/datasets/1
+Completed in 100452ms (DB: 1) | 302 Found [http://localhost/datasets/1/customers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-10 16:26:47) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.6ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 115ms (View: 38, DB: 1) | 200 OK [http://localhost/datasets/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 16:26:48) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 16:26:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-10 16:26:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 21:46:10) [GET]
+  [4;36;1mDataset Load (10.5ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (3.2ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 147ms (View: 117, DB: 16) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-25 21:46:23) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (1.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (3.0ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 60ms (View: 45, DB: 5) | 200 OK [http://localhost/datasets/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-25 21:46:23) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-25 21:46:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 21:50:54) [GET]
+  [4;36;1mDataset Load (1.2ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 93ms (View: 87, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 21:52:44) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 29ms (View: 22, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 21:53:03) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 29ms (View: 23, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 21:53:29) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 29ms (View: 22, DB: 2) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:55:40) [GET]
+Filter chain halted as [:verify_access] rendered_or_redirected.
+Completed in 3ms (View: 2, DB: 1) | 401 Unauthorized [http://localhost/admin]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:55:46) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47admin47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/admin/datasets/index.html.erb:13)
+Completed in 29ms (View: 21, DB: 1) | 200 OK [http://localhost/admin]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-25 22:55:48) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;35;1mLicence Load (1.3ms)[0m   [0mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 88ms (View: 79, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-25 22:56:00) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"z3a6FNxZpGir7nKG+5Jv3PboDsJCI6/GsKkeqTPlc1k=", "dataset"=>{"licence_id"=>"2", "long_desc"=>"test", "meta_download"=>"", "title"=>"test", "shp_download"=>"", "metadata_description"=>"test", "wfs"=>"", "wms"=>"", "short_desc"=>"test"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLicence Load (0.4ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1mINSERT INTO "datasets" ("long_desc", "licence_id", "created_at", "title", "meta_download", "metadata_description", "shp_download", "updated_at", "wfs", "wms", "short_desc") VALUES(E'test', 2, '2009-12-25 22:56:00.277313', E'test', E'', E'test', E'', '2009-12-25 22:56:00.277313', E'', E'', E'test') RETURNING "id"[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/datasets/2
+Completed in 41ms (DB: 7) | 302 Found [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#show (for 127.0.0.1 at 2009-12-25 22:56:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/show
+Completed in 19ms (View: 10, DB: 1) | 200 OK [http://localhost/admin/datasets/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:56:03) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47admin47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/admin/datasets/index.html.erb:13)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47admin47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/admin/datasets/index.html.erb:13)
+Completed in 19ms (View: 13, DB: 1) | 200 OK [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-25 22:56:04) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;36;1mLicence Load (1.1ms)[0m   [0;1mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 26ms (View: 17, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-25 22:56:22) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"z3a6FNxZpGir7nKG+5Jv3PboDsJCI6/GsKkeqTPlc1k=", "dataset"=>{"licence_id"=>"1", "long_desc"=>"test2", "meta_download"=>"", "title"=>"tests2", "shp_download"=>"", "metadata_description"=>"", "wfs"=>"", "wms"=>"", "short_desc"=>"test2"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLicence Load (0.6ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;36;1mLicence Load (0.8ms)[0m   [0;1mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 32ms (View: 16, DB: 2) | 200 OK [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-25 22:56:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"z3a6FNxZpGir7nKG+5Jv3PboDsJCI6/GsKkeqTPlc1k=", "dataset"=>{"licence_id"=>"1", "long_desc"=>"test2", "meta_download"=>"", "title"=>"tests2", "shp_download"=>"", "metadata_description"=>"test2", "wfs"=>"", "wms"=>"", "short_desc"=>"test2"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mLicence Load (0.6ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO "datasets" ("long_desc", "licence_id", "created_at", "title", "meta_download", "metadata_description", "shp_download", "updated_at", "wfs", "wms", "short_desc") VALUES(E'test2', 1, '2009-12-25 22:56:27.228862', E'tests2', E'', E'test2', E'', '2009-12-25 22:56:27.228862', E'', E'', E'test2') RETURNING "id"[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/admin/datasets/3
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#show (for 127.0.0.1 at 2009-12-25 22:56:27) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 3) [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/show
+Completed in 75ms (View: 66, DB: 1) | 200 OK [http://localhost/admin/datasets/3]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:57:13) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47admin47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/admin/datasets/index.html.erb:13)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47admin47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/admin/datasets/index.html.erb:13)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47admin47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/admin/datasets/index.html.erb:13)
+Completed in 22ms (View: 16, DB: 1) | 200 OK [http://localhost/admin/datasets]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#new (for 127.0.0.1 at 2009-12-25 22:57:23) [GET]
+Rendering template within layouts/admin
+Rendering admin/datasets/new
+  [4;35;1mLicence Load (1.1ms)[0m   [0mSELECT * FROM "licences" ORDER BY title ASC[0m
+Completed in 25ms (View: 16, DB: 1) | 200 OK [http://localhost/admin/datasets/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#create (for 127.0.0.1 at 2009-12-25 22:58:04) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"z3a6FNxZpGir7nKG+5Jv3PboDsJCI6/GsKkeqTPlc1k=", "dataset"=>{"licence_id"=>"1", "long_desc"=>"test4", "meta_download"=>"", "title"=>"test4", "shp_download"=>"", "metadata_description"=>"test4", "wfs"=>"", "wms"=>"", "short_desc"=>"test4"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mLicence Load (0.6ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "datasets" ("long_desc", "licence_id", "created_at", "title", "meta_download", "metadata_description", "shp_download", "updated_at", "wfs", "wms", "short_desc") VALUES(E'test4', 1, '2009-12-25 22:58:04.666181', E'test4', E'', E'test4', E'', '2009-12-25 22:58:04.666181', E'', E'', E'test4') RETURNING "id"[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/admin/datasets/4
+Completed in 21ms (DB: 2) | 302 Found [http://localhost/admin/datasets]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing Admin::DatasetsController#show (for 127.0.0.1 at 2009-12-25 22:58:04) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/admin
+Rendering admin/datasets/show
+Completed in 14ms (View: 5, DB: 1) | 200 OK [http://localhost/admin/datasets/4]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:58:19) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 27ms (View: 20, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:59:24) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 22:59:36) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:03:06) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 33ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:03:39) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 90ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:11:45) [GET]
+  [4;35;1mDataset Load (1.5ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:11:53) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 90ms (View: 84, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:11:57) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:12:17) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 89ms (View: 83, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:12:38) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:12:51) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:12:59) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 90ms (View: 84, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:13:36) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 24, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:13:40) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 89ms (View: 83, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:13:44) [GET]
+  [4;35;1mDataset Load (1.5ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:13:49) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 24, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:14:05) [GET]
+  [4;35;1mDataset Load (1.4ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:14:15) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 30ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:14:34) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.6ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:14:57) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:15:02) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 89ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:15:20) [GET]
+  [4;35;1mDataset Load (1.4ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (1.8ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 35ms (View: 27, DB: 5) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:15:25) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 89ms (View: 83, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:15:39) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:15:52) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 90ms (View: 83, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:15:58) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:16:01) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 30ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:16:06) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:16:41) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:17:44) [GET]
+  [4;35;1mDataset Load (1.5ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 34ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:18:22) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 30ms (View: 23, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:18:25) [GET]
+  [4;35;1mDataset Load (1.4ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 92ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:29:51) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:29:58) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 94ms (View: 87, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:30:01) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 24, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:37:58) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 92ms (View: 85, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-25 23:57:05) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:34)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:34)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:34)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:34)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 38ms (View: 32, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:12:00) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 35ms (View: 27, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:12:27) [GET]
+  [4;35;1mDataset Load (1.4ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:12:49) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:13:06) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 94ms (View: 27, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:13:19) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:13:45) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 91ms (View: 84, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:14:07) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.6ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 25, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:14:22) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 91ms (View: 84, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:14:59) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:15:19) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:15:41) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:15:55) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 31ms (View: 25, DB: 2) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:16:49) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:22:10) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 33ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:23:02) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 89ms (View: 24, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:23:17) [GET]
+  [4;35;1mDataset Load (1.3ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.6ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 32ms (View: 26, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:24:20) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;36;1mLicence Load (0.4ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Completed in 87ms (View: 75, DB: 1) | 200 OK [http://localhost/datasets/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:24:20) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.5ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:24:20) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:24:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:35:41) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;36;1mLicence Load (0.4ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Completed in 98ms (View: 86, DB: 1) | 200 OK [http://localhost/datasets/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:35:41) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:35:41) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing LicencesController#show (for 127.0.0.1 at 2009-12-26 00:35:45) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mLicence Load (0.4ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering licences/show
+
+ActionView::TemplateError (undefined method `updated_at' for nil:NilClass) on line #2 of app/views/licences/show.html.erb:
+1: <div class="span-16 datasets">	
+2: 	<h2 style="font-size:30px;"><%= @licence.title %> <span class="quiet small" style="font-size:0.5em;">updated <%= @dataset.updated_at.to_date.to_s(:long)%></span></h2>
+3: 	
+4: 	<p><%= RedCloth.new(@licence.body).to_html %></p>
+5: 		
+
+    app/views/licences/show.html.erb:2
+
+Rendered rescues/_trace (99.9ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing LicencesController#show (for 127.0.0.1 at 2009-12-26 00:36:19) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mLicence Load (0.4ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering licences/show
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets".licence_id = 2) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/licences/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:36:23) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.3ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Completed in 29ms (View: 17, DB: 1) | 200 OK [http://localhost/datasets/2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:36:23) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:36:23) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 00:36:27) [GET]
+  [4;36;1mDataset Load (1.3ms)[0m   [0;1mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 27ms (View: 21, DB: 3) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:36:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 29ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:36:30) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:36:30) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing LicencesController#show (for 127.0.0.1 at 2009-12-26 00:36:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLicence Load (0.6ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering licences/show
+  [4;35;1mDataset Load (0.6ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets".licence_id = 1) [0m
+Completed in 35ms (View: 26, DB: 1) | 200 OK [http://localhost/licences/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:36:47) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 30ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:36:47) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:36:47) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)

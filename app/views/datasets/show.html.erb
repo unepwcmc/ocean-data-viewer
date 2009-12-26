@@ -82,12 +82,9 @@
 	
 	<p><%= @dataset.licence.short_desc %></p>
 	
-	<p><%= link_to "Read more", "#licence", :rel => "facebox" %> about this licence.</p>	
+	<p><%= link_to "Read more", @dataset.licence %> about this licence.</p>	
 	</div>
-	<div id="licence" style="display:none;">
-		<h5 style="font-size:1.2em;"><%=@dataset.licence.title %></h5>
-		<%= RedCloth.new(@dataset.licence.body).to_html %>
-	</div>
+
 	
 </div>	 
 	

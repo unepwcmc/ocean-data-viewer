@@ -1518,3 +1518,607 @@ ActionController::RoutingError (No route matches "/images/loading.gif" with {:me
   
 
 Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:37:56) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:44:14) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.9ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 36ms (View: 23, DB: 2) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:44:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:44:15) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:44:22) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:44:35) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.6ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 95ms (View: 23, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:44:35) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:44:35) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:44:37) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:49:46) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 30ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:49:46) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:49:47) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:49:48) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:50:59) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 29ms (View: 17, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:00) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:02) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:51:15) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 30ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:15) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (8.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:15) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:17) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 00:51:23) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 31ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:24) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:24) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 00:51:26) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:00:57) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.6ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 96ms (View: 83, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:00:57) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:00:57) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:00) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:01:32) [GET]
+  Parameters: {"id"=>"4"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 4) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.5ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 37ms (View: 24, DB: 1) | 200 OK [http://localhost/datasets/4]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:33) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:33) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:34) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing LicencesController#show (for 127.0.0.1 at 2009-12-26 01:01:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mLicence Load (0.6ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering licences/show
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets".licence_id = 1) [0m
+Completed in 34ms (View: 25, DB: 1) | 200 OK [http://localhost/licences/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:01:39) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.6ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 89ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:39) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:39) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:01:52) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing CustomersController#create (for 127.0.0.1 at 2009-12-26 01:02:08) [POST]
+  Parameters: {"commit"=>"Register", "dataset_id"=>"1", "authenticity_token"=>"z3a6FNxZpGir7nKG+5Jv3PboDsJCI6/GsKkeqTPlc1k=", "customer"=>{"institution"=>"test", "title"=>"Mr", "licence_agreed"=>"1", "last_name"=>"tokumine", "intended_use"=>"test", "email"=>"si@tinypla.net", "first_name"=>"simon"}}
+  [4;36;1mDataset Load (0.5ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+  [4;35;1mLicence Load (0.8ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mINSERT INTO "customers" ("licence_id", "created_at", "title", "institution", "updated_at", "dataset_id", "licence_agreed", "last_name", "first_name", "email", "intended_use") VALUES(1, '2009-12-26 01:02:08.349077', E'Mr', E'test', '2009-12-26 01:02:08.349077', 1, 't', E'tokumine', E'simon', E'si@tinypla.net', E'test') RETURNING "id"[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mCOMMIT[0m
+Sent mail to One Oceans <OneOcean@unep-wcmc.org>
+
+Date: Sat, 26 Dec 2009 01:02:08 +0000
+To: One Oceans <OneOcean@unep-wcmc.org>
+Bcc: Simon <si@tinypla.net>
+Subject: New Registration
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<h3>One Oceans Dataset confirmation</h3>
+
+<p>A new user has signed up with the following details:</p>
+
+<ul>
+	<li>Mr simon tokumine</li>
+	<li>si@tinypla.net</li>
+	<li>test</li>
+	<li>test</li>
+</ul>	
+
+<p>The user has accessed the <b>Coral disease</b> dataset and agreed to the licence </b>Attribution Non-Commercial No Derivatives</b>.</p>
+
+<p>Request received on December 26th, 2009 01:02.<p>
+
+
+--<br>
+<p>One Oceans data portal</p>
+<a href="http://www.unep-wcmc.org">Portal home</a>
+
+***** Debugger requested, but was not available: Start server with --debugger to enable *****
+Redirected to http://localhost:3000/datasets/1
+Completed in 4982ms (DB: 3) | 302 Found [http://localhost/datasets/1/customers]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:02:13) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 1) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;36;1mLicence Load (0.6ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 1) [0m
+Completed in 25ms (View: 13, DB: 1) | 200 OK [http://localhost/datasets/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#index (for 127.0.0.1 at 2009-12-26 01:05:57) [GET]
+  [4;35;1mDataset Load (1.2ms)[0m   [0mSELECT * FROM "datasets" [0m
+Rendering template within layouts/client
+Rendering datasets/index
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47datasets47index46html46erb at /Users/simon/Documents/01.Code/01.Now/git/marine_portal/app/views/datasets/index.html.erb:11)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "datasets" [0m
+  [4;35;1mDataset Load (0.5ms)[0m   [0mSELECT * FROM "datasets" ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "customers" [0m
+Completed in 27ms (View: 21, DB: 3) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:06:00) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;36;1mLicence Load (0.3ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Completed in 30ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:01) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:01) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:03) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:06:25) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;36;1mLicence Load (0.3ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Completed in 30ms (View: 18, DB: 1) | 200 OK [http://localhost/datasets/2]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:25) [GET]
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:25) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:27) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-12-26 01:06:29) [GET]
+
+ActionController::RoutingError (No route matches "/images/loading.gif" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'notice'[0m
+
+
+Processing CustomersController#create (for 127.0.0.1 at 2009-12-26 01:06:42) [POST]
+  Parameters: {"commit"=>"Register", "dataset_id"=>"2", "authenticity_token"=>"z3a6FNxZpGir7nKG+5Jv3PboDsJCI6/GsKkeqTPlc1k=", "customer"=>{"institution"=>"tests", "title"=>"Mr", "licence_agreed"=>"1", "last_name"=>"tokumine", "intended_use"=>"test", "email"=>"si@tinypla.net", "first_name"=>"simon"}}
+  [4;35;1mDataset Load (0.4ms)[0m   [0mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+  [4;36;1mLicence Load (0.3ms)[0m   [0;1mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO "customers" ("licence_id", "created_at", "title", "institution", "updated_at", "dataset_id", "licence_agreed", "last_name", "first_name", "email", "intended_use") VALUES(2, '2009-12-26 01:06:42.162887', E'Mr', E'tests', '2009-12-26 01:06:42.162887', 2, 't', E'tokumine', E'simon', E'si@tinypla.net', E'test') RETURNING "id"[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCOMMIT[0m
+Sent mail to One Oceans <OneOcean@unep-wcmc.org>, Simon.Blyth@unep-wcmc.org
+
+Date: Sat, 26 Dec 2009 01:06:42 +0000
+To: One Oceans <OneOcean@unep-wcmc.org>, Simon.Blyth@unep-wcmc.org
+Bcc: Simon <si@tinypla.net>
+Subject: New Registration
+Mime-Version: 1.0
+Content-Type: text/html; charset=utf-8
+
+<h3>One Oceans Dataset confirmation</h3>
+
+<p>A new user requests access to the <b>test</b> dataset with the following details:</p>
+
+<ul>
+	<li>Mr simon tokumine</li>
+	<li>si@tinypla.net</li>
+	<li>tests</li>
+	<li>test</li>
+</ul>	
+
+<p>The user has accessed the <b>test</b> dataset and agreed to the licence <b>WDPA v1</b>.</p>
+
+<p>Request received on December 26th, 2009 01:06.<p>
+
+
+--<br>
+<p>One Oceans data portal</p>
+<a href="http://www.unep-wcmc.org">Portal home</a>
+Redirected to http://localhost:3000/datasets/2
+Completed in 3962ms (DB: 2) | 302 Found [http://localhost/datasets/2/customers]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET client_min_messages TO 'panic'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET client_min_messages TO 'notice'[0m
+
+
+Processing DatasetsController#show (for 127.0.0.1 at 2009-12-26 01:06:46) [GET]
+  Parameters: {"id"=>"2"}
+  [4;36;1mDataset Load (0.4ms)[0m   [0;1mSELECT * FROM "datasets" WHERE ("datasets"."id" = 2) [0m
+Rendering template within layouts/client
+Rendering datasets/show
+  [4;35;1mLicence Load (0.3ms)[0m   [0mSELECT * FROM "licences" WHERE ("licences"."id" = 2) [0m
+Completed in 23ms (View: 11, DB: 1) | 200 OK [http://localhost/datasets/2]

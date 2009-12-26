@@ -12,9 +12,6 @@ class CustomersController < ApplicationController
       Postmaster.deliver_registration(@customer)
       session["dataset_#{@dataset.id}"] = "agreed"      
     end
-    
-    debugger
-    
     redirect_to :back     
   end
 

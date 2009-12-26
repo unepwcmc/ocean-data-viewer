@@ -1,6 +1,6 @@
 <h3>One Oceans Dataset confirmation</h3>
 
-<p>A new user has signed up with the following details:</p>
+<p>A new user requests access to the <b><%= @user.dataset.title %></b> dataset with the following details:</p>
 
 <ul>
 	<li><%=h @user.title %> <%=h @user.first_name %> <%=h @user.last_name %></li>
@@ -9,7 +9,7 @@
 	<li><%=h @user.intended_use %></li>
 </ul>	
 
-<p>The user has accessed the <b><%= @user.dataset.title %></b> dataset and agreed to the licence </b><%= @user.licence.title %></b>.</p>
+<p>The user has accessed the <b><%= @user.dataset.title %></b> dataset and agreed to the licence <b><%= @user.licence.title %></b>.</p>
 
 <p>Request received on <%= Time.now.to_s(:long_ordinal) %>.<p>
 

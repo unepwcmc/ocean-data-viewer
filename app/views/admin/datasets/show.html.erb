@@ -19,6 +19,19 @@
 </p>
 
 <p>
+  <b>HTML file:</b>
+  <%= link_to "HTML file", @dataset.html.url if @dataset.html.file? %>
+</p>
+
+
+<p>
+  <b>XML file:</b>
+  <%= link_to "XML file", @dataset.xml.url if @dataset.xml.file? %>
+</p>
+
+
+
+<p>
   <b>Shp download:</b>
   <%=h @dataset.shp_download %>
 </p>

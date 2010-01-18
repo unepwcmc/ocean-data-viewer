@@ -1,6 +1,6 @@
 <h1>New dataset</h1>
 
-<% form_for([:admin,@dataset]) do |f| %>
+<% form_for([:admin,@dataset], :html => { :multipart => true }) do |f| %>
   <%= f.error_messages %>
 
   <p>
@@ -19,7 +19,18 @@
     <%= f.label :metadata_description %><br />
     <%= f.text_area :metadata_description %>
   </p>
-  <p>
+
+	<p>
+		<%= f.label :metadata_html_file%><br/>
+		<%= f.file_field :html%>
+  </p>
+	
+	<p>
+		<%= f.label :metadata_xml_file%><br/>
+		<%= f.file_field :xml%>
+  </p>
+	
+	<p>
     <%= f.label :shp_download %><br />
     <%= f.text_field :shp_download %>
   </p>

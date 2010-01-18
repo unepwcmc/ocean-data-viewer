@@ -4,6 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Short desc</th>
+		<th>Meta data</th>
     <th>&nbsp;</th>
   </tr>
 
@@ -11,9 +12,11 @@
   <tr>
     <td><%=h dataset.title %></td>
     <td><%=h truncate(dataset.short_desc,30) %></td>
-    <td><%= link_to 'Show', [:admin, dataset] %></td>
-    <td><%= link_to 'Edit', edit_admin_dataset_path(dataset) %></td>
-    <td><%= link_to 'Destroy', [:admin,dataset], :confirm => 'Are you sure?', :method => :delete %></td>
+		<td><%= image_tag 'icons/page_white_world.png' if dataset.html.file? %>
+				<%= image_tag 'icons/page_white_database.png' if dataset.xml.file? %>
+    <td><%= link_to 'Show', [:admin, dataset] %>
+    <%= link_to 'Edit', edit_admin_dataset_path(dataset) %>
+    <%= link_to 'Destroy', [:admin,dataset], :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

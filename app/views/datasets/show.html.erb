@@ -13,7 +13,15 @@
 	<h3>Metadata description</h3>
 	<p><%= RedCloth.new(@dataset.metadata_description).to_html %></p>
 	
-	
+	<% if @dataset.html.file? || @dataset.xml.file? %>
+	<div class="file_panel" style="padding:1em; background:#eee;">
+		<h4 style="margin-bottom:0;">Metadata files</h4>
+		<%= link_to "#{image_tag 'icons/page_white_world.png'} HTML metadata", @dataset.html.url, :class => "button positive" if @dataset.html.file?%>
+		<%= link_to "#{image_tag 'icons/page_white_database.png'} XML metadata", @dataset.xml.url, :class => "button positive" if @dataset.xml.file? %>		
+		<div style="clear:both;"></div>
+	</div>
+	<div style="clear:both;"></div>
+	<% end -%>
 	
 	<div class="data_panel">
 		<h4>Data access available</h4>

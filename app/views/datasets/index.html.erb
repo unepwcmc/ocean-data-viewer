@@ -8,7 +8,7 @@
 <% @datasets.each_with_index do |dataset,i| %>  
 <div style="margin-bottom:2em;margin-right:10px;width:220px;border-bottom:1px solid #eee;" class="span-6 <%= "last" if (i+1) % 4 == 0 %>">
 	<h3><%= link_to dataset.title, dataset %></h3>
-	<p><%=h truncate(dataset.short_desc,80) %> <%= link_to "more..", dataset %></p>
+	<p><%=h truncate(dataset.short_desc,50) %> <%= link_to "more..", dataset %></p>
 	
 	<div class="data_panel">
 		<h4>Data access available</h4>

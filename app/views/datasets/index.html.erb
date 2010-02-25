@@ -7,7 +7,7 @@
 	
 <% @datasets.each_with_index do |dataset,i| %>  
 <div style="margin-bottom:2em;margin-right:10px;width:220px;border-bottom:1px solid #eee;" class="span-6 <%= "last" if (i+1) % 4 == 0 %>">
-	<h3 style="font-size:14px"><%= link_to truncate(dataset.title,20), dataset %></h3>
+	<h3 style="font-size:16px"><%= link_to truncate(dataset.title,80), dataset %></h3>
 	<p><%=h truncate(dataset.short_desc,50) %> <%= link_to "more..", dataset %></p>
 	
 	<div class="data_panel">

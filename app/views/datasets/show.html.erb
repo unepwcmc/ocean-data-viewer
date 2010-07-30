@@ -28,56 +28,57 @@
 
 		
 		<% if session["dataset_#{@dataset.id}"] == "agreed" %>
-		Thank you for your data request. We will contact you shortly.
-<!--		
-		<%= link_to "Shapefile", @dataset.shp_download, :id => "tipsy", :title => "Download ESRI shapefile" if !@dataset.shp_download.blank? %>
-		<%= link_to "WMS", @dataset.wms, :id => "tipsy", :title => "Access online WMS service" if !@dataset.wms.blank? %>
-		<%= link_to "WFS", @dataset.wfs, :id => "tipsy", :title => "Access online WFS service" if !@dataset.wfs.blank? %>
-		<%= link_to "Metadata", @dataset.meta_download, :id => "tipsy", :title => "Download full metadata" if !@dataset.meta_download.blank? %>
--->		
+                  <p>Thank you for your data request. <%= "We will contact you shortly." if @dataset.shp_download.blank? %></p>
+
+                  <%= link_to "Shapefile", @dataset.shp_download, :id => "tipsy", :title => "Download ESRI shapefile" if !@dataset.shp_download.blank? %>
+  <!--		
+                  <%= link_to "WMS", @dataset.wms, :id => "tipsy", :title => "Access online WMS service" if !@dataset.wms.blank? %>
+                  <%= link_to "WFS", @dataset.wfs, :id => "tipsy", :title => "Access online WFS service" if !@dataset.wfs.blank? %>
+                  <%= link_to "Metadata", @dataset.meta_download, :id => "tipsy", :title => "Download full metadata" if !@dataset.meta_download.blank? %>
+  -->		
 		<% else -%>
 		
-		Please <%= link_to "register", "#registration", :rel => "facebox", :style=>"color:white;" %> to request access to this dataset.
+                  Please <%= link_to "register", "#registration", :rel => "facebox", :style=>"color:white;" %> to request access to this dataset.
 
-		<div id="registration" style="display:none;width:800px;">
-		<h1>New data access registrant</h1>
+                  <div id="registration" style="display:none;width:800px;">
+                    <h1>New data access registrant</h1>
 
-		<% form_for([@dataset, @customer]) do |f| %>
-		  <%= f.error_messages %>
+                    <% form_for([@dataset, @customer]) do |f| %>
+                      <%= f.error_messages %>
 
-		  <p>
-		    <%= f.label :title %><br />
-		<%= f.select :title, [["Mr", "Mr"],["Mrs", "Mrs"],["Ms", "Ms"],["Miss", "Miss"],["Dr", "Dr"],["Prof", "Prof"]], {:include_blank => true} %>
-		  </p>
-		  <p>
-		    <%= f.label :first_name %><br />
-		    <%= f.text_field :first_name, :class => "text"%>
-		  </p>
-		  <p>
-		    <%= f.label :last_name %><br />
-		    <%= f.text_field :last_name,:class => "text" %>
-		  </p>
-		  <p>
-		    <%= f.label :email %><br />
-		    <%= f.text_field :email,:class => "text" %>
-		  </p>
-		  <p>
-		    <%= f.label :institution %><br />
-		    <%= f.text_area :institution,:class => "text" %>
-		  </p>
-		  <p>
-		    <%= f.label :intended_use %><br />
-		    <%= f.text_area :intended_use %>
-		  </p>
-		  <p>
-		    <%= f.label 'I agree to the data licence (' + link_to('click to read more',  @dataset.licence) + ')' %><br />
-		    <%= f.check_box :licence_agreed %>
-		  </p>
-		  <p>
-		    <%= f.submit 'Register' %>
-		  </p>
-		<% end %>
-		</div>
+                      <p>
+                        <%= f.label :title %><br />
+                    <%= f.select :title, [["Mr", "Mr"],["Mrs", "Mrs"],["Ms", "Ms"],["Miss", "Miss"],["Dr", "Dr"],["Prof", "Prof"]], {:include_blank => true} %>
+                      </p>
+                      <p>
+                        <%= f.label :first_name %><br />
+                        <%= f.text_field :first_name, :class => "text"%>
+                      </p>
+                      <p>
+                        <%= f.label :last_name %><br />
+                        <%= f.text_field :last_name,:class => "text" %>
+                      </p>
+                      <p>
+                        <%= f.label :email %><br />
+                        <%= f.text_field :email,:class => "text" %>
+                      </p>
+                      <p>
+                        <%= f.label :institution %><br />
+                        <%= f.text_area :institution,:class => "text" %>
+                      </p>
+                      <p>
+                        <%= f.label :intended_use %><br />
+                        <%= f.text_area :intended_use %>
+                      </p>
+                      <p>
+                        <%= f.label 'I agree to the data licence (' + link_to('click to read more',  @dataset.licence) + ')' %><br />
+                        <%= f.check_box :licence_agreed %>
+                      </p>
+                      <p>
+                        <%= f.submit 'Register' %>
+                      </p>
+                    <% end %>
+                  </div>
 		<% end -%>
 	</div>
 	

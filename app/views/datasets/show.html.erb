@@ -22,13 +22,17 @@
 	</div>
 	<div style="clear:both;"></div>
 	<% end -%>
+        <% unless @dataset.shp_download.blank? %>
+            <h3>Shapefile Preview</h3>
+            <%= link_to image_tag("logo.png"), root_url %><br/>
+        <% end %>
 	
 	<div class="data_panel">
 		<h4>Data access available</h4>
 
 		
 		<% if session["dataset_#{@dataset.id}"] == "agreed" %>
-                  <p>Thank you for your data request. <%= "We will contact you shortly." if @dataset.shp_download.blank? %></p>
+                  <p>Thank you for your data request. <%= "We will contact you shortly."  %></p>
 
                   <%= link_to "Shapefile", @dataset.shp_download, :id => "tipsy", :title => "Download ESRI shapefile" if !@dataset.shp_download.blank? %>
   <!--		

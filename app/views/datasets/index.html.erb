@@ -24,7 +24,7 @@
 <% end %>
 </div>
 
-<h2 style="font-size:20px;">Other One Oceans Sites</h2>
+<h2 style="font-size:20px;">Other Marine Assessment And Decision Support Sites</h2>
 <div class="span-17 datasets">
 	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
 	
@@ -47,12 +47,12 @@
 
 <div class="span-6 last">
 	<div class="about">
-	<h3>One Oceans</h3>
+	<h3>Marine Assessment And Decision Support</h3>
 	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
 	<p>Synthesis, analysis and dissemination of marine and coastal biodiversity knowledge.</p>
 		
 	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal) %>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
-	<p>For more information on the One Oceans team, <%= link_to "click here", "http://www.unep-wcmc.org/oneocean/" %>.</p>
+	<p>For more information on the Marine Assessment And Decision Support team, <%= link_to "click here", "http://www.unep-wcmc.org/marine/" %>.</p>
 	</div>
 </div>
 

@@ -1,5 +1,5 @@
 <% content_for :map do %>
-  <%= render :partial => 'gmap'  %>
+  <%= render :partial => 'gmap', :locals => {:datasets => @datasets}  %>
 <% end -%>
 
 <div class="span-24 datasets">

@@ -1,5 +1,5 @@
-<% content_for :map do%>
-	<%= swf_tag "map", :height => 400 %>
+<% content_for :map do %>
+  <%= render :partial => 'gmap', :locals => {:datasets => [@dataset], :display_layers => true}  %>
 <% end -%>
 
 <div class="span-16 datasets">

@@ -2,21 +2,38 @@
     var map;
 
     function init(){
-        map = new OpenLayers.Map('map');
+        var options = {
+            projection: new OpenLayers.Projection("EPSG:900913"),
+            units: "m",
+            maxResolution: 156543.0339,
+            maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34,
+                                             20037508.34, 20037508.34)
+        };
+        
+        map = new OpenLayers.Map('map', options);
 
+        // create Google Mercator layers
         var satellite = new OpenLayers.Layer.Google(
-            "Google Satellite" , {type: G_PHYSICAL_MAP}
+            "Google Streets",
+            {
+              'sphericalMercator': true,
+              maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
+              type: G_PHYSICAL_MAP
+            }
         );
         
 
+        /* WMS Layers*/
         <%
+          display_layers = false if display_layers.nil?
           wmses = []
           i = 0
-          @datasets.each do |dataset|
-            wmses << "wms_" +i.to_s 
+
+          datasets.each do |dataset|
+            wmses << "wms_" + i.to_s 
             i = i+1
         %>
-            /* WMS Layers*/
+            /* <%= dataset.title %> */
             var <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
                     "<%= dataset.wms_server %>", 
                     {
@@ -26,13 +43,14 @@
                     },
                     {
                       isBaseLayer: false,
+                      visibility: <%= display_layers.to_s %>,
                       reproject: true
                     }
                 );
 
         <% end %>
 
-          map.addLayers([satellite,<%= wmses.join(',') %>]);
+        map.addLayers([satellite,<%= wmses.join(',') %>]);
 
         map.setCenter(new OpenLayers.LonLat(0,10), 2);
         map.addControl( new OpenLayers.Control.LayerSwitcher() );

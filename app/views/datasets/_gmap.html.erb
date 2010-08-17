@@ -11,7 +11,7 @@
         <% @datasets.each do |dataset| %>
           /* WMS Layers*/
           var wms = new OpenLayers.Layer.WMS("<%= dataset.title %>",
-                  "<%= dataset.wms_server %>/geoserver/wms", 
+                  "<%= dataset.wms_server %>", 
                   {
                     layers: '<%= dataset.wms_name %>',
                     transparent: true,
@@ -22,7 +22,7 @@
                     reproject: true
                   }
               );
-      <% end %>
+        <% end %>
 
         map.addLayers([satellite, wms]);
 

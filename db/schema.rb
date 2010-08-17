@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100118152752) do
+ActiveRecord::Schema.define(:version => 20100817084718) do
 
   create_table "customers", :force => true do |t|
     t.string   "title"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20100118152752) do
     t.text     "long_desc"
     t.text     "metadata_description"
     t.string   "shp_download"
-    t.string   "wms"
+    t.string   "wms_server"
     t.string   "wfs"
     t.string   "meta_download"
     t.integer  "licence_id"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20100118152752) do
     t.string   "xml_content_type"
     t.integer  "xml_file_size"
     t.datetime "xml_updated_at"
+    t.string   "wms_name"
   end
 
   create_table "licences", :force => true do |t|

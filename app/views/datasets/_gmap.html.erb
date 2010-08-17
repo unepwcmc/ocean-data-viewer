@@ -1,0 +1,35 @@
+<script type='text/javascript'>
+    var map;
+
+    function init(){
+        map = new OpenLayers.Map('map');
+
+        var satellite = new OpenLayers.Layer.Google(
+            "Google Satellite" , {type: G_PHYSICAL_MAP}
+        );
+        
+        <% @datasets.each do |dataset| %>
+          /* WMS Layers*/
+          var wms = new OpenLayers.Layer.WMS("<%= dataset.title %>",
+                  "<%= dataset.wms_server %>/geoserver/wms", 
+                  {
+                    layers: '<%= dataset.wms_name %>',
+                    transparent: true,
+                    format: 'image/gif'
+                  },
+                  {
+                    isBaseLayer: false,
+                    reproject: true
+                  }
+              );
+      <% end %>
+
+        map.addLayers([satellite, wms]);
+
+        map.setCenter(new OpenLayers.LonLat(0,10), 2);
+        map.addControl( new OpenLayers.Control.LayerSwitcher() );
+    }
+</script>
+
+<div id="map" class="smallmap" style="width:100%;height:400px"></div> 
+

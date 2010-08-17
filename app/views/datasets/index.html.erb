@@ -1,5 +1,5 @@
-<% content_for :map do%>
-	<%= swf_tag "map", :height => 400 %>
+<% content_for :map do %>
+  <%= render :partial => 'gmap'  %>
 <% end -%>
 
 <div class="span-24 datasets">
@@ -15,7 +15,6 @@
 		<%= link_to "Click for access details", dataset, :id => "tipsy", :title => "more information" %>
 		<!-- 
 		<%= link_to "Shapefile", dataset, :id => "tipsy", :title => "Download ESRI shapefile" if !dataset.shp_download.blank? %>
-		<%= link_to "WMS", dataset, :id => "tipsy", :title => "Access online WMS service" if !dataset.wms.blank? %>
 		<%= link_to "WFS", dataset, :id => "tipsy", :title => "Access online WFS service" if !dataset.wfs.blank? %>
 		<%= link_to "Metadata", dataset, :id => "tipsy", :title => "Download full metadata" if !dataset.meta_download.blank? %>
 		-->

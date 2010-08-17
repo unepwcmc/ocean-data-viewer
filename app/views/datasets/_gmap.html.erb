@@ -8,23 +8,31 @@
             "Google Satellite" , {type: G_PHYSICAL_MAP}
         );
         
-        <% @datasets.each do |dataset| %>
-          /* WMS Layers*/
-          var wms = new OpenLayers.Layer.WMS("<%= dataset.title %>",
-                  "<%= dataset.wms_server %>", 
-                  {
-                    layers: '<%= dataset.wms_name %>',
-                    transparent: true,
-                    format: 'image/gif'
-                  },
-                  {
-                    isBaseLayer: false,
-                    reproject: true
-                  }
-              );
+
+        <%
+          wmses = []
+          i = 0
+          @datasets.each do |dataset|
+            wmses << "wms_" +i.to_s 
+            i = i+1
+        %>
+            /* WMS Layers*/
+            var <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
+                    "<%= dataset.wms_server %>", 
+                    {
+                      layers: '<%= dataset.wms_name %>',
+                      transparent: true,
+                      format: 'image/gif'
+                    },
+                    {
+                      isBaseLayer: false,
+                      reproject: true
+                    }
+                );
+
         <% end %>
 
-        map.addLayers([satellite, wms]);
+          map.addLayers([satellite,<%= wmses.join(',') %>]);
 
         map.setCenter(new OpenLayers.LonLat(0,10), 2);
         map.addControl( new OpenLayers.Control.LayerSwitcher() );

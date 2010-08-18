@@ -9,7 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100817084718) do
+ActiveRecord::Schema.define(:version => 20100818084800) do
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.text     "identifier"
+    t.text     "short_desc"
+    t.text     "description"
+    t.integer  "decision_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customers", :force => true do |t|
     t.string   "title"
@@ -46,6 +56,21 @@ ActiveRecord::Schema.define(:version => 20100817084718) do
     t.integer  "xml_file_size"
     t.datetime "xml_updated_at"
     t.string   "wms_name"
+  end
+
+  create_table "datasets_decisions", :force => true do |t|
+    t.integer "dataset_id"
+    t.integer "descision_id"
+    t.integer "category_id"
+  end
+
+  create_table "decisions", :force => true do |t|
+    t.string   "name"
+    t.text     "short_name"
+    t.text     "short_desc"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "licences", :force => true do |t|

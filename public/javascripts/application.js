@@ -5,6 +5,7 @@
 $(function(){
 	Cufon.replace('h2, h3, h4');
 	$('a#tipsy').tipsy({fade: true, gravity: 's'});
+	$('#tipsy').tipsy({fade: true, gravity: 's'});
 	$('a[rel*=facebox]').facebox() 
 	$('#close_fb').click(function(){
 		$(document).trigger('close.facebox');

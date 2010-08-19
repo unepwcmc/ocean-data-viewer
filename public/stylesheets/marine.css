@@ -67,7 +67,11 @@ body{padding-top:1em; background: #ccc url("/images/background.png") top left re
 }
 
 td, th{
-  border-right: 2px solid #3174AF;
-  border-bottom: 2px solid #3174AF;
-  border-style: solid;
+        border-right: 2px solid #3174AF;
+        border-bottom: 2px solid #3174AF;
+        border-style: solid;
+}
+
+.active_matrix {
+	background:#CCCCCC;
 }

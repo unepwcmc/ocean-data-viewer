@@ -17,6 +17,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :datasets_decisions
   end
 
+  map.resources :decisions
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

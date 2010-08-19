@@ -9,18 +9,23 @@
     <tr>
       <th style="border-left:black 1px;"></th>
       <% @decisions.each do |decision| %>
-        <th><%= decision.name %></th>
+        <th id='tipsy' title='<%= decision.short_desc %>'><%= link_to decision.name, decision %></th>
       <% end %>
     </tr>
-    <% @datasets.each_with_index do |dataset,i| %>  
+    <% @datasets.each do |dataset| %>  
         <tr>
             <td>
-                <h2 style="font-size:16px"><%= truncate(dataset.title,80) %></h2>
+                <h2 style="font-size:16px" id><%= truncate(dataset.title,80) %></h2>
                 <%= link_to "more..", dataset %>
             </td>
             <% @decisions.each do |decision|%>
-              <td <%= "bgcolor='grey'" if dataset.decisions.include? decision %>>
-                <%=  %>
+              <%
+                datasets_decision = DatasetsDecision.find(:first, :conditions => {:dataset_id => dataset, :decision_id => decision})
+                hover_msg = datasets_decision.try(:category).try(:short_desc)
+                hover_msg ||= decision.short_desc
+              %>
+              <td <%= "class='active_matrix'" if datasets_decision.present? %> id='tipsy' title='<%= hover_msg %>' >
+                <%= datasets_decision.try(:category).try(:identifier) %>
               </td>
             <% end %>
         </tr>

@@ -9,10 +9,12 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => "datasets", :action => "index"
     admin.resources :customers
     admin.resources :licences
-    admin.resources :datasets
+    admin.resources :datasets do |dataset|
+      dataset.resources :datasets_decisions
+    end
     admin.resources :decisions
     admin.resources :categories
-    admin.resources :decisions_datasets
+    admin.resources :datasets_decisions
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

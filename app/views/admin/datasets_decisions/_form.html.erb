@@ -1,0 +1,19 @@
+<% form_for([:admin,@dataset,@datasets_decision], :html => { :multipart => true }) do |f| %>
+  <%= f.error_messages %>
+
+  <%= f.hidden_field :dataset_id  %>
+
+  <p>
+    <%= f.label :decision %><br />
+    <%= collection_select(:datasets_decision, :decision_id, Decision.all(:order => "name ASC"), :id, :name, {:prompt => true})%>
+  </p>
+
+  <p>
+    <%= f.label :category %><br />
+    <%= collection_select(:datasets_decision, :category_id, Category.all(:order => "name ASC"), :id, :name, {:prompt => true})%>
+  </p>
+
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

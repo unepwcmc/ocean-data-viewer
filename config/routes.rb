@@ -10,6 +10,9 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :customers
     admin.resources :licences
     admin.resources :datasets
+    admin.resources :decisions
+    admin.resources :categories
+    admin.resources :decisions_datasets
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

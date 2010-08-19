@@ -2,6 +2,7 @@ class DatasetsController < ApplicationController
   # GET /datasets
   def index
     @datasets = Dataset.all
+    @decisions = Decision.all
   end
 
   # GET /datasets/1

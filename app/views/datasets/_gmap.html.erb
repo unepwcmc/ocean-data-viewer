@@ -27,11 +27,9 @@
         <%
           display_layers = false if display_layers.nil?
           wmses = []
-          i = 0
 
-          datasets.each do |dataset|
+          datasets.each_with_index do |dataset, i|
             wmses << "wms_" + i.to_s 
-            i = i+1
         %>
             /* <%= dataset.title %> */
             var <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",

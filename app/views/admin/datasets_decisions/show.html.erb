@@ -5,7 +5,7 @@
 
 <p>
   <b>Category</b>
-  <%= @datasets_decision.category.try(:name) %>
+  <%=h @datasets_decision.category.try(:name) %>
 </p>
 
 <%= link_to 'Edit', edit_admin_datasets_decision_path(@datasets_decision), :class=> "button" %>

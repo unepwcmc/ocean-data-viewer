@@ -5,22 +5,27 @@
 <div class="span-24 datasets">
 	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
 	
-<% @datasets.each_with_index do |dataset,i| %>  
-<div style="margin-bottom:2em;margin-right:10px;width:220px; height:180px;border-bottom:1px solid #eee;position:relative;" class="span-6 <%= "last" if (i+1) % 4 == 0 %>">
-	<h3 style="font-size:16px"><%= link_to truncate(dataset.title,80), dataset %></h3>
-	<p><%=h truncate(dataset.short_desc,50) %> <%= link_to "more..", dataset %></p>
-	
-	<div class="data_panel" style="position:absolute;top:117px;width:196px;">
-		<h4>Data access available</h4>
-		<%= link_to "Click for access details", dataset, :id => "tipsy", :title => "more information" %>
-		<!-- 
-		<%= link_to "Shapefile", dataset, :id => "tipsy", :title => "Download ESRI shapefile" if !dataset.shp_download.blank? %>
-		<%= link_to "WFS", dataset, :id => "tipsy", :title => "Access online WFS service" if !dataset.wfs.blank? %>
-		<%= link_to "Metadata", dataset, :id => "tipsy", :title => "Download full metadata" if !dataset.meta_download.blank? %>
-		-->
-	</div>
-</div>
-<% end %>
+  <table style="width:96%;">
+    <tr>
+      <th style="border-left:black 1px;"></th>
+      <% @decisions.each do |decision| %>
+        <th><%= decision.name %></th>
+      <% end %>
+    </tr>
+    <% @datasets.each_with_index do |dataset,i| %>  
+        <tr>
+            <td>
+                <h2 style="font-size:16px"><%= truncate(dataset.title,80) %></h2>
+                <%= link_to "more..", dataset %>
+            </td>
+            <% @decisions.each do |decision|%>
+              <td <%= "bgcolor='grey'" if dataset.decisions.include? decision %>>
+                <%=  %>
+              </td>
+            <% end %>
+        </tr>
+    <% end %>
+  </table>
 </div>
 
 <h2 style="font-size:20px;">Other Marine Assessment And Decision Support Sites</h2>

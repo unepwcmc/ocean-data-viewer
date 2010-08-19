@@ -65,3 +65,9 @@ body{padding-top:1em; background: #ccc url("/images/background.png") top left re
 	margin-bottom:0.5em;
 	padding:0;
 }
+
+td, th{
+  border-right: 2px solid #3174AF;
+  border-bottom: 2px solid #3174AF;
+  border-style: solid;
+}

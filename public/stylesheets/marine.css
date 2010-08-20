@@ -76,7 +76,19 @@ td, th{
         border-style: solid;
 }
 
-.active_matrix {
+th a{
+        text-decoration: none;
+        font-size: 1.5em;
+        color:black;
+}
+
+.group_toggle {
+        text-decoration: underline;
+        font-size: 0.5em;
+        color:blue;
+}
+
+.active_matrix_cell {
 	background:#CCCCCC;
 }
 
@@ -94,3 +106,4 @@ td, th{
         font-size: 1.5em;
         padding: 7px;
 }
+

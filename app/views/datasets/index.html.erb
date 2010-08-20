@@ -2,6 +2,12 @@
   <%= render :partial => 'gmap', :locals => {:datasets => @datasets}  %>
 <% end -%>
 
+<script type="text/javascript">
+  showHideGroup = function(group_name) {
+    $('.' + group_name).toggle();
+  }
+</script>
+
 <div class="span-24 datasets">
 	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
 	
@@ -9,7 +15,15 @@
     <tr>
       <th style="border-left:black 1px;"></th>
       <% @decisions.each do |decision| %>
-        <th class='matrix_title' title='<%= decision.short_desc %>'><%= link_to decision.name, decision %></th>
+        <th class='matrix_title' title='<%= decision.short_desc %>'>
+          <%= link_to decision.name, decision %>
+          <% if decision.children.size > 0 %>
+            <a href='#' class='group_toggle'onclick="showHideGroup('<%= decision.name.gsub(/ /,'').underscore %>_group')">(toggle group)</a>
+          <% end %>
+        </th>
+        <% decision.children.each do |child_decision| %>
+          <th class="matrix_title hidden_matrix_cell <%= decision.name.gsub(/ /,'').underscore%>_group" title='<%= decision.short_desc %>'><%= link_to decision.name, decision %></th>
+        <% end %>
       <% end %>
     </tr>
     <% @datasets.each do |dataset| %>  
@@ -24,7 +38,7 @@
                 hover_msg = datasets_decision.try(:category).try(:short_desc)
                 hover_msg ||= decision.short_desc
               %>
-              <td id='tipsy' title='<%= hover_msg %>' <%= "class='active_matrix'" if datasets_decision.present? %> >
+              <td id='tipsy' title='<%= hover_msg %>' <%= "class='active_matrix_cell'" if datasets_decision.present? %> >
                 <%= datasets_decision.try(:category).try(:identifier) %>
               </td>
               <%
@@ -35,8 +49,8 @@
                   hover_msg ||= child_decision.short_desc
 
                   styles = "hidden_matrix_cell "
-                  styles << "#{decision.name}_group "
-                  styles << "active_matrix " if datasets_decision.present?
+                  styles << "#{decision.name.gsub(/ /,'').underscore}_group "
+                  styles << "active_matrix_cell " if datasets_decision.present?
               %>
                   <td id='tipsy' title='<%= hover_msg %>' class='<%= styles %>' >
                     <%= datasets_decision.try(:category).try(:identifier) %>

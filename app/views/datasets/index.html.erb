@@ -22,7 +22,7 @@
           <% end %>
         </th>
         <% decision.children.each do |child_decision| %>
-          <th class="matrix_title hidden_matrix_cell <%= decision.name.gsub(/ /,'').underscore%>_group" title='<%= decision.short_desc %>'><%= link_to decision.name, decision %></th>
+          <th class="matrix_title hidden_matrix_cell <%= decision.name.gsub(/ /,'').underscore%>_group" title='<%= child_decision.short_desc %>'><%= link_to child_decision.name, child_decision %></th>
         <% end %>
       <% end %>
     </tr>

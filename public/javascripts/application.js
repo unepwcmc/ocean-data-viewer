@@ -5,7 +5,7 @@
 $(function(){
 	Cufon.replace('h2, h3, h4');
 	$('.matrix_title').tipsy({fade: true, gravity: 's'});
-	$('.active_matrix').tipsy({fade: true, gravity: 's'});
+	$('.active_matrix_cell').tipsy({fade: true, gravity: 's'});
 
 	$('a[rel*=facebox]').facebox() 
 	$('#close_fb').click(function(){

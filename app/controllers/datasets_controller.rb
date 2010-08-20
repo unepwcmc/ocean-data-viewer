@@ -2,7 +2,7 @@ class DatasetsController < ApplicationController
   # GET /datasets
   def index
     @datasets = Dataset.all
-    @decisions = Decision.all
+    @decisions = Decision.roots
   end
 
   # GET /datasets/1

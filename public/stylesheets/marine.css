@@ -25,6 +25,10 @@ body{padding-top:1em; background: #ccc url("/images/background.png") top left re
 	margin-bottom:10px;
 }
 
+#facebox {
+	z-index:1000;
+}
+
 #facebox table{
 	width:480px;
 }
@@ -74,4 +78,15 @@ td, th{
 
 .active_matrix {
 	background:#CCCCCC;
+}
+
+.admin_menu {
+        background:#3174AF;
+}
+
+.admin_menu a{
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+        padding: 7px;
 }

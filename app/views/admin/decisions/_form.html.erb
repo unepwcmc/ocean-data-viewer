@@ -20,6 +20,12 @@
   </p>
 
   <p>
+    <%= f.label :group_parent %><br />
+    <%= collection_select(:decision, :parent_id, Decision.all(:order => "name ASC"), :id, :name, {:prompt => true})%>
+  </p>
+
+
+  <p>
     <%= f.submit 'Submit' %>
   </p>
 <% end %>

@@ -1,3 +1,4 @@
+<h2>Decision Details</h2>
 <p>
   <b>Name</b>
   <%= h @decision.name %>
@@ -14,9 +15,19 @@
   <b>Description</b>
   <%= h @decision.description %>
 </p>
+<p>
+  <b>Group</b>
+  <% if @decision.parent.present? %>
+    <%= link_to @decision.parent.name, admin_decision_path(@decision.parent) %>
+  <% else %>
+    Not grouped
+  <% end %>
+</p>
 
 <%= link_to 'Edit', edit_admin_decision_path(@decision), :class=> "button" %>
 <%= link_to 'Back', admin_decisions_path, :class=> "button" %>
+<br/>
+<br/>
 <br/>
 <br/>
 <br/>

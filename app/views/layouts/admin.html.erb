@@ -16,8 +16,10 @@
   </h1>
 	
 	<div class="inner_container">
-		<%= link_to "datasets", admin_datasets_path %> | <%= link_to "licences", admin_licences_path %> | <%= link_to "Registered users", admin_customers_path %>   | <%= link_to "decisions", admin_decisions_path %> 
-		<%= yield :menu%>
+            <div class="admin_menu">
+                <%= link_to "Datasets", admin_datasets_path %> | <%= link_to "Licences", admin_licences_path %> | <%= link_to "Registered users", admin_customers_path %>   | <%= link_to "Decisions", admin_decisions_path %> 
+                <%= yield :menu%>
+            </div>
 		<div class="content_container">
 			<p style="color: green"><%= flash[:notice] %></p>
 			<%= yield %>			

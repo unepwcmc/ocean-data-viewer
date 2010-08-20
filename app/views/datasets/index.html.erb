@@ -27,6 +27,23 @@
               <td id='tipsy' title='<%= hover_msg %>' <%= "class='active_matrix'" if datasets_decision.present? %> >
                 <%= datasets_decision.try(:category).try(:identifier) %>
               </td>
+              <%
+                #Handle group children
+                decision.children.each do |child_decision|
+                  datasets_decision = DatasetsDecision.find(:first, :conditions => {:dataset_id => dataset, :decision_id => child_decision})
+                  hover_msg = datasets_decision.try(:category).try(:short_desc)
+                  hover_msg ||= child_decision.short_desc
+
+                  styles = "hidden_matrix_cell "
+                  styles << "#{decision.name}_group "
+                  styles << "active_matrix " if datasets_decision.present?
+              %>
+                  <td id='tipsy' title='<%= hover_msg %>' class='<%= styles %>' >
+                    <%= datasets_decision.try(:category).try(:identifier) %>
+                  </td>
+              <%
+                end
+              %>
             <% end %>
         </tr>
     <% end %>

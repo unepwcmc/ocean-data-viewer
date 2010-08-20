@@ -80,6 +80,10 @@ td, th{
 	background:#CCCCCC;
 }
 
+.hidden_matrix_cell {
+	display: none;
+}
+
 .admin_menu {
         background:#3174AF;
 }

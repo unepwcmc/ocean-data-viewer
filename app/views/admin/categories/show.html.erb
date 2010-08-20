@@ -1,0 +1,23 @@
+<p>
+  <b>Name</b>
+  <%=h @category.name %>
+</p>
+<p>
+  <b>Identifier</b>
+  <%=h @category.identifier %>
+</p>
+<p>
+  <b>Decision</b>
+  <%=h @category.decision.name %>
+</p>
+<p>
+  <b>Short_desc</b>
+  <%=h @category.short_desc %>
+</p>
+<p>
+  <b>Description</b>
+  <%=h @category.description %>
+</p>
+
+<%= link_to 'Edit', edit_admin_category_path(@category), :class=> "button" %>
+<%= link_to 'Back', admin_decision_path(@category.decision), :class=> "button" %>

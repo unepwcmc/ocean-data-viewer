@@ -15,6 +15,31 @@
   <%= h @decision.description %>
 </p>
 
-<%= link_to 'View or Edit Categories', admin_dataset_datasets_decisions_path(@dataset), :class=> "button" %>
 <%= link_to 'Edit', edit_admin_decision_path(@decision), :class=> "button" %>
 <%= link_to 'Back', admin_decisions_path, :class=> "button" %>
+<br/>
+<br/>
+<br/>
+<h3>Categories</h3>
+<table>
+    <tr>
+        <td>Identifier</td>
+        <td>Name</td>
+        <td>Description</td>
+        <td></td>
+    </tr>
+  <% @categories.each do |category| %>
+    <tr>
+        <td><%= category.identifier %></td>
+        <td><%= category.name %></td>
+        <td><%= category.description %></td>
+        <td>
+          <%= link_to 'Show', [:admin, category] %>
+          <%= link_to 'Edit', edit_admin_category_path(category), :class=> "button" %>
+          <%= link_to 'Destroy', [:admin, category], :confirm => 'Are you sure?', :method => :delete %>
+        </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'Add new Category', new_admin_decision_category_path(@decision), :class=> "button" %>

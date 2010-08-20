@@ -9,12 +9,16 @@ ActionController::Routing::Routes.draw do |map|
     admin.root :controller => "datasets", :action => "index"
     admin.resources :customers
     admin.resources :licences
+    admin.resources :categories
+    admin.resources :datasets_decisions
+
     admin.resources :datasets do |dataset|
       dataset.resources :datasets_decisions
     end
-    admin.resources :decisions
-    admin.resources :categories
-    admin.resources :datasets_decisions
+
+    admin.resources :decisions do |decision|
+      decision.resources :categories
+    end
   end
 
   map.resources :decisions

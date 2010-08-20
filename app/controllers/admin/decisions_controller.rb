@@ -14,6 +14,7 @@ class Admin::DecisionsController < Admin::AdminController
   # GET /decisions/1.xml
   def show
     @decision = Decision.find(params[:id])
+    @categories = @decision.categories
 
     respond_to do |format|
       format.html # show.html.erb

@@ -1,4 +1,5 @@
 class Admin::DatasetsDecisionsController < Admin::ApplicationController
+  layout 'admin'
   # GET /datasets_decisions
   def index
     @dataset = Dataset.find params[:dataset_id]

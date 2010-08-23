@@ -13,7 +13,7 @@
 	
   <table style="width:96%;">
     <tr>
-      <th style="border-left:black 1px;"></th>
+      <th style="border-left:black 1px;">Available Datasets</th>
       <% @decisions.each do |decision| %>
         <th class='matrix_title' title='<%= decision.short_desc %>'>
           <%= link_to decision.name, decision %>

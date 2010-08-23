@@ -14,6 +14,7 @@ class Admin::DatasetsController < Admin::AdminController
   # GET /datasets/1.xml
   def show
     @dataset = Dataset.find(params[:id])
+    @linked_decisions = @dataset.datasets_decisions
 
     respond_to do |format|
       format.html # show.html.erb

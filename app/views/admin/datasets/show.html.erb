@@ -55,8 +55,32 @@
   <b>Meta download:</b>
   <%=h @dataset.meta_download %>
 </p>
-
-
-<%= link_to 'View or edit Decision Associations', admin_dataset_datasets_decisions_path(@dataset), :class=> "button" %>
 <%= link_to 'Edit', edit_admin_dataset_path(@dataset), :class=> "button" %>
 <%= link_to 'Back', admin_datasets_path, :class=> "button" %>
+<br />
+<br />
+<br />
+<br />
+
+<h3 style="border-top: 2px solid #3174AF; margin-bottom:0em;">Linked Desicions</h3>
+<%= link_to 'Link to another decision', new_admin_dataset_datasets_decision_path(@dataset), :class=> "button" %>
+<table>
+  <tr>
+    <th>Decision</th>
+    <th>Category</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% @linked_decisions.each do |datasets_decision| %>
+  <tr>
+    <td><%= link_to datasets_decision.decision.name, [:admin, datasets_decision.decision] %></td>
+    <td><%= (link_to datasets_decision.category.try(:name), [:admin, datasets_decision.category]) if datasets_decision.category.present? %></td>
+    <td>
+      <%= link_to 'Show', [:admin, datasets_decision] %>
+      <%= link_to 'Edit', edit_admin_datasets_decision_path(datasets_decision) %>
+      <%= link_to 'Destroy', [:admin,datasets_decision], :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

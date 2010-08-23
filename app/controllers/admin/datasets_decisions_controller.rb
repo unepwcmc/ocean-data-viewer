@@ -16,6 +16,8 @@ class Admin::DatasetsDecisionsController < Admin::ApplicationController
   def new
     @dataset = Dataset.find params[:dataset_id]
     @datasets_decision = DatasetsDecision.new :dataset => @dataset
+    @decisions = Decision.all(:order => "name ASC")
+    @categories = []
 
     respond_to do |format|
       format.html # new.html.erb
@@ -26,6 +28,9 @@ class Admin::DatasetsDecisionsController < Admin::ApplicationController
   # GET /decisions/1/edit
   def edit
     @datasets_decision = DatasetsDecision.find(params[:id])
+    @decisions = Decision.all(:order => "name ASC")
+    @categories = @datasets_decision.try(:decision).try(:categories)
+    @categories ||= []
   end
 
   # POST /datasets_decisions
@@ -73,5 +78,11 @@ class Admin::DatasetsDecisionsController < Admin::ApplicationController
       format.html { redirect_to(admin_dataset_datasets_decisions_url @dataset) }
       format.xml  { head :ok }
     end
+  end
+
+  # GET the categories for the given decision
+  def categories_for_decision
+    @decision = Decision.find params[:id]
+    @categories = @decision.categories
   end
 end

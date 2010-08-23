@@ -19,6 +19,8 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :decisions do |decision|
       decision.resources :categories
     end
+    
+    admin.species_for_genus 'datasets_decision/categories_for_decision/:id', :controller => :datasets_decisions, :action => :categories_for_decision
   end
 
   map.resources :decisions

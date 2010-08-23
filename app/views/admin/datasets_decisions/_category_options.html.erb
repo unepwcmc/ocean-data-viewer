@@ -1,0 +1,8 @@
+<%
+if @datasets_decision.nil?
+   current_category = ''
+else
+   current_category = @datasets_decision.category.nil? ? "" : @datasets_decision.category.id
+end
+%>
+<%= collection_select(:datasets_decision, :category_id, @categories, :id, :name, {:selected_value => current_category, :prompt => true})%>

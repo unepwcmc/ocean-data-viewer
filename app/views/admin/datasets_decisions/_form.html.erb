@@ -5,15 +5,23 @@
 
   <p>
     <%= f.label :decision %><br />
-    <%= collection_select(:datasets_decision, :decision_id, Decision.all(:order => "name ASC"), :id, :name, {:prompt => true})%>
+    <% current_dataset = @datasets_decision.dataset.nil? ? "" : @datasets_decision.dataset.id %>
+    <%= collection_select(:datasets_decision, :decision_id, @decisions, :id, :name, {:selected_value => current_dataset, :prompt => true})%>
   </p>
 
   <p>
     <%= f.label :category %><br />
-    <%= collection_select(:datasets_decision, :category_id, Category.all(:order => "name ASC"), :id, :name, {:prompt => true})%>
+    <div id="category_select_combo"><%= render :partial => "category_options"%></div>
   </p>
 
   <p>
     <%= f.submit 'Submit' %>
   </p>
 <% end %>
+
+<script type=text/javascript>
+    $("#datasets_decision_decision_id").change(function(){
+        $.ajax({url: '/admin/datasets_decision/categories_for_decision/' + (this.value), type:'get', dataType: 'script' })
+    });
+
+</script>

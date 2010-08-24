@@ -1,4 +1,4 @@
-class Admin::CategoriesController < Admin::ApplicationController
+class Admin::CategoriesController < Admin::AdminController
   # GET /categories
   def index
     @decision = Decision.find params[:decision_id]

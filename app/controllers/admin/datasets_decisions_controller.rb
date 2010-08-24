@@ -1,4 +1,4 @@
-class Admin::DatasetsDecisionsController < Admin::ApplicationController
+class Admin::DatasetsDecisionsController < Admin::AdminController
   layout 'admin'
   # GET /datasets_decisions
   def index

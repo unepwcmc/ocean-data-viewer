@@ -38,9 +38,10 @@
                       layers: '<%= dataset.wms_name %>',
                       tiled: true,
                       transparent: true,
-                      format: 'image/gif'
+                      format: 'image/png'
                     },
                     {
+                      transparent: true,
                       isBaseLayer: false,
                       visibility: <%= display_layers.to_s %>,
                       reproject: true

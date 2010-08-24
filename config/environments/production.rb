@@ -26,3 +26,7 @@ config.action_mailer.raise_delivery_errors = false
 
 # Enable threaded mode
 # config.threadsafe!
+
+
+
+MAPS_API_KEY = "ABQIAAAAeHILri4AWFPUe0-e6P_4ABSiKc7Tylq1ZI8ZERLH_qopa-x-ZBTTCJnxUihbzfRTCbjtQevbNR3BrQ"

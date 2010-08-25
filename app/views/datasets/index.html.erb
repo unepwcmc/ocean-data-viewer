@@ -14,7 +14,7 @@
   <table style="width:96%;">
     <tr>
       <th style="border-left:black 1px;">Available Datasets</th>
-      <th style="border-left:black 1px;">Show on map</th>
+      <th style="border-left:black 1px;">Show</th>
       <% @decisions.each do |decision| %>
         <th class='matrix_title' title='<%= decision.short_desc %>'>
           <%= link_to decision.name, decision %>
@@ -30,10 +30,9 @@
     <% @datasets.each_with_index do |dataset, i| %>  
         <tr>
             <td>
-                <h2 style="font-size:16px" id><%= truncate(dataset.title,80) %></h2>
-                <%= link_to "more..", dataset %>
+              <h2 style="font-size:16px"><%= link_to "#{truncate(dataset.title,80)}", dataset %></h2>
             </td>
-            <td width='50px'>
+            <td width='30px'>
               <input type="checkbox" name="show_wms_<%= i %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
             </td>
             <% @decisions.each do |decision| %>

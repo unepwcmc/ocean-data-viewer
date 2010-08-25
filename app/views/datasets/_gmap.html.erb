@@ -32,7 +32,7 @@
             wmses << "wms_" + i.to_s 
         %>
             /* <%= dataset.title %> */
-            var <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
+            <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
                     "<%= dataset.wms_server %>", 
                     {
                       layers: '<%= dataset.wms_name %>',
@@ -54,6 +54,10 @@
 
         map.setCenter(new OpenLayers.LonLat(0,10), 2);
         map.addControl( new OpenLayers.Control.LayerSwitcher() );
+    }
+
+    function toggleLayerVisibility(layer) {
+      layer.setVisibility(!layer.getVisibility());
     }
 </script>
 

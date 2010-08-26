@@ -85,7 +85,6 @@ set :deploy_via, :remote_cache
 # items are symlinked in when the code is updated.
 # set :global_shared_dirs, %w(public/upload)
 set :global_shared_files, %w(config/database.yml)
-set :global_shared_files, %w(config/backup.rb)
 
 # SSL Certificates. If you specify an SSL certificate name then
 # the gem will create an 'https' configuration for this application

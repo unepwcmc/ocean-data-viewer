@@ -45,7 +45,6 @@ set :deploy_via, :remote_cache
   depend :remote, :gem, "RedCloth", "4.2.3"
   depend :remote, :gem, "paperclip", "2.3.1.1"
   depend :remote, :gem, "aws-s3", "0.6.2"
-  depend :remote, :gem, "backup", "2.3.1"
 
 ## Local Shared Area
 # These are the list of files and directories that you want

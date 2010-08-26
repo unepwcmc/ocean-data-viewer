@@ -104,7 +104,7 @@ end
 # ACTUAL BACKUP - POSTGRESQL AND LOGS
 backup "postgres" do
   adapter :custom do
-    commands ["pg_dump -U postgres -P #{ENV['MARINE_DB_PASS']} -f :tmp_path/postgresql_dump.sql marine_portal_development ", "cp /var/log/postgresql/* :tmp_path/"]
+    commands ["pg_dump -U marineportal -P #{ENV['MARINE_DB_PASS']} -f :tmp_path/postgresql_dump.sql marine_portal_production ", "cp /var/log/postgresql/* :tmp_path/"]
   end
 
   storage :s3 do

@@ -7,7 +7,7 @@
     <div id="scrollable_databases" class="jScrollPaneContainer jScrollPaneScrollable">
 
         <ul id="list">
-          <% @datasets.each_with_index do |dataset, i| %>
+          <% datasets.each_with_index do |dataset, i| %>
             <li class="type<%= i + 1 %> <%= 'first' if i ==0 %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
                 <span class="check_box"></span>
                 <p class="text"><%= dataset.title %></p>

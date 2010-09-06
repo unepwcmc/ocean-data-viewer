@@ -1,7 +1,27 @@
+<% content_for :map_controls do %>
+    <a id="showing_databases_down">
+        <span class="tick up"></span>
+        Showing <%= @dataset_count %> datasets
+    </a>
+        
+    <div id="scrollable_databases" class="jScrollPaneContainer jScrollPaneScrollable">
+
+        <ul id="list">
+          <% @datasets.each_with_index do |dataset, i| %>
+            <li class="type<%= i + 1 %> <%= 'first' if i ==0 %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
+                <span class="check_box"></span>
+                <p class="text"><%= dataset.title %></p>
+            </li>
+          <% end %>
+        </ul>
+
+    </div>
+<% end %>
+
 <script type='text/javascript'>
-    var map;
 
     function init(){
+        /* 
         var options = {
             projection: new OpenLayers.Projection("EPSG:900913"),
             units: "m",
@@ -12,6 +32,7 @@
         
         map = new OpenLayers.Map('map', options);
 
+        REMOVE?
         // create Google Mercator layers
         var satellite = new OpenLayers.Layer.Google(
             "Google Streets",
@@ -21,6 +42,7 @@
               type: G_PHYSICAL_MAP
             }
         );
+        */
         
 
         /* WMS Layers*/
@@ -50,10 +72,9 @@
 
         <% end %>
 
-        map.addLayers([satellite,<%= wmses.join(',') %>]);
+        map.addLayers([<%= wmses.join(',') %>]);
 
         map.setCenter(new OpenLayers.LonLat(0,10), 2);
-        map.addControl( new OpenLayers.Control.LayerSwitcher() );
     }
 
     function toggleLayerVisibility(layer) {

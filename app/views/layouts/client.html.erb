@@ -1,33 +1,729 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+    <head lang="en" xml:lang="en"> 
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8" /> 
+        <title>Ocean Data Viewer</title> 
+        <meta name="description" content=""> 
+        <meta name="keywords" content=""> 
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>Ocean Data Viewer</title>
-  <%= stylesheet_link_tag 'blueprint/screen' , 'blueprint/plugins/buttons/screen',  'tipsy','facebox', 'marine' %>
-  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%= MAPS_API_KEY %>" type="text/javascript"></script>
-  <%= javascript_include_tag 'OpenLayers', 'jquery-1.3.2.min','swfobject', 'cufon-yui', 'titillium','facebox', 'jquery.tipsy','application' %>
-</head>
-<body onload="init()">
-<div class="container">
-  <h1 style="margin-bottom:0.25em; color:white;" class="cufon cufon-canvas">
-    <!--<%= link_to image_tag("logo.png"), root_url %><br/> -->
-    Ocean Data Viewer
-  </h1>
-	
-	<div class="inner_container">
-		<%= yield :map%>
-		<div class="content_container">
-			<p style="color: green"><%= flash[:notice] %></p>
-			<%= yield %>			
-		</div>
-		<div style="clear:both">&nbsp;</div>
+        <%= stylesheet_link_tag 'tipsy','facebox', 'marine', 'layout', 'jScrollPane.css' %>
+
+        <!--<script src="http://maps.google.com/maps?file=api&amp;key=<%= MAPS_API_KEY %>" type="text/javascript"></script>-->
+        <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <%= javascript_include_tag 'OpenLayers', 'facebox', 'ie', 'jquery.textshadow.js', 'jquery.mousewheel.min.js', 'jquery.em.js', 'jScrollPane.js', 'application' %>
+    </head>
+
+    <body onload="init()">
+	<div id ="content_header">
+
+            <div class="map">			
+                    <div id="js_map">				
+                    </div>
+            </div>
+
+            <div id="layout_header">				
+                <div id="header">
+                    <div class="content_left">
+                        <h1>Ocean data for decision makers</h1>
+                        <ul class="menu">
+                                <li class="actual"><a href="#">EXPLORE THE DATA</a></li>
+                                <li><a href="#">DATA LICENCES</a></li>
+                                <li<a href="#">REGISTRATION</a></li>
+                                <li><a href="#">LINKS</a></li>
+                                <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">CONTACT</a></li>					
+                        </ul>
+                    </div>
+                    <div class="content_right">
+                        <ul class="info">
+                                
+                            <li class="datasets">
+                                <span class="icon"></span>							
+                                <p class="amount"><%= @dataset_count %></p>
+                                <p class="title">DATASETS</p>
+                            </li>						
+                            <li class="split"></li>
+                            <li class="downloads">
+                                <span class="icon"></span>
+                                <p class="amount">6</p>
+                                <p class="title">DOWNLOADS</p>
+                            </li>					
+                        </ul>
+                            
+                    </div>
+                </div>
+                <div id="down_databases_info">
+                    <%= yield :map_controls %>
+                    <span id="bottom_scrollable_databases"></span>			
+                </div>
+
+                <div id="zoom_buttons">
+                    <a id="zoomIn"></a>
+                    <a id="zoomOut"></a>
+                </div>
+            </div>
 	</div>
-	<div class="span-24">&nbsp;</div>
-	<div class="span-6 prepend-18 quiet">
-				UNEP-WCMC 2009 <%= image_tag 'wcmc_logo.png'%>
+
+ 	<div id="outer_layout">	
+		<div id="layout">	
+			
+			<div id="available_title_datasets">
+				<ul>
+					<li class="gray detail">Available datasets</li>
+					<li class="information">
+						<ul>
+							<li class="first two_lines">
+								<div class="left_shadow"></div>
+								<a href="#">CBD EBSAs</a>
+								<div class="right_shadow"></div>
+							</li>
+							<li class="suboptions columns3">
+								<div class="left_shadow"></div>
+								<a href="#">CBD POW +</a>
+								<ul>
+									<li class="first"><a href="#">M+C POW</a></li>
+									<li><a href="#">Islands POW</a></li>
+									<li class="last"><a href="#">Pas POW</a></li>
+								</ul>
+								<div class="right_shadow"></div>
+							</li>
+							<li>
+								<div class="left_shadow"></div>
+								<a href="#">GEOBON</a>
+								<div class="right_shadow"></div>
+							</li>
+							<li>
+								<div class="left_shadow"></div>
+								<a href="#">WSDD</a>
+								<div class="right_shadow"></div>
+							</li>
+							<li class="two_lines">
+								<div class="left_shadow"></div>
+								<a href="#">Ramsar 09-12</a>
+								<div class="right_shadow"></div>
+							</li>
+							<li class="last">
+								<div class="left_shadow"></div>
+								<a href="#">FAO-VME</a>
+								<div class="right_shadow"></div>
+							</li>
+							
+						</ul>
+					</li>
+				</ul>
+			</div>
+			
+			<a id="resize_map"></a>	
+			<div id="data_set_content_datasets">
+				<!-- ROW 1 -->
+				<ul class="dataset">
+					<li class="title first">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Global distribution of Coral Reefs</a> <span>2010</span>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li></li>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of seagrass</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">GEOBON</a>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="check_bttn"></a>
+							</li>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of seagrass</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">GEOBON</a>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="check_bttn"></a>	
+							</li>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of seagrass</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">GEOBON</a>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="check_bttn"></a>
+							</li>
+							<li>
+							<div id="info_tooltip">
+								<div class="content">
+								
+									<span class="head">
+										<a class="close"></a>
+										<p class="title">DATASET</p>
+									</span> 
+									<span class="content">
+										<a class="match" href="#">Global distribution of seagrass</a>
+										<span class="line"></span>
+										<p class="title">DECISSION</p>
+										<a class="match" href="#">GEOBON</a>
+									</span> 
+									<span class="bottom">
+									</span>										
+								</div>
+								
+							</div>
+							
+							<a class="check_bttn"></a>
+							</li>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of seagrass</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">GEOBON</a>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="check_bttn"></a>
+							</li>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of seagrass</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">GEOBON</a>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="check_bttn"></a>
+							</li>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of seagrass</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">GEOBON</a>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="check_bttn"></a>
+							</li>
+						</ul>
+					</li>
+				</ul>				
+				<!-- ROW 2-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Global distribution of mangroves</a> <span>2010</span>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+						</ul>
+					</li>					
+				</ul>
+				<!-- ROW 3-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Global distribution of seagrass</a> <span>2010</span>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+						</ul>
+					</li>					
+				</ul>				
+				<!-- ROW 4 -->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Global distribution of cold-water corals</a> <span>2010</span>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+									
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of cold-water corals</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">EBSAs ET3:</a><p class="info">description of the meaning of tag ET3</p>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+									
+								</div>
+								
+								<a class="c3_bttn"></a>
+							
+							</li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li></li>							
+							<li><a class="check_bttn"></a></li>
+						</ul>
+					</li>					
+				</ul>
+				<!-- ROW 5-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">The World Database On Protected Areas (WDPA) - MPA'a only</a> <span>2010</span>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li></li>							
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li></li>							
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+						</ul>
+					</li>					
+				</ul>	
+				<!-- ROW 6-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Ocean Biogeographic Information System. Shannon Weaver Index</a>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li class="three_lines"><a class="c3_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>							
+						</ul>
+					</li>					
+				</ul>
+				<!-- ROW 7-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Ocean Biogeographic Information System. ES50.</a>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li class="three_lines"><a class="c3_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>							
+						</ul>
+					</li>					
+				</ul>		
+				<!-- ROW 8-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Ocean Biogeographic Information System. Hurberts Index</a>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li class="three_lines"><a class="c3_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>							
+						</ul>
+					</li>					
+				</ul>	
+				<!-- ROW 9-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Net Primary Productivity to June and December 2003-2007</a>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li class="three_lines"><a class="c3_bttn"></a></li>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>
+							<li></li>
+							<li class="three_lines"><a class="check_bttn"></a></li>							
+						</ul>
+					</li>					
+				</ul>
+				<!-- ROW 10-->
+				<ul class="dataset">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">Annual sea surface temperature 2003-2007</a>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li>
+								<div id="info_tooltip">
+									<div class="content">
+
+										<span class="head">
+											<a class="close"></a>
+											<p class="title">DATASET</p>
+										</span> 
+										<span class="content">
+											<a class="match" href="#">Global distribution of cold-water corals</a>
+											<span class="line"></span>
+											<p class="title">DECISSION</p>
+											<a class="match" href="#">EBSAs ET3:</a><p class="info">description of the meaning of tag ET3</p>
+										</span> 
+										<span class="bottom">
+										</span>										
+									</div>
+
+								</div>
+								<a class="c5_bttn"></a>
+								
+							</li>
+							<li></li>
+							<li><a class="check_bttn"></a></li>
+							<li></li>
+							<li><a class="check_bttn"></a></li>
+							<li><a class="check_bttn"></a></li>
+							<li></li>
+							<li><a class="check_bttn"></a></li>
+						</ul>
+					</li>					
+				</ul>				
+				<!-- ROW 11-->
+				<ul class="dataset last">
+					<li class="title">
+						<div class="head_shadow"></div>
+						<div class="text">
+							<a href="dataset_detail.html">EBSA Illustrations</a>
+						</div>
+						<div class="buttons">
+							<a href="#" class="download_dataset">
+								<div id="download_tooltip">DOWNLOAD DATASET</div>
+							</a>
+							<a href="#" class="download_arcgis">
+								<div id="arcgis_tooltip">ARCGIS</div>
+							</a>
+						</div>
+						<div class="bottom_shadow"></div>
+					</li>
+					<li class="information">
+						<ul>
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>							
+							<li></li>
+							<li></li>
+							<li></li>
+							<li></li>							
+						</ul>
+					</li>					
+				</ul>
+				<span class="end_information"></span>	
+			</div>		<!-- data_set_content_datasets -->
+			<!-- FOOTER INFORMATION -->
+			<div id="footer_datasets">
+				<ul id="footer_datasets_table">
+					<li class="first two_lines">
+						<a href="#">CBD EBSAs</a>
+					</li>
+					<li class="suboptions columns3">
+						<ul>
+							<li class="first"><a href="#">M+C POW</a></li>
+							<li><a href="#">Islands POW</a></li>
+							<li class="last"><a href="#">Pas POW</a></li>
+						</ul>
+						<a href="#">CBD POW +</a>
+					</li>
+					<li>
+						<a href="#">GEOBON</a>
+					</li>
+					<li>
+						<a href="#">WSDD</a>
+					</li>
+					<li class="two_lines">
+						<a href="#">Ramsar 09-12</a>
+					</li>
+					<li class="last">
+						<a href="#">FAO-VME</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div id="footer_supportsites">
+				<div class="content_left">
+					<p>Other Marine Assesment and Decission support Sites</p>
+				</div>
+				<div class="content_right">
+					<a class="left"></a>
+					<a class="right"></a>					
+					<ul>
+						<li>
+							<a class="site_support" href="#">WDPA Marine</a>
+							<p>The World Database on Protected Areas Marine is a foundation dataset for conservation decision making.</p>
+							<p>The UNEP-WCMC Protected Areas Data Unit was set up in 1981 to compile information on the world’s protected areas, and to be a resource for those requiring such information.</p>
+						</li>
+						<li class="last">
+							<a class="site_support" href="#">Coral disease database</a>
+							<p>The first version of the GCDD was launched in 2000 and was populated with some 2000 points of data from 155 references, mostly peer reviewed scientific literature. more.</p>
+						</li>
+						<li>
+							<a class="site_support" href="#">Vizzuality</a>
+							<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>							
+						</li>
+						<li class="last">
+							<a class="site_support" href="#">WCMC</a>
+							<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+						</li>
+						
+					</ul>
+				</div>
+			</div>
+			<div id="footer" class="datasets">
+				<a href="http://www.unep-wcmc.org/" target="_blank" class="wcmc_unep"></a>
+				<div class="reserved">
+					<p>All rights reserved.</p>
+					<p>UNEP-WCMC</p> 
+				</div>	
+			</div>
+			 <!-- layout -->
 	</div>
-</div>
-</body>
+        -->
+        <div class="container">
+          <h1 style="margin-bottom:0.25em; color:white;" class="cufon cufon-canvas">
+            <!--<%= link_to image_tag("logo.png"), root_url %><br/> -->
+            Ocean Data Viewer
+          </h1>
+                
+                <div class="inner_container">
+                        <%= yield :map%>
+                        <div class="content_container">
+                                <p style="color: green"><%= flash[:notice] %></p>
+                                <%= yield %>			
+                        </div>
+                        <div style="clear:both">&nbsp;</div>
+                </div>
+                <div class="span-24">&nbsp;</div>
+                <div class="span-6 prepend-18 quiet">
+                                        UNEP-WCMC 2009 <%= image_tag 'wcmc_logo.png'%>
+                </div>
+        </div>
+    </body>
 </html>

@@ -1,0 +1,264 @@
+body,div,ul,li,ol,h1,h2,h3,h4,h5,h6,form,fieldset,p{margin:0; padding:0; font-weight:normal}
+img,fieldset{border:none; padding:0; margin:0;}
+body{font:12px  Arial, Helvetica, sans-serif; color:#666666; background:#eeeeee; background:url(../images/bkg_repeatedxy.jpg) repeat 0 0; }
+span.clear{clear:both;}
+div.left{float:left; width:auto;}
+div.right{float:right; width:auto;}
+a:focus{outline:none}
+ul{list-style:none;}
+
+div#outer_layout{margin:relative; float:left; width:100%; height:auto;}
+div#layout{margin:0 auto; width:945px; height:auto; position:relative;}
+
+div#layout_header{margin:0 auto; width:945px; height:528px; position:relative;}
+div#content_header {float:left; width:100%; height:auto; position:relative;}
+
+/*TOOLTIPS*/
+
+div#download_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px Arial; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
+div#arcgis_tooltip {position:absolute; bottom:15px; left:-29px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:29px; padding:12px 5px 5px 5px; font:bold 9px Arial; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
+
+div#info_tooltip {position:absolute; bottom:29px; left:-33px; width:160px; height:auto; z-index:500; display:none;}
+div#info_tooltip span.head {float:left; background:url(../images/tooltips/bkg_head_info.png) no-repeat 0 0; width:135px; height:14px; padding:10px 10px 0 15px; position:relative; margin:0;}
+div#info_tooltip span.head a.close {position:absolute; bottom:10px; right:0; width:33px; height:33px; cursor:pointer; z-index:550; background:url(../images/tooltips/close_tooltip_bttn.png) no-repeat 0 0;}
+div#info_tooltip span.head a.close:hover {background-position:0 -33px;}
+div#info_tooltip div.content {float:left; position:relative; width:100%; height:auto; }
+div#info_tooltip span.content {float:left; background:url(../images/tooltips/bkg_content_info.png) repeat-y; height:auto; width:120px; bottom:0; left:0; padding:5px 25px 5px 15px; margin:-1px 0 0 0;}
+div#info_tooltip span.content span.line {float:left; width:123px; background-color:#ECECEC; height:1px; margin:7px 0 0 0;}
+div#info_tooltip span.content a.match {float:left; font:normal 11px Arial; color:#E58800;  width:auto; height:auto; margin:0 5px 0 0;}  
+div#info_tooltip span.content a.match:hover {color:#C87500;}
+div#info_tooltip span.content p.info {font:normal 11px Arial; color:#666666; width:auto; }
+div#info_tooltip p.title {float:left; font:normal 10px Arial; color:#BABABA; text-transform:uppercase; width:123px; padding:5px 0 0 0;}
+div#info_tooltip span.bottom {float:left; background:url(../images/tooltips/bkg_bottom_info.png) no-repeat 0 0; height:23px; width:100%; margin:-1px 0 0 0;}
+
+/*END - TOOLTIPS*/
+
+div#header {position:left; position:absolute; top:0; left:0; width:930px; padding:7px 0 0 15px; height:90px; background:url(../images/bkg_header.png) no-repeat 0 0; margin:0; z-index:5;}
+div#header div.content_left {float:left; width:660px}
+div#header div.content_right {float:right;  width:260px}
+div#header h1 {float:left; font:bold 37px Arial; color:white; width:100%; height:auto; margin:0; text-shadow:0px 2px 0px #3D3D3D;}
+div#header ul.info {float:left; height:90px; width:250px; margin:7px 0 0 50px; padding:0;}
+div#header ul.info li {float:left; height:100%;}
+
+div#header ul.info li.datasets {float:left; width:80px; margin:0; }
+div#header ul.info li.downloads {float:left; width:100px; margin:0;}
+
+div#header ul.info li span {float:left; margin:15px 8px 0 0;}
+div#header ul.info li.datasets span.icon {background:url(../images/dataset_icon.png) no-repeat 0 0; width:22px; height:26px;  }
+div#header ul.info li p.amount {float:left; font:normal 48px "Times News Roman"; color:white; width:50px; margin:0; height:49px;}
+div#header ul.info li.downloads span.icon {background:url(../images/downloads_icon.png) no-repeat 0 0; width:17px; height:26px;  }
+
+div#header ul.info li p.title {float:left; font:bold 11px Arial; color:white; text-transform:uppercase; width:70px; margin:0 0 5px 0; line-height:11px;}
+div#header ul.info li.split {float:left; width:1px; height:45px; background-color:white; margin:18px 20px 0 0px;}
+
+div#header ul.menu {float:left; width:100%; height:26px; margin:22px 0 0 0;	 }
+div#header ul.menu li {float:left; width:auto; height:100%; text-transform:uppercase; margin:0 30px 0 0;}
+div#header ul.menu li a {text-decoration:none; font:normal 13px Arial; color:white; text-shadow:0px 1px 0px #3D3D3D;}
+div#header ul.menu li a:hover {color:#F99F00; text-shadow:0px 1px 0px #3D3D3D; }
+div#header ul.menu li.actual a {font-weight:bold;}
+
+div.map {position:absolute; top:0; left:0; width:100%; float:left; margin:0; height:528px; z-index:1; border-bottom:2px solid #7F90A2;}
+div#js_map {position:absolute; top:0; left:0; right:0; bottom:0; z-index:1;}
+
+div#zoom_buttons {position:absolute; top:115px; left:0; z-index:5; width:68px; height:27px;}
+a#zoomIn {float:left; margin:0 11px 0 0; width:26px; height:26px; background:url(../images/zoom_in_bttn.png) no-repeat 0 0;}
+a#zoomIn:hover {background-position:0 -26px; cursor:pointer;}
+a#zoomOut {float:left; margin:0; width:26px; height:26px; background:url(../images/zoom_out_bttn.png) no-repeat 0 0;} 
+a#zoomOut:hover {background-position:0 -26px; cursor:pointer;}
+
+
+
+/* SCROLLABLE LIST */
+div#down_databases_info {position:absolute; top:115px; right:0; z-index:5; width:231px;}
+a#showing_databases_down {float:left; background:url(../images/showing_db_head.png) no-repeat 0 0; width:216px; height:19px; margin:0; cursor:pointer; position:relative; font:bold 13px Arial; color:white; padding:7px 5px 5px 10px;}
+a#showing_databases_down span.tick {position:absolute; right:10px; top:10px; width:10px; height:8px;}
+a#showing_databases_down span.tick.up {background:url(../images/tick_show_db_up.png) no-repeat 0 0; }
+a#showing_databases_down span.tick.down {background:url(../images/tick_show_db_down.png) no-repeat 0 0; top:11px;}
+
+div#scrollable_databases {float:left; width:231px; height:268px; background-color:white; display:inline; margin:0;}
+div#scrollable_databases ul {float:left; width:185px; margin:0px 5px 5px 10px; height:auto; overflow:visible; padding:0px 0 0 0;}
+div#scrollable_databases ul li {float:left; height:auto; width:190px; margin:5px 0 0 0;}
+
+div#scrollable_databases ul li:hover { cursor:pointer;}
+
+div#scrollable_databases ul li p {float:left; font:bold 11px Arial; height:auto; width:155px; margin:7px 0 0 5px; padding:0 0 7px 0; }
+div#scrollable_databases ul li span {float:left; margin:10px 0 0 7px; height:10px; width:10px;}
+
+div#scrollable_databases ul li.checked span.check_box {float:left; margin:11px 0 0 7px; background:url(../images/list_dbs_check.png) no-repeat 0 -10px;}
+div#scrollable_databases ul li.checked p.text { color:white; font-weight:bold;}
+
+div#scrollable_databases ul li span.check_box {background:url(../images/list_dbs_check.png) no-repeat 0 0px;}
+div#scrollable_databases ul li p.text { color:#666666; }
+div#scrollable_databases ul li p.text.hover {text-decoration:underline;}
+
+div#scrollable_databases ul li.unchecked {background-color:white;}
+div#scrollable_databases ul li.checked.type1 {background-color:#FABD7F;}
+div#scrollable_databases ul li.checked.type2 {background-color:#44D487;}
+div#scrollable_databases ul li.checked.type3 {background-color:#CC6699;}
+div#scrollable_databases ul li.checked.type4 {background-color:#2D3638;}
+div#scrollable_databases ul li.checked.type5 {background-color:#B9C47A;}
+div#scrollable_databases ul li.checked.type6 {background-color:#B3C1D1;}
+div#scrollable_databases ul li.checked.type7 {background-color:#109489;}
+div#scrollable_databases ul li.checked.type8 {background-color:#0099CC;}
+div#scrollable_databases ul li.checked.type9 {background-color:#E9BA60;}
+
+span#bottom_scrollable_databases {float:left; width:231px; height:8px; background:url(../images/bottom_db_list.png) no-repeat 0 0; display:inline;}
+
+
+a#resize_map {position:absolute; top:-10px; right:-30px;  background:url(../images/btt_expand_map.png) no-repeat 0 0; width:23px; height:23px; cursor:pointer; z-index:10;}
+a#resize_map:hover {background-position:0 -23px;}
+a#resize_map.reduce_map {background:url(../images/btt_reduce_map.png) no-repeat 0 0;}
+a#resize_map.reduce_map:hover {background-position:0 -23px;}
+
+div#data_set_title {position:absolute; bottom:9px; left:0; z-index:5; width:930px; height:64px;}
+div#data_set_title ul {float:left; width:945px;}
+div#data_set_title ul li.gray {padding:20px 0 0 20px; font:bold 21px Arial; color:white;  height:45px; text-shadow:2px 1px 0px #3D3D3D; }
+div#data_set_title ul li.detail {float:left; background:url(../images/left_head_content.png) no-repeat 0 0; width:184px; margin:11px 0 0 0;}
+div#data_set_title ul li.information {float:left; background:url(../images/middle_head_content.png) no-repeat 0 0; width:485px; height:48px; font:bold 24px Arial; color:#999999; padding:29px 0 0 20px; text-shadow:1px 1px 1px #FFFFFF;}
+div#data_set_title ul li.access {float:left; background:url(../images/right_head_content.png) no-repeat 0 0; width:214px; margin:11px 0 0 0;} 
+
+div#available_title_datasets {position:absolute; bottom:10px; left:0; z-index:5; width:945px; height:64px;}
+div#available_title_datasets ul {float:left; width:945px;}
+div#available_title_datasets ul li.gray {padding:20px 0 0 20px; font:bold 21px Arial; color:white;  height:45px; text-shadow:2px 1px 0px #3D3D3D; }
+div#available_title_datasets ul li.detail {float:left; background:url(../images/left_head_datasets.png) no-repeat 0 0; width:251px; margin:11px 0 0 0;}
+
+div#available_title_datasets ul li.information {float:left; background:url(../images/bkg_head_content_datasets.png) no-repeat 0 0; width:674px; height:77px; font:bold 24px Arial; color:#999999;/* text-shadow:1px 1px 1px #FFFFFF;*/}
+div#available_title_datasets ul li.information ul {float:left; width:674px; height:77px; text-align:center;}
+div#available_title_datasets ul li.information ul li.two_lines {line-height:13px;}
+div#available_title_datasets ul li.information ul li {float:left; width:72px; height:45px; border-right:1px solid #CCCCCC; border-left:1px solid #FFFFFF; position:relative; margin:14px 0 0 0; padding:5px 5px 0 5px; }
+div#available_title_datasets ul li.information ul li.first {border-left:none; width:73px; }
+div#available_title_datasets ul li.information ul li.last {border-right:none; width:73px;  }
+div#available_title_datasets ul li.information ul li a{font:bold 13px Arial; color:#999999; text-decoration:none; }
+div#available_title_datasets ul li.information ul li a:hover {color:#E58600; border-bottom:1px solid #E58600; }
+div#available_title_datasets ul li.information ul li.suboptions {float:left; height:45px; padding:5px 0 0 0; line-height:13px;}
+div#available_title_datasets ul li.information ul li.suboptions.columns3 {width:252px; }
+div#available_title_datasets ul li.information ul li.suboptions a {width:auto; }
+div#available_title_datasets ul li.information ul li.suboptions ul {float:left; width:100%; margin:0 0 0 0; height:6px; padding:8px 0 0 0;}
+div#available_title_datasets ul li.information ul li.suboptions ul li {float:left; width:82px; height:13px; margin:0px 0 0 0; padding:0; line-height:5px;}
+div#available_title_datasets ul li.information ul li.suboptions ul li.first {border-left:none; width:83px;}
+div#available_title_datasets ul li.information ul li.suboptions ul li.last {border-right:none; width:83px;}
+div#available_title_datasets ul li.information ul li.suboptions ul li a {width:auto; font:bold 10px Arial;}
+div#available_title_datasets ul li.information ul li div.left_shadow {position:absolute; top:-15px; left:0; display:none; background:url(../images/left_shadow_head_datasets.png) no-repeat 0 0; width:9px; height:77px;}
+div#available_title_datasets ul li.information ul li div.right_shadow {position:absolute; top:-15px; right:0; display:none; background:url(../images/right_shadow_head_datasets.png) no-repeat 0 0; width:9px; height:77px;}
+
+
+
+
+div#data_set_content_datasets {float:left; width:945px; margin:3px 0 0 0; height:auto; position:relative;}
+div#data_set_content_datasets ul.dataset {float:left; width:945px; border-bottom:1px solid #CCCCCC; height:auto; background:url(../images/bkg_datasets.jpg) repeat-y;}
+div#data_set_content_datasets ul.dataset.last {border:none;}
+div#data_set_content_datasets ul.dataset li.title {float:left; height:auto; border-top:1px solid #FFFFFF; padding:12px 10px 12px 12px; width:249px; position:relative;}
+div#data_set_content_datasets ul.dataset li.title.first {border:none;}
+div#data_set_content_datasets ul.dataset li.title div.head_shadow {width:266px; height:9px; position:absolute; top:0px; left:0; background:url(../images/head_shadow_dataset_row.png) no-repeat 0 0; display:none;}
+div#data_set_content_datasets ul.dataset li.title div.bottom_shadow {width:266px; height:9px; position:absolute; bottom:0px; left:0; background:url(../images/bottom_shadow_dataset_row.png) no-repeat 0 0; display:none;}
+div#data_set_content_datasets ul.dataset li.title div.text {float:left; width:186px;}
+div#data_set_content_datasets ul.dataset li.title a {height:auto; font:bold 15px Arial; color:#666666; text-decoration:none; }
+div#data_set_content_datasets ul.dataset li.title a:hover {color:#E58600; border-bottom:1px solid #E58600;}
+div#data_set_content_datasets ul.dataset li.title span {font:normal 14px Georgia; color:#999999;}
+div#data_set_content_datasets ul.dataset li.title div.buttons {float:right; width:35px; height:100%; margin:3px 0 0 0;}
+div#data_set_content_datasets ul.dataset li.title div.buttons a {position:relative;}
+div#data_set_content_datasets ul.dataset li.title a.download_dataset {float:left; background:url(../images/download_dataset_icon.png) no-repeat 0 0; width:10px; height:14px; margin:0 5px 0 0; border:none;} 
+div#data_set_content_datasets ul.dataset li.title a.download_dataset:hover {background-position:0 -14px; border:none;}
+div#data_set_content_datasets ul.dataset li.title a.download_arcgis {float:left; background:url(../images/download_arcgis_icon.png) no-repeat 0 0; width:17px; height:15px;} 
+div#data_set_content_datasets ul.dataset li.title a.download_arcgis:hover {background-position:0 -15px; border:none;}
+
+div#data_set_content_datasets ul.dataset li.information {float:left; width:673px; height:auto;}
+div#data_set_content_datasets ul.dataset li.information ul {float:left; width:673px; height:auto; }
+div#data_set_content_datasets ul.dataset li.information ul li {float:left; width:57px; height:auto; padding:17px 0 0 27px; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li.one_line {width:57px; height:auto; padding:15px 0 0 27px;}
+div#data_set_content_datasets ul.dataset li.information ul li.three_lines {width:57px; height:auto; padding:23px 0 0 27px;}
+
+
+div#data_set_content_datasets ul.dataset li.information ul li a.check_bttn {background:url(../images/check_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.check_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.check_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c3_bttn {background:url(../images/c3_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c3_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c3_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c5_bttn {background:url(../images/c5_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c5_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c5_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets span.end_information {background:url(../images/bkg_last_content_dataset.png) no-repeat 0 0; width:681px; height:35px; margin:0; position:absolute; bottom:-8px; right:-7px;}
+
+div#footer_datasets {float:left; width:945px; padding:0 0 40px 0; border-bottom:1px solid #9F9F9F;}
+ul#footer_datasets_table {float:left; width:674px; height:77px; margin:0px 0 0 271px; text-align:center; font:bold 24px Arial; color:#999999; }
+ul#footer_datasets_table li.two_lines {line-height:13px;}
+ul#footer_datasets_table li {float:left; width:72px; height:45px; border-right:1px solid #CCCCCC; border-left:1px solid #FFFFFF; position:relative; margin:14px 0 0 0; padding:5px 5px 0 5px; }
+ul#footer_datasets_table li.first {border-left:none; width:73px; }
+ul#footer_datasets_table li.last {border-right:none; width:73px;  }
+ul#footer_datasets_table li a{font:bold 13px Arial; color:#999999; text-decoration:none; }
+ul#footer_datasets_table li a:hover {color:#E58600; border-bottom:1px solid #E58600; }
+ul#footer_datasets_table li.suboptions {float:left; height:45px; padding:5px 0 0 0; line-height:13px;}
+ul#footer_datasets_table li.suboptions.columns3 {width:252px; }
+ul#footer_datasets_table li.suboptions a {width:auto;  }
+ul#footer_datasets_table li.suboptions ul {float:left; width:100%; margin:0 0 0 0; height:6px; padding:0 0 15px 0;}
+ul#footer_datasets_table li.suboptions ul li {float:left; width:82px; height:13px; margin:0px 0 0 0; padding:0; line-height:5px;}
+ul#footer_datasets_table li.suboptions ul li.first {border-left:none; width:83px;}
+ul#footer_datasets_table li.suboptions ul li.last {border-right:none; width:83px;}
+ul#footer_datasets_table li.suboptions ul li a {width:auto; font:bold 10px Arial;}
+
+
+div#data_set_content {float:left; width:945px; margin:0; height:auto; padding:0 0 20px 0; border-bottom:1px solid #9F9F9F;}
+div#data_set_content div.content_left {float:left; width:709px;}
+div#data_set_content div.content_left ul {float:left;width:100%; height:auto; border-bottom:1px solid #CCCCCC;}
+div#data_set_content div.content_left ul.last {border-bottom:none;}
+div#data_set_content div.content_left ul li.detail {float:left; width:164px; height:auto; border-top:1px solid #FFFFFF; padding:20px; }
+div#data_set_content div.content_left ul li.detail p {float:left; font:bold 15px Arial; color:#666666;}
+
+div#data_set_content div.content_left ul li.detail.first {border:none;}
+div#data_set_content div.content_left ul li.information {float:left; width:465px; height:auto; background-color:white; padding:0px 20px 20px 20px; }
+div#data_set_content div.content_left ul li.information ul {float:left; width:100%; margin:10px 0 0 0; border-bottom:none;}
+div#data_set_content div.content_left ul li.information ul li {float:left; margin:10px 15px 0 0; width:127px; background:url(../images/li_style_info.png) no-repeat 0 5px; padding:0 0 0 13px; font:normal 13px Arial; color:#333333;}
+div#data_set_content div.content_left ul li.information ul li.last {margin:10px 0 0 0;}
+div#data_set_content div.content_left ul li.information ul li a {text-decoration:none; color:#E58600; border-bottom:1px solid #E58600;}
+div#data_set_content div.content_left ul li.information ul li a:hover {color:#C87500;}
+div#data_set_content div.content_left ul li.information p {float:left; font:normal 15px Arial; color:#666666; margin:20px 0 0 0;}
+div#data_set_content div.content_left ul li.information p a {text-decoration:none; color:#E58600; border-bottom:1px solid #E58600;}
+div#data_set_content div.content_left ul li.information p a:hover {color:#C87500;}
+
+div#data_set_content div.content_left span.end_information {float:right; background:url(../images/bkg_last_content_data.png) no-repeat 0 0; width:505px; height:22px;}
+
+div#data_set_content div.content_right {float:right; width:236px; }
+div#data_set_content div.content_right div.data_set_box {float:left; background:url(../images/bkg_right_data_box.png) no-repeat; width:236px; height:176px; padding:20px 0;}
+div#data_set_content div.content_right div.data_set_box div.buttons {float:left; width:211px; height:auto; border-bottom:1px solid #BABABA; margin:10px 0 0 0; padding:0 0 20px 23px;}
+div#data_set_content div.content_right div.data_set_box div.last_date {float:left; width:213px; height:auto; border-top:1px solid #E3E3E3; margin:0; padding:0 0 20px 23px;}
+div#data_set_content div.content_right div.data_set_box h4 {float:left; font:bold 11px Arial; color:#666666; text-transform:uppercase; margin:13px 0 0 0;}
+div#data_set_content div.content_right div.data_set_box p.date {float:left; font:normal 27px Georgia; color:#666666;}
+
+
+div#data_set_content div.content_right div.data_set_box a.download {float:left; background:url(../images/download_button.png) no-repeat 0 0; width:185px; height:40px; margin:0;}
+div#data_set_content div.content_right div.data_set_box a.download:hover {background-position:0 -40px;}
+div#data_set_content div.content_right div.data_set_box a.arcgis {float:left; background:url(../images/arcgis_button.png) no-repeat 0 0; width:185px; height:40px; margin:14px 0 0 0;}
+div#data_set_content div.content_right div.data_set_box a.arcgis:hover {background-position:0 -40px;}
+
+div#data_set_content div.content_right div.related_datasets {float:left; width:236px; height:auto; margin:20px 0 0 20px;}
+div#data_set_content div.content_right div.related_datasets h4 {float:left; font:bold 15px Arial; color:#666666;}
+div#data_set_content div.content_right div.related_datasets ul.links {float:left;}
+div#data_set_content div.content_right div.related_datasets ul li {float:left; margin:15px 10px 0 0; width:171px; background:url(../images/li_style_info.png) no-repeat 0 5px; padding:0 0 0 13px; font:normal 13px Arial; color:#333333;}
+div#data_set_content div.content_right div.related_datasets ul li a {text-decoration:none; color:#E58600; border-bottom:1px solid #E58600;}
+div#data_set_content div.content_right div.related_datasets ul li a:hover {color:#C87500;}
+
+div#footer_supportsites {float:left; width:945px; height:auto; margin:22px 0 0 0; padding:0; position:relative;}
+div#footer_supportsites div.content_left {float:left; width:200px; height:auto; margin:0;}
+div#footer_supportsites div.content_left p {float:left; font:normal 15px Arial; color:#999999; width:100%;}
+
+div#footer_supportsites div.content_right {float:right; width:671px; height:201px; overflow:hidden;}
+div#footer_supportsites div.content_right ul {float:left; width:auto; height:auto; }
+div#footer_supportsites div.content_right ul li {float:left; background:url(../images/box_support_site.png) no-repeat 0 0; width:297px; height:182px; margin:0 37px 0 0; padding:10px;}
+div#footer_supportsites div.content_right ul li.last {margin:0;}
+div#footer_supportsites div.content_right ul li a.site_support {float:left; font:bold 15px Arial; color:#858585; text-decoration:underline; margin:10px 0 0 10px;}
+div#footer_supportsites div.content_right ul li a:hover {color:#F99F00;}
+div#footer_supportsites div.content_right ul li p {float:left; margin:10px; font:normal 13px Arial; color:#848484;}
+
+
+div#footer_supportsites div.content_right a.left {position:absolute; left:252px; top:90px; background:url(../images/left_footer_contact.png) no-repeat 0 0; width:13px; height:19px; cursor:pointer; z-index:5; display:none;}
+div#footer_supportsites div.content_right a.left:hover {background-position:0 -19px;}
+div#footer_supportsites div.content_right a.right {position:absolute; right:-26px; top:90px; width:13px; height:19px; background:url(../images/right_footer_contact.png) no-repeat 0 0; cursor:pointer; z-index:5;}
+div#footer_supportsites div.content_right a.right:hover {background-position:0 -19px;}
+
+
+div#footer {float:left; width:945px; margin:0px 0 0 0; height:auto; padding:30px 0 30px 0; border-top:1px solid #FFFFFF;}
+div#footer.datasets {border:none;}
+div#footer a.wcmc_unep {float:right; background:url(../images/unep_logo.png) no-repeat 0 0; width:75px; height:39px;}
+div#footer div.reserved {float:right; width:125px; height:31px; margin:6px 30px 0 0;}
+div#footer p {float:right; margin:0; font:normal 12px Arial; color:#666666;}

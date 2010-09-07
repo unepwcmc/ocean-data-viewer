@@ -2,46 +2,70 @@
   <%= render :partial => 'gmap', :locals => {:datasets => [@dataset], :display_layers => true}  %>
 <% end -%>
 
-<div class="span-16 datasets">
-	
-	
-	<h2 style="font-size:30px;"><%= @dataset.title %> <span class="quiet small" style="font-size:0.5em;">updated <%= @dataset.updated_at.to_date.to_s(:long)%></span></h2>
-	
-	<p><%= RedCloth.new(@dataset.long_desc).to_html %></p>
-	
-	
-	<h3>Metadata description</h3>
-	<p><%= RedCloth.new(@dataset.metadata_description).to_html %></p>
-	
-	<% if @dataset.html.file? || @dataset.xml.file? %>
-	<div class="file_panel" style="padding:1em; background:#eee;">
-		<h4 style="margin-bottom:0;">Metadata files</h4>
-		<%= link_to "#{image_tag 'icons/page_white_world.png'} HTML metadata", @dataset.html.url, :class => "button positive" if @dataset.html.file?%>
-		<%= link_to "#{image_tag 'icons/page_white_database.png'} XML metadata", @dataset.xml.url, :class => "button positive" if @dataset.xml.file? %>		
-		<div style="clear:both;"></div>
-	</div>
-	<div style="clear:both;"></div>
-	<% end -%>
-        <% unless @dataset.shp_download.blank? %>
-            <h3>Shapefile Preview</h3>
-            <%= image_tag("shape-preview.png", :size => '815x406') %><br/>
-        <% end %>
-	
-	<div class="data_panel">
-		<h4>Data access available</h4>
+<div id="data_set_title">
+    <ul>
+        <li class="gray detail">Dataset detail</li>
+        <li class="information"><%= @dataset.title %></li>
+        <li class="gray access">Access</li>
+    </ul>
+</div>
 
-		
-		<% if session["dataset_#{@dataset.id}"] == "agreed" %>
-                  <p>Thank you for your data request. <%= "We will contact you shortly."  %></p>
+<a id="resize_map"></a>	
 
-                  <%= link_to "Shapefile", @dataset.shp_download, :id => "tipsy", :title => "Download ESRI shapefile" if !@dataset.shp_download.blank? %>
-  <!--		
-                  <%= link_to "WFS", @dataset.wfs, :id => "tipsy", :title => "Access online WFS service" if !@dataset.wfs.blank? %>
-                  <%= link_to "Metadata", @dataset.meta_download, :id => "tipsy", :title => "Download full metadata" if !@dataset.meta_download.blank? %>
-  -->		
-		<% else -%>
-		
-                  Please <%= link_to "register", "#registration", :rel => "facebox", :style=>"color:white" %> to request access to this dataset.
+<div id="data_set_content">
+    <div class="content_left">
+        <ul>
+            <li class="detail first">
+                <p>Description</p>
+            </li>
+            <li class="information">
+                <p><%= RedCloth.new(@dataset.long_desc).to_html %></p>
+            </li>
+        </ul>
+        <ul>
+            <li class="detail">
+                <p>Metadata description</p>
+            </li>
+            <li class="information">
+                <p><%= RedCloth.new(@dataset.metadata_description).to_html %></p>
+            </li>
+        </ul>
+        <ul>
+            <li class="detail">
+                <p>Licence</p>
+            </li>
+            <li class="information">
+                <p>The <%= @dataset.title %> is licenced under the <%= @dataset.licence.title %> licence.</p>
+                <p><%= RedCloth.new(@dataset.licence.short_desc).to_html %></p>
+                <p><%= link_to "Read more", licence_path(@dataset.licence) %> about this licence.</p>
+            </li>
+        </ul>
+        <ul class="last">
+            <li class="detail">
+                <p>Decisions</p>
+            </li>
+            <li class="information">
+                <ul>
+                  <% @dataset.datasets_decisions.each do |datasets_decision| -%>
+                    <li>
+                      <%= link_to datasets_decision.decision.name, datasets_decision.decision %>
+                      <%= "(#{datasets_decision.try(:category).try(:name)})" if datasets_decision.category.present? %>
+                    </li>
+                  <% end -%>
+                </ul>
+            </li>
+        </ul>
+        <span class="end_information"></span>
+            
+    </div>
+    <!-- content_left -->
+    <div class="content_right">
+        <div class="data_set_box">
+            <div class="buttons">
+		<% if session["dataset_#{@dataset.id}"] == "agreed" -%>
+                  <%= link_to "", @dataset.shp_download, :class=>"download" %>
+                <% else -%>
+                  <%= link_to "", "#registration", :rel => "facebox", :class=>"download" %>
 
                   <div id="registration" style="display:none;width:800px;">
                     <h1>New data access registrant</h1>
@@ -85,26 +109,22 @@
                       </p>
                     <% end %>
                   </div>
-		<% end -%>
-	</div>
-	
-</div>	
+                <% end -%>
+                <a href="#" class="arcgis"></a>
+            </div>
+            <div class="last_date">
+                <h4>LAST UPDATE</h4>
+                <p class="date"><%= @dataset.updated_at.strftime('%d/%m/%y') %></p>						
+            </div>
+        </div>
 
-
-
-
-
-<div class="span-7 last">
-	<div class="about">
-	<h3>Licence information</h3>
-	<p>The <%= @dataset.title %> dataset is licenced under the <%= @dataset.licence.title %> licence.</p>
-	
-	<p><%= @dataset.licence.short_desc %></p>
-	
-	<p><%= link_to "Read more", @dataset.licence %> about this licence.</p>	
-	</div>
-
-	
-</div>	 
-	
+        <div class="related_datasets">
+            <h4>Related datasets</h4>
+            <ul class="links">
+                <li><a href="#">Global distribution of mangroves</a></li>
+                <li><a href="#">Global distribution of seagrass</a></li>
+            </ul>
+        </div>
+    </div>  <!-- right -->
+</div> <!-- data_set_content -->
 

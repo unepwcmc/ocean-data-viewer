@@ -1,22 +1,46 @@
-<div class="span-16 datasets">	
-	<h2 style="font-size:30px;"><%= @licence.title %> <span class="quiet small" style="font-size:0.5em;">updated <%= @licence.updated_at.to_date.to_s(:long)%></span></h2>
-	
-	<p><%= RedCloth.new(@licence.body).to_html %></p>
-		
-</div>	
+<div id="data_set_title">
+    <ul>
+        <li class="gray detail">Licence</li>
+        <li class="information"><%= @licence.title %></li>
+        <li class="gray access">Datasets Covered</li>
+    </ul>
+</div>
+
+<a id="resize_map"></a>	
+<div id="data_set_content">
+    <div class="content_left">
+        <ul>
+            <li class="detail first">
+                <p>Description</p>
+            </li>
+            <li class="information">
+                <p><%= RedCloth.new(@licence.body).to_html %></p>
+            </li>
+        </ul>
+        <ul>
+            <li class="detail">
+                <p>Updated at</p>
+            </li>
+            <li class="information">
+                <p><%= @licence.updated_at.strftime('%d/%m/%y') %></p>
+            </li>
+        </ul>
+    </div>
+    <div class="content_right">
+        <div class="related_datasets">
+            <ul class="links">
+                <% @licence.datasets.each do |ds|%>
+                        <li><%= link_to ds.title, ds %></li>
+                <% end -%>
+            </ul>
+        </div>
+    </div>
+</div>
 
 
 
 
 
-<div class="span-7 last">
-	<div class="about">
-	<h3>Datasets under this licence</h3>
-	<ul>
-		<% @licence.datasets.each do |ds|%>
-			<li><%= link_to ds.title, ds %></li>
-		<% end -%>
-	</div>
-</div>	 
+
 	
 

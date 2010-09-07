@@ -18,7 +18,7 @@
               -%>
                   <li class="<%= styles %>">
                       <div class="left_shadow"></div>
-                      <a href="#"><%= decision.short_name %></a>
+                      <%= link_to decision.short_name, decision %></a>
                       <% if decision.children.present? %>
                         <ul>
                           <% decision.children.each_with_index do |child,ci|
@@ -26,7 +26,7 @@
                                child_style << 'first ' if (ci == 0)
                                child_style << 'last ' if (ci == (decision.children.size - 1))
                           -%>
-                            <li class="<%= child_style %>"><a href="#"><%= child.short_name %></a></li>
+                            <li class="<%= child_style %>"><%= link_to child.short_name, child %></li>
                           <% end -%>
                         </ul>
                       <% end -%>
@@ -79,10 +79,10 @@
                                           <p class="title">DATASET</p>
                                       </span> 
                                       <span class="content">
-                                          <a class="match" href="#"><%= dataset.title %></a>
+                                          <%= link_to dataset.title, dataset, :class => 'match' %>
                                           <span class="line"></span>
                                           <p class="title">DECISION</p>
-                                          <a class="match" href="#"><%= decision.name %></a>
+                                          <%= link_to decision.name, decision, :class => 'match' %>
                                       </span> 
                                       <span class="bottom">
                                       </span>										

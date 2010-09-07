@@ -17,7 +17,7 @@
               -%>
                   <li class="<%= styles %>">
                       <div class="left_shadow"></div>
-                      <a href="#"><%= decision.name %></a>
+                      <a href="#"><%= decision.short_name %></a>
                       <% if decision.children.present? %>
                         <ul>
                           <% decision.children.each_with_index do |child,ci|

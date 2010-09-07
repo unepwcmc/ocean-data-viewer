@@ -44,10 +44,10 @@
   <% @datasets.each_with_index do |dataset, i| %>
     <!-- ROW for <%= dataset.title -%>-->
     <ul class="dataset">
-      <li class="title <%= 'first' if i == 0 %> <%= 'last' if i == (@datasets.size - 1) %>">
+        <li class="title <%= 'first' if i == 0 %> <%= 'last' if i == (@datasets.size - 1) %>">
             <div class="head_shadow"></div>
             <div class="text">
-                <%= link_to "#{truncate(dataset.title,80)}", dataset %>
+                <%= link_to "#{truncate(dataset.title,80)}", dataset %> <span>2010</span>
             </div>
             <div class="buttons">
                 <a href="#" class="download_dataset">
@@ -68,7 +68,7 @@
                         <li>
                           <%  
                             datasets_decision = DatasetsDecision.find(:first, :conditions => {:dataset_id => dataset, :decision_id => decision})
-                            if datasets_decision.present?
+                            if datasets_decision.present? #Only render the cell if link exists
                           %>
                               <div id="info_tooltip">
                                   <div class="content">
@@ -107,7 +107,7 @@
                         <li>
                           <%
                             datasets_decision = DatasetsDecision.find(:first, :conditions => {:dataset_id => dataset, :decision_id => child_decision})
-                            if datasets_decision.present?
+                            if datasets_decision.present? #Only render the cell if link exists
                           %>
                               <div id="info_tooltip">
                                   <div class="content">
@@ -146,471 +146,37 @@
               </ul>
         </li>
     </ul>				
-      <% end -%>
-        <!-- ROW 2-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Global distribution of mangroves</a> <span>2010</span>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                        </ul>
-                </li>					
-        </ul>
-        <!-- ROW 3-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Global distribution of seagrass</a> <span>2010</span>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                        </ul>
-                </li>					
-        </ul>				
-        <!-- ROW 4 -->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Global distribution of cold-water corals</a> <span>2010</span>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li>
-                                        <div id="info_tooltip">
-                                                <div class="content">
-                                                
-                                                        <span class="head">
-                                                                <a class="close"></a>
-                                                                <p class="title">DATASET</p>
-                                                        </span> 
-                                                        <span class="content">
-                                                                <a class="match" href="#">Global distribution of cold-water corals</a>
-                                                                <span class="line"></span>
-                                                                <p class="title">DECISSION</p>
-                                                                <a class="match" href="#">EBSAs ET3:</a><p class="info">description of the meaning of tag ET3</p>
-                                                        </span> 
-                                                        <span class="bottom">
-                                                        </span>										
-                                                </div>
-                                                
-                                        </div>
-                                        
-                                        <a class="c3_bttn"></a>
-                                
-                                </li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li></li>							
-                                <li><a class="check_bttn"></a></li>
-                        </ul>
-                </li>					
-        </ul>
-        <!-- ROW 5-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">The World Database On Protected Areas (WDPA) - MPA'a only</a> <span>2010</span>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li></li>							
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li></li>							
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                        </ul>
-                </li>					
-        </ul>	
-        <!-- ROW 6-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Ocean Biogeographic Information System. Shannon Weaver Index</a>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li class="three_lines"><a class="c3_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>							
-                        </ul>
-                </li>					
-        </ul>
-        <!-- ROW 7-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Ocean Biogeographic Information System. ES50.</a>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li class="three_lines"><a class="c3_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>							
-                        </ul>
-                </li>					
-        </ul>		
-        <!-- ROW 8-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Ocean Biogeographic Information System. Hurberts Index</a>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li class="three_lines"><a class="c3_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>							
-                        </ul>
-                </li>					
-        </ul>	
-        <!-- ROW 9-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Net Primary Productivity to June and December 2003-2007</a>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li class="three_lines"><a class="c3_bttn"></a></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>
-                                <li></li>
-                                <li class="three_lines"><a class="check_bttn"></a></li>							
-                        </ul>
-                </li>					
-        </ul>
-        <!-- ROW 10-->
-        <ul class="dataset">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">Annual sea surface temperature 2003-2007</a>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li>
-                                        <div id="info_tooltip">
-                                                <div class="content">
-
-                                                        <span class="head">
-                                                                <a class="close"></a>
-                                                                <p class="title">DATASET</p>
-                                                        </span> 
-                                                        <span class="content">
-                                                                <a class="match" href="#">Global distribution of cold-water corals</a>
-                                                                <span class="line"></span>
-                                                                <p class="title">DECISSION</p>
-                                                                <a class="match" href="#">EBSAs ET3:</a><p class="info">description of the meaning of tag ET3</p>
-                                                        </span> 
-                                                        <span class="bottom">
-                                                        </span>										
-                                                </div>
-
-                                        </div>
-                                        <a class="c5_bttn"></a>
-                                        
-                                </li>
-                                <li></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li><a class="check_bttn"></a></li>
-                                <li></li>
-                                <li><a class="check_bttn"></a></li>
-                        </ul>
-                </li>					
-        </ul>				
-        <!-- ROW 11-->
-        <ul class="dataset last">
-                <li class="title">
-                        <div class="head_shadow"></div>
-                        <div class="text">
-                                <a href="dataset_detail.html">EBSA Illustrations</a>
-                        </div>
-                        <div class="buttons">
-                                <a href="#" class="download_dataset">
-                                        <div id="download_tooltip">DOWNLOAD DATASET</div>
-                                </a>
-                                <a href="#" class="download_arcgis">
-                                        <div id="arcgis_tooltip">ARCGIS</div>
-                                </a>
-                        </div>
-                        <div class="bottom_shadow"></div>
-                </li>
-                <li class="information">
-                        <ul>
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>							
-                                <li></li>
-                                <li></li>
-                                <li></li>
-                                <li></li>							
-                        </ul>
-                </li>					
-        </ul>
-        <span class="end_information"></span>	
+  <% end -%>
+  <span class="end_information"></span>	
 </div>		<!-- data_set_content_datasets -->
 
 <!-- FOOTER INFORMATION -->
 <div id="footer_datasets">
-        <ul id="footer_datasets_table">
-                <li class="first two_lines">
-                        <a href="#">CBD EBSAs</a>
-                </li>
-                <li class="suboptions columns3">
-                        <ul>
-                                <li class="first"><a href="#">M+C POW</a></li>
-                                <li><a href="#">Islands POW</a></li>
-                                <li class="last"><a href="#">Pas POW</a></li>
-                        </ul>
-                        <a href="#">CBD POW +</a>
-                </li>
-                <li>
-                        <a href="#">GEOBON</a>
-                </li>
-                <li>
-                        <a href="#">WSDD</a>
-                </li>
-                <li class="two_lines">
-                        <a href="#">Ramsar 09-12</a>
-                </li>
-                <li class="last">
-                        <a href="#">FAO-VME</a>
-                </li>
-        </ul>
+    <ul id="footer_datasets_table">
+
+        <% @decisions.each_with_index do |decision,i|
+             styles = ''
+             styles << 'first ' if (i == 0)
+             styles << 'last ' if (i == (@dataset_count - 1))
+             styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
+        -%>
+            <li class="<%= styles %>">
+                <% if decision.children.present? %>
+                  <ul>
+                    <% decision.children.each_with_index do |child,ci|
+                         child_style = ''
+                         child_style << 'first ' if (ci == 0)
+                         child_style << 'last ' if (ci == (decision.children.size - 1))
+                    -%>
+                      <li class="<%= child_style %>"><a href="#"><%= child.name %></a></li>
+                    <% end -%>
+                  </ul>
+                <% end -%>
+                <a href="#"><%= decision.name %></a>
+            </li>
+
+        <% end -%>
+    </ul>
 </div>
-<!--
-<div class="span-24 datasets">
-	
-  <table style="width:96%;">
-    <tr>
-      <th style="border-left:black 1px;">Available Datasets</th>
-      <th style="border-left:black 1px;">Show</th>
-
-      <% @decisions.each do |decision| %>
-        <th class='matrix_title' title='<%= decision.short_desc %>'>
-          <%= link_to decision.name, decision %>
-          <% if decision.children.size > 0 %>
-            <a href='#' class='group_toggle'onclick="showHideGroup('<%= decision.name.gsub(/ /,'').underscore %>_group')">(toggle group)</a>
-          <% end %>
-        </th>
-        <% decision.children.each do |child_decision| %>
-          <th class="matrix_title hidden_matrix_cell <%= decision.name.gsub(/ /,'').underscore%>_group" title='<%= child_decision.short_desc %>'><%= link_to child_decision.name, child_decision %></th>
-        <% end %>
-      <% end %>
-    </tr>
-    <% @datasets.each_with_index do |dataset, i| %>  
-        <tr>
-            <td>
-              <h2 style="font-size:16px"><%= link_to "#{truncate(dataset.title,80)}", dataset %></h2>
-            </td>
-            <td width='30px'>
-              <input type="checkbox" name="show_wms_<%= i %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
-            </td>
-            <% @decisions.each do |decision| %>
-              <%
-                datasets_decision = DatasetsDecision.find(:first, :conditions => {:dataset_id => dataset, :decision_id => decision})
-                hover_msg = datasets_decision.try(:category).try(:short_desc)
-                hover_msg ||= decision.short_desc
-              %>
-              <td id='tipsy' title='<%= hover_msg %>' <%= "class='active_matrix_cell'" if datasets_decision.present? %> >
-                <%= datasets_decision.try(:category).try(:identifier) %>
-              </td>
-              <%
-                #Handle group children
-                decision.children.each do |child_decision|
-                  datasets_decision = DatasetsDecision.find(:first, :conditions => {:dataset_id => dataset, :decision_id => child_decision})
-                  hover_msg = datasets_decision.try(:category).try(:short_desc)
-                  hover_msg ||= child_decision.short_desc
-
-                  styles = "hidden_matrix_cell "
-                  styles << "#{decision.name.gsub(/ /,'').underscore}_group "
-                  styles << "active_matrix_cell " if datasets_decision.present?
-              %>
-                  <td id='tipsy' title='<%= hover_msg %>' class='<%= styles %>' >
-                    <%= datasets_decision.try(:category).try(:identifier) %>
-                  </td>
-              <%
-                end
-              %>
-            <% end %>
-        </tr>
-    <% end %>
-  </table>
-</div>
-
-<h2 style="font-size:20px;">Other Marine Assessment And Decision Support Sites</h2>
-<div class="span-17 datasets">
-
-<div style="margin-bottom:2em;border-bottom:1px solid #eee;margin-right:30px;" class="span-8">
-	<h3>WDPA Marine</h3>
-	<p>The World Database on Protected Areas Marine is a foundation dataset for conservation decision making.</p>
-	
-	<p>The UNEP-WCMC Protected Areas Data Unit was set up in 1981 to compile information on the world's protected areas, and to be a resource for those requiring such information.
-	<%= link_to "more..", "http://www.wdpa-marine.org" %></p>	
-</div>
-
-<div style="margin-bottom:2em;border-bottom:1px solid #eee;" class="span-8">
-	<h3>Coral Disease Database</h3>
-	<p>The first version of the GCDD was launched in 2000 and was populated with some 2000 points of data from 155 references, mostly peer reviewed scientific literature. <%= link_to "more..", "http://gcdd.tinypla.net" %></p>	
-</div>
-</div>
-
-
-
-<div class="span-6 last">
-	<div class="about">
-	<h3>Marine Assessment And Decision Support</h3>
-	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
-	<p>Synthesis, analysis and dissemination of marine and coastal biodiversity knowledge.</p>
-		
-	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal) %>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
-	<p>For more information on the Marine Assessment And Decision Support team, <%= link_to "click here", "http://www.unep-wcmc.org/marine/" %>.</p>
-	</div>
-</div>
-
--->
 
 

@@ -13,6 +13,7 @@
                    styles = ''
                    styles << 'first ' if (i == 0)
                    styles << 'last ' if (i == (@dataset_count - 1))
+                   styles << 'two_lines ' if decision.name.size > 8
                    styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
               -%>
                   <li class="<%= styles %>">
@@ -25,7 +26,7 @@
                                child_style << 'first ' if (ci == 0)
                                child_style << 'last ' if (ci == (decision.children.size - 1))
                           -%>
-                            <li class="<%= child_style %>"><a href="#"><%= child.name %></a></li>
+                            <li class="<%= child_style %>"><a href="#"><%= child.short_name %></a></li>
                           <% end -%>
                         </ul>
                       <% end -%>

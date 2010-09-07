@@ -1,42 +1,49 @@
-<div class="span-16 datasets">
-    <h2 style="font-size:30px;"><%= @decision.name %> </h2>
-    
-    <p><%= RedCloth.new(@decision.short_desc).to_html %></p>
-    
-    
-    <h3>Full Description</h3>
-    <p><%= RedCloth.new(@decision.description).to_html %></p>
-
-    <% if @categories.size > 0 %>
-      <h3>Categories</h3>
-      <table>
-        <tr>
-          <th>Name</th>
-          <th>Identifier</th>
-          <th>Description</th>
-        </tr>
-
-      <% @categories.each do |category|%>
-        <tr>
-          <td><b><%=h category.name %></b></td>
-          <td><%=h category.identifier %></td>
-          <td><%=h category.description %></td>
-        </tr>
-      <% end %>
-      </table>
-    <% end %>
-</div>	
-
-<div class="span-7 last">
-    <div class="about">
-    <h3>Datasets under this decision</h3>
+<div id="data_set_title">
     <ul>
-      <% @datasets.each do |dataset| %>
-        <li>
-          <h4><%= link_to dataset.title, dataset %></h4>
-        </li>
-      <% end %>
+        <li class="gray detail">Decision</li>
+        <li class="information"><%= @decision.name %></li>
+        <li class="gray access">Datasets Covered</li>
     </ul>
+</div>
+
+<a id="resize_map"></a>	
+<div id="data_set_content">
+    <div class="content_left">
+        <ul>
+            <li class="detail first">
+                <p>Description</p>
+            </li>
+            <li class="information">
+                <p><%= RedCloth.new(@decision.description).to_html %></p>
+            </li>
+        </ul>
+        <% unless @decision.categories.empty? %>
+          <ul>
+              <li class="detail">
+                  <p>Categories</p>
+              </li>
+              <li class="information">
+                  <ul>
+                  <% @categories.each do |category|%>
+                      <li><h4><%=h category.name %></h4> (<%=h category.identifier %>)</li>
+                      <p><%=h category.description %></p>
+                  <% end %>
+                  </ul>
+              </li>
+          </ul>
+        <% end %>
+    </div>
+    
+    <div class="content_right">
+        <div class="related_datasets">
+            <ul class="links">
+                <% @datasets.each do |dataset| %>
+                  <li>
+                    <%= link_to dataset.title, dataset %>
+                  </li>
+                <% end -%>
+            </ul>
+        </div>
     </div>
 </div>	 
 	

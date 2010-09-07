@@ -172,12 +172,35 @@ div#data_set_content_datasets ul.dataset li.information ul li.three_lines {width
 div#data_set_content_datasets ul.dataset li.information ul li a.check_bttn {background:url(../images/check_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
 div#data_set_content_datasets ul.dataset li.information ul li a.check_bttn:hover {background-position:0 -31px; }
 div#data_set_content_datasets ul.dataset li.information ul li a.check_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c1_bttn {background:url(../images/c1_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c1_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c1_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c2_bttn {background:url(../images/c2_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c2_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c2_bttn.checked {background-position:0 -62px;}
 div#data_set_content_datasets ul.dataset li.information ul li a.c3_bttn {background:url(../images/c3_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
 div#data_set_content_datasets ul.dataset li.information ul li a.c3_bttn:hover {background-position:0 -31px; }
 div#data_set_content_datasets ul.dataset li.information ul li a.c3_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c4_bttn {background:url(../images/c4_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c4_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c4_bttn.checked {background-position:0 -62px;}
 div#data_set_content_datasets ul.dataset li.information ul li a.c5_bttn {background:url(../images/c5_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
 div#data_set_content_datasets ul.dataset li.information ul li a.c5_bttn:hover {background-position:0 -31px; }
 div#data_set_content_datasets ul.dataset li.information ul li a.c5_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c6_bttn {background:url(../images/c6_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c6_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c6_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c7_bttn {background:url(../images/c7_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c7_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c7_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c8_bttn {background:url(../images/c8_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c8_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c8_bttn.checked {background-position:0 -62px;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c9_bttn {background:url(../images/c9_bttn.png) no-repeat 0 0; float:left; width:31px; height:31px; cursor:pointer; position:relative;}
+div#data_set_content_datasets ul.dataset li.information ul li a.c9_bttn:hover {background-position:0 -31px; }
+div#data_set_content_datasets ul.dataset li.information ul li a.c9_bttn.checked {background-position:0 -62px;}
+
+
 div#data_set_content_datasets span.end_information {background:url(../images/bkg_last_content_dataset.png) no-repeat 0 0; width:681px; height:35px; margin:0; position:absolute; bottom:-8px; right:-7px;}
 
 div#footer_datasets {float:left; width:945px; padding:0 0 40px 0; border-bottom:1px solid #9F9F9F;}

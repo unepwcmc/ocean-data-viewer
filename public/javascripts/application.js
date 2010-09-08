@@ -59,6 +59,16 @@ $(document).ready(function() {
         );
         map.addLayers([satellite])
 
+        // Hack required to get set centre working
+        var myzoom = 2; 
+        var lonCenter = 10; 
+        var latCenter = 25; 
+
+        point = new OpenLayers.Geometry.Point(lonCenter, latCenter); 
+        OpenLayers.Projection.transform(point, map.displayProjection, map.getProjectionObject()); 
+        map.setCenter(new OpenLayers.LonLat(point.x, point.y), myzoom);
+        
+
 	$('div#zoom_buttons a#zoomIn').click(function(ev) {
 		ev.stopPropagation();
 		ev.preventDefault();

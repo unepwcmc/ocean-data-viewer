@@ -1,5 +1,4 @@
 class CustomersController < ApplicationController
- 
 
   # POST /customers
   def create

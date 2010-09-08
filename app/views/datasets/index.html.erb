@@ -54,7 +54,9 @@
                 <% if dataset.shp_download.present? %>
                   <%= link_to "<div id='download_tooltip'>DOWNLOAD DATASET</div>", dataset.shp_download, :class => 'download_dataset'  %>
                 <% end %>
-                <%= link_to "<div id='arcgis_tooltip'>VIEW ON ARCGIS.COM</div>", '#', :class => 'download_arcgis'  %>
+                <% if dataset.arcgis_link.present? %>
+                  <%= link_to "<div id='arcgis_tooltip'>VIEW ON ARCGIS.COM</div>", dataset.arcgis_link, :class => 'download_arcgis'  %>
+                <% end %>
             </div>
             <div class="bottom_shadow"></div>
         </li>

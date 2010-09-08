@@ -1,6 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
   map.root :controller => :datasets, :action => :index
   map.about '/about', :controller => "static_contents", :action => "about"
+  map.contact '/contact', :controller => "static_contents", :action => "contact"
+  map.business '/business', :controller => "static_contents", :action => "business"
   
   map.resources :datasets, :only => [:index, :show], :has_many => :customers
   map.resources :licences, :only => :show

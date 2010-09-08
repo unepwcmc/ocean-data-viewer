@@ -28,13 +28,23 @@ $(document).ready(function() {
 	    map = new google.maps.Map(document.getElementById("js_map"), myOptions);
        */
 
+        bounds = new OpenLayers.Bounds(-19037508.34, -14037508.34,
+                                      10937508.34, 14037508.34);
+        
+        /*oldBounds = new OpenLayers.Bounds(500.796673, 190.640072,
+                                        190.796673, 190.815568)
+        alert('bounds = ' + oldBounds.toBBOX()); // returns 4,5,5,6*/
+
         var options = {
-            projection: new OpenLayers.Projection("EPSG:900913"),
-            units: "m",
-            maxResolution: 156543.0339,
-            maxExtent: new OpenLayers.Bounds(-20037508.34, -20037508.34,
-                                             20037508.34, 20037508.34),
-        };
+                projection: new OpenLayers.Projection("EPSG:900913"),
+                displayProjection: new OpenLayers.Projection("EPSG:4326"),
+                units: "m",
+                numZoomLevels: 18,
+                maxResolution: 156543.0339,
+                maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
+                                                 20037508, 20037508.34)
+          
+                };
         
         map = new OpenLayers.Map('js_map', options);
 
@@ -43,7 +53,6 @@ $(document).ready(function() {
             "Google Streets",
             {
               'sphericalMercator': true,
-              maxExtent: new OpenLayers.Bounds(-20037508.34,-20037508.34,20037508.34,20037508.34),
               scrollwheel:false,
               mapTypeId: google.maps.MapTypeId.TERRAIN
             }

@@ -6,4 +6,11 @@ class StaticContentsController < ApplicationController
   end
     
     
+  def contact
+    
+  end
+
+  def business
+    
+  end
 end

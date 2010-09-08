@@ -10,7 +10,8 @@ var map;
 
 $(document).ready(function() {
 	
-	$('ul#list').jScrollPane({scrollbarWidth:11});
+        if(!( /msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)))
+          $('ul#list').jScrollPane({scrollbarWidth:11});
 	
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').removeClass('up');
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').addClass('down');

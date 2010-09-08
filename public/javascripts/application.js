@@ -30,10 +30,6 @@ $(document).ready(function() {
 
         bounds = new OpenLayers.Bounds(-19037508.34, -14037508.34,
                                       10937508.34, 14037508.34);
-        
-        /*oldBounds = new OpenLayers.Bounds(500.796673, 190.640072,
-                                        190.796673, 190.815568)
-        alert('bounds = ' + oldBounds.toBBOX()); // returns 4,5,5,6*/
 
         var options = {
                 projection: new OpenLayers.Projection("EPSG:900913"),
@@ -42,6 +38,7 @@ $(document).ready(function() {
                 numZoomLevels: 18,
                 maxResolution: 156543.0339,
 	        scrollwheel:false,
+                controls: [],
                 maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
                                                  20037508, 20037508.34)
           
@@ -69,23 +66,17 @@ $(document).ready(function() {
         OpenLayers.Projection.transform(point, map.displayProjection, map.getProjectionObject()); 
         map.setCenter(new OpenLayers.LonLat(point.x, point.y), myzoom);
 
-        // Disable scroll wheel (hack)
-        controls = map.getControlsByClass('OpenLayers.Control.Navigation');
-        for(var i = 0; i<controls.length; ++i)
-          controls[i].disableZoomWheel();
-        
-        
 
 	$('div#zoom_buttons a#zoomIn').click(function(ev) {
 		ev.stopPropagation();
 		ev.preventDefault();
-		map.setZoom(map.getZoom()+1);
+		map.zoomIn();
 	});
 	
 	$('div#zoom_buttons a#zoomOut').click(function(ev) {
 		ev.stopPropagation();
 		ev.preventDefault();
-		map.setZoom(map.getZoom()-1);
+		map.zoomOut();
 	});
 	
 	$('#resize_map').click(function(ev){

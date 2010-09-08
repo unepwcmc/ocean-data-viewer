@@ -46,6 +46,15 @@ $(document).ready(function() {
                 };
         
         map = new OpenLayers.Map('js_map', options);
+        
+        var customControls = [new OpenLayers.Control.DragPan()
+                              ];
+        for (var i=0; i<customControls.length; i++) {
+          var control = customControls[i];
+          map.addControl(control);
+          control.activate();
+        }
+        
 
         // create Google Mercator layers
         var satellite = new OpenLayers.Layer.Google(

@@ -66,6 +66,8 @@ $(document).ready(function() {
         OpenLayers.Projection.transform(point, map.displayProjection, map.getProjectionObject()); 
         map.setCenter(new OpenLayers.LonLat(point.x, point.y), myzoom);
 
+        loadWMS();
+
 
 	$('div#zoom_buttons a#zoomIn').click(function(ev) {
 		ev.stopPropagation();

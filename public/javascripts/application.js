@@ -41,6 +41,7 @@ $(document).ready(function() {
                 units: "m",
                 numZoomLevels: 18,
                 maxResolution: 156543.0339,
+	        scrollwheel:false,
                 maxExtent: new OpenLayers.Bounds(-20037508, -20037508,
                                                  20037508, 20037508.34)
           
@@ -67,6 +68,12 @@ $(document).ready(function() {
         point = new OpenLayers.Geometry.Point(lonCenter, latCenter); 
         OpenLayers.Projection.transform(point, map.displayProjection, map.getProjectionObject()); 
         map.setCenter(new OpenLayers.LonLat(point.x, point.y), myzoom);
+
+        // Disable scroll wheel (hack)
+        controls = map.getControlsByClass('OpenLayers.Control.Navigation');
+        for(var i = 0; i<controls.length; ++i)
+          controls[i].disableZoomWheel();
+        
         
 
 	$('div#zoom_buttons a#zoomIn').click(function(ev) {

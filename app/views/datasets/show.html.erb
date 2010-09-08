@@ -72,6 +72,7 @@
 
                     <% form_for([@dataset, @customer]) do |f| %>
                       <%= f.error_messages %>
+                      <%= @customer.errors.collect { |c| puts c} %>
 
                       <p>
                         <%= f.label :title %><br />

@@ -9,8 +9,10 @@ class CustomersController < ApplicationController
     @customer.licence = @dataset.licence
 
     if @customer.save
-      Postmaster.deliver_registration(@customer)
+      #Postmaster.deliver_registration(@customer)
       session["dataset_#{@dataset.id}"] = "agreed"      
+    else
+      flash[:notice] = @customer.errors.collect { |c| puts c}
     end
     redirect_to :back     
   end

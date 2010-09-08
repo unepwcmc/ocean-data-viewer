@@ -52,9 +52,9 @@ $(document).ready(function() {
         var satellite = new OpenLayers.Layer.Google(
             "Google Streets",
             {
-              'sphericalMercator': true,
+              sphericalMercator: true,
               scrollwheel:false,
-              mapTypeId: google.maps.MapTypeId.TERRAIN
+              type: google.maps.MapTypeId.TERRAIN
             }
         );
         map.addLayers([satellite])

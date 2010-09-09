@@ -14,7 +14,8 @@
         <%= javascript_include_tag 'OpenLayers', 'facebox', 'ie', 'jquery.textshadow.js', 'jquery.mousewheel.min.js', 'jquery.em.js', 'jScrollPane.js', 'application' %>
     </head>
 
-    <body >
+    <body>
+        <div class="error_flash"><%= flash[:error] %></div>
 	<div id ="content_header">
 
             <div class="map">			

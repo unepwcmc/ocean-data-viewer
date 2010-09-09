@@ -16,22 +16,22 @@
                    styles << 'two_lines ' if decision.name.size > 8
                    styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
               -%>
-                  <li class="<%= styles %>">
-                      <div class="left_shadow"></div>
-                      <%= link_to decision.short_name, decision %></a>
-                      <% if decision.children.present? %>
-                        <ul>
-                          <% decision.children.each_with_index do |child,ci|
-                               child_style = ''
-                               child_style << 'first ' if (ci == 0)
-                               child_style << 'last ' if (ci == (decision.children.size - 1))
-                          -%>
-                            <li class="<%= child_style %>"><%= link_to child.short_name, child %></li>
-                          <% end -%>
-                        </ul>
-                      <% end -%>
-                      <div class="right_shadow"></div>
-                  </li>
+                <li class="<%= styles %>">
+                    <div class="left_shadow"></div>
+                    <%= link_to decision.short_name + "size:#{decision.name.length}", decision %></a>
+                    <% if decision.children.present? %>
+                      <ul>
+                        <% decision.children.each_with_index do |child,ci|
+                             child_style = ''
+                             child_style << 'first ' if (ci == 0)
+                             child_style << 'last ' if (ci == (decision.children.size - 1))
+                        -%>
+                          <li class="<%= child_style %>"><%= link_to child.short_name, child %></li>
+                        <% end -%>
+                      </ul>
+                    <% end -%>
+                    <div class="right_shadow"></div>
+                </li>
 
               <% end -%>
             </ul>

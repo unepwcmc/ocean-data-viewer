@@ -16,7 +16,7 @@ $(document).ready(function() {
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').removeClass('up');
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').addClass('down');
 	$('div#scrollable_databases').css('display','none');	
-	$('div#scrollable_databases').parent().children('span#bottom_scrollable_databases').css('display','none');
+	$('span#bottom_scrollable_databases').css('display','none');
 	
         /* VIZZ GMAPS
 	var myOptions = {

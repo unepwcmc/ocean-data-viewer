@@ -37,10 +37,10 @@ div#header {position:left; position:absolute; top:0; left:0; width:930px; paddin
 div#header div.content_left {float:left; width:660px}
 div#header div.content_right {float:right;  width:260px}
 div#header h1 a {float:left; font:bold 37px Arial; color:white; width:100%; height:auto; margin:0; text-shadow:0px 2px 0px #3D3D3D; text-decoration:none;}
-div#header ul.info {float:left; height:90px; width:250px; margin:7px 0 0 50px; padding:0;}
+div#header ul.info {float:left; height:90px; width:250px; margin:7px 0 0 40px; padding:0;}
 div#header ul.info li {float:left; height:100%;}
 
-div#header ul.info li.datasets {float:left; width:80px; margin:0; }
+div#header ul.info li.datasets {float:left; width:90px; margin:0; }
 div#header ul.info li.downloads {float:left; width:100px; margin:0;}
 
 div#header ul.info li span {float:left; margin:15px 8px 0 0;}
@@ -115,6 +115,7 @@ div#data_set_title ul {float:left; width:945px;}
 div#data_set_title ul li.gray {padding:20px 0 0 20px; font:bold 21px Arial; color:white;  height:45px; text-shadow:2px 1px 0px #3D3D3D; }
 div#data_set_title ul li.detail {float:left; background:url(../images/left_head_content.png) no-repeat 0 0; width:184px; margin:11px 0 0 0;}
 div#data_set_title ul li.information {float:left; background:url(../images/middle_head_content.png) no-repeat 0 0; width:485px; height:48px; font:bold 24px Arial; color:#999999; padding:29px 0 0 20px; text-shadow:1px 1px 1px #FFFFFF;}
+div#data_set_title ul li.information.two_lines {padding:12px 0 0 20px; height:65px; }
 div#data_set_title ul li.access {float:left; background:url(../images/right_head_content.png) no-repeat 0 0; width:214px; margin:11px 0 0 0;} 
 
 div#available_title_datasets {position:absolute; bottom:10px; left:0; z-index:5; width:945px; height:64px;}

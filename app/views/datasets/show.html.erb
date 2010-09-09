@@ -5,7 +5,7 @@
 <div id="data_set_title">
     <ul>
         <li class="gray detail">Dataset detail</li>
-        <li class="information"><%= @dataset.title %></li>
+        <li class="information <%= (@dataset.title.size > 38)? 'two_lines' : '' %>"><%= @dataset.title %></li>
         <li class="gray access">Access</li>
     </ul>
 </div>
@@ -18,7 +18,7 @@
             <li class="detail first">
                 <p>Description</p>
             </li>
-            <li class="information">
+			<li class="information">
                 <p class="first"><%= RedCloth.new(@dataset.long_desc).to_html %></p>
             </li>
         </ul>

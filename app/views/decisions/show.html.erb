@@ -11,10 +11,46 @@
     <div class="content_left">
         <ul>
             <li class="detail first">
-                <p>Description</p>
+                <p>Summary</p>
             </li>
             <li class="information">
                 <p><%= RedCloth.new(@decision.description).to_html %></p>
+            </li>
+        </ul>
+        <ul>
+            <li class="detail first">
+                <p>Established</p>
+            </li>
+            <li class="information">
+                <p>
+                  <% if @decision.established.present? %>
+                    <%= RedCloth.new(@decision.established).to_html %>
+                  <% end %>
+                </p>
+            </li>
+        </ul>
+        <ul>
+            <li class="detail first">
+                <p>Key Points</p>
+            </li>
+            <li class="information">
+                <p>
+                  <% if @decision.established.present? %>
+                    <%= RedCloth.new(@decision.key_points).to_html %>
+                  <% end %>
+                </p>
+            </li>
+        </ul>
+        <ul>
+            <li class="detail first">
+                <p>Links</p>
+            </li>
+            <li class="information">
+                <p>
+                  <% if @decision.established.present? %>
+                    <%= RedCloth.new(@decision.description).to_html %>
+                  <% end %>
+                </p>
             </li>
         </ul>
         <% unless @decision.categories.empty? %>

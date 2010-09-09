@@ -18,7 +18,7 @@
               -%>
                 <li class="<%= styles %>">
                     <div class="left_shadow"></div>
-                    <%= link_to decision.short_name + "size:#{decision.name.length}", decision %></a>
+                    <%= link_to decision.short_name, decision %></a>
                     <% if decision.children.present? %>
                       <ul>
                         <% decision.children.each_with_index do |child,ci|

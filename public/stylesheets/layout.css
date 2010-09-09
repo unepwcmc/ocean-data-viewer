@@ -246,7 +246,7 @@ div#data_set_content div.content_right {float:right; width:236px; }
 div#data_set_content div.content_right div.data_set_box {float:left; background:url(../images/bkg_right_data_box.png) no-repeat; width:236px; height:176px; padding:20px 0;}
 div#data_set_content div.content_right div.data_set_box div.buttons {float:left; width:211px; height:auto; border-bottom:1px solid #BABABA; margin:10px 0 0 0; padding:0 0 20px 23px;}
 div#data_set_content div.content_right div.data_set_box div.last_date {float:left; width:213px; height:auto; border-top:1px solid #E3E3E3; margin:0; padding:0 0 20px 23px;}
-div#data_set_content div.content_right div.data_set_box h4 {float:left; font:bold 11px Arial; color:#666666; text-transform:uppercase; margin:13px 0 0 0;}
+div#data_set_content div.content_right div.data_set_box h4 {float:left; font:bold 11px Arial; color:#666666; text-transform:uppercase; margin:13px 0 0 0; width:213px;}
 div#data_set_content div.content_right div.data_set_box p.date {float:left; font:normal 27px Georgia; color:#666666;}
 
 

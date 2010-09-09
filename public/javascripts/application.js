@@ -100,12 +100,14 @@ $(document).ready(function() {
 		if ($(this).hasClass('reduce_map')) {
 			$(this).removeClass('reduce_map');
 			$('div.map').animate({height:'528px'}, 500,'','');
+			$('div#map').animate({height:'400px'}, 500,'','');
 			$('#layout_header').animate({height:'528px'}, 500,'','');			
 			$('div#zoom_buttons').fadeIn();
 			$('div#down_databases_info').fadeIn();
 		}else {
 			$(this).addClass('reduce_map');			
 			$('div.map').animate({height:'222px'}, 500,'','');
+			$('div#map').animate({height:'222px'}, 500,'','');			
 			$('#layout_header').animate({height:'222px'}, 500,'','');
 			$('div#zoom_buttons').fadeOut();
 			$('div#down_databases_info').fadeOut();			

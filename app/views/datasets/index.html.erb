@@ -48,7 +48,7 @@
         <li class="title <%= 'first' if i == 0 %> <%= 'last' if i == (@datasets.size - 1) %>">
             <div class="head_shadow"></div>
             <div class="text">
-                <%= link_to "#{truncate(dataset.title,80)}", dataset %> <span>2010</span>
+                <%= link_to "#{truncate(dataset.title,80)}", dataset %> 
             </div>
             <div class="buttons">
                 <% if dataset.shp_download.present? %>
@@ -148,6 +148,7 @@
         </li>
     </ul>				
   <% end -%>
+  <span class="end_information"></span>	
 </div>		<!-- data_set_content_datasets -->
 
 <!-- FOOTER INFORMATION -->

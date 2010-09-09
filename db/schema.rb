@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100908152616) do
+ActiveRecord::Schema.define(:version => 20100909124926) do
 
   create_table "backup", :force => true do |t|
     t.string   "storage"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(:version => 20100908152616) do
     t.datetime "xml_updated_at"
     t.string   "wms_name"
     t.string   "arcgis_link"
+    t.integer  "order_number"
   end
 
   create_table "datasets_decisions", :force => true do |t|
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(:version => 20100908152616) do
     t.text     "established"
     t.text     "key_points"
     t.text     "links"
+    t.integer  "order_number"
   end
 
   create_table "licences", :force => true do |t|

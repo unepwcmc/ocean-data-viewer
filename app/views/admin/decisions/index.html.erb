@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Order Number</th>
     <th>Short Name</th>
     <th>Short Description</th>
     <th>Description</th>
@@ -12,6 +13,7 @@
 <% @decisions.each do |decision| %>
   <tr>
     <td><%=h decision.name %></td>
+    <td><%=h decision.order_number %></td>
     <td><%=h truncate(decision.short_name,30) %></td>
     <td><%=h truncate(decision.short_desc,30) %></td>
     <td><%=h truncate(decision.description,30) %></td>

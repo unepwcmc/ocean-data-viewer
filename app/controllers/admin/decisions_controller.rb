@@ -2,7 +2,7 @@ class Admin::DecisionsController < Admin::AdminController
   # GET /decisions
   # GET /decisions.xml
   def index
-    @decisions = Decision.all
+    @decisions = Decision.find(:all, :order => "order_number ASC")
 
     respond_to do |format|
       format.html # index.html.erb

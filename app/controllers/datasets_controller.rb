@@ -2,8 +2,8 @@ class DatasetsController < ApplicationController
   before_filter :get_stats
   # GET /datasets
   def index
-    @datasets = Dataset.all
-    @decisions = Decision.roots
+    @datasets = Dataset.find(:all, :order => "order_number ASC")
+    @decisions = Decision.find(:all, :order => "order_number ASC", :conditions => {:parent_id => nil})
   end
 
   # GET /datasets/1

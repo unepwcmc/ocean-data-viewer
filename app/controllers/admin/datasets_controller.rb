@@ -2,7 +2,7 @@ class Admin::DatasetsController < Admin::AdminController
   # GET /datasets
   # GET /datasets.xml
   def index
-    @datasets = Dataset.all
+    @datasets = Dataset.find(:all, :order => "order_number ASC")
 
     respond_to do |format|
       format.html # index.html.erb

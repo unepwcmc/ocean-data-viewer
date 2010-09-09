@@ -632,7 +632,7 @@ $.fn.jScrollPaneRemove = function()
 					'height':'',
 					'width':'',
 					'padding':'',
-					'overflow':'',
+					'overflow':''
 					// 'position':''
 				}
 			);

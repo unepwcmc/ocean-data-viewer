@@ -36,7 +36,7 @@ div#info_tooltip span.bottom {float:left; background:url(../images/tooltips/bkg_
 div#header {position:left; position:absolute; top:0; left:0; width:930px; padding:7px 0 0 15px; height:90px; background:url(../images/bkg_header.png) no-repeat 0 0; margin:0; z-index:5;}
 div#header div.content_left {float:left; width:660px}
 div#header div.content_right {float:right;  width:260px}
-div#header h1 {float:left; font:bold 37px Arial; color:white; width:100%; height:auto; margin:0; text-shadow:0px 2px 0px #3D3D3D;}
+div#header h1 a {float:left; font:bold 37px Arial; color:white; width:100%; height:auto; margin:0; text-shadow:0px 2px 0px #3D3D3D; text-decoration:none;}
 div#header ul.info {float:left; height:90px; width:250px; margin:7px 0 0 50px; padding:0;}
 div#header ul.info li {float:left; height:100%;}
 
@@ -222,14 +222,14 @@ ul#footer_datasets_table li.suboptions ul li a {width:auto; font:bold 10px Arial
 
 
 div#data_set_content {float:left; width:945px; margin:0; height:auto; padding:0 0 20px 0; border-bottom:1px solid #9F9F9F;}
-div#data_set_content div.content_left {float:left; width:709px;}
-div#data_set_content div.content_left ul {float:left;width:100%; height:auto; border-bottom:1px solid #CCCCCC;}
+div#data_set_content div.content_left {float:left; width:709px; }
+div#data_set_content div.content_left ul {float:left; width:709px; background:url('../images/bkg_information_repeaty.png') repeat-y; height:auto; border-bottom:1px solid #CCCCCC;}
 div#data_set_content div.content_left ul.last {border-bottom:none;}
 div#data_set_content div.content_left ul li.detail {float:left; width:164px; height:auto; border-top:1px solid #FFFFFF; padding:20px; }
 div#data_set_content div.content_left ul li.detail p {float:left; font:bold 15px Arial; color:#666666;}
 
 div#data_set_content div.content_left ul li.detail.first {border:none;}
-div#data_set_content div.content_left ul li.information {float:left; width:465px; height:auto; background-color:white; padding:0px 20px 20px 20px; }
+div#data_set_content div.content_left ul li.information {float:left; width:465px; height:auto; padding:0px 20px 20px 20px; }
 div#data_set_content div.content_left ul li.information ul {float:left; width:100%; margin:10px 0 0 0; border-bottom:none;}
 div#data_set_content div.content_left ul li.information ul li {float:left; margin:10px 15px 0 0; width:127px; background:url(../images/li_style_info.png) no-repeat 0 5px; padding:0 0 0 13px; font:normal 13px Arial; color:#333333;}
 div#data_set_content div.content_left ul li.information ul li.last {margin:10px 0 0 0;}

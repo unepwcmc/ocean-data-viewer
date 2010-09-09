@@ -19,7 +19,7 @@
                 <p>Description</p>
             </li>
             <li class="information">
-                <p><%= RedCloth.new(@dataset.long_desc).to_html %></p>
+                <p class="first"><%= RedCloth.new(@dataset.long_desc).to_html %></p>
             </li>
         </ul>
         <ul>
@@ -27,7 +27,7 @@
                 <p>Metadata description</p>
             </li>
             <li class="information">
-                <p><%= RedCloth.new(@dataset.metadata_description).to_html %></p>
+                <p class="first"><%= RedCloth.new(@dataset.metadata_description).to_html %></p>
             </li>
         </ul>
         <ul>
@@ -36,8 +36,8 @@
             </li>
             <li class="information">
                 <p>The <%= @dataset.title %> is licenced under the <%= @dataset.licence.title %> licence.</p>
-                <p><%= RedCloth.new(@dataset.licence.short_desc).to_html %></p>
-                <p><%= link_to "Read more", licence_path(@dataset.licence) %> about this licence.</p>
+                <p class="first"><%= RedCloth.new(@dataset.licence.short_desc).to_html %></p>
+                <p> <%= link_to "Read more", licence_path(@dataset.licence) %> about this licence.</p>
             </li>
         </ul>
         <ul class="last">

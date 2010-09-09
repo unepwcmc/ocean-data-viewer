@@ -235,7 +235,8 @@ div#data_set_content div.content_left ul li.information ul li {float:left; margi
 div#data_set_content div.content_left ul li.information ul li.last {margin:10px 0 0 0;}
 div#data_set_content div.content_left ul li.information ul li a {text-decoration:none; color:#E58600; border-bottom:1px solid #E58600;}
 div#data_set_content div.content_left ul li.information ul li a:hover {color:#C87500;}
-div#data_set_content div.content_left ul li.information p {float:left; font:normal 15px Arial; color:#666666; margin:20px 0 0 0;}
+div#data_set_content div.content_left ul li.information p {float:left; font:normal 15px Arial; color:#666666; margin:20px 0 0 0; width:465px; height:auto;}
+div#data_set_content div.content_left ul li.information p.first {margin:0;}
 div#data_set_content div.content_left ul li.information p a {text-decoration:none; color:#E58600; border-bottom:1px solid #E58600;}
 div#data_set_content div.content_left ul li.information p a:hover {color:#C87500;}
 

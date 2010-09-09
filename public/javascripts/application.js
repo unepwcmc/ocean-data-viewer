@@ -159,7 +159,7 @@ $(document).ready(function() {
 			$(this).children('div#arcgis_tooltip').fadeOut('fast');
 	});
 	
-	$('li.information ul li a').click(function(ev){
+	$('div#data_set_content_datasets ul.dataset li.information ul li a').click(function(ev){
 
 		ev.stopPropagation();
 		ev.preventDefault();

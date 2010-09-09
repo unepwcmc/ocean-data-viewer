@@ -65,7 +65,7 @@
 		<% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% else -%>
-                  <%= link_to "", "#registration", :rel => "facebox", :class=>"download" %>
+                  <%= link_to "", "#registration", :id => 'Download' , :rel => "facebox", :class=>"download" %>
 
                   <div id="registration" style="display:none;width:800px;">
                     <h1>New data access registrant</h1>

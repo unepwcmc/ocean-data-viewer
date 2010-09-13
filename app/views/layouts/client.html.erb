@@ -73,19 +73,19 @@
 			
 			<div id="footer_supportsites">
 				<div class="content_left">
-					<p>Other Marine Assesment and Decission support Sites</p>
+                                    <p>Other UNEP-WCMC Online Tools</p>
 				</div>
 				<div class="content_right">
-					<a class="left"></a>
-					<a class="right"></a>					
-					<ul>
-                                           <% @site_links.each_with_index do |site_link, i| %>
-                                            <li <%= "class='last'" if i.odd? %>>
-                                                <%= link_to site_link.title, site_link.link, :class => "site_support" %>
-                                                <%= RedCloth.new(site_link.body).to_html() %>
-                                            </li>
-                                          <% end %>
-					</ul>
+                                    <a class="left"></a>
+                                    <a class="right"></a>					
+                                    <ul>
+                                       <% @site_links.each_with_index do |site_link, i| %>
+                                        <li <%= "class='last'" if i.odd? %>>
+                                            <%= link_to site_link.title, site_link.link, :class => "site_support" %>
+                                            <%= RedCloth.new(site_link.body).to_html() %>
+                                        </li>
+                                      <% end %>
+                                    </ul>
 				</div> <!-- content_right -->
 			</div>  <!-- footer_supportsites -->
 			<div id="footer" class="datasets">

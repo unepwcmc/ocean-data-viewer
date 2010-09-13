@@ -1,5 +1,4 @@
 class DatasetsController < ApplicationController
-  before_filter :get_stats
   # GET /datasets
   def index
     @datasets = Dataset.find(:all, :order => "order_number ASC")
@@ -10,9 +9,5 @@ class DatasetsController < ApplicationController
   def show
     @dataset = Dataset.find(params[:id])
     @customer = Customer.new
-  end
-  
-  def get_stats
-    @dataset_count = Dataset.count
   end
 end

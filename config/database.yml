@@ -15,3 +15,13 @@ development:
   pool: 5
   username: postgres
   password:
+
+production:
+  adapter: postgresql
+  database: marine_portal_production
+  username: marineportal
+  password: conserveworld
+  host: localhost
+  pool: 5
+  timeout: 5000
+

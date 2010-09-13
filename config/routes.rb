@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+
   map.root :controller => :datasets, :action => :index
   map.about '/about', :controller => "static_contents", :action => "about"
   map.contact '/contact', :controller => "static_contents", :action => "contact"
@@ -21,10 +22,12 @@ ActionController::Routing::Routes.draw do |map|
     admin.resources :decisions do |decision|
       decision.resources :categories
     end
+    admin.resources :site_links
     
     admin.species_for_genus 'datasets_decision/categories_for_decision/:id', :controller => :datasets_decisions, :action => :categories_for_decision
   end
 
+  map.resources :site_links
   map.resources :decisions
 
   # The priority is based upon order of creation: first created -> highest priority.

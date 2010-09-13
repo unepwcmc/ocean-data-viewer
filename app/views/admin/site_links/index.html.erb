@@ -1,0 +1,24 @@
+<h1>Listing site_links</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th>Link</th>
+  </tr>
+
+<% @site_links.each do |site_link| %>
+  <tr>
+    <td><%=h site_link.title %></td>
+    <td><%=h site_link.body %></td>
+    <td><%=h site_link.link %></td>
+    <td><%= link_to 'Show', [:admin, site_link] %></td>
+    <td><%= link_to 'Edit', edit_admin_site_link_path(site_link) %></td>
+    <td><%= link_to 'Destroy', [:admin, site_link], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New site_link', new_admin_site_link_path %>

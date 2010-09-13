@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100909124926) do
+ActiveRecord::Schema.define(:version => 20100913134327) do
 
   create_table "backup", :force => true do |t|
     t.string   "storage"
@@ -95,6 +95,14 @@ ActiveRecord::Schema.define(:version => 20100909124926) do
     t.string   "title"
     t.text     "short_desc"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "site_links", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

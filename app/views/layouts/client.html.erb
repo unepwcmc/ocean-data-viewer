@@ -12,7 +12,7 @@
         <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		
-        <%= javascript_include_tag 'OpenLayers', 'facebox', 'ie', 'jquery.textshadow.js', 'jquery.mousewheel.min.js', 'jScrollPane.js', 'application' %>
+        <%= javascript_include_tag 'OpenLayers', 'facebox', 'ie', 'jquery.textshadow.js', 'jquery.mousewheel.min.js', 'jScrollPane.js', 'easySlider1.7', 'application' %>
     </head>
 
     <body>
@@ -76,16 +76,42 @@
                       <p>Other UNEP-WCMC Online Tools</p>
                   </div>
                   <div class="content_right">
-                      <a class="left"></a>
-                      <a class="right"></a>					
-                      <ul>
-                         <% @site_links.each_with_index do |site_link, i| %>
-                          <li <%= "class='last'" if i.odd? %>>
-                              <%= link_to site_link.title, site_link.link, :class => "site_support" %>
-                              <%= RedCloth.new(site_link.body).to_html() %>
-                          </li>
-                        <% end %>
-                      </ul>
+					  <div id="slider">
+						<ul>
+							<li>
+								<div>
+									<a class="site_support" href="#">WDPA Marine</a>
+									<p>The World Database on Protected Areas Marine is a foundation dataset for conservation decision making.</p>
+									<p>The UNEP-WCMC Protected Areas Data Unit was set up in 1981 to compile information on the world’s protected areas, and to be a resource for those requiring such information.</p>
+								</div>
+								<div class="last">
+									<a class="site_support" href="#">Coral disease database</a>
+									<p>The first version of the GCDD was launched in 2000 and was populated with some 2000 points of data from 155 references, mostly peer reviewed scientific literature. more.</p>
+								</div>
+							</li>
+							<li>							
+								<div>
+									<a class="site_support" href="#">Vizzuality</a>
+									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>							
+								</div>
+								<div class="last">
+									<a class="site_support" href="#">WCMC</a>
+									<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+								</div>
+							</li>		
+						</ul>
+	                      <!-- <ul>
+	                         <% @site_links.each_with_index do |site_link, i| %>
+							<li>	
+	                          <div <%= "class='last'" if i.odd? %>>
+	                              <%= link_to site_link.title, site_link.link, :class => "site_support" %>
+	                              <%= RedCloth.new(site_link.body).to_html() %>
+	                          </div>
+							 <li>
+	                        <% end %>
+							
+	                      </ul> -->
+					  </div>
                   </div> <!-- content_right -->
               </div>  <!-- footer_supportsites -->
               <div id="footer" class="datasets">

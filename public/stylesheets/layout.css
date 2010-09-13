@@ -293,6 +293,17 @@ div#licence_content_information ul.about li.information p a:hover {color:#C87500
 
 
 div#licence_content_information span.end_information {background:url(../images/bkg_last_content_dataset.png) no-repeat 0 0; width:681px; height:35px; margin:0; position:absolute; bottom:-15px; right:-7px;}
+
+/* browse */	
+/* Easy Slider */
+#slider ul, #slider li,	#slider2 ul, #slider2 li{margin:0;padding:0;list-style:none;}
+#slider2{margin-top:1em;}
+#prevBtn, #nextBtn,#slider1next, #slider1prev{ display:block; width:30px; height:77px; position:absolute; left:252px; top:90px;	z-index:1000;}	
+#nextBtn, #slider1next{ left:954px;	}
+#prevBtn a, #nextBtn a, #slider1next a, #slider1prev a{  display:block; 	position:relative; width:13px; height:19px; 	background:url(../images/left_footer_contact.png) no-repeat 0 0;}	
+#nextBtn a, #slider1next a{ background:url(../images/right_footer_contact.png) no-repeat 0 0; }	
+			
+	
 /* ************************* */
 
 div#footer_supportsites {float:left; width:945px; height:auto; margin:22px 0 0 0; padding:0; position:relative;}
@@ -300,18 +311,19 @@ div#footer_supportsites div.content_left {float:left; width:200px; height:auto; 
 div#footer_supportsites div.content_left p {float:left; font:normal 15px Arial; color:#999999; width:100%;}
 
 div#footer_supportsites div.content_right {float:right; width:671px; height:201px; overflow:hidden;}
-div#footer_supportsites div.content_right ul {float:left; width:auto; height:auto; }
-div#footer_supportsites div.content_right ul li {float:left; background:url(../images/box_support_site.png) no-repeat 0 0; width:297px; height:182px; margin:0 37px 0 0; padding:10px;}
-div#footer_supportsites div.content_right ul li.last {margin:0;}
-div#footer_supportsites div.content_right ul li a.site_support {float:left; font:bold 15px Arial; color:#858585; text-decoration:underline; margin:10px 0 0 10px;}
-div#footer_supportsites div.content_right ul li a:hover {color:#F99F00;}
-div#footer_supportsites div.content_right ul li p {float:left; margin:10px; font:normal 13px Arial; color:#848484;}
+div#footer_supportsites div.content_right ul {float:left; width:671px; height:auto; }
+div#footer_supportsites div.content_right ul li {float:left; width:auto; height:auto; }
+div#footer_supportsites div.content_right ul li div {float:left; background:url(../images/box_support_site.png) no-repeat 0 0; width:297px; height:182px; margin:0 37px 0 0; padding:10px;}
+div#footer_supportsites div.content_right ul li div.last {margin:0;}
+div#footer_supportsites div.content_right ul li div a.site_support {float:left; font:bold 15px Arial; color:#858585; text-decoration:underline; margin:10px 0 0 10px;}
+div#footer_supportsites div.content_right ul li div a:hover {color:#F99F00;}
+div#footer_supportsites div.content_right ul li div p {float:left; margin:10px; font:normal 13px Arial; color:#848484;}
 
 
-div#footer_supportsites div.content_right a.left {position:absolute; left:252px; top:90px; background:url(../images/left_footer_contact.png) no-repeat 0 0; width:13px; height:19px; cursor:pointer; z-index:5; display:none;}
-div#footer_supportsites div.content_right a.left:hover {background-position:0 -19px;}
-div#footer_supportsites div.content_right a.right {position:absolute; right:-26px; top:90px; width:13px; height:19px; background:url(../images/right_footer_contact.png) no-repeat 0 0; cursor:pointer; z-index:5;}
-div#footer_supportsites div.content_right a.right:hover {background-position:0 -19px;}
+div#footer_supportsites div.content_right a#prevBtn {position:absolute; left:252px; top:90px; background:url(../images/left_footer_contact.png) no-repeat 0 0; width:13px; height:19px; cursor:pointer; z-index:5; display:none;}
+div#footer_supportsites div.content_right a#prevBtn:hover {background-position:0 -19px;}
+div#footer_supportsites div.content_right a#nextBtn {position:absolute; right:-26px; top:90px; width:13px; height:19px; background:url(../images/right_footer_contact.png) no-repeat 0 0; cursor:pointer; z-index:5;}
+div#footer_supportsites div.content_right a#nextBtn:hover {background-position:0 -19px;}
 
 
 div#footer {float:left; width:945px; margin:0px 0 0 0; height:auto; padding:30px 0 30px 0; border-top:1px solid #FFFFFF;}

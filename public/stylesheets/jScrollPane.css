@@ -1,11 +1,12 @@
 
 .jScrollPaneContainer {
-	margin:10px 0 0 0;
 	float:left;
 	position: relative;
 	overflow: hidden;
 	z-index: 5000;
 	width:10px;
+	padding:0;
+	background-color
 }
 
 .jScrollPaneTrack {

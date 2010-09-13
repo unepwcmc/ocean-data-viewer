@@ -88,7 +88,7 @@ $.fn.jScrollPane = function(settings)
 					.css(
 						{
 							'float':'left',
-							'margin':'5px 0 0 0',
+							'margin':'0',
 							'height':paneHeight+'px', 
 							'width':paneWidth+'px'
 						}
@@ -150,7 +150,7 @@ $.fn.jScrollPane = function(settings)
 			var cssToApply = {
 				'float':'left',
 				'height':'auto',
-				'width': realPaneWidth + 'px'
+				'width': 280 + 'px'
 			}
 
 			if(settings.scrollbarOnLeft) {
@@ -628,12 +628,10 @@ $.fn.jScrollPaneRemove = function()
 			$this.css(
 				{
 					'float':'left',
-					// 'top':'',
 					'height':'',
 					'width':'',
 					'padding':'',
 					'overflow':''
-					// 'position':''
 				}
 			);
 			$this.attr('style', $this.data('originalStyleTag'));

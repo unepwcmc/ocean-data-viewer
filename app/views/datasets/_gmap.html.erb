@@ -3,19 +3,21 @@
         <span class="tick up"></span>
         Showing <%= pluralize(datasets.count, 'dataset') %>
     </a>
-        
-    <div id="scrollable_databases" class="jScrollPaneContainer jScrollPaneScrollable">
-
-        <ul id="list">
-          <% datasets.each_with_index do |dataset, i| %>
-            <li class="type<%= (i + 1)%9 %> <%= 'first' if i ==0 %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
-                <span class="check_box"></span>
-                <p class="text"><%= dataset.title %></p>
-            </li>
-          <% end %>
-        </ul>
-
-    </div>
+    
+    <div id="container">
+	<!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
+    	<div id="scrollable_databases"class="scroll-pane" >
+	        <ul id="list">
+	          <% datasets.each_with_index do |dataset, i| %>
+	            <li class="type<%= (i + 1)%9 %> <%= 'first' if i ==0 %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
+	                <span class="check_box"></span>
+	                <p class="text"><%= dataset.title %></p>
+	            </li>
+	          <% end %>
+	        </ul>
+	    </div>
+		<span class="bottom_scrollable_databases"></span>
+	</div>
 <% end %>
 
 <script type='text/javascript'>

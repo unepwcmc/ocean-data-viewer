@@ -10,13 +10,19 @@ var map;
 
 $(document).ready(function() {
 	
-        if(!( /msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)))
-          $('ul#list').jScrollPane({scrollbarWidth:11});
+  // if(!( /msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)))
+ //         	$('div#scrollable_databases').jScrollPane();
 	
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').removeClass('up');
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').addClass('down');
-	$('div#scrollable_databases').css('display','none');	
-	$('span#bottom_scrollable_databases').css('display','none');
+	
+	$('div#scrollable_databases').jScrollPane({scrollbarWidth:11});	
+	$('div#container').css('display','none');
+	$('span#bottom_scrollable_databases').css('display','none');	
+	// $('div#scrollable_databases').css('display','none');
+
+	
+	
 	
         /* VIZZ GMAPS
 	var myOptions = {
@@ -190,20 +196,21 @@ $(document).ready(function() {
 	$('div#down_databases_info a#showing_databases_down').click(function(ev){
 		ev.stopPropagation();
 		ev.preventDefault();
-			
-		if ($(this).children('span.tick').hasClass('down')){
-			
+		
+		if ($(this).children('span.tick').hasClass('down')){  		    
 			$(this).children('span.tick').removeClass('down');
 			$(this).children('span.tick').addClass('up');
-			$(this).parent().children('div#scrollable_databases').css('display','inline');
+			
+			$(this).parent().children('div#container').css('display','inline');
 			$(this).parent().children('span#bottom_scrollable_databases').css('display','inline');
 		}
 		else {
 			
 			$(this).children('span.tick').removeClass('up');
 			$(this).children('span.tick').addClass('down');
-			$(this).parent().children('div#scrollable_databases').fadeOut('fast');
+			$(this).parent().children('div#container').fadeOut('fast');
 			$(this).parent().children('span#bottom_scrollable_databases').fadeOut('fast');
+						
 		}		
 	});
 	

@@ -67,35 +67,35 @@
 
         <%= yield :map%>
  	<div id="outer_layout">	
-		<div id="layout">	
-			
-                  <%= yield %>
-			
-			<div id="footer_supportsites">
-				<div class="content_left">
-                                    <p>Other UNEP-WCMC Online Tools</p>
-				</div>
-				<div class="content_right">
-                                    <a class="left"></a>
-                                    <a class="right"></a>					
-                                    <ul>
-                                       <% @site_links.each_with_index do |site_link, i| %>
-                                        <li <%= "class='last'" if i.odd? %>>
-                                            <%= link_to site_link.title, site_link.link, :class => "site_support" %>
-                                            <%= RedCloth.new(site_link.body).to_html() %>
-                                        </li>
-                                      <% end %>
-                                    </ul>
-				</div> <!-- content_right -->
-			</div>  <!-- footer_supportsites -->
-			<div id="footer" class="datasets">
-				<a href="http://www.unep-wcmc.org/" target="_blank" class="wcmc_unep"></a>
-				<div class="reserved">
-					<p>All rights reserved.</p>
-					<p>UNEP-WCMC</p> 
-				</div>	
-			</div> <!-- footer -->			
-		</div> <!-- layout -->
+            <div id="layout">	
+                    
+              <%= yield %>
+              
+              <div id="footer_supportsites">
+                  <div class="content_left">
+                      <p>Other UNEP-WCMC Online Tools</p>
+                  </div>
+                  <div class="content_right">
+                      <a class="left"></a>
+                      <a class="right"></a>					
+                      <ul>
+                         <% @site_links.each_with_index do |site_link, i| %>
+                          <li <%= "class='last'" if i.odd? %>>
+                              <%= link_to site_link.title, site_link.link, :class => "site_support" %>
+                              <%= RedCloth.new(site_link.body).to_html() %>
+                          </li>
+                        <% end %>
+                      </ul>
+                  </div> <!-- content_right -->
+              </div>  <!-- footer_supportsites -->
+              <div id="footer" class="datasets">
+                  <a href="http://www.unep-wcmc.org/" target="_blank" class="wcmc_unep"></a>
+                  <div class="reserved">
+                          <p>All rights reserved.</p>
+                          <p>UNEP-WCMC</p> 
+                  </div>	
+              </div> <!-- footer -->			
+            </div> <!-- layout -->
 	</div> <!-- outer_layout -->
     </body>
 </html>

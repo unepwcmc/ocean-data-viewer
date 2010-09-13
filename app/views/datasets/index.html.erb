@@ -81,8 +81,13 @@
                                       <span class="content">
                                           <%= link_to dataset.title, dataset, :class => 'match' %>
                                           <span class="line"></span>
-                                          <p class="title">DECISION</p>
-                                          <%= link_to decision.name, decision, :class => 'match' %>
+                                          <% if datasets_decision.try(:category).try(:identifier).nil? %>
+                                            <p class="title">DECISION</p>
+                                            <%= link_to decision.name, decision, :class => 'match' %>
+                                          <% else %>
+                                            <p class="title">DECISION CATEGORY</p>
+                                            <%= link_to datasets_decision.category.name, decision, :class => 'match' %>
+                                          <% end %>
                                       </span> 
                                       <span class="bottom">
                                       </span>										

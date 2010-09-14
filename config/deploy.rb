@@ -8,7 +8,8 @@ require 'brightbox/passenger'
 set :application, "marine-portal"
 
 # Primary domain name of your application. Used in the Apache configs
-set :domain, "unepwcmc-001.vm.brightbox.net"
+#set :domain, "unepwcmc-001.vm.brightbox.net"
+set :domain, "data.unep-wcmc.org"
 
 ## List of servers
 server "unepwcmc-001.vm.brightbox.net", :app, :web, :db, :primary => true

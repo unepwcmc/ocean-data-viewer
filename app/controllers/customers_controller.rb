@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
       #Postmaster.deliver_registration(@customer)
       session["dataset_#{@dataset.id}"] = "agreed"      
     else
-      flash[:notice] = @customer.errors.collect { |c| puts c}
+      flash[:error] = @customer.errors.collect { |f, e| "<li><b>" + f + "</b> - " + e + "</li>"}
     end
     redirect_to :back     
   end

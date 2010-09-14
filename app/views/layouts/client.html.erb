@@ -16,7 +16,11 @@
     </head>
 
     <body>
-        <div class="error_flash"><%= flash[:error] %></div>
+      <% if flash[:error].present? %>
+        <div id="error_flash">
+          <h2>Sorry, there was a problem with your form submission</h2><%= flash[:error] %>
+        </div>
+      <% end %>
 	<div id ="content_header">
 
             <div class="map">			

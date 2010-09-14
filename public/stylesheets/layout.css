@@ -302,7 +302,8 @@ div#licence_content_information span.end_information {background:url(../images/b
 #nextBtn, #slider1next{ left:954px;	}
 #prevBtn a, #nextBtn a, #slider1next a, #slider1prev a{  display:block; 	position:relative; width:13px; height:19px; 	background:url(../images/left_footer_contact.png) no-repeat 0 0;}	
 #nextBtn a, #slider1next a{ background:url(../images/right_footer_contact.png) no-repeat 0 0; }	
-			
+#prevBtn a:hover {background-position:0 -19px;} 
+#nextBtn a:hover {background-position:0 -19px;} 
 	
 /* ************************* */
 

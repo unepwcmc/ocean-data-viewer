@@ -35,7 +35,7 @@
             </li>
             <li class="information">
                 <p>
-                  <% if @decision.established.present? %>
+                  <% if @decision.key_points.present? %>
                     <%= RedCloth.new(@decision.key_points).to_html %>
                   <% end %>
                 </p>
@@ -47,8 +47,8 @@
             </li>
             <li class="information">
                 <p>
-                  <% if @decision.established.present? %>
-                    <%= RedCloth.new(@decision.description).to_html %>
+                  <% if @decision.links.present? %>
+                    <%= RedCloth.new(@decision.links).to_html %>
                   <% end %>
                 </p>
             </li>

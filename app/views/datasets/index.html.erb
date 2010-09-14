@@ -123,10 +123,15 @@
                                           <p class="title">DATASET</p>
                                       </span> 
                                       <span class="content">
-                                          <a class="match" href="#"><%= dataset.title %></a>
+                                          <%= link_to dataset.title, dataset, :class => 'match' %>
                                           <span class="line"></span>
-                                          <p class="title">DECISION</p>
-                                          <a class="match" href="#"><%= child_decision.name %></a>
+                                          <% if datasets_decision.try(:category).try(:identifier).nil? %>
+                                            <p class="title">DECISION</p>
+                                            <%= link_to child_decision.name, child_decision, :class => 'match' %>
+                                          <% else %>
+                                            <p class="title">DECISION CATEGORY</p>
+                                            <%= link_to datasets_decision.category.name, decision, :class => 'match' %>
+                                          <% end %>
                                       </span> 
                                       <span class="bottom">
                                       </span>										

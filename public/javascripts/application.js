@@ -10,19 +10,17 @@ var map;
 
 $(document).ready(function() {
 	
-  // if(!( /msie/i.test(navigator.userAgent) && !/opera/i.test(navigator.userAgent)))
- //         	$('div#scrollable_databases').jScrollPane();
-	
+	$("#slider").easySlider({
+		auto: false, 
+		continuous: false
+	});
+		
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').removeClass('up');
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').addClass('down');
 	
 	$('div#scrollable_databases').jScrollPane({scrollbarWidth:11});	
 	$('div#container').css('display','none');
 	$('span#bottom_scrollable_databases').css('display','none');	
-	// $('div#scrollable_databases').css('display','none');
-
-	
-	
 	
         /* VIZZ GMAPS
 	var myOptions = {
@@ -167,8 +165,7 @@ $(document).ready(function() {
 			$(this).children('div#arcgis_tooltip').fadeOut('fast');
 	});
 	
-	$('div#data_set_content_datasets ul.dataset li.information ul li a').click(function(ev){
-
+	$('div#data_set_content_datasets ul.dataset li.information ul li a.button').click(function(ev){
 		ev.stopPropagation();
 		ev.preventDefault();
 		
@@ -236,22 +233,4 @@ $(document).ready(function() {
 			$(this).children('p.text').removeClass('hover');
 	});	
 	
-	$('div#footer_supportsites div.content_right a.right').click(function(ev){
-		ev.stopPropagation();
-		ev.preventDefault();
-		$(this).css('display','none');
-		$(this).parent().children('a.left').css('display','inline');
-		$('div#footer_supportsites div.content_right ul').animate({margin:'-202px 0 0 0'}, 0,'','');
-
-	});
-
-	$('div#footer_supportsites div.content_right a.left').click(function(ev){
-		ev.stopPropagation();
-		ev.preventDefault();
-		$(this).css('display','none');
-		$(this).parent().children('a.right').css('display','inline');	
-		$('div#footer_supportsites div.content_right ul').animate({margin:'0 0 0 0'}, 0,'','');
-
-	});
-
 });

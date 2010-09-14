@@ -111,7 +111,9 @@
                     <% end %>
                   </div>
                 <% end -%>
-                <%= link_to "", @dataset.arcgis_link, :class=>"arcgis" %>
+                <% if @dataset.arcgis_link.present? %>
+                  <%= link_to "", @dataset.arcgis_link, :class=>"arcgis" %>
+                <% end %>
             </div>
             <div class="last_date">
                 <h4>LAST UPDATE</h4>

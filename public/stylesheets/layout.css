@@ -333,4 +333,16 @@ div#footer a.wcmc_unep {float:right; background:url(../images/unep_logo.png) no-
 div#footer div.reserved {float:right; width:125px; height:31px; margin:6px 30px 0 0;}
 div#footer p {float:right; margin:0; font:normal 12px Arial; color:#666666;}
 
-div#error_flash {background:red; }
+div#error_flash {
+  background: #FFC;
+  border-bottom: 2px solid #F90;
+  color: #F90;
+  font: normal normal normal 13px/normal Arial;
+  padding: 12px 0px;
+  position: absolute;
+  text-align: center;
+  top: 0px;
+  width: 100%;
+  z-index: 100000;
+}
+

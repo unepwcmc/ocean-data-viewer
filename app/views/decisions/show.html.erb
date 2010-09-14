@@ -61,7 +61,7 @@
               <li class="information">
                   <ul>
                   <% @categories.each do |category|%>
-                      <li><h4><%=h category.name %></h4> (<%=h category.identifier %>)</li>
+                      <li><h4><%=h category.identifier %> - <%=h category.name %></h4></li>
                   <% end %>
                   </ul>
               </li>

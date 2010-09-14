@@ -64,6 +64,8 @@
             <div class="buttons">
 		<% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
+                <% elsif @dataset.shp_download == "http://protectedplanet.net" -%>
+                  <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download %>
                 <% else -%>
                   <%= link_to "", "#registration", :id => 'Download' , :rel => "facebox", :class=>"download" %>
 

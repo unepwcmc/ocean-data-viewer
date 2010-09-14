@@ -1,4 +1,5 @@
 <% content_for :map_controls do %>
+  <% display_layers = false if display_layers.nil? %>
     <a id="showing_databases_down">
         <span class="tick up"></span>
         Showing <%= pluralize(datasets.count, 'dataset') %>
@@ -7,17 +8,17 @@
     <div id="container">
 	<!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
     	<div id="scrollable_databases"class="scroll-pane" >
-	        <ul id="list">
-	          <% datasets.each_with_index do |dataset, i| %>
-	            <li class="type<%= (i + 1)%9 %> <%= 'first' if i ==0 %>" onclick="toggleLayerVisibility(wms_<%= i %>)">
-	                <span class="check_box"></span>
-	                <p class="text"><%= dataset.title %></p>
-	            </li>
-	          <% end %>
-	        </ul>
-	    </div>
-		<span class="bottom_scrollable_databases"></span>
-	</div>
+            <ul id="list">
+              <% datasets.each_with_index do |dataset, i| %>
+                <li class="type<%= (i + 1)%9 %> <%= 'first' if i ==0 %> <%= 'checked' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
+                    <span class="check_box"></span>
+                    <p class="text"><%= dataset.title %></p>
+                </li>
+              <% end %>
+            </ul>
+        </div>
+        <span class="bottom_scrollable_databases"></span>
+    </div>
 <% end %>
 
 <script type='text/javascript'>

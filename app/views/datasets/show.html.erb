@@ -65,7 +65,7 @@
 		<% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% elsif @dataset.shp_download == "http://protectedplanet.net" -%>
-                  <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download %>
+                  <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download' %>
                 <% elsif @dataset.shp_download == "" -%>
                   Sorry, there is no data available to download for this dataset
                 <% else -%>

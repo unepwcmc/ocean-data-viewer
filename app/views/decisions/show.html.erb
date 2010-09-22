@@ -22,11 +22,9 @@
                 <p>Established</p>
             </li>
             <li class="information">
-                <p>
-                  <% if @decision.established.present? %>
-                    <%= RedCloth.new(@decision.established).to_html %>
-                  <% end %>
-                </p>
+                <% if @decision.established.present? %>
+                  <%= RedCloth.new(@decision.established).to_html %>
+                <% end %>
             </li>
         </ul>
         <ul>
@@ -34,11 +32,9 @@
                 <p>Key Points</p>
             </li>
             <li class="information">
-                <p>
-                  <% if @decision.key_points.present? %>
-                    <%= RedCloth.new(@decision.key_points).to_html %>
-                  <% end %>
-                </p>
+                <% if @decision.key_points.present? %>
+                  <%= RedCloth.new(@decision.key_points).to_html %>
+                <% end %>
             </li>
         </ul>
         <ul>
@@ -46,11 +42,9 @@
                 <p>Links</p>
             </li>
             <li class="information">
-                <p>
-                  <% if @decision.links.present? %>
-                    <%= RedCloth.new(@decision.links).to_html %>
-                  <% end %>
-                </p>
+                <% if @decision.links.present? %>
+                  <%= RedCloth.new(@decision.links).to_html %>
+                <% end %>
             </li>
         </ul>
         <% unless @decision.categories.empty? %>

@@ -13,7 +13,6 @@ class CustomersController < ApplicationController
     else
       flash[:error] = @customer.errors.collect { |f, e| "<li><b>" + f.humanize + "</b> - " + e + "</li>"}
     end
-    debugger
     redirect_to :back     
   end
 

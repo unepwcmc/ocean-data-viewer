@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100913134327) do
+ActiveRecord::Schema.define(:version => 20100922154239) do
 
   create_table "backup", :force => true do |t|
     t.string   "storage"
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(:version => 20100913134327) do
     t.string   "wms_name"
     t.string   "arcgis_link"
     t.integer  "order_number"
+    t.boolean  "has_legend"
   end
 
   create_table "datasets_decisions", :force => true do |t|

@@ -60,7 +60,12 @@
     <%= f.text_field :meta_download %>
   </p>
 
-	<p>
+  <p>
+    <%= f.label :has_legend %><br />
+    <%= f.check_box :has_legend %>
+  </p>
+
+  <p>
     <%= f.label :licence %><br />
     <%= collection_select(:dataset, :licence_id, Licence.all(:order => "title ASC"), :id, :title, {:prompt => true})%>
   </p>

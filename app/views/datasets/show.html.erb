@@ -80,7 +80,7 @@
 
                       <p>
                         <%= f.label :title %><br />
-                    <%= f.select :title, [["Mr", "Mr"],["Mrs", "Mrs"],["Ms", "Ms"],["Miss", "Miss"],["Dr", "Dr"],["Prof", "Prof"]], {:include_blank => true} %>
+                        <%= f.select :title, [["Mr", "Mr"],["Mrs", "Mrs"],["Ms", "Ms"],["Miss", "Miss"],["Dr", "Dr"],["Prof", "Prof"]], {:include_blank => true} %>
                       </p>
                       <p>
                         <%= f.label :first_name %><br />
@@ -119,6 +119,12 @@
                   <%= link_to "", @dataset.arcgis_link, :class=>"arcgis",  :target => '_blank' %>
                 <% end %>
             </div>
+            <% if @dataset.has_legend? %>
+              <div class="last_date">
+                  <h4>Legend</h4>
+                  <%= image_tag "http://ec2-184-73-120-49.compute-1.amazonaws.com:8080/geoserver/wms/?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=#{@dataset.wms_name }&Format=image/png", :width => '200px' %>
+              </div>
+            <% end %>
             <div class="last_date">
                 <h4>LAST UPDATE</h4>
                 <p class="date"><%= @dataset.updated_at.strftime('%d/%m/%y') %></p>						

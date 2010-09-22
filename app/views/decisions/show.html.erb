@@ -14,7 +14,7 @@
                 <p>Summary</p>
             </li>
             <li class="information">
-                <p><%= RedCloth.new(@decision.description).to_html %></p>
+                <%= RedCloth.new(@decision.description).to_html %>
             </li>
         </ul>
         <ul>

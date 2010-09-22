@@ -10,10 +10,11 @@ class CustomersController < ApplicationController
     if @customer.save
       #Postmaster.deliver_registration(@customer)
       session["dataset_#{@dataset.id}"] = "agreed"      
+      redirect_to @dataset.shp_download
     else
       flash[:error] = @customer.errors.collect { |f, e| "<li><b>" + f.humanize + "</b> - " + e + "</li>"}
+      redirect_to :back     
     end
-    redirect_to :back     
   end
 
 end

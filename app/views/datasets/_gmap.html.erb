@@ -49,10 +49,39 @@
                       visibility: <%= display_layers.to_s %>
                     }
                 );
+            <% if dataset.wms_name == "wcmc:ebsa" %>
+                OpenLayers.ProxyHost = "/geo_proxy?url=";
+
+                // Add info overlay
+                info = new OpenLayers.Control.WMSGetFeatureInfo({
+                    url: '<%= datasets[0].wms_server %>', //'http://ec2-184-73-120-49.compute-1.amazonaws.com:8080/geoserver/wms',
+                    title: 'Identify features by clicking',
+                    queryVisible: true,
+                    eventListeners: {
+                        getfeatureinfo: function(event) {
+                            map.addPopup(new OpenLayers.Popup.FramedCloud(
+                                "chicken", 
+                                map.getLonLatFromPixel(event.xy),
+                                null,
+                                event.text,
+                                null,
+                                true
+                            ));
+                        }
+                    }
+                });
+                
+            <% end %>
 
         <% end %>
 
         map.addLayers([<%= wmses.join(',') %>]);
+
+        if (typeof info != 'undefined'){
+          map.addControl(info);
+          info.activate();
+        }
+        
     }
 
     function toggleLayerVisibility(layer) {

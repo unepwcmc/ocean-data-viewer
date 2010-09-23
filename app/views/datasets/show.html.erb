@@ -122,7 +122,7 @@
                   </div>
                 <% end -%>
                 <% if @dataset.arcgis_link.present? %>
-                  <%= link_to "", @dataset.arcgis_link, :class=>"arcgis",  :target => '_blank' %>
+                  <%= link_to "", @dataset.arcgis_link, :class=>"arcgis tipsy", :style => "padding: 0px", :target => '_blank', :title => 'Click here to view this dataset on Arcgis.com. To add other layers from Ocean Data Viewer, click the "Add" button and search for the dataset titles' %>
                 <% end %>
             </div>
             <% if @dataset.has_legend? %>

@@ -11,9 +11,13 @@ var map;
 $(document).ready(function() {
 	
 	$("#slider").easySlider({
-		auto: false, 
-		continuous: false
+            auto: false, 
+            continuous: false
 	});
+
+        $('.tipsy').each(function(){
+            $(this).tipsy()
+        });
 		
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').removeClass('up');
 	$('div#down_databases_info a#showing_databases_down').children('span.tick').addClass('down');

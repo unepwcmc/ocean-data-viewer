@@ -1,6 +1,12 @@
 <% content_for :map do %>
   <%= render :partial => 'gmap', :locals => {:datasets => [@dataset], :display_layers => true}  %>
 <% end -%>
+<script type='text/javascript'>
+  hideFormElements = function () {
+    $('#error_flash').hide()
+    $('#facebox').hide()
+  }
+</script>
 
 <div id="data_set_title">
     <ul>
@@ -18,7 +24,7 @@
             <li class="detail first">
                 <p>Description</p>
             </li>
-			<li class="information">
+                <li class="information">
                 <p class="first"><%= RedCloth.new(@dataset.long_desc).to_html %></p>
             </li>
         </ul>
@@ -65,7 +71,7 @@
 		<% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% elsif @dataset.shp_download == "http://protectedplanet.net" -%>
-                  <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download' %>
+                  <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at protectedplanet.net" %>
                 <% elsif @dataset.shp_download == "" -%>
                   Sorry, there is no data available to download for this dataset
                 <% else -%>
@@ -74,7 +80,7 @@
                   <div id="registration" style="display:none;width:800px;">
                     <h1>New data access registrant</h1>
 
-                    <% form_for([@dataset, @customer]) do |f| %>
+                    <% form_for([@dataset, @customer], :html => {:onsubmit => "hideFormElements()"}) do |f| %>
                       <%= f.error_messages %>
                       <%= @customer.errors.collect { |c| puts c} %>
 

@@ -111,6 +111,11 @@ a#resize_map:hover {background-position:0 -23px;}
 a#resize_map.reduce_map {background:url(../images/btt_reduce_map.png) no-repeat 0 0;}
 a#resize_map.reduce_map:hover {background-position:0 -23px;}
 
+a#enlarge_map {position:absolute; top:-10px; right:-60px;  background:url(../images/btt_reduce_map.png) no-repeat 0 0; width:23px; height:23px; cursor:pointer; z-index:10;}
+a#enlarge_map:hover {background-position:0 -23px;}
+a#enlarge_map.reduce_map {background:url(../images/btt_expand_map.png) no-repeat 0 0;}
+a#enlarge_map.reduce_map:hover {background-position:0 -23px;}
+
 div#data_set_title {position:absolute; bottom:9px; left:0; z-index:5; width:930px; height:64px;}
 div#data_set_title ul {float:left; width:945px;}
 div#data_set_title ul li.gray {padding:20px 0 0 20px; font:bold 21px Arial; color:white;  height:45px; text-shadow:2px 1px 0px #3D3D3D; }

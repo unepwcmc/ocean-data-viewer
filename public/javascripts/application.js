@@ -105,13 +105,44 @@ $(document).ready(function() {
 			$('#layout_header').animate({height:'528px'}, 500,'','');			
 			$('div#zoom_buttons').fadeIn();
 			$('div#down_databases_info').fadeIn();
+                        $('#enlarge_map').fadeIn();
 		} else {
-			$(this).addClass('reduce_map');			
+			$(this).addClass('reduce_map');
 			$('div.map').animate({height:'222px'}, 500,'','');
 			$('div#map').animate({height:'222px'}, 500,'','');			
 			$('#layout_header').animate({height:'222px'}, 500,'','');
 			$('div#zoom_buttons').fadeOut();
 			$('div#down_databases_info').fadeOut();			
+
+                        $('#enlarge_map').fadeOut();
+		}
+						
+	});
+
+	$('#enlarge_map').click(function(ev){
+		ev.stopPropagation();
+		ev.preventDefault();
+		var map_height;
+		var maximize = false;
+		
+		if ($(this).hasClass('reduce_map')) {
+			$(this).removeClass('reduce_map');
+			$('div.map').animate({height:'528px'}, 500,'','');
+			$('div#map').animate({height:'400px'}, 500,'','');
+
+			$('#layout_header').animate({height:'528px'}, 500,'','');
+			$('div#zoom_buttons').fadeOut();
+			$('div#down_databases_info').fadeOut();			
+
+                        $('#resize_map').fadeIn();
+		} else {
+			$(this).addClass('reduce_map');			
+			$('div.map').animate({height:'728px'}, 500,'','');
+			$('div#map').animate({height:'600px'}, 500,'','');
+			$('#layout_header').animate({height:'728px'}, 500,'','');			
+			$('div#zoom_buttons').fadeIn();
+			$('div#down_databases_info').fadeIn();
+                        $('#resize_map').fadeOut();
 		}
 						
 	});

@@ -59,6 +59,12 @@
   <b>Meta download:</b>
   <%=h @dataset.meta_download %>
 </p>
+
+<p>
+  <b>Has Legend?:</b>
+  <%=h @dataset.has_legend? %>
+</p>
+
 <%= link_to 'Edit', edit_admin_dataset_path(@dataset), :class=> "button" %>
 <%= link_to 'Back', admin_datasets_path, :class=> "button" %>
 <br />

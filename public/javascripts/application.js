@@ -26,17 +26,6 @@ $(document).ready(function() {
 	$('div#container').css('display','none');
 	$('span#bottom_scrollable_databases').css('display','none');	
 	
-        /* VIZZ GMAPS
-	var myOptions = {
-	        zoom: 8,
-	        center: new google.maps.LatLng(28.685769,-14.540405),
-	        disableDefaultUI: true,
-	        scrollwheel:false,
-	        mapTypeId: google.maps.MapTypeId.TERRAIN
-	    };
-	    map = new google.maps.Map(document.getElementById("js_map"), myOptions);
-       */
-
         bounds = new OpenLayers.Bounds(-19037508.34, -14037508.34,
                                       10937508.34, 14037508.34);
 
@@ -55,7 +44,10 @@ $(document).ready(function() {
         
         map = new OpenLayers.Map('js_map', options);
         
-        var customControls = [new OpenLayers.Control.DragPan()
+        nav = new OpenLayers.Control.Navigation(),
+        nav.zoomWheelEnabled = false
+        var customControls = [new OpenLayers.Control.DragPan(),
+                              nav
                               ];
         for (var i=0; i<customControls.length; i++) {
           var control = customControls[i];

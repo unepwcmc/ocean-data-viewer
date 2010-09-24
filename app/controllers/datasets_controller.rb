@@ -8,6 +8,6 @@ class DatasetsController < ApplicationController
   # GET /datasets/1
   def show
     @dataset = Dataset.find(params[:id])
-    @customer = Customer.new
+    @customer = Customer.new(params[:customer])
   end
 end

@@ -111,11 +111,16 @@
                         <%= f.text_area :intended_use %>
                       </p>
                       <p>
-                         If you are planning an analysis that either makes use of the dataset(s) in their entirety and/or is a global-scale analysis, you are required to notify UNEP-WCMC to explore the appropriateness of the analysis and the possibilities for collaboration, and to avoid duplication of effort. 
-                      </p>
-                      <p>
                         <%= f.label 'I agree to the data licence (' + link_to('click to read more',  @dataset.licence, :target => "_blank") + ')' %><br />
                         <%= f.check_box :licence_agreed %>
+                      </p>
+                      <p>
+                        <%= f.label 'I agree that if I am planning an analysis that either makes use of the dataset(s) in their entirety and/or is a global-scale analysis, I am required to notify UNEP-WCMC to explore the appropriateness of the analysis and the possibilities for collaboration, and to avoid duplication of effort.' %><br />
+                        <%= f.check_box :understand_collaboration %>
+                      </p>
+                      <p>
+                        <%= f.label 'I agree to only use this data non commercially' %><br />
+                        <%= f.check_box :non_commercial %>
                       </p>
                       <p>
                         <%= f.submit 'Register' %>

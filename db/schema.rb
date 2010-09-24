@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100922154239) do
+ActiveRecord::Schema.define(:version => 20100924085950) do
 
   create_table "backup", :force => true do |t|
     t.string   "storage"
@@ -39,11 +39,13 @@ ActiveRecord::Schema.define(:version => 20100922154239) do
     t.string   "email"
     t.text     "institution"
     t.text     "intended_use"
-    t.boolean  "licence_agreed", :default => false
+    t.boolean  "licence_agreed",           :default => false
     t.integer  "licence_id"
     t.integer  "dataset_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "non_commercial"
+    t.boolean  "understand_collaboration"
   end
 
   create_table "datasets", :force => true do |t|

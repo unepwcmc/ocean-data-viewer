@@ -131,8 +131,6 @@ $(document).ready(function() {
 			$('div#map').animate({height:'400px'}, 500,'','');
 
 			$('#layout_header').animate({height:'528px'}, 500,'','');
-			$('div#zoom_buttons').fadeOut();
-			$('div#down_databases_info').fadeOut();			
 
                         $('#resize_map').fadeIn();
 		} else {
@@ -140,8 +138,6 @@ $(document).ready(function() {
 			$('div.map').animate({height:'728px'}, 500,'','');
 			$('div#map').animate({height:'600px'}, 500,'','');
 			$('#layout_header').animate({height:'728px'}, 500,'','');			
-			$('div#zoom_buttons').fadeIn();
-			$('div#down_databases_info').fadeIn();
                         $('#resize_map').fadeOut();
 		}
 						

@@ -84,7 +84,9 @@ $(document).ready(function() {
         OpenLayers.Projection.transform(point, map.displayProjection, map.getProjectionObject()); 
         map.setCenter(new OpenLayers.LonLat(point.x, point.y), myzoom);
 
-
+        if (typeof(loadWMS) == 'function'){
+          loadWMS();
+        }
 
 	$('div#zoom_buttons a#zoomIn').click(function(ev) {
 		ev.stopPropagation();
@@ -236,5 +238,4 @@ $(document).ready(function() {
 			$(this).children('p.text').removeClass('hover');
 	});	
 	
-        loadWMS();
 });

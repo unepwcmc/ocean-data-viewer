@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   map.about '/about', :controller => "static_contents", :action => "about"
   map.contact '/contact', :controller => "static_contents", :action => "contact"
   map.business '/business', :controller => "static_contents", :action => "business"
-  map.business '/geo_proxy', :controller => "proxy", :action => "geo_proxy"
+  map.geo_proxy '/geo_proxy', :controller => "proxy", :action => "geo_proxy"
   
   map.resources :datasets, :only => [:index, :show], :has_many => :customers
   map.resources :licences, :only => :show

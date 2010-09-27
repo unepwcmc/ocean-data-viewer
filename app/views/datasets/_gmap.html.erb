@@ -49,7 +49,9 @@
                       visibility: <%= display_layers.to_s %>
                     }
                 );
-            <% if dataset.wms_name == "wcmc:ebsa" %>
+
+            // this is currently commented, change back to wcmc:ebsa to restore
+            <% if dataset.wms_name == "wcmc:ebsass" %>
                 OpenLayers.ProxyHost = "/geo_proxy?url=";
 
                 // Add info overlay

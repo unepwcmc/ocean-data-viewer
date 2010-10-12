@@ -13,7 +13,7 @@
             <p>Description</p>
         </li>
         <li class="information">
-            <p class="first"><%= @licence.body %></p>
+            <p class="first"><%= RedCloth.new(@licence.body).to_html %></p>
         </li>
     </ul>
     <ul class="about last">

@@ -139,6 +139,7 @@ div#available_title_datasets ul li.information ul li a{font:bold 13px Arial; col
 div#available_title_datasets ul li.information ul li a:hover {color:#E58600; border-bottom:1px solid #E58600; }
 div#available_title_datasets ul li.information ul li.suboptions {float:left; height:45px; padding:5px 0 0 0; line-height:13px;}
 div#available_title_datasets ul li.information ul li.suboptions.columns3 {width:252px; }
+div#available_title_datasets ul li.information ul li.suboptions.columns4 {width:336px; }
 div#available_title_datasets ul li.information ul li.suboptions a {width:auto; }
 div#available_title_datasets ul li.information ul li.suboptions ul {float:left; width:100%; margin:0 0 0 0; height:6px; padding:8px 0 0 0;}
 div#available_title_datasets ul li.information ul li.suboptions ul li {float:left; width:82px; height:13px; margin:0px 0 0 0; padding:0; line-height:5px;}
@@ -220,6 +221,7 @@ ul#footer_datasets_table li a{font:bold 13px Arial; color:#999999; text-decorati
 ul#footer_datasets_table li a:hover {color:#E58600; border-bottom:1px solid #E58600; }
 ul#footer_datasets_table li.suboptions {float:left; height:45px; padding:5px 0 0 0; line-height:13px;}
 ul#footer_datasets_table li.suboptions.columns3 {width:252px; }
+ul#footer_datasets_table li.suboptions.columns4 {width:336px; }
 ul#footer_datasets_table li.suboptions a {width:auto;  }
 ul#footer_datasets_table li.suboptions ul {float:left; width:100%; margin:0 0 0 0; height:6px; padding:0 0 15px 0;}
 ul#footer_datasets_table li.suboptions ul li {float:left; width:82px; height:13px; margin:0px 0 0 0; padding:0; line-height:5px;}

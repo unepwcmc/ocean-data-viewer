@@ -113,18 +113,36 @@
                         <%= f.label :intended_use %><br />
                         <%= f.text_area :intended_use %>
                       </p>
-                      <p>
-                        <%= f.label 'I agree to the data licence (' + link_to('click to read more',  @dataset.licence, :target => "_blank") + ')' %><br />
-                        <%= f.check_box :licence_agreed %>
-                      </p>
-                      <p>
-                        <%= f.label '“I confirm that I am not planning an analysis that either makes use of the dataset(s) in their entirety and/or is a global-scale analysis” If you are planning such an analysis, please contact UNEP-WCMC at marine@unep-wcmc.org to explore the appropriateness of the analysis and the possibilities for collaboration, and to avoid duplication of effort.' %><br />
-                        <%= f.check_box :understand_collaboration %>
-                      </p>
-                      <p>
-                        <%= f.label 'I agree to only use this data for non commercial purposes' %><br />
-                        <%= f.check_box :non_commercial %>
-                      </p>
+                      <table >
+                        <tr>
+                          <td class="licence-table">
+                              <%= f.check_box :licence_agreed %>
+                          </td>
+                          <td>
+                              <%= f.label 'I agree to the data licence (' + link_to('click to read more',  @dataset.licence, :target => "_blank") + ')' %><br /><br/><br/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                              <%= f.check_box :understand_collaboration %>
+                          </td>
+                          <td>
+                            <%= f.label 'I confirm that I am not planning an analysis that either makes use of the dataset(s) in their entirety and/or is a global-scale analysis ' %>
+                            <br/>
+                            Please note, if you are planning such an analysis, please contact UNEP-WCMC at marine@unep-wcmc.org to explore
+                            the appropriateness of the analysis and the possibilities for collaboration, and to avoid duplication of effort.
+                            <br/><br/>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <%= f.check_box :non_commercial %>
+                          </td>
+                          <td>
+                            <%= f.label 'I agree to only use this data for non commercial purposes' %><br />
+                          </td>
+                        </tr>
+                      </table>
                       <p>
                         <%= f.submit 'Register' %>
                       </p>

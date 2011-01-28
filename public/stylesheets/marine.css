@@ -107,3 +107,6 @@ th a{
         padding: 7px;
 }
 
+.licence_table td {
+        vertical-align: top;
+}

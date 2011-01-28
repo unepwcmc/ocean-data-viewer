@@ -24,7 +24,7 @@ set :scm, :git
 set :branch, "master"
 set :scm_username, "unepwcmc-read"
 set :git_enable_submodules, 1
-set :deploy_via, :remote_cache
+set :deploy_via, :copy#:remote_cache
 
 ### Other options you can set ##
 # Comma separated list of additional domains for Apache

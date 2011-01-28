@@ -19,7 +19,7 @@ set(:deploy_to) { File.join("", "home", user, "webapps", application) }
 
 # URL of your source repository. This is the default one that comes on 
 # every Brightbox, you can use your own (we'll let you :)
-set :repository, "git@github.com:th3james/marine-portal.git"
+set :repository, "git@github.com:unepwcmc/marine-portal.git"
 set :scm, :git
 set :branch, "master"
 set :scm_username, "th3james"

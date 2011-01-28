@@ -22,7 +22,7 @@ set(:deploy_to) { File.join("", "home", user, "webapps", application) }
 set :repository, "git@github.com:unepwcmc/marine-portal.git"
 set :scm, :git
 set :branch, "master"
-set :scm_username, "th3james"
+set :scm_username, "unepwcmc-read"
 set :git_enable_submodules, 1
 set :deploy_via, :remote_cache
 

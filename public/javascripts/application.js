@@ -30,7 +30,7 @@ $(document).ready(function() {
                                       10937508.34, 14037508.34);
 
         var options = {
-                projection: new OpenLayers.Projection("EPSG:900913"),
+                projection: new OpenLayers.Projection("EPSG:102113"),
                 displayProjection: new OpenLayers.Projection("EPSG:4326"),
                 units: "m",
                 numZoomLevels: 18,

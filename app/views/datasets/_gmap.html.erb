@@ -34,20 +34,18 @@
             wmses << "wms_" + i.to_s 
         %>
             /* <%= dataset.title %> */
-            <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
+
+
+
+
+/*CONNECT TO ARCGIS SERVER AND GRAB TILES*/
+
+            <%= wmses.last %> = new OpenLayers.Layer.ArcGIS93Rest("<%= dataset.title %>",
                     "<%= dataset.wms_server %>", 
-                    {
-                      layers: '<%= dataset.wms_name %>',
-                      tiled: true,
-                      transparent: true,
-                      format: 'image/png'
-                    },
-                    {
-                      transparent: true,
-                      isBaseLayer: false,
-                      wrapDateLine: true,
-                      visibility: <%= display_layers.to_s %>
-                    }
+                    {layers: "show:0,2",
+                     TRANSPARENT: true},
+                    {isBaseLayer: false,
+                     extractAttributes: true}
                 );
 
             // this is currently commented, change back to wcmc:ebsa to restore

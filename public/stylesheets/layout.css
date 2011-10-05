@@ -354,3 +354,6 @@ div#error_flash {
   z-index: 10;
 }
 
+.olLayerGoogleCopyright {
+  top: -100000px;
+}

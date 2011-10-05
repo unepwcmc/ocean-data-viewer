@@ -33,10 +33,10 @@
           datasets.each_with_index do |dataset, i|
             wmses << "wms_" + i.to_s 
         %>
-            /* <%= dataset.title %> */
+            // <%= dataset.title %>
 
-            /*CONNECT TO TILE SERVER AND GRAB TILES*/
             <% if dataset.wms_name != '0' %>
+                // Create Geoserver layer (set wms_name as 0 for ArcGIS)
                 <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
                     "<%= dataset.wms_server %>",
                     {
@@ -53,6 +53,7 @@
                     }
                 );
             <% else %>
+                // Create ArcGIS layer
                 <%= wmses.last %> = new OpenLayers.Layer.ArcGIS93Rest("<%= dataset.title %>",
                     "<%= dataset.wms_server %>",
                     {layers: "show:0,2",

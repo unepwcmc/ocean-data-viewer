@@ -35,26 +35,41 @@
         %>
             /* <%= dataset.title %> */
 
-
-
-
-/*CONNECT TO ARCGIS SERVER AND GRAB TILES*/
-
-            <%= wmses.last %> = new OpenLayers.Layer.ArcGIS93Rest("<%= dataset.title %>",
-                    "<%= dataset.wms_server %>", 
+            /*CONNECT TO TILE SERVER AND GRAB TILES*/
+            <% if dataset.wms_name != '0' %>
+                <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
+                    "<%= dataset.wms_server %>",
+                    {
+                        layers: '<%= dataset.wms_name %>',
+                        tiled: true,
+                        transparent: true,
+                        format: 'image/png'
+                    },
+                    {
+                        transparent: true,
+                        isBaseLayer: false,
+                        wrapDateLine: true,
+                        visibility: <%= display_layers.to_s %>
+                    }
+                );
+            <% else %>
+                <%= wmses.last %> = new OpenLayers.Layer.ArcGIS93Rest("<%= dataset.title %>",
+                    "<%= dataset.wms_server %>",
                     {layers: "show:0,2",
                      TRANSPARENT: true},
                     {isBaseLayer: false,
                      extractAttributes: true,
-					 visibility: <%= display_layers.to_s %>}
+                     visibility: <%= display_layers.to_s %>}
                 );
+            <% end %>
 
-            // this is currently commented, change back to wcmc:ebsa to restore
-            <% if dataset.wms_name == "wcmc:ebsass" %>
+
+
+            <% if dataset.wms_name == "wcmc:ebsass" #this is currently commented, change back to wcmc:ebsa to restore %>
                 OpenLayers.ProxyHost = "/geo_proxy?url=";
 
                 // Add info overlay
-                info = new OpenLayers.Control.WMSGetFeatureInfo({
+                var info = new OpenLayers.Control.WMSGetFeatureInfo({
                     url: '<%= datasets[0].wms_server %>', 
                     title: 'Identify features by clicking',
                     queryVisible: true,

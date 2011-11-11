@@ -69,7 +69,7 @@
     <div class="content_right">
         <div class="data_set_box">
             <div class="buttons">
-		<% if session["dataset_#{@dataset.id}"] == "agreed" -%>
+                <% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% elsif /(.*)protectedplanet\.net(.*)/.match @dataset.shp_download -%>
                   <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at protectedplanet.net" %>
@@ -80,74 +80,7 @@
                 <% elsif @dataset.shp_download == "" -%>
                   Sorry, there is no data available to download for this dataset
                 <% else -%>
-                  <%= link_to "", "#registration", :id => 'Download' , :rel => "facebox", :class=>"download" %>
-
-                  <div id="registration" style="display:none;width:800px;">
-                    <h1>New data access registrant</h1>
-
-                    <% form_for([@dataset, @customer], :html => {:onsubmit => "hideFormElements()"}) do |f| %>
-                      <%= f.error_messages %>
-                      <%= @customer.errors.collect { |c| puts c} %>
-
-                      <p>
-                        <%= f.label :title %><br />
-                        <%= f.select :title, [["Mr", "Mr"],["Mrs", "Mrs"],["Ms", "Ms"],["Miss", "Miss"],["Dr", "Dr"],["Prof", "Prof"]], {:include_blank => true} %>
-                      </p>
-                      <p>
-                        <%= f.label :first_name %><br />
-                        <%= f.text_field :first_name, :class => "text"%>
-                      </p>
-                      <p>
-                        <%= f.label :last_name %><br />
-                        <%= f.text_field :last_name,:class => "text" %>
-                      </p>
-                      <p>
-                        <%= f.label :email %><br />
-                        <%= f.text_field :email,:class => "text" %>
-                      </p>
-                      <p>
-                        <%= f.label :institution %><br />
-                        <%= f.text_area :institution,:class => "text" %>
-                      </p>
-                      <p>
-                        <%= f.label :intended_use %><br />
-                        <%= f.text_area :intended_use %>
-                      </p>
-                      <table >
-                        <tr>
-                          <td class="licence-table">
-                              <%= f.check_box :licence_agreed %>
-                          </td>
-                          <td>
-                              <%= f.label 'I agree to the data licence (' + link_to('click to read more',  @dataset.licence, :target => "_blank") + ')' %><br /><br/><br/>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                              <%= f.check_box :understand_collaboration %>
-                          </td>
-                          <td>
-                            <%= f.label 'I confirm that I am not planning an analysis that either makes use of the dataset(s) in their entirety and/or is a global-scale analysis ' %>
-                            <br/>
-                            Please note, if you are planning such an analysis, please contact UNEP-WCMC at marine@unep-wcmc.org to explore
-                            the appropriateness of the analysis and the possibilities for collaboration, and to avoid duplication of effort.
-                            <br/><br/>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>
-                            <%= f.check_box :non_commercial %>
-                          </td>
-                          <td>
-                            <%= f.label 'I agree to only use this data for non commercial purposes' %><br />
-                          </td>
-                        </tr>
-                      </table>
-                      <p>
-                        <%= f.submit 'Register' %>
-                      </p>
-                    <% end %>
-                  </div>
+                  <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% end -%>
                 <% if @dataset.arcgis_link.present? %>
                   <%= link_to "", @dataset.arcgis_link, :class=>"arcgis tipsy", :style => "padding: 0px", :target => '_blank', :title => 'Click here to view this dataset on Arcgis.com. To add other layers from Ocean Data Viewer, click the "Add" button and search for the dataset titles' %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100924085950) do
+ActiveRecord::Schema.define(:version => 20120528093306) do
 
   create_table "backup", :force => true do |t|
     t.string   "storage"
@@ -72,6 +72,10 @@ ActiveRecord::Schema.define(:version => 20100924085950) do
     t.string   "arcgis_link"
     t.integer  "order_number"
     t.boolean  "has_legend"
+    t.string   "factsheet_file_name"
+    t.string   "factsheet_content_type"
+    t.integer  "factsheet_file_size"
+    t.datetime "factsheet_updated_at"
   end
 
   create_table "datasets_decisions", :force => true do |t|

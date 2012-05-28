@@ -179,6 +179,16 @@ $(document).ready(function() {
 			$(this).children('div#download_tooltip').fadeOut('fast');
 	});
 
+        $('div.buttons a.download_factsheet').hover(function(ev) {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            $(this).children('div#factsheet_tooltip').css('display','inline');
+          },
+          function(ev){
+            $(this).children('div#factsheet_tooltip').fadeOut('fast');
+        });
+
 	$('div.buttons a.download_arcgis').hover(function(ev) {
 		ev.stopPropagation();
 		ev.preventDefault();

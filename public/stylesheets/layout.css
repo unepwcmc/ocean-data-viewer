@@ -359,3 +359,14 @@ div#error_flash {
 .olLayerGoogleCopyright {
   top: -100000px;
 }
+
+#factsheets {
+  margin-top: 10px;
+  margin-left: 30px;
+  list-style-type: disc;
+}
+
+#factsheets a {
+  text-decoration:none;
+  color: #E58600;
+}

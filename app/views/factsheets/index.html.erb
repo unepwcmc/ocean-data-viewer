@@ -1,0 +1,24 @@
+<div id="licence_content">
+    <ul>
+        <li class="gray detail">Ocean Data Viewer</li>
+        <li class="information">Factsheets</li>
+    </ul>
+</div>
+
+<a id="resize_map"></a>	
+<div id="licence_content_information">
+
+  <ul class="about first last">
+    <li class="title">
+      <p>Factsheet downloads</p>
+    </li>
+    <li class="information">
+      Here are our factsheets, we hope you like them:
+      <ul id='factsheets'>
+        <% @datasets.each do |dataset| %>
+          <li><%= link_to dataset.title, dataset.factsheet.url %></li>
+        <% end %>
+      </ul>
+    </li>
+  </ul>
+</div>

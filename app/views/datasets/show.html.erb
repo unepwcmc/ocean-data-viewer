@@ -83,7 +83,7 @@
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% end -%>
 
-                <% if @dataset.factsheet.present? %>
+                <% if @dataset.factsheet.file? %>
                   <%= link_to "", @dataset.factsheet.url, :class=>"factsheet" %>
                 <% end %>
 

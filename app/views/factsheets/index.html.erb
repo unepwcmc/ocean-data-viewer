@@ -13,7 +13,8 @@
       <p>Factsheet downloads</p>
     </li>
     <li class="information">
-      Here are our factsheets, we hope you like them:
+    <p>Supplementary information, metadata and attribute field descriptions for the spatial data available to download.</p>
+    <p>Please note all factsheets require Acrobat Reader available from <a href='http://www.adobe.com'>www.adobe.com</a></p>
       <ul id='factsheets'>
         <% @datasets.each do |dataset| %>
           <li><%= link_to dataset.title, dataset.factsheet.url %></li>

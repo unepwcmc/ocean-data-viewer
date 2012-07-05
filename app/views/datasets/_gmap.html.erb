@@ -10,7 +10,7 @@
     	<div id="scrollable_databases"class="scroll-pane" >
             <ul id="list">
               <% datasets.each_with_index do |dataset, i| %>
-                <li class="type<%= (i + 1)%9 %> <%= 'first' if i ==0 %> <%= 'checked' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
+                <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'checked' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
                     <span class="check_box"></span>
                     <p class="text"><%= dataset.title %></p>
                 </li>

@@ -94,15 +94,22 @@ div#scrollable_databases ul#list li p.text { color:#666666; }
 div#scrollable_databases ul#list li p.text.hover {text-decoration:underline;}
 
 div#scrollable_databases ul#list li.unchecked {background-color:white;}
-div#scrollable_databases ul#list li.checked.type1 {background-color:#FABD7F;}
-div#scrollable_databases ul#list li.checked.type2 {background-color:#44D487;}
-div#scrollable_databases ul#list li.checked.type3 {background-color:#CC6699;}
-div#scrollable_databases ul#list li.checked.type4 {background-color:#2D3638;}
+div#scrollable_databases ul#list li.checked.type13 {background-color:#FFAA00;}
+div#scrollable_databases ul#list li.checked.type14 {background-color:#A900E6;}
+div#scrollable_databases ul#list li.checked.type6  {background-color:#267300;}
+div#scrollable_databases ul#list li.checked.type7  {background-color:#55FF00;}
+div#scrollable_databases ul#list li.checked.type8  {background-color:#E6E600;}
+div#scrollable_databases ul#list li.checked.type11 {background-color:#66CC99;}
+div#scrollable_databases ul#list li.checked.type9  {background-color:#CD6666;}
+div#scrollable_databases ul#list li.checked.type10 {background-color:#A80000;}
+div#scrollable_databases ul#list li.checked.type1  {background-color:#CC66CC;}
+div#scrollable_databases ul#list li.checked.type17 {background-color:#99B3CC;}
+div#scrollable_databases ul#list li.checked.type16 {background-color:#E1E73D;}
+div#scrollable_databases ul#list li.checked.type15 {background-color:#399CF0;}
+div#scrollable_databases ul#list li.checked.type4 {background-color:#98B285;}
 div#scrollable_databases ul#list li.checked.type5 {background-color:#B9C47A;}
-div#scrollable_databases ul#list li.checked.type6 {background-color:#B3C1D1;}
-div#scrollable_databases ul#list li.checked.type7 {background-color:#109489;}
-div#scrollable_databases ul#list li.checked.type8 {background-color:#0099CC;}
-div#scrollable_databases ul#list li.checked.type0 {background-color:#E9BA60;}
+div#scrollable_databases ul#list li.checked.type3 {background-color:#B3C1D1;}
+div#scrollable_databases ul#list li.checked.type19 {background-color:#109489;}
 
 span#bottom_scrollable_databases {float:left; width:231px; height:8px; background:url(../images/bottom_db_list.png) no-repeat 0 0; display:inline; margin:0;}
 

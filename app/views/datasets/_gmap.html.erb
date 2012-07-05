@@ -54,14 +54,14 @@
                 );
             <% else %>
                 // Create ArcGIS layer
-                <%= wmses.last %> = new OpenLayers.Layer.ArcGIS93Rest("<%= dataset.title %>",
-                    "<%= dataset.wms_server %>",
-                    {layers: "show:0,2",
-                     TRANSPARENT: true},
-                    {isBaseLayer: false,
-                     extractAttributes: true,
-                     visibility: <%= display_layers.to_s %>}
-                );
+                <%= wmses.last %> = new OpenLayers.Layer.ArcGISCache("<%= dataset.title %>", "<%= dataset.wms_server %>", {
+                  tileOrigin: new OpenLayers.LonLat(-20037508.342787 , 20037508.342787),
+                  useAGS: true,
+                  sphericalMercator: true,
+                  useArcGISServer: true,
+                  isBaseLayer: false,
+                  maxExtent: new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34)
+                });
             <% end %>
 
 

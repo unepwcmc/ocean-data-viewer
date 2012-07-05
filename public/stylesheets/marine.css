@@ -110,3 +110,8 @@ th a{
 .licence_table td {
         vertical-align: top;
 }
+
+.olImageLoadError { 
+  /* when OL encounters a 404, don't display the pink image */
+  display: none !important;
+}

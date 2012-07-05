@@ -24,6 +24,12 @@ class Dataset < ActiveRecord::Base
                      :path => "resources/:class/:attachment/:id/:style_:basename.:extension",
                      :url => ":s3_domain_url"
 
+  has_attached_file :factsheet,
+                     :storage => :s3,
+                     :s3_credentials => "#{RAILS_ROOT}/config/s3.yml",  
+                     :bucket => "marine-portal",
+                     :path => "resources/:class/:attachment/:id/:style_:basename.:extension",
+                     :url => ":s3_domain_url"
   private
 
   def strip_urls

@@ -8,6 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :datasets, :only => [:index, :show], :has_many => :customers
   map.resources :licences, :only => :show
+  map.resources :factsheets, :only => :index
   
   map.namespace(:admin) do |admin| 
     admin.root :controller => "datasets", :action => "index"

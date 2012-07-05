@@ -16,6 +16,7 @@ div#content_header {float:left; width:100%; height:auto; position:relative;}
 /*TOOLTIPS*/
 
 div#download_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px Arial; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
+div#factsheet_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px Arial; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
 div#arcgis_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px Arial; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
 
 div#info_tooltip {position:absolute; bottom:29px; left:-33px; width:160px; height:auto; z-index:500; display:none;}
@@ -163,10 +164,12 @@ div#data_set_content_datasets ul.dataset li.title div.text {float:left; width:18
 div#data_set_content_datasets ul.dataset li.title a {height:auto; font:bold 15px Arial; color:#666666; text-decoration:none; }
 div#data_set_content_datasets ul.dataset li.title a:hover {color:#E58600; border-bottom:1px solid #E58600;}
 div#data_set_content_datasets ul.dataset li.title span {font:normal 14px Georgia; color:#999999;}
-div#data_set_content_datasets ul.dataset li.title div.buttons {float:right; width:35px; height:100%; margin:3px 0 0 0;}
+div#data_set_content_datasets ul.dataset li.title div.buttons {float:right; width:55px; height:100%; margin:3px 0 0 0;}
 div#data_set_content_datasets ul.dataset li.title div.buttons a {position:relative;}
 div#data_set_content_datasets ul.dataset li.title a.download_dataset {float:left; background:url(../images/download_dataset_icon.png) no-repeat 0 0; width:10px; height:14px; margin:0 5px 0 0; border:none;} 
 div#data_set_content_datasets ul.dataset li.title a.download_dataset:hover {background-position:0 -14px; border:none;}
+div#data_set_content_datasets ul.dataset li.title a.download_factsheet {float:left; background:url(../images/download_factsheet_icon.png) no-repeat 0 0; width:17px; height:14px; margin:0 5px 0 0; border:none;} 
+div#data_set_content_datasets ul.dataset li.title a.download_factsheet:hover {background-position:0 -15px; border:none;}
 div#data_set_content_datasets ul.dataset li.title a.download_arcgis {float:left; background:url(../images/download_arcgis_icon.png) no-repeat 0 0; width:17px; height:15px;} 
 div#data_set_content_datasets ul.dataset li.title a.download_arcgis:hover {background-position:0 -15px; border:none;}
 
@@ -252,7 +255,7 @@ div#data_set_content div.content_left ul li.information p a:hover {color:#C87500
 div#data_set_content div.content_left span.end_information {float:right; background:url(../images/bkg_last_content_data.png) no-repeat 0 0; width:505px; height:22px;}
 
 div#data_set_content div.content_right {float:right; width:236px; }
-div#data_set_content div.content_right div.data_set_box {float:left; background:url(../images/bkg_right_data_box.png) no-repeat; width:236px; height:176px; padding:20px 0;}
+div#data_set_content div.content_right div.data_set_box {float:left; background:url(../images/bkg_right_data_box.png) repeat-y; width:236px; padding:20px 0;}
 div#data_set_content div.content_right div.data_set_box div.buttons {float:left; width:211px; height:auto; border-bottom:1px solid #BABABA; margin:10px 0 0 0; padding:0 0 20px 23px;}
 div#data_set_content div.content_right div.data_set_box div.last_date {float:left; width:213px; height:auto; border-top:1px solid #E3E3E3; margin:0; padding:0 0 20px 23px;}
 div#data_set_content div.content_right div.data_set_box h4 {float:left; font:bold 11px Arial; color:#666666; text-transform:uppercase; margin:13px 0 0 0; width:213px;}
@@ -262,6 +265,8 @@ div#data_set_content div.content_right div.data_set_box p.date {float:left; font
 div#data_set_content div.content_right div.data_set_box a.download {float:left; background:url(../images/download_button.png) no-repeat 0 0; width:185px; height:40px; margin:0;}
 div#data_set_content div.content_right div.data_set_box a.straight_download {float:left; background:url(../images/download_button.png) no-repeat 0 0; width:185px; height:40px; margin:0;}
 div#data_set_content div.content_right div.data_set_box a.download:hover {background-position:0 -40px;}
+div#data_set_content div.content_right div.data_set_box a.factsheet {float:left; background:url(../images/factsheet_button.png) no-repeat 0 0; width:185px; height:40px; margin: 14px 0 0 0;}
+div#data_set_content div.content_right div.data_set_box a.factsheet:hover {background-position:0 -40px;}
 div#data_set_content div.content_right div.data_set_box a.arcgis {float:left; background:url(../images/arcgis_button.png) no-repeat 0 0; width:185px; height:40px; margin:14px 0 0 0;}
 div#data_set_content div.content_right div.data_set_box a.arcgis:hover {background-position:0 -40px;}
 
@@ -356,4 +361,16 @@ div#error_flash {
 
 .olLayerGoogleCopyright {
   top: -100000px;
+}
+
+#factsheets {
+  clear:both;
+  margin-top: 80px;
+  margin-left: 40px;
+  list-style-type: disc;
+}
+
+#factsheets a {
+  text-decoration:none;
+  color: #E58600;
 }

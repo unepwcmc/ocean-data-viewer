@@ -38,7 +38,7 @@ div#header {position:left; position:absolute; top:0; left:0; width:930px; paddin
 div#header div.content_left {float:left; width:660px}
 div#header div.content_right {float:right;  width:260px}
 div#header h1 a {float:left; font:bold 37px Arial; color:white; width:100%; height:auto; margin:0; text-shadow:0px 2px 0px #3D3D3D; text-decoration:none;}
-div#header ul.info {float:left; height:90px; width:250px; margin:7px 0 0 40px; padding:0;}
+div#header ul.info {float:left; height:90px; width:250px; margin:7px 0 0 170px; padding:0;}
 div#header ul.info li {float:left; height:100%;}
 
 div#header ul.info li.datasets {float:left; width:90px; margin:0; }

@@ -94,6 +94,9 @@ div#scrollable_databases ul#list li p.text { color:#666666; }
 div#scrollable_databases ul#list li p.text.hover {text-decoration:underline;}
 
 div#scrollable_databases ul#list li.unchecked {background-color:white;}
+
+div#scrollable_databases ul#list li.checked.type21 {background-color:#734c00;}
+div#scrollable_databases ul#list li.checked.type22 {background-color:#a8a800;}
 div#scrollable_databases ul#list li.checked.type13 {background-color:#FFAA00;}
 div#scrollable_databases ul#list li.checked.type14 {background-color:#A900E6;}
 div#scrollable_databases ul#list li.checked.type6  {background-color:#267300;}

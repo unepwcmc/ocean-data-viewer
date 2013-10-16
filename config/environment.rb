@@ -23,6 +23,9 @@ Rails::Initializer.run do |config|
   config.gem "paperclip", :ver => "2.3.1.1"
   config.gem "aws-s3", :lib => "aws/s3"
   config.gem "backup"
+  config.gem "capistrano", :version => "2.15.4"
+  config.gem "brightbox", :version => "2.3.9"
+
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
   # config.plugins = [ :exception_notification, :ssl_requirement, :all ]

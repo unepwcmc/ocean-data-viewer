@@ -116,6 +116,8 @@ div#scrollable_databases ul#list li.checked.type19 {background-color:#109489;}
 div#scrollable_databases ul#list li.checked.type28 {background-color:#ecd906;}
 div#scrollable_databases ul#list li.checked.type27 {background-color:#43c2d9;}
 div#scrollable_databases ul#list li.checked.type26 {background-color:#5c83c4;}
+div#scrollable_databases ul#list li.checked.type29 {background-color:#ff0000;}
+div#scrollable_databases ul#list li.checked.type30 {background-color:#59c3e2;}
 
 span#bottom_scrollable_databases {float:left; width:231px; height:8px; background:url(../images/bottom_db_list.png) no-repeat 0 0; display:inline; margin:0;}
 

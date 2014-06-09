@@ -14,7 +14,7 @@ development:
   database: marine_portal_development
   pool: 5
   username: postgres
-  password:
+  password: postgres
 
 production:
   adapter: postgresql

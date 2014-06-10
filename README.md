@@ -69,11 +69,12 @@ LC_ALL=en_US.UTF-8
 
 ## Setup the app environment
 
-Donwload rvm:
+Donwload & Install rvm:
 
 ```
 $ curl -sSL https://get.rvm.io | bash -s stable
 $ source /etc/profile.d/rvm.sh
+$ echo "source /etc/profile.d/rvm.sh" >> /etc/environment
 ```
 
 Install ruby version:

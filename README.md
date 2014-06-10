@@ -24,7 +24,17 @@ $ vagrant ssh
 First you need to download the postgresql database.
 
 ```
+$ sudo apt-get update
 $ sudo apt-get install postgresql
+```
+
+You will need to configure the postgresql.
+
+Configure machine environment, add those lines to `/etc/environment`
+
+```
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
 ```
 
 ## Setup the app environment
@@ -32,7 +42,8 @@ $ sudo apt-get install postgresql
 Donwload rvm:
 
 ```
-curl -sSL https://get.rvm.io | bash -s stable
+$ curl -sSL https://get.rvm.io | bash -s stable
+$ source /etc/profile.d/rvm.sh
 ```
 
 Install ruby version:

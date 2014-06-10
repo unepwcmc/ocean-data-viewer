@@ -24,8 +24,16 @@ $ vagrant ssh
 First you need to download the postgresql database.
 
 ```
+$ export LANG=en_US.UTF-8
+$ export LC_ALL=en_US.UTF-8
 $ sudo apt-get update
 $ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison postgresql postgresql-server-dev-all
+```
+
+Start postgres server:
+
+```
+$ pg_createcluster 9.1 main --start
 ```
 
 You will need to configure the postgresql. Change the `postgres` user password:

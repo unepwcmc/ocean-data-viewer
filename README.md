@@ -86,11 +86,15 @@ Create the app gemset:
 
 ```
 $ rvm ruby-1.8.7-head do rvm gemset create marine_portal
+$ cd /vagrant
 ```
 
 Then you will have to install all the gems manually:
 
 ```
+$ echo "gem: --no-document" >> ~/.gemrc
+$ gem update --system 1.8.25
+$ gem install mime-types -v=1.17.2
 $ gem install rake
 $ gem install -v=2.3.18 rails
 $ gem install rdoc

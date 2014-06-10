@@ -57,3 +57,27 @@ Create the app gemset:
 ```
 $ rvm ruby-1.8.7-head do rvm gemset create marine_portal
 ```
+
+Then you will have to install all the gems manually:
+
+```
+$ gem install rake
+$ gem install -v=2.3.18 rails
+$ gem install rdoc
+$ gem install activerecord-postgresql-adapter
+$ gem install aws-s3
+$ gem install RedCloth
+$ gem install backup -v=3.0.27
+```
+
+After that, you can run the rake task to create the database:
+
+```
+$ rake db:setup
+```
+
+Finally run the app, run it on port 80 and then in your host machine you can see the app at 8080.
+
+```
+$ ./script/server -p 80
+```

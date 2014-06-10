@@ -25,10 +25,33 @@ First you need to download the postgresql database.
 
 ```
 $ sudo apt-get update
+$ apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison
 $ sudo apt-get install postgresql
 ```
 
-You will need to configure the postgresql.
+You will need to configure the postgresql. Change the `postgres` user password:
+
+```
+$ sudo -u postgres psql template1
+```
+
+Run SQL code to change the password:
+
+```sql
+ALTER USER postgres with encrypted password 'postgres';
+```
+
+After configuring the password, edit the file `/etc/postgresql/9.1/main/pg_hba.conf` to use MD5 authentication with the postgres user:
+
+```
+local   all         postgres                          md5
+```
+
+Finnally, restart postgresql:
+
+```
+sudo /etc/init.d/postgresql restart
+```
 
 Configure machine environment, add those lines to `/etc/environment`
 
@@ -76,7 +99,9 @@ After that, you can run the rake task to create the database:
 $ rake db:setup
 ```
 
-Finally run the app, run it on port 80 and then in your host machine you can see the app at 8080.
+## Run the app
+
+To run the app, run it on port 80 and then in your host machine you can see the app at 8080.
 
 ```
 $ ./script/server -p 80

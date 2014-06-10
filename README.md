@@ -92,7 +92,7 @@ $ cd /vagrant
 Then you will have to install all the gems manually:
 
 ```
-$ echo "gem: --no-document" >> ~/.gemrc
+$ echo "gem: --no-document --no-ri --no-rdoc" >> ~/.gemrc
 $ gem update --system 1.8.25
 $ gem install mime-types -v=1.17.2
 $ gem install rake

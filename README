@@ -19,3 +19,26 @@ To Deploy
 cap deploy
 
 Password is in the 'Setting up Brightbox' PT project
+
+
+
+How to setup using Vagrant
+==========================
+
+First download the [Vagrant App](http://www.vagrantup.com/downloads.html) and then the box we gonna use:
+
+```
+$ vagrant box add ubuntu-13.04 https://cloud-images.ubuntu.com/vagrant/raring/current/raring-server-cloudimg-i386-vagrant-disk1.box
+```
+
+Then go to the project directory and run:
+
+```
+$ vagrant up
+```
+
+Wait it to get up the image, then login via ssh in the machine.
+
+```
+$ vagrant ssh
+```

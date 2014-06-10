@@ -117,3 +117,9 @@ To run the app, run it on port 80 and then in your host machine you can see the 
 ```
 $ ./script/server -p 80
 ```
+
+Go to your preferred browser:
+
+```
+http://localhost:8080/
+```

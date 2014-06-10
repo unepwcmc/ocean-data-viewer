@@ -1,5 +1,5 @@
-How to setup using Vagrant
-==========================
+How to run using Vagrant
+========================
 
 First download the [Vagrant App](http://www.vagrantup.com/downloads.html) and then the box we gonna use:
 

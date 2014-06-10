@@ -25,8 +25,7 @@ First you need to download the postgresql database.
 
 ```
 $ sudo apt-get update
-$ apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison
-$ sudo apt-get install postgresql
+$ sudo apt-get install build-essential openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison postgresql postgresql-server-dev-all
 ```
 
 You will need to configure the postgresql. Change the `postgres` user password:

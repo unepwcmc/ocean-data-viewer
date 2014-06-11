@@ -9,8 +9,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'spring',        group: :development
 
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
 gem 'RedCloth'
+
+group :development, :test do
+  gem 'dotenv-rails'
+  gem 'spring'
+end

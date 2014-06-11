@@ -11,7 +11,7 @@
 // about supported directives.
 //
 //= require ../../../vendor/assets/bower_components/leaflet/dist/leaflet
-//= require_tree ../../../vendor/assets/bower_components
+//= require ../../../vendor/assets/bower_components/esri-leaflet/dist/esri-leaflet
 //= require OpenLayers
 //= require ArcGISCache
 //= require facebox

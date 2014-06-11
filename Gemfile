@@ -11,6 +11,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'spring',        group: :development
 
-gem 'paperclip'
+gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
 gem 'RedCloth'

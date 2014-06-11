@@ -1,9 +1,11 @@
-== README
+README
+======
 
 Ruby version: 2.1.0
 Rails version: 4.1.1
 
-== Setup
+Setup
+-----
 
 Install the dependencies:
 

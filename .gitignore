@@ -1,8 +1,0 @@
-*.swp
-*.swo
-*.un~
-log/*
-
-.idea/
-nbproject
-.vagrant

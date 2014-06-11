@@ -43,38 +43,6 @@ $(document).ready(function() {
 
   L.esri.basemapLayer("Topographic").addTo(map);
 
-  // nav = new OpenLayers.Control.Navigation(),
-  // nav.zoomWheelEnabled = false
-  // var customControls = [new OpenLayers.Control.DragPan(),
-  //                       nav
-  //                       ];
-  // for (var i=0; i<customControls.length; i++) {
-  //   var control = customControls[i];
-  //   map.addControl(control);
-  //   control.activate();
-  // }
-
-
-  // // create Google Mercator layers
-  // var satellite = new OpenLayers.Layer.Google(
-  //     "Google Streets",
-  //     {
-  //       sphericalMercator: true,
-  //       scrollwheel:false,
-  //       type: google.maps.MapTypeId.TERRAIN
-  //     }
-  // );
-  // map.addLayers([satellite])
-
-  // // Hack required to get set centre working
-  // var myzoom = 2;
-  // var lonCenter = 10;
-  // var latCenter = 25;
-
-  // point = new OpenLayers.Geometry.Point(lonCenter, latCenter);
-  // OpenLayers.Projection.transform(point, map.displayProjection, map.getProjectionObject());
-  // map.setCenter(new OpenLayers.LonLat(point.x, point.y), myzoom);
-
   // if (typeof(loadWMS) == 'function'){
   //   loadWMS();
   // }

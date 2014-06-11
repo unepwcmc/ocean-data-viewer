@@ -1,3 +1,4 @@
 tmp
 .ruby-gemset
-
+log/*.log
+.DS_Store

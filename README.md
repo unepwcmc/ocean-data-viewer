@@ -1,6 +1,6 @@
 == README
 
-The ruby version is: 2.1.0
+Ruby version: 2.1.0
 Rails version: 4.1.1
 
 == Setup

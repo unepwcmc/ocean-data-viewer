@@ -36,34 +36,25 @@
             // <%= dataset.title %>
 
             <% if dataset.wms_name != '0' %>
-                // Create Geoserver layer (set wms_name as 0 for ArcGIS)
-                <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
-                    "<%= dataset.wms_server %>",
-                    {
+                <%= wmses.last %> = new L.tileLayer.wms("<%= dataset.wms_server %>", {
                         layers: '<%= dataset.wms_name %>',
-                        tiled: true,
                         transparent: true,
                         format: 'image/png'
-                    },
-                    {
-                        transparent: true,
-                        isBaseLayer: false,
-                        wrapDateLine: true,
-                        visibility: <%= display_layers.to_s %>,
-                        projection: 'EPSG:100135'
-                    }
-                );
+                    });
             <% else %>
                 // Create ArcGIS layer
-                <%= wmses.last %> = new OpenLayers.Layer.ArcGISCache("<%= dataset.title %>", "<%= dataset.wms_server %>", {
-                  tileOrigin: new OpenLayers.LonLat(-20037508.342787 , 20037508.342787),
-                  useAGS: true,
-                  sphericalMercator: true,
-                  useArcGISServer: true,
-                  isBaseLayer: false,
-                  visibility: <%= display_layers.to_s %>,
-                  maxExtent: new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34)
-                });
+                //<%= wmses.last %> = new OpenLayers.Layer.ArcGISCache("<%= dataset.title %>", "<%= dataset.wms_server %>", {
+                //  tileOrigin: new OpenLayers.LonLat(-20037508.342787 , 20037508.342787),
+                //  useAGS: true,
+                //  sphericalMercator: true,
+                //  useArcGISServer: true,
+                //  isBaseLayer: false,
+                //  visibility: <%= display_layers.to_s %>,
+                //  maxExtent: new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34)
+                //});
+              <%= wmses.last %> = new L.esri.DynamicMapLayer("<%= dataset.wms_server %>", {
+                  opacity : 1
+                  });
             <% end %>
 
 
@@ -93,16 +84,20 @@
 
         <% end %>
 
-        map.addLayers([<%= wmses.join(',') %>]);
+        //map.addLayers([<%= wmses.join(',') %>]);
 
-        if (typeof info != 'undefined'){
-          map.addControl(info);
-          info.activate();
-        }
+        //if (typeof info != 'undefined'){
+        //  map.addControl(info);
+        //  info.activate();
+        //}
     }
 
     function toggleLayerVisibility(layer) {
-      layer.setVisibility(!layer.getVisibility());
+      if (map.hasLayer(layer)) {
+        map.removeLayer(layer);
+      } else {
+        map.addLayer(layer);
+      }
     }
 </script>
 

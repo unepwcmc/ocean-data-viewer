@@ -43,9 +43,9 @@ $(document).ready(function() {
 
   L.esri.basemapLayer("Topographic").addTo(map);
 
-  // if (typeof(loadWMS) == 'function'){
-  //   loadWMS();
-  // }
+  if (typeof(loadWMS) == 'function'){
+    loadWMS();
+  }
 
   $('div#zoom_buttons a#zoomIn').click(function(ev) {
     ev.stopPropagation();

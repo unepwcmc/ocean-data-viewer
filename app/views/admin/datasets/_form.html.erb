@@ -1,0 +1,85 @@
+<%= form_for([:admin, @dataset], :html => { :multipart => true }) do |f| %>
+  <% if @dataset.errors.any? %>
+    <ul>
+      <% @dataset.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :order_number %><br />
+    <%= f.text_field :order_number %>
+  </p>
+  <p>
+    <%= f.label :short_desc %><br />
+    <%= f.text_area :short_desc %>
+  </p>
+  <p>
+    <%= f.label :long_desc %><br />
+    <%= f.text_area :long_desc %>
+  </p>
+  <p>
+    <%= f.label :metadata_description %><br />
+    <%= f.text_area :metadata_description %>
+  </p>
+
+  <p>
+    <%= f.label :metadata_html_file%><br/>
+    <%= f.file_field :html%>
+  </p>
+
+  <p>
+    <%= f.label :metadata_xml_file%><br/>
+    <%= f.file_field :xml%>
+  </p>
+
+  <p>
+    <%= f.label :factsheet_file %><br/>
+    <%= f.file_field :factsheet %>
+  </p>
+
+  <p>
+    <%= f.label :shp_download %><br />
+    <%= f.text_field :shp_download %>
+  </p>
+
+  <p>
+    <%= f.label :arcgis_link %><br />
+    <%= f.text_field :arcgis_link %>
+  </p>
+
+  <p>
+    <%= f.label :wms_server %><br />
+    <%= f.text_field :wms_server %>
+  </p>
+  <p>
+    <%= f.label :wms_name %><br />
+    <%= f.text_field :wms_name %>
+  </p>
+  <p>
+    <%= f.label :wfs %><br />
+    <%= f.text_field :wfs %>
+  </p>
+  <p>
+    <%= f.label :meta_download %><br />
+    <%= f.text_field :meta_download %>
+  </p>
+
+  <p>
+    <%= f.label :has_legend %><br />
+    <%= f.check_box :has_legend %>
+  </p>
+
+  <p>
+    <%= f.label :licence %><br />
+    <%= collection_select(:dataset, :licence_id, Licence.all.order("title ASC"), :id, :title, {:prompt => true})%>
+  </p>
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

@@ -1,0 +1,110 @@
+<% content_for :map_controls do %>
+  <% display_layers = false if display_layers.nil? %>
+    <a id="showing_databases_down">
+        <span class="tick up"></span>
+        Showing <%= pluralize(datasets.count, 'dataset') %>
+    </a>
+
+    <div id="container">
+	<!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
+    	<div id="scrollable_databases"class="scroll-pane" >
+            <ul id="list">
+              <% datasets.each_with_index do |dataset, i| %>
+                <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'checked' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
+                    <span class="check_box"></span>
+                    <p class="text"><%= dataset.title %></p>
+                </li>
+              <% end %>
+            </ul>
+        </div>
+        <span class="bottom_scrollable_databases"></span>
+    </div>
+<% end %>
+
+<script type='text/javascript'>
+
+    function loadWMS(){
+
+        /* WMS Layers*/
+        <%
+          display_layers = false if display_layers.nil?
+          wmses = []
+
+          datasets.each_with_index do |dataset, i|
+            wmses << "wms_" + i.to_s
+        %>
+            // <%= dataset.title %>
+
+            <% if dataset.wms_name != '0' %>
+                // Create Geoserver layer (set wms_name as 0 for ArcGIS)
+                <%= wmses.last %> = new OpenLayers.Layer.WMS("<%= dataset.title %>",
+                    "<%= dataset.wms_server %>",
+                    {
+                        layers: '<%= dataset.wms_name %>',
+                        tiled: true,
+                        transparent: true,
+                        format: 'image/png'
+                    },
+                    {
+                        transparent: true,
+                        isBaseLayer: false,
+                        wrapDateLine: true,
+                        visibility: <%= display_layers.to_s %>,
+                        projection: 'EPSG:100135'
+                    }
+                );
+            <% else %>
+                // Create ArcGIS layer
+                <%= wmses.last %> = new OpenLayers.Layer.ArcGISCache("<%= dataset.title %>", "<%= dataset.wms_server %>", {
+                  tileOrigin: new OpenLayers.LonLat(-20037508.342787 , 20037508.342787),
+                  useAGS: true,
+                  sphericalMercator: true,
+                  useArcGISServer: true,
+                  isBaseLayer: false,
+                  visibility: <%= display_layers.to_s %>,
+                  maxExtent: new OpenLayers.Bounds(-20037508, -20037508, 20037508, 20037508.34)
+                });
+            <% end %>
+
+
+
+            <% if dataset.wms_name == "wcmc:ebsass" #this is currently commented, change back to wcmc:ebsa to restore %>
+                OpenLayers.ProxyHost = "/geo_proxy?url=";
+
+                // Add info overlay
+                var info = new OpenLayers.Control.WMSGetFeatureInfo({
+                    url: '<%= datasets[0].wms_server %>',
+                    title: 'Identify features by clicking',
+                    queryVisible: true,
+                    eventListeners: {
+                        getfeatureinfo: function(event) {
+                            map.addPopup(new OpenLayers.Popup.FramedCloud(
+                                "chicken",
+                                map.getLonLatFromPixel(event.xy),
+                                null,
+                                event.text,
+                                null,
+                                true
+                            ));
+                        }
+                    }
+                });
+            <% end %>
+
+        <% end %>
+
+        map.addLayers([<%= wmses.join(',') %>]);
+
+        if (typeof info != 'undefined'){
+          map.addControl(info);
+          info.activate();
+        }
+    }
+
+    function toggleLayerVisibility(layer) {
+      layer.setVisibility(!layer.getVisibility());
+    }
+</script>
+
+<div id="map" class="smallmap" style="width:100%;height:400px"></div>
+

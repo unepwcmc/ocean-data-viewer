@@ -1,0 +1,28 @@
+<div id="licence_content">
+    <ul>
+        <li class="gray detail">Ocean Data Viewer</li>
+        <li class="information">Business</li>
+    </ul>
+</div>
+
+<a id="resize_map"></a>	
+<div id="licence_content_information">
+
+    <ul class="about first last">
+        <li class="title">
+            <p>Reducing risk, increasing <br/> sustainability</p>
+        </li>
+        <li class="information">
+        <%= RedCloth.new("
+The world’s oceans and coasts are becoming ever smaller as users of ocean space compete for marine resources and services. 
+
+From a business perspective, biodiversity risk management; the process of understanding and mitigating environmental and social risks of projects; is essential for effective project implementation. Businesses which can get integrated access to information on the location and distribution of critical marine ecosystems and sites important for biodiversity can reduce their risk and associated liability for operations in ocean and coastal waters.
+
+As such, the ocean industry requires accurate and up to date biodiversity information to support critical business decision making. A recent meeting of global ocean industry leaders highlighted the need for better scalability, extent, and quality of data for marine spatial planning to support best practice in corporate ocean responsibility. 
+
+The Ocean Data Viewer helps companies to avoid or minimize threats to biodiversity arising from their operations by accessing critical site-scale ocean and coastal data, allowing decision-makers to incorporate important biodiversity priorities into their risk assessment procedures for existing and potential operations. 
+            ").to_html().html_safe %>
+        </li>
+    </ul>
+</div>
+

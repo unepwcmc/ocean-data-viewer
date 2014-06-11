@@ -1,0 +1,17 @@
+<p>
+  <b>Dataset</b>
+  <%=h @datasets_decision.dataset.title %>
+</p>
+
+<p>
+  <b>Decision</b>
+  <%=h @datasets_decision.decision.name %>
+</p>
+
+<p>
+  <b>Category</b>
+  <%=h @datasets_decision.category.try(:name) %>
+</p>
+
+<%= link_to 'Edit', edit_admin_datasets_decision_path(@datasets_decision), :class=> "button" %>
+<%= link_to 'Back', admin_dataset_datasets_decisions_path(@datasets_decision.dataset), :class=> "button" %>

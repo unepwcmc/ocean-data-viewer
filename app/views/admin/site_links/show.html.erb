@@ -1,0 +1,18 @@
+<p>
+  <b>Title:</b>
+  <%=h @site_link.title %>
+</p>
+
+<p>
+  <b>Body:</b>
+  <%=h @site_link.body %>
+</p>
+
+<p>
+  <b>Link:</b>
+  <%=h @site_link.link %>
+</p>
+
+
+<%= link_to 'Edit', edit_admin_site_link_path(@site_link) %> |
+<%= link_to 'Back', admin_site_links_path %>

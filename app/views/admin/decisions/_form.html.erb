@@ -1,0 +1,47 @@
+<%= form_for([:admin,@decision], :html => { :multipart => true }) do |f| %>
+  <% if @decision.errors.any? %>
+    <ul>
+      <% @decision.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :order_number %><br />
+    <%= f.text_field :order_number %>
+  </p>
+  <p>
+    <%= f.label :short_name %><br />
+    <%= f.text_field :short_name %>
+  </p>
+  <p>
+    <%= f.label :established %><br />
+    <%= f.text_area :established %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :key_points %><br />
+    <%= f.text_area :key_points %>
+  </p>
+  <p>
+    <%= f.label :links %><br />
+    <%= f.text_area :links %>
+  </p>
+
+  <p>
+    <%= f.label :group_parent %><br />
+    <%= collection_select(:decision, :parent_id, Decision.order("name ASC"), :id, :name, {:prompt => true})%>
+  </p>
+
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

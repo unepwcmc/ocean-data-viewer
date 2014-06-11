@@ -1,0 +1,30 @@
+<h1>Editing licence</h1>
+
+<%= form_for([:admin,@licence]) do |f| %>
+  <% if @licence.errors.any? %>
+    <ul>
+      <% @licence.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+	<p>
+    <%= f.label :short_desc %><br />
+    <%= f.text_area :short_desc %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin,@licence], :class=> "button" %>
+<%= link_to 'Back', admin_licences_path, :class=> "button" %>

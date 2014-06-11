@@ -1,0 +1,32 @@
+<%= form_for([:admin,@dataset,@datasets_decision], :html => { :multipart => true }) do |f| %>
+  <% if @datasets_decision.errors.any? %>
+    <ul>
+      <% @datasets_decision.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.hidden_field :dataset_id  %>
+
+  <p>
+    <%= f.label :decision %><br />
+    <% current_dataset = @datasets_decision.dataset.nil? ? "" : @datasets_decision.dataset.id %>
+    <%= collection_select(:datasets_decision, :decision_id, @decisions, :id, :name, {:selected_value => current_dataset, :prompt => true})%>
+  </p>
+
+  <p>
+    <%= f.label :category %><br />
+    <div id="category_select_combo"><%= render :partial => "category_options"%></div>
+  </p>
+
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>
+
+<script type=text/javascript>
+    $("#datasets_decision_decision_id").change(function(){
+        $.ajax({url: '/admin/datasets_decision/categories_for_decision/' + (this.value), type:'get', dataType: 'script' })
+    });
+</script>

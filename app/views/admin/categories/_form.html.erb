@@ -1,0 +1,32 @@
+<%= form_for([:admin,@decision,@category], :html => { :multipart => true }) do |f| %>
+  <% if @category.errors.any? %>
+    <ul>
+      <% @category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <%= f.hidden_field :decision_id  %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :identifier %><br />
+    <%= f.text_field :identifier %>
+  </p>
+  <p>
+    <%= f.label :short_desc %><br />
+    <%= f.text_area :short_desc %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

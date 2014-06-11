@@ -1,0 +1,96 @@
+<p>
+  <b>Title:</b>
+  <%=h @dataset.title %>
+</p>
+
+<p>
+  <b>Short desc:</b>
+  <%=h @dataset.short_desc %>
+</p>
+
+<p>
+  <b>Long desc:</b>
+  <%=h @dataset.long_desc %>
+</p>
+
+<p>
+  <b>Metadata description:</b>
+  <%=h @dataset.metadata_description %>
+</p>
+
+<p>
+  <b>HTML file:</b>
+  <%= link_to "HTML file", @dataset.html.url if @dataset.html.file? %>
+</p>
+
+
+<p>
+  <b>XML file:</b>
+  <%= link_to "XML file", @dataset.xml.url if @dataset.xml.file? %>
+</p>
+
+
+<p>
+  <b>Shp download:</b>
+  <%=h @dataset.shp_download %>
+</p>
+
+<p>
+  <b>Arcgis.com link:</b>
+  <%=h @dataset.arcgis_link %>
+</p>
+
+<p>
+  <b>Wms server:</b>
+  <%=h @dataset.wms_server %>
+</p>
+
+<p>
+  <b>Wms name:</b>
+  <%=h @dataset.wms_name %>
+</p>
+
+<p>
+  <b>Wfs:</b>
+  <%=h @dataset.wfs %>
+</p>
+
+<p>
+  <b>Meta download:</b>
+  <%=h @dataset.meta_download %>
+</p>
+
+<p>
+  <b>Has Legend?:</b>
+  <%=h @dataset.has_legend? %>
+</p>
+
+<%= link_to 'Edit', edit_admin_dataset_path(@dataset), :class=> "button" %>
+<%= link_to 'Back', admin_datasets_path, :class=> "button" %>
+<br />
+<br />
+<br />
+<br />
+
+<h3 style="border-top: 2px solid #3174AF; margin-bottom:0em;">Linked Desicions</h3>
+<%= link_to 'Link to another decision', new_admin_dataset_datasets_decision_path(@dataset), :class=> "button" %>
+<table>
+  <tr>
+    <th>Decision</th>
+    <th>Category</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% @linked_decisions.each do |datasets_decision| %>
+  <tr>
+    <td><%= link_to datasets_decision.decision.name, [:admin, datasets_decision.decision] %></td>
+    <td><%= (link_to datasets_decision.category.try(:name), [:admin, datasets_decision.category]) if datasets_decision.category.present? %></td>
+    <td>
+      <%= link_to 'Show', [:admin, datasets_decision] %>
+      <%= link_to 'Edit', edit_admin_datasets_decision_path(datasets_decision) %>
+      <%= link_to 'Destroy', [:admin,datasets_decision], :confirm => 'Are you sure?', :method => :delete %>
+    </td>
+  </tr>
+<% end %>
+</table>
+

@@ -1,0 +1,27 @@
+<h1>Listing datasets</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Order Number</th>
+    <th>Short desc</th>
+    <th>WMS Name</th>
+    <th>&nbsp;</th>
+  </tr>
+
+<% @datasets.each do |dataset| %>
+  <tr>
+    <td><%= dataset.title %></td>
+    <td><%= dataset.order_number %></td>
+    <td><%= truncate(dataset.short_desc,lenght:30) %></td>
+    <td><%= truncate(dataset.wms_name,lenght:30) %></td>
+    <td><%= link_to 'Show', [:admin, dataset] %>
+    <%= link_to 'Edit', edit_admin_dataset_path(dataset) %>
+    <%= link_to 'Destroy', [:admin,dataset], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New dataset', new_admin_dataset_path, :class=> "button" %>

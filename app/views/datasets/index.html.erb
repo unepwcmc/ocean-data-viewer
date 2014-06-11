@@ -1,0 +1,192 @@
+<% content_for :map do %>
+  <%= render :partial => 'gmap', :locals => {:datasets => @datasets}  %>
+<% end -%>
+
+<div id="available_title_datasets">
+    <ul>
+        <li class="gray detail">Available datasets</li>
+        <li class="information">
+            <ul>
+  
+              <!-- DECISION HEADERS -->
+              <% @decisions.each_with_index do |decision,i|
+                   styles = ''
+                   styles << 'first ' if (i == 0)
+                   styles << 'last ' if (i == (@dataset_count - 1))
+                   styles << 'two_lines ' if decision.name.size > 8
+                   styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
+              -%>
+                <li class="<%= styles %>">
+                    <div class="left_shadow"></div>
+                    <%= link_to decision.short_name, decision %>
+                    <% if decision.children.present? %>
+                      <ul>
+                        <% decision.children.each_with_index do |child,ci|
+                             child_style = ''
+                             child_style << 'first ' if (ci == 0)
+                             child_style << 'last ' if (ci == (decision.children.size - 1))
+                        -%>
+                          <li class="<%= child_style %>"><%= link_to child.short_name, child %></li>
+                        <% end -%>
+                      </ul>
+                    <% end -%>
+                    <div class="right_shadow"></div>
+                </li>
+
+              <% end -%>
+            </ul>
+        </li>
+    </ul>
+</div>
+
+<a id="resize_map"></a>	
+<a id="enlarge_map"></a>	
+<div id="data_set_content_datasets">
+
+  <% @datasets.each_with_index do |dataset, i| %>
+    <!-- ROW for <%= dataset.title -%>-->
+    <ul class="dataset">
+        <li class="title <%= 'first' if i == 0 %> <%= 'last' if i == (@datasets.size - 1) %>">
+            <div class="head_shadow"></div>
+            <div class="text">
+                <%= link_to "#{truncate(dataset.title, lenght: 80)}", dataset %> 
+            </div>
+            <div class="buttons">
+                <% if dataset.shp_download.present? %>
+                  <%= link_to "<div id='download_tooltip'>DOWNLOAD DATASET</div>".html_safe, dataset_path(dataset) + '#Download', :class => 'download_dataset'  %>
+                <% end %>
+                <% if dataset.factsheet.file? %>
+                  <%= link_to "<div id='factsheet_tooltip'>DOWNLOAD FACTSHEET</div>".html_safe, dataset_path(dataset) + '#Factsheet', :class => 'download_factsheet'  %>
+                <% end %>
+                <% if dataset.arcgis_link.present? %>
+                  <%= link_to "<div id='arcgis_tooltip'>VIEW ON ARCGIS.COM</div>".html_safe, dataset.arcgis_link, :class => 'download_arcgis'  %>
+                <% end %>
+            </div>
+            <div class="bottom_shadow"></div>
+        </li>
+
+        <li class="information">
+              <ul>
+                <% @decisions.each do |decision|
+                      if decision.children.empty? #If no children, render result of dataset decision link
+                -%>
+                        <li>
+                          <%
+                            datasets_decision = DatasetsDecision.where(:dataset_id => dataset, :decision_id => decision).first
+                            if datasets_decision.present? #Only render the cell if link exists
+                          %>
+                              <div id="info_tooltip">
+                                  <div class="content">
+                                      <span class="head">
+                                          <a class="close"></a>
+                                          <p class="title">DATASET</p>
+                                      </span>
+                                      <span class="content">
+                                          <%= link_to dataset.title, dataset, :class => 'match' %>
+                                          <span class="line"></span>
+                                          <% if datasets_decision.try(:category).try(:identifier).nil? %>
+                                            <p class="title">DECISION</p>
+                                            <%= link_to decision.name, decision, :class => 'match' %>
+                                          <% else %>
+                                            <p class="title">DECISION CATEGORY</p>
+                                            <%= link_to datasets_decision.category.name, decision, :class => 'match' %>
+                                          <% end %>
+                                      </span> 
+                                      <span class="bottom">
+                                      </span>
+                                  </div>
+                              </div>
+                              <%
+                                style = ""
+                                if datasets_decision.try(:category).try(:identifier).nil?
+                                  style = "check_bttn"
+                                else
+                                  style = "c#{datasets_decision.try(:category).try(:identifier)}_bttn"
+                                end
+                               -%>
+                              <a class="button <%= style %>"></a>
+                        <% end -%>
+                        </li>
+                    <%
+                      else #Children exist, ignore parent
+                        decision.children.each do |child_decision|
+                    -%>
+                        <li>
+                          <%
+                            datasets_decision = DatasetsDecision.where(:dataset_id => dataset, :decision_id => child_decision).first
+                            if datasets_decision.present? #Only render the cell if link exists
+                          %>
+                              <div id="info_tooltip">
+                                  <div class="content">
+                                      <span class="head">
+                                          <a class="close"></a>
+                                          <p class="title">DATASET</p>
+                                      </span>
+                                      <span class="content">
+                                          <%= link_to dataset.title, dataset, :class => 'match' %>
+                                          <span class="line"></span>
+                                          <% if datasets_decision.try(:category).try(:identifier).nil? %>
+                                            <p class="title">DECISION</p>
+                                            <%= link_to child_decision.name, child_decision, :class => 'match' %>
+                                          <% else %>
+                                            <p class="title">DECISION CATEGORY</p>
+                                            <%= link_to datasets_decision.category.name, decision, :class => 'match' %>
+                                          <% end %>
+                                      </span>
+                                      <span class="bottom">
+                                      </span>
+                                  </div>
+                              </div>
+                              <%
+                                style = ""
+                                if datasets_decision.try(:category).try(:identifier).nil?
+                                  style = "check_bttn"
+                                else
+                                  style = "c#{datasets_decision.try(:category).try(:identifier)}_bttn"
+                                end
+                               -%>
+                              <a class="button <%= style %>"></a>
+
+                        <% end -%>
+                        </li>
+                      <% end %>
+                  <% end %>
+                <% end %>
+              </ul>
+        </li>
+    </ul>
+  <% end %>
+  <span class="end_information"></span>
+</div>		<!-- data_set_content_datasets -->
+
+<!-- FOOTER INFORMATION -->
+<div id="footer_datasets">
+    <ul id="footer_datasets_table">
+
+        <% @decisions.each_with_index do |decision,i|
+             styles = ''
+             styles << 'first ' if (i == 0)
+             styles << 'last ' if (i == (@dataset_count - 1))
+             styles << 'two_lines ' if decision.name.size > 8
+             styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
+        %>
+            <li class="<%= styles %>">
+                <% if decision.children.present? %>
+                  <ul>
+                    <% decision.children.each_with_index do |child,ci|
+                         child_style = ''
+                         child_style << 'first ' if (ci == 0)
+                         child_style << 'last ' if (ci == (decision.children.size - 1))
+                    %>
+                      <li class="<%= child_style %>"><%= link_to child.short_name, child %></li>
+                    <% end %>
+                  </ul>
+                <% end %>
+                <%= link_to decision.short_name, decision %>
+            </li>
+
+        <% end %>
+    </ul>
+</div>
+
+

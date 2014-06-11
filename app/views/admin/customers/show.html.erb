@@ -1,0 +1,47 @@
+<p>
+  <b>Title:</b>
+  <%=h @customer.title %>
+</p>
+
+<p>
+  <b>First name:</b>
+  <%=h @customer.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @customer.last_name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @customer.email %>
+</p>
+
+<p>
+  <b>Institution:</b>
+  <%=h @customer.institution %>
+</p>
+
+<p>
+  <b>Intended use:</b>
+  <%=h @customer.intended_use %>
+</p>
+
+<p>
+  <b>Licence agreed:</b>
+  <%=h @customer.licence_agreed %>
+</p>
+
+<p>
+  <b>Licence:</b>
+  <%=h @customer.licence_id %>
+</p>
+
+<p>
+  <b>Dataset:</b>
+  <%=h @customer.dataset_id %>
+</p>
+
+
+<%= link_to 'Back', admin_customers_path, :class=> "button" %>

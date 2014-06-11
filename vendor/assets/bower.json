@@ -1,0 +1,6 @@
+{
+  "name": "dsl-generated dependencies",
+  "dependencies": {
+    "esri-leaflet": "0.0.1-beta.4"
+  }
+}

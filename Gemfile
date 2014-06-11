@@ -13,6 +13,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
 gem 'RedCloth'
+gem 'bower-rails', '~> 0.7.3'
 
 group :development, :test do
   gem 'dotenv-rails'

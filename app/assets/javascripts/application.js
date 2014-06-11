@@ -10,6 +10,7 @@
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require ../../../vendor/assets/bower_components/leaflet/dist/leaflet
 //= require_tree ../../../vendor/assets/bower_components
 //= require OpenLayers
 //= require ArcGISCache

@@ -12,8 +12,6 @@
 //
 //= require ../../../vendor/assets/bower_components/leaflet/dist/leaflet
 //= require ../../../vendor/assets/bower_components/esri-leaflet/dist/esri-leaflet
-//= require OpenLayers
-//= require ArcGISCache
 //= require facebox
 //= require ie
 //= require jquery.textshadow

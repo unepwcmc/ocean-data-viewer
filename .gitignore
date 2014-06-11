@@ -1,4 +1,15 @@
-tmp
 .ruby-gemset
-log/*.log
 .DS_Store
+*.rbc
+capybara-*.html
+.rspec
+/log
+/tmp
+/db/*.sqlite3
+/public/system
+/coverage/
+/spec/tmp
+**.orig
+rerun.txt
+pickle-email-*.html
+.rvmrc

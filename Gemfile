@@ -16,8 +16,16 @@ gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
 gem 'a9n'
 
+gem 'unicorn'
+
 group :development, :test do
   gem 'dotenv-rails'
   gem 'spring'
   gem 'letter_opener'
+end
+
+group :development do
+  gem 'capistrano', '~> 2.15'
+  gem 'rvm-capistrano', '1.2.7'
+  gem 'capistrano-unicorn', '~> 0.1.10', require: false
 end

@@ -25,9 +25,6 @@ $(document).ready(function() {
   $('div#container').css('display','none');
   $('span#bottom_scrollable_databases').css('display','none');
 
-  // var bounds = new L.LatLngBounds(new L.latLng(-20037508, -20037508),
-  //                                 new L.latLng(20037508, 20037508.34));
-
   var options = {
     crs: L.CRS.EPSG4326,
     minZoom: 3,
@@ -35,11 +32,15 @@ $(document).ready(function() {
     zoom: 3,
     center: new L.latLng(0, 0),
     scrollWheelZoom: false,
-    zoomControl: false,
-    // maxBounds: bounds
+    zoomControl: false
   };
 
+  var southWest = L.latLng(-180, -3600),
+    northEast = L.latLng(180, 3600),
+    bounds = L.latLngBounds(southWest, northEast);
+
   map = new L.map('js_map', options);
+  map.setMaxBounds(bounds);
 
   L.esri.basemapLayer("Topographic").addTo(map);
 

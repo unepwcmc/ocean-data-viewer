@@ -73,7 +73,7 @@ $(document).ready(function() {
       $('#layout_header').animate({height:'528px'}, 500,'','');
       $('div#zoom_buttons').fadeIn();
       $('div#down_databases_info').fadeIn();
-                        $('#enlarge_map').fadeIn();
+      $('#enlarge_map').fadeIn();
     } else {
       $(this).addClass('reduce_map');
       $('div.map').animate({height:'222px'}, 500,'','');

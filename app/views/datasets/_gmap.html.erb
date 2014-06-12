@@ -6,8 +6,8 @@
     </a>
 
     <div id="container">
-	<!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
-    	<div id="scrollable_databases"class="scroll-pane" >
+        <!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
+        <div id="scrollable_databases" class="scroll-pane" >
             <ul id="list">
               <% datasets.each_with_index do |dataset, i| %>
                 <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'checked' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
@@ -102,4 +102,3 @@
 </script>
 
 <div id="map" class="smallmap" style="width:100%;height:400px"></div>
-

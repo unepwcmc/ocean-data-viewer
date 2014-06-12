@@ -7,7 +7,7 @@
         <li class="gray detail">Available datasets</li>
         <li class="information">
             <ul>
-  
+
               <!-- DECISION HEADERS -->
               <% @decisions.each_with_index do |decision,i|
                    styles = ''
@@ -39,8 +39,8 @@
     </ul>
 </div>
 
-<a id="resize_map"></a>	
-<a id="enlarge_map"></a>	
+<a id="resize_map"></a>
+<a id="enlarge_map"></a>
 <div id="data_set_content_datasets">
 
   <% @datasets.each_with_index do |dataset, i| %>
@@ -49,7 +49,7 @@
         <li class="title <%= 'first' if i == 0 %> <%= 'last' if i == (@datasets.size - 1) %>">
             <div class="head_shadow"></div>
             <div class="text">
-                <%= link_to "#{truncate(dataset.title, lenght: 80)}", dataset %> 
+                <%= link_to "#{truncate(dataset.title, lenght: 80)}", dataset %>
             </div>
             <div class="buttons">
                 <% if dataset.shp_download.present? %>
@@ -91,7 +91,7 @@
                                             <p class="title">DECISION CATEGORY</p>
                                             <%= link_to datasets_decision.category.name, decision, :class => 'match' %>
                                           <% end %>
-                                      </span> 
+                                      </span>
                                       <span class="bottom">
                                       </span>
                                   </div>
@@ -157,7 +157,7 @@
     </ul>
   <% end %>
   <span class="end_information"></span>
-</div>		<!-- data_set_content_datasets -->
+</div>    <!-- data_set_content_datasets -->
 
 <!-- FOOTER INFORMATION -->
 <div id="footer_datasets">
@@ -184,9 +184,7 @@
                 <% end %>
                 <%= link_to decision.short_name, decision %>
             </li>
-
         <% end %>
+
     </ul>
 </div>
-
-

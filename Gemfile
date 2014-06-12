@@ -14,8 +14,10 @@ gem 'paperclip', '~> 4.1'
 gem 'aws-sdk'
 gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
+gem 'a9n'
 
 group :development, :test do
   gem 'dotenv-rails'
   gem 'spring'
+  gem 'letter_opener'
 end

@@ -1,0 +1,11 @@
+production:
+  email_from: "Marine Portal <mailer@tinypla.net>"
+  app_host: ""
+  delivery_method: "smtp"
+  smtp_settings:
+    address: "smtp.google.com"
+    port: 587
+    domain: "tinypla.net"
+    authentication: "plain"
+    user_name: "mailer@tinypla.net"
+    password: "mailer"

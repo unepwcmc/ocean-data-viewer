@@ -1,0 +1,15 @@
+development: &development
+  email_from: "Marine Portal <mailer@tinypla.net>"
+  app_host: "localhost:3000"
+  delivery_method: "letter_opener"
+  smtp_settings:
+    address: "127.0.0.1"
+    port: 1025
+
+production:
+  <<: *development
+  delivery_method: "test"
+
+test:
+  <<: *development
+  delivery_method: "test"

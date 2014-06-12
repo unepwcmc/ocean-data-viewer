@@ -17,6 +17,7 @@ gem 'bower-rails', '~> 0.7.3'
 gem 'a9n'
 
 gem 'unicorn'
+gem 'therubyracer'
 
 group :development, :test do
   gem 'dotenv-rails'

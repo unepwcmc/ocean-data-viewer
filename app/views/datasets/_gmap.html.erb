@@ -38,7 +38,7 @@
             <% if dataset.wms_name != '0' %>
               // Create Geoserver layer (set wms_name as 0 for ArcGIS)
               <%= wmses.last %> = new L.tileLayer.wms("<%= dataset.wms_server %>", {
-                layers: '<%= dataset.wms_name %>',
+                layers: '<%= dataset.wms_name.html_safe %>',
                 transparent: true,
                 format: 'image/png'
               });

@@ -1,11 +1,3 @@
-$(function(){
-  $('a[rel*=facebox]').facebox()
-  $('#close_fb').click(function(){
-    $(document).trigger('close.facebox');
-    false;
-  });
-});
-
 var map;
 
 $(document).ready(function() {

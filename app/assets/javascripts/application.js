@@ -17,6 +17,6 @@
 //= require jquery.textshadow
 //= require jquery.mousewheel
 //= require jquery.tipsy
-//= require jScrollPane
 //= require easySlider1.7
+//= require ../../../vendor/assets/bower_components/jquery.jscrollpane/jquery.jscrollpane
 //= require bootstrap_app

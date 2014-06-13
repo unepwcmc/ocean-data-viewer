@@ -12,10 +12,10 @@
 //
 //= require ../../../vendor/assets/bower_components/jquery/dist/jquery
 //= require ../../../vendor/assets/bower_components/jquery.mousewheel/jquery.mousewheel
+//= require ../../../vendor/assets/bower_components/jquery.jscrollpane/jquery.jscrollpane
 //= require ../../../vendor/assets/bower_components/leaflet/dist/leaflet
 //= require ../../../vendor/assets/bower_components/esri-leaflet/dist/esri-leaflet
 //= require jquery.textshadow
 //= require jquery.tipsy
 //= require easySlider1.7
-//= require ../../../vendor/assets/bower_components/jquery.jscrollpane/jquery.jscrollpane
 //= require bootstrap_app

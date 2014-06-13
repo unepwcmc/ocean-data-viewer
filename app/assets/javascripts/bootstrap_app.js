@@ -18,7 +18,6 @@ $(document).ready(function() {
   $('span#bottom_scrollable_databases').css('display','none');
 
   var options = {
-    crs: L.CRS.EPSG4326,
     minZoom: 3,
     maxZoom: 18,
     zoom: 3,

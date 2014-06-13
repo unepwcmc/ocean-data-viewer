@@ -2,6 +2,7 @@
   "name": "dsl-generated dependencies",
   "dependencies": {
     "leaflet": "latest",
-    "esri-leaflet": "0.0.1-beta.4"
+    "esri-leaflet": "0.0.1-beta.4",
+    "jquery.mousewheel": "latest"
   }
 }

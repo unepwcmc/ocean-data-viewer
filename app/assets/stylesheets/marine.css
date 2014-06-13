@@ -5,69 +5,69 @@ body{padding-top:1em; background: #ccc url("/images/background.png") top left re
 .content_container{background:#fff; margin: 0 0.5em;}
 
 .about h3{
-	background:#3174AF;
-	color:white;
-	padding:0.2em 0.2em 0 0.2em;
-	margin-bottom:0.3em;
-	font-size:2em;
+  background:#3174AF;
+  color:white;
+  padding:0.2em 0.2em 0 0.2em;
+  margin-bottom:0.3em;
+  font-size:2em;
 }
 
 .data_panel{
-	background:#1B558B;
-	color:white;
-	padding:1em;
+  background:#1B558B;
+  color:white;
+  padding:1em;
 }
 
 .data_panel h4{
-	color:white;
-	font-weight:bold;
-	font-size:1.2em;
-	margin-bottom:10px;
+  color:white;
+  font-weight:bold;
+  font-size:1.2em;
+  margin-bottom:10px;
 }
 
 #facebox {
-	z-index:1000;
+  z-index:1000;
 }
 
 #facebox table{
-	width:480px;
+  width:480px;
 }
 
 
 .data_panel a#tipsy{
-	background:#578DCA;
-	padding:2px;
-	font-weight:bold;
-	border:1px solid #2D4F75;
-	color:white;
-	text-decoration:none;
-	border-width: 0 1px 1px 0;
+  background:#578DCA;
+  padding:2px;
+  font-weight:bold;
+  border:1px solid #2D4F75;
+  color:white;
+  text-decoration:none;
+  border-width: 0 1px 1px 0;
 }
 
 .datasets h3{
-	border-top:2px solid #3174AF;
-	padding:0.3em 0;
-	font-size:2em;
-	margin-bottom:0.2em;
+  border-top:2px solid #3174AF;
+  padding:0.3em 0;
+  font-size:2em;
+  margin-bottom:0.2em;
 }
 
 .datasets h3 a {
-	color:#444;
+  color:#444;
 }
 
 .datasets h3 a:hover {
-	text-decoration:underline;
+  text-decoration:underline;
 }
 
 
 .about{
-	background:#eee;
-	padding:0.5em;
+  background:#eee;
+  padding:0.5em;
 }
 
 .about p{
-	margin-bottom:0.5em;
-	padding:0;
+  margin-bottom:0.5em;
+  padding:0;
 }
 
 td, th{
@@ -89,29 +89,29 @@ th a{
 }
 
 .active_matrix_cell {
-	background:#CCCCCC;
+  background:#CCCCCC;
 }
 
 .hidden_matrix_cell {
-	display: none;
+  display: none;
 }
 
 .admin_menu {
-        background:#3174AF;
+  background:#3174AF;
 }
 
 .admin_menu a{
-        color: white;
-        text-decoration: none;
-        font-size: 1.5em;
-        padding: 7px;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+  padding: 7px;
 }
 
 .licence_table td {
-        vertical-align: top;
+  vertical-align: top;
 }
 
-.olImageLoadError { 
+.olImageLoadError {
   /* when OL encounters a 404, don't display the pink image */
   display: none !important;
 }

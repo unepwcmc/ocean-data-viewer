@@ -11,5 +11,9 @@
  * file per style scope.
  *
  *= require_tree ../../../vendor/assets/bower_components
- *= require_self
+ *= require tipsy
+ *= require facebox
+ *= require marine
+ *= require layout
+ *= require jScrollPane.css
  */

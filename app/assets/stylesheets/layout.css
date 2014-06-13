@@ -26,7 +26,7 @@ div#info_tooltip span.head a.close:hover {background-position:0 -33px;}
 div#info_tooltip div.content {float:left; position:relative; width:100%; height:auto; }
 div#info_tooltip span.content {float:left; background:url(../images/tooltips/bkg_content_info.png) repeat-y; height:auto; width:120px; bottom:0; left:0; padding:5px 25px 5px 15px; margin:-1px 0 0 0;}
 div#info_tooltip span.content span.line {float:left; width:123px; background-color:#ECECEC; height:1px; margin:7px 0 0 0;}
-div#info_tooltip span.content a.match {float:left; font:normal 11px Arial; color:#E58800;  width:auto; height:auto; margin:0 5px 0 0;}  
+div#info_tooltip span.content a.match {float:left; font:normal 11px Arial; color:#E58800;  width:auto; height:auto; margin:0 5px 0 0;}
 div#info_tooltip span.content a.match:hover {color:#C87500;}
 div#info_tooltip span.content p.info {font:normal 11px Arial; color:#666666; width:auto; }
 div#info_tooltip p.title {float:left; font:normal 10px Arial; color:#BABABA; text-transform:uppercase; width:123px; padding:5px 0 0 0;}
@@ -64,7 +64,7 @@ div#js_map {position:absolute; top:0; left:0; right:0; bottom:0; z-index:1;}
 div#zoom_buttons {position:absolute; top:115px; left:0; z-index:5; width:68px; height:27px;}
 a#zoomIn {float:left; margin:0 11px 0 0; width:26px; height:26px; background:url(../images/zoom_in_bttn.png) no-repeat 0 0;}
 a#zoomIn:hover {background-position:0 -26px; cursor:pointer;}
-a#zoomOut {float:left; margin:0; width:26px; height:26px; background:url(../images/zoom_out_bttn.png) no-repeat 0 0;} 
+a#zoomOut {float:left; margin:0; width:26px; height:26px; background:url(../images/zoom_out_bttn.png) no-repeat 0 0;}
 a#zoomOut:hover {background-position:0 -26px; cursor:pointer;}
 
 
@@ -138,7 +138,7 @@ div#data_set_title ul li.gray {padding:20px 0 0 20px; font:bold 21px Arial; colo
 div#data_set_title ul li.detail {float:left; background:url(../images/left_head_content.png) no-repeat 0 0; width:184px; margin:11px 0 0 0;}
 div#data_set_title ul li.information {float:left; background:url(../images/middle_head_content.png) no-repeat 0 0; width:485px; height:48px; font:bold 24px Arial; color:#999999; padding:29px 0 0 20px; text-shadow:1px 1px 1px #FFFFFF;}
 div#data_set_title ul li.information.two_lines {padding:12px 0 0 20px; height:65px; }
-div#data_set_title ul li.access {float:left; background:url(../images/right_head_content.png) no-repeat 0 0; width:214px; margin:11px 0 0 0;} 
+div#data_set_title ul li.access {float:left; background:url(../images/right_head_content.png) no-repeat 0 0; width:214px; margin:11px 0 0 0;}
 
 div#available_title_datasets {position:absolute; bottom:10px; left:0; z-index:5; width:945px; height:64px;}
 div#available_title_datasets ul {float:left; width:945px;}
@@ -181,11 +181,11 @@ div#data_set_content_datasets ul.dataset li.title a:hover {color:#E58600; border
 div#data_set_content_datasets ul.dataset li.title span {font:normal 14px Georgia; color:#999999;}
 div#data_set_content_datasets ul.dataset li.title div.buttons {float:right; width:55px; height:100%; margin:3px 0 0 0;}
 div#data_set_content_datasets ul.dataset li.title div.buttons a {position:relative;}
-div#data_set_content_datasets ul.dataset li.title a.download_dataset {float:left; background:url(../images/download_dataset_icon.png) no-repeat 0 0; width:10px; height:14px; margin:0 5px 0 0; border:none;} 
+div#data_set_content_datasets ul.dataset li.title a.download_dataset {float:left; background:url(../images/download_dataset_icon.png) no-repeat 0 0; width:10px; height:14px; margin:0 5px 0 0; border:none;}
 div#data_set_content_datasets ul.dataset li.title a.download_dataset:hover {background-position:0 -14px; border:none;}
-div#data_set_content_datasets ul.dataset li.title a.download_factsheet {float:left; background:url(../images/download_factsheet_icon.png) no-repeat 0 0; width:17px; height:14px; margin:0 5px 0 0; border:none;} 
+div#data_set_content_datasets ul.dataset li.title a.download_factsheet {float:left; background:url(../images/download_factsheet_icon.png) no-repeat 0 0; width:17px; height:14px; margin:0 5px 0 0; border:none;}
 div#data_set_content_datasets ul.dataset li.title a.download_factsheet:hover {background-position:0 -15px; border:none;}
-div#data_set_content_datasets ul.dataset li.title a.download_arcgis {float:left; background:url(../images/download_arcgis_icon.png) no-repeat 0 0; width:17px; height:15px;} 
+div#data_set_content_datasets ul.dataset li.title a.download_arcgis {float:left; background:url(../images/download_arcgis_icon.png) no-repeat 0 0; width:17px; height:15px;}
 div#data_set_content_datasets ul.dataset li.title a.download_arcgis:hover {background-position:0 -15px; border:none;}
 
 div#data_set_content_datasets ul.dataset li.information {float:left; width:673px; height:auto;}
@@ -322,17 +322,17 @@ div#licence_content_information ul.about li.information p a:hover {color:#C87500
 
 div#licence_content_information span.end_information {background:url(../images/bkg_last_content_dataset.png) no-repeat 0 0; width:681px; height:35px; margin:0; position:absolute; bottom:-15px; right:-7px;}
 
-/* browse */	
+/* browse */
 /* Easy Slider */
 #slider ul, #slider li,	#slider2 ul, #slider2 li{margin:0;padding:0;list-style:none;}
 #slider2{margin-top:1em;}
-#prevBtn, #nextBtn,#slider1next, #slider1prev{ display:block; width:30px; height:77px; position:absolute; left:252px; top:90px;	z-index:1000;}	
+#prevBtn, #nextBtn,#slider1next, #slider1prev{ display:block; width:30px; height:77px; position:absolute; left:252px; top:90px;	z-index:1000;}
 #nextBtn, #slider1next{ left:954px;	}
-#prevBtn a, #nextBtn a, #slider1next a, #slider1prev a{  display:block; 	position:relative; width:13px; height:19px; 	background:url(../images/left_footer_contact.png) no-repeat 0 0;}	
-#nextBtn a, #slider1next a{ background:url(../images/right_footer_contact.png) no-repeat 0 0; }	
-#prevBtn a:hover {background-position:0 -19px;} 
-#nextBtn a:hover {background-position:0 -19px;} 
-	
+#prevBtn a, #nextBtn a, #slider1next a, #slider1prev a{  display:block; 	position:relative; width:13px; height:19px; 	background:url(../images/left_footer_contact.png) no-repeat 0 0;}
+#nextBtn a, #slider1next a{ background:url(../images/right_footer_contact.png) no-repeat 0 0; }
+#prevBtn a:hover {background-position:0 -19px;}
+#nextBtn a:hover {background-position:0 -19px;}
+
 /* ************************* */
 
 div#footer_supportsites {float:left; width:945px; height:auto; margin:22px 0 0 0; padding:0; position:relative;}

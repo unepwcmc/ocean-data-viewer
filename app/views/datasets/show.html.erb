@@ -4,7 +4,12 @@
 <script type='text/javascript'>
   hideFormElements = function () {
     $('#error_flash').hide()
-  }
+  };
+  showLayer = function () {
+    map.whenReady(function () {
+      toggleLayerVisibility(wms_0);
+    });
+  };
 </script>
 
 <div id="data_set_title">

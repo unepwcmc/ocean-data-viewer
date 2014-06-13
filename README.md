@@ -19,12 +19,6 @@ Create the `database.yml` file based on the `database.yml.example`
 cp config/database.yml.example config/database.yml
 ```
 
-Create the `.env` file and replace the variables with valid Amazon S3 credentials:
-
-```
-cp .env-exampe .env
-```
-
 Create the database:
 
 ```

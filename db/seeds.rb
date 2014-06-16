@@ -15,5 +15,5 @@
   'Species Habitat'
   ].each do |name|
 
-  DataCategory.create(name: name)
+  DataCategory.create!(name: name)
 end

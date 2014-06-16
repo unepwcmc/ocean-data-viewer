@@ -87,6 +87,6 @@ class Admin::DatasetsController < Admin::AdminController
   private
 
   def dataset_params
-    params.require(:dataset).permit(:title, :short_desc, :long_desc, :metadata_description, :shp_download, :wms_server, :wfs, :meta_download, :licence_id, :wms_name, :arcgis_link, :order_number, :has_legend, :html, :xml, :factsheet)
+    params.require(:dataset).permit(:title, :short_desc, :long_desc, :metadata_description, :shp_download, :wms_server, :wfs, :meta_download, :licence_id, :wms_name, :arcgis_link, :order_number, :has_legend, :html, :xml, :factsheet, :creation_date, :format, :observation_type, :geographical_range, data_category_ids: [])
   end
 end

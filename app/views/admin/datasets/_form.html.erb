@@ -29,6 +29,40 @@
   </p>
 
   <p>
+    <%= f.label :creation_date %><br/>
+    <%= f.text_field :creation_date %>
+  </p>
+
+  <p>
+    <%= f.label :data_categories %><br/>
+    <%= f.collection_check_boxes :data_category_ids, DataCategory.all, :id, :name %>
+  </p>
+
+  <p>
+    <%= f.label :format, label: 'Data Format' %><br/>
+    <% [ 'point', 'polygon', 'point & polygon'].each do |option| %>
+      <%= f.radio_button :format, option %>
+      <%= option.humanize %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.label :observation_type %><br/>
+    <% [ 'empirical', 'modeled' ].each do |option| %>
+      <%= f.radio_button :observation_type, option %>
+      <%= option.humanize %>
+    <% end %>
+  </p>
+
+  <p>
+    <%= f.label :geographical_range %><br/>
+    <% [ 'global', 'regional' ].each do |option| %>
+      <%= f.radio_button :geographical_range, option %>
+      <%= option.humanize %>
+    <% end %>
+  </p>
+
+  <p>
     <%= f.label :metadata_html_file%><br/>
     <%= f.file_field :html%>
   </p>

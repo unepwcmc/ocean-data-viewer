@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+[ 'Biogenetic',
+  'Biodiversity Metric',
+  'Biogeographic',
+  'Species Distribuition',
+  'Areas of Biodiversity Importance',
+  'Environment Descriptor',
+  'Ecological Status Administration',
+  'Species Habitat'
+  ].each do |name|
+
+  DataCategory.create(name: name)
+end

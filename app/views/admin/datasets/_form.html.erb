@@ -9,20 +9,24 @@
 
   <p>
     <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <%= f.text_field :title, class: 'long-text' %>
   </p>
+
   <p>
     <%= f.label :order_number %><br />
     <%= f.text_field :order_number %>
   </p>
+
   <p>
     <%= f.label :short_desc %><br />
     <%= f.text_area :short_desc %>
   </p>
+
   <p>
     <%= f.label :long_desc %><br />
     <%= f.text_area :long_desc %>
   </p>
+
   <p>
     <%= f.label :metadata_description %><br />
     <%= f.text_area :metadata_description %>
@@ -33,32 +37,32 @@
     <%= f.text_field :creation_date %>
   </p>
 
-  <p>
+  <p class="checkboxes">
     <%= f.label :data_categories %><br/>
     <%= f.collection_check_boxes :data_category_ids, DataCategory.all, :id, :name %>
   </p>
 
-  <p>
+  <p class="checkboxes">
     <%= f.label :format, label: 'Data Format' %><br/>
     <% [ 'point', 'polygon', 'point & polygon'].each do |option| %>
       <%= f.radio_button :format, option %>
-      <%= option.humanize %>
+      <%= f.label :format, option.humanize, value: option %>
     <% end %>
   </p>
 
-  <p>
+  <p class="checkboxes">
     <%= f.label :observation_type %><br/>
     <% [ 'empirical', 'modeled' ].each do |option| %>
       <%= f.radio_button :observation_type, option %>
-      <%= option.humanize %>
+      <%= f.label :observation_type, option.humanize, value: option %>
     <% end %>
   </p>
 
-  <p>
+  <p class="checkboxes">
     <%= f.label :geographical_range %><br/>
     <% [ 'global', 'regional' ].each do |option| %>
       <%= f.radio_button :geographical_range, option %>
-      <%= option.humanize %>
+      <%= f.label :geographical_range, option.humanize, value: option %>
     <% end %>
   </p>
 
@@ -79,17 +83,17 @@
 
   <p>
     <%= f.label :shp_download %><br />
-    <%= f.text_field :shp_download %>
+    <%= f.text_field :shp_download, class: 'long-text' %>
   </p>
 
   <p>
     <%= f.label :arcgis_link %><br />
-    <%= f.text_field :arcgis_link %>
+    <%= f.text_field :arcgis_link, class: 'long-text' %>
   </p>
 
   <p>
     <%= f.label :wms_server %><br />
-    <%= f.text_field :wms_server %>
+    <%= f.text_field :wms_server, class: 'long-text' %>
   </p>
   <p>
     <%= f.label :wms_name %><br />

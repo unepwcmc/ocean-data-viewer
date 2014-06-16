@@ -3,4 +3,5 @@
 *= require blueprint/plugins/buttons/screen
 *= require tipsy
 *= require marine
+*= require admin/forms
 */

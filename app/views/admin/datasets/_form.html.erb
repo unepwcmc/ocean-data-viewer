@@ -37,12 +37,12 @@
     <%= f.text_field :creation_date, type: :date %>
   </p>
 
-  <p class="checkboxes">
+  <p class="options">
     <%= f.label :data_categories %><br/>
     <%= f.collection_check_boxes :data_category_ids, data_categories, :id, :name %>
   </p>
 
-  <p class="checkboxes">
+  <p class="options radio">
     <%= f.label :format, label: 'Data Format' %><br/>
     <% data_formats.each do |option| %>
       <%= f.radio_button :format, option %>
@@ -50,7 +50,7 @@
     <% end %>
   </p>
 
-  <p class="checkboxes">
+  <p class="options radio">
     <%= f.label :observation_type %><br/>
     <% observation_types.each do |option| %>
       <%= f.radio_button :observation_type, option %>
@@ -58,7 +58,7 @@
     <% end %>
   </p>
 
-  <p class="checkboxes">
+  <p class="options radio">
     <%= f.label :geographical_range %><br/>
     <% geographical_ranges.each do |option| %>
       <%= f.radio_button :geographical_range, option %>

@@ -17,5 +17,4 @@
 //= require ../../../vendor/assets/bower_components/esri-leaflet/dist/esri-leaflet
 //= require jquery.textshadow
 //= require jquery.tipsy
-//= require easySlider1.7
 //= require bootstrap_app

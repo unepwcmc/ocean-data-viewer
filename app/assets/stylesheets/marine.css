@@ -1,86 +1,99 @@
-body{padding-top:1em; background: #ccc url("/images/background.png") top left repeat-x;}
-
-.container{padding-top:1.5em;}
-.inner_container{margin-top:1.5em;background:#fff;border:10px solid #eee;}
-.content_container{background:#fff; margin: 0 0.5em;}
-
-.about h3{
-  background:#3174AF;
-  color:white;
-  padding:0.2em 0.2em 0 0.2em;
-  margin-bottom:0.3em;
-  font-size:2em;
+body {
+  padding-top: 1em;
+  background: #ccc url("/images/background.png") top left repeat-x;
 }
 
-.data_panel{
-  background:#1B558B;
-  color:white;
-  padding:1em;
+.container {
+  padding-top: 1.5em;
+}
+
+.inner_container {
+  margin-top: 1.5em;
+  background: #fff;
+  border: 10px solid #eee;
+}
+
+.content_container {
+  background: #fff;
+  margin: 0 0.5em;
+}
+
+.about h3 {
+  background: #3174AF;
+  color: white;
+  padding: 0.2em 0.2em 0 0.2em;
+  margin-bottom: 0.3em;
+  font-size: 2em;
+}
+
+.data_panel {
+  background: #1B558B;
+  color: white;
+  padding: 1em;
 }
 
 .data_panel h4{
-  color:white;
-  font-weight:bold;
-  font-size:1.2em;
-  margin-bottom:10px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 10px;
 }
 
 .data_panel a#tipsy{
-  background:#578DCA;
-  padding:2px;
-  font-weight:bold;
-  border:1px solid #2D4F75;
-  color:white;
-  text-decoration:none;
+  background: #578DCA;
+  padding: 2px;
+  font-weight: bold;
+  border: 1px solid #2D4F75;
+  color: white;
+  text-decoration: none;
   border-width: 0 1px 1px 0;
 }
 
 .datasets h3{
-  border-top:2px solid #3174AF;
-  padding:0.3em 0;
-  font-size:2em;
-  margin-bottom:0.2em;
+  border-top: 2px solid #3174AF;
+  padding: 0.3em 0;
+  font-size: 2em;
+  margin-bottom: 0.2em;
 }
 
 .datasets h3 a {
-  color:#444;
+  color: #444;
 }
 
 .datasets h3 a:hover {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
-
-.about{
-  background:#eee;
-  padding:0.5em;
+.about {
+  background: #eee;
+  padding: 0.5em;
 }
 
-.about p{
-  margin-bottom:0.5em;
-  padding:0;
+.about p {
+  margin-bottom: 0.5em;
+  padding: 0;
 }
 
-td, th{
-        border-right: 2px solid #3174AF;
-        border-bottom: 2px solid #3174AF;
-        border-style: solid;
+td, th {
+  border-right: 2px solid #3174AF;
+  border-bottom: 2px solid #3174AF;
+  border-style: solid;
 }
 
-th a{
-        text-decoration: none;
-        font-size: 1.5em;
-        color:black;
+th a {
+  text-decoration: none;
+  font-size: 1.5em;
+  color: black;
 }
 
 .group_toggle {
-        text-decoration: underline;
-        font-size: 0.5em;
-        color:blue;
+  text-decoration: underline;
+  font-size: 0.5em;
+  color: blue;
 }
 
 .active_matrix_cell {
-  background:#CCCCCC;
+  background: #CCCCCC;
 }
 
 .hidden_matrix_cell {
@@ -88,10 +101,10 @@ th a{
 }
 
 .admin_menu {
-  background:#3174AF;
+  background: #3174AF;
 }
 
-.admin_menu a{
+.admin_menu a {
   color: white;
   text-decoration: none;
   font-size: 1.5em;

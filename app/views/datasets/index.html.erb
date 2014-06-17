@@ -17,7 +17,6 @@
                    styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
               -%>
                 <li class="<%= styles %>">
-                    <div class="left_shadow"></div>
                     <%= link_to decision.short_name, decision %>
                     <% if decision.children.present? %>
                       <ul>
@@ -30,7 +29,6 @@
                         <% end -%>
                       </ul>
                     <% end -%>
-                    <div class="right_shadow"></div>
                 </li>
 
               <% end -%>
@@ -39,15 +37,12 @@
     </ul>
 </div>
 
-<a id="resize_map"></a>
-<a id="enlarge_map"></a>
 <div id="data_set_content_datasets">
 
   <% @datasets.each_with_index do |dataset, i| %>
     <!-- ROW for <%= dataset.title -%>-->
     <ul class="dataset">
         <li class="title <%= 'first' if i == 0 %> <%= 'last' if i == (@datasets.size - 1) %>">
-            <div class="head_shadow"></div>
             <div class="text">
                 <%= link_to "#{truncate(dataset.title, lenght: 80)}", dataset %>
             </div>
@@ -62,7 +57,6 @@
                   <%= link_to "<div id='arcgis_tooltip'>VIEW ON ARCGIS.COM</div>".html_safe, dataset.arcgis_link, :class => 'download_arcgis'  %>
                 <% end %>
             </div>
-            <div class="bottom_shadow"></div>
         </li>
 
         <li class="information">
@@ -156,35 +150,4 @@
         </li>
     </ul>
   <% end %>
-  <span class="end_information"></span>
 </div>    <!-- data_set_content_datasets -->
-
-<!-- FOOTER INFORMATION -->
-<div id="footer_datasets">
-    <ul id="footer_datasets_table">
-
-        <% @decisions.each_with_index do |decision,i|
-             styles = ''
-             styles << 'first ' if (i == 0)
-             styles << 'last ' if (i == (@dataset_count - 1))
-             styles << 'two_lines ' if decision.name.size > 8
-             styles << "suboptions columns#{decision.children.size} " unless decision.children.empty?
-        %>
-            <li class="<%= styles %>">
-                <% if decision.children.present? %>
-                  <ul>
-                    <% decision.children.each_with_index do |child,ci|
-                         child_style = ''
-                         child_style << 'first ' if (ci == 0)
-                         child_style << 'last ' if (ci == (decision.children.size - 1))
-                    %>
-                      <li class="<%= child_style %>"><%= link_to child.short_name, child %></li>
-                    <% end %>
-                  </ul>
-                <% end %>
-                <%= link_to decision.short_name, decision %>
-            </li>
-        <% end %>
-
-    </ul>
-</div>

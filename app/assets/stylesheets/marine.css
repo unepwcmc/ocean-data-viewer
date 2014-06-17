@@ -39,7 +39,7 @@ body {
   margin-bottom: 10px;
 }
 
-.data_panel a#tipsy{
+.data_panel a#tipsy {
   background: #578DCA;
   padding: 2px;
   font-weight: bold;
@@ -49,7 +49,7 @@ body {
   border-width: 0 1px 1px 0;
 }
 
-.datasets h3{
+.datasets h3 {
   border-top: 2px solid #3174AF;
   padding: 0.3em 0;
   font-size: 2em;
@@ -86,20 +86,6 @@ th a {
   color: black;
 }
 
-.group_toggle {
-  text-decoration: underline;
-  font-size: 0.5em;
-  color: blue;
-}
-
-.active_matrix_cell {
-  background: #CCCCCC;
-}
-
-.hidden_matrix_cell {
-  display: none;
-}
-
 .admin_menu {
   background: #3174AF;
 }
@@ -109,10 +95,6 @@ th a {
   text-decoration: none;
   font-size: 1.5em;
   padding: 7px;
-}
-
-.licence_table td {
-  vertical-align: top;
 }
 
 .olImageLoadError {

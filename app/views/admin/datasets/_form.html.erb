@@ -45,24 +45,24 @@
   <p class="options radio">
     <%= f.label :format, label: 'Data Format' %><br/>
     <% data_formats.each do |option| %>
-      <%= f.radio_button :format, option %>
-      <%= f.label :format, option.humanize, value: option %>
+      <%= f.radio_button :format, option.id %>
+      <%= f.label :format, option.name.humanize, value: option.id %>
     <% end %>
   </p>
 
   <p class="options radio">
     <%= f.label :observation_type %><br/>
     <% observation_types.each do |option| %>
-      <%= f.radio_button :observation_type, option %>
-      <%= f.label :observation_type, option.humanize, value: option %>
+      <%= f.radio_button :observation_type, option.id %>
+      <%= f.label :observation_type, option.name.humanize, value: option.id %>
     <% end %>
   </p>
 
   <p class="options radio">
     <%= f.label :geographical_range %><br/>
     <% geographical_ranges.each do |option| %>
-      <%= f.radio_button :geographical_range, option %>
-      <%= f.label :geographical_range, option.humanize, value: option %>
+      <%= f.radio_button :geographical_range, option.id %>
+      <%= f.label :geographical_range, option.name.humanize, value: option.id %>
     <% end %>
   </p>
 

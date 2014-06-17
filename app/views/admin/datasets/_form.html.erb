@@ -39,12 +39,12 @@
 
   <p class="checkboxes">
     <%= f.label :data_categories %><br/>
-    <%= f.collection_check_boxes :data_category_ids, DataCategory.all, :id, :name %>
+    <%= f.collection_check_boxes :data_category_ids, data_categories, :id, :name %>
   </p>
 
   <p class="checkboxes">
     <%= f.label :format, label: 'Data Format' %><br/>
-    <% [ 'point', 'polygon', 'point & polygon'].each do |option| %>
+    <% data_formats.each do |option| %>
       <%= f.radio_button :format, option %>
       <%= f.label :format, option.humanize, value: option %>
     <% end %>
@@ -52,7 +52,7 @@
 
   <p class="checkboxes">
     <%= f.label :observation_type %><br/>
-    <% [ 'empirical', 'modeled' ].each do |option| %>
+    <% observation_types.each do |option| %>
       <%= f.radio_button :observation_type, option %>
       <%= f.label :observation_type, option.humanize, value: option %>
     <% end %>
@@ -60,7 +60,7 @@
 
   <p class="checkboxes">
     <%= f.label :geographical_range %><br/>
-    <% [ 'global', 'regional' ].each do |option| %>
+    <% geographical_ranges.each do |option| %>
       <%= f.radio_button :geographical_range, option %>
       <%= f.label :geographical_range, option.humanize, value: option %>
     <% end %>
@@ -115,7 +115,7 @@
 
   <p>
     <%= f.label :licence %><br />
-    <%= collection_select(:dataset, :licence_id, Licence.all.order("title ASC"), :id, :title, {:prompt => true})%>
+    <%= collection_select(:dataset, :licence_id, licences, :id, :title, {:prompt => true})%>
   </p>
   <p>
     <%= f.submit 'Submit' %>

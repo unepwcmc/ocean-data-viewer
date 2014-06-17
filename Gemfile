@@ -15,6 +15,7 @@ gem 'aws-sdk'
 gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
 gem 'a9n'
+gem 'dependor'
 
 gem 'unicorn'
 gem 'therubyracer'
@@ -23,6 +24,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'spring'
   gem 'letter_opener'
+  gem 'rspec-rails', '~> 3.0.0'
 end
 
 group :development do

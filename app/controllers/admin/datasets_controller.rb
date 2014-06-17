@@ -1,4 +1,7 @@
 class Admin::DatasetsController < Admin::AdminController
+  inject :dataset, :data_categories, :data_formats, :observation_types, :geographical_ranges, :licences
+  helper_method :data_categories, :data_formats, :observation_types, :geographical_ranges, :licences
+
   # GET /datasets
   # GET /datasets.xml
   def index
@@ -13,7 +16,7 @@ class Admin::DatasetsController < Admin::AdminController
   # GET /datasets/1
   # GET /datasets/1.xml
   def show
-    @dataset = Dataset.find(params[:id])
+    @dataset = dataset
     @linked_decisions = @dataset.datasets_decisions
 
     respond_to do |format|
@@ -35,7 +38,7 @@ class Admin::DatasetsController < Admin::AdminController
 
   # GET /datasets/1/edit
   def edit
-    @dataset = Dataset.find(params[:id])
+    @dataset = dataset
   end
 
   # POST /datasets
@@ -58,7 +61,7 @@ class Admin::DatasetsController < Admin::AdminController
   # PUT /datasets/1
   # PUT /datasets/1.xml
   def update
-    @dataset = Dataset.find(params[:id])
+    @dataset = dataset
 
     respond_to do |format|
       if @dataset.update_attributes(dataset_params)
@@ -75,7 +78,7 @@ class Admin::DatasetsController < Admin::AdminController
   # DELETE /datasets/1
   # DELETE /datasets/1.xml
   def destroy
-    @dataset = Dataset.find(params[:id])
+    @dataset = dataset
     @dataset.destroy
 
     respond_to do |format|

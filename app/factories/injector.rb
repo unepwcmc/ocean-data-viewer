@@ -1,13 +1,10 @@
 class Injector
-  attr_accessor :request
-
-  def initialize(request)
-    self.request = request
-  end
+  takes :request
 
   include MemoizeServices
 
   service (:dataset) { Dataset.find(id('dataset')) }
+  #service (:datasets_repository) { DatasetsRepository.new }
 
   service (:data_categories) { data_categories_repository.all }
   service (:data_categories_repository) { DataCategoriesRepository.new }
@@ -19,6 +16,8 @@ class Injector
   service (:geographical_ranges) { GeographicalRange.all }
 
   service (:licences) { Licence.all.order("title ASC") }
+
+  #service (:search) { MapSearchService.new(datasets_repository) }
 
   private
 

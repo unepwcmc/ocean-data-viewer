@@ -12,8 +12,8 @@
  *
  *= require_tree ../../../vendor/assets/bower_components
  *= require tipsy
- *= require marine
  *= require layout
  *= require webfonts
+ *= require jscrollpane
  *= require_tree ./home
  */

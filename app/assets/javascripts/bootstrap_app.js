@@ -5,12 +5,10 @@ $(document).ready(function() {
     $(this).tipsy()
   });
 
-  $('div#down_databases_info a#showing_databases_down').children('span.tick').removeClass('up');
-  $('div#down_databases_info a#showing_databases_down').children('span.tick').addClass('down');
-
-  $('div#scrollable_databases').jScrollPane({scrollbarWidth:11});
-  $('div#container').css('display','none');
-  $('span#bottom_scrollable_databases').css('display','none');
+  $('div#scrollable_databases').jScrollPane({
+    scrollbarWidth: 11,
+    autoReinitialise: true
+  });
 
   var options = {
     minZoom: 3,
@@ -106,26 +104,6 @@ $(document).ready(function() {
 
     $(this).parent().parent().parent().parent().children('a').removeClass('checked');
     $(this).parent().parent().parent().fadeOut('fast');
-  });
-
-  // Down showing databases
-  $('div#down_databases_info a#showing_databases_down').click(function(ev){
-    ev.stopPropagation();
-    ev.preventDefault();
-
-    if ($(this).children('span.tick').hasClass('down')){
-      $(this).children('span.tick').removeClass('down');
-      $(this).children('span.tick').addClass('up');
-
-      $(this).parent().children('div#container').css('display','inline');
-      $(this).parent().children('span#bottom_scrollable_databases').css('display','inline');
-    }
-    else {
-      $(this).children('span.tick').removeClass('up');
-      $(this).children('span.tick').addClass('down');
-      $(this).parent().children('div#container').fadeOut('fast');
-      $(this).parent().children('span#bottom_scrollable_databases').fadeOut('fast');
-    }
   });
 
   $('div#scrollable_databases ul li').click(function(ev){

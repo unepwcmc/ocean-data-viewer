@@ -3,8 +3,8 @@ class Injector
 
   include MemoizeServices
 
-  service (:dataset) { Dataset.find(id('dataset')) }
-  #service (:datasets_repository) { DatasetsRepository.new }
+  service (:dataset) { datasets_repository.find(id('dataset')) }
+  service (:datasets_repository) { Dataset }
 
   service (:data_categories) { data_categories_repository.all }
   service (:data_categories_repository) { DataCategoriesRepository.new }
@@ -17,7 +17,7 @@ class Injector
 
   service (:licences) { Licence.all.order("title ASC") }
 
-  #service (:search) { MapSearchService.new(datasets_repository) }
+  service (:search) { MapSearchService.new(datasets_repository) }
 
   private
 

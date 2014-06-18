@@ -14,5 +14,6 @@
  *= require tipsy
  *= require marine
  *= require layout
+ *= require webfonts
  *= require_tree ./home
  */

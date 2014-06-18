@@ -33,5 +33,11 @@ module MarinePortal
     # config.i18n.default_locale = :de
 
     config.assets.paths << "#{Rails.root}/vendor/assets/bower_components"
+
+     # Add path to fonts
+    config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
+    # Precompile fonts
+    config.assets.precompile += %w( .svg .eot .woff .ttf )
   end
 end

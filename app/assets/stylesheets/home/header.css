@@ -1,13 +1,38 @@
 header {
   width: 100%;
-  background: #317fce;
-  padding: 1em;
+  background: #4295D5;
+  color: white;
+  font-size: 17px;
+  padding: .65em 1.5em;
+  height: 60px;
   margin: 0;
   z-index: 5;
-  color: white;
+  position: relative;
 }
 
 header a {
   color: white;
   text-decoration: none;
+}
+
+header img, header h1 {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+header > a, header h1 {
+  position: absolute;
+  top: 21.5px;
+}
+
+header h1 {
+  font-size: 1em;
+  font-family: 'MuseoSans-500';
+  text-transform: uppercase;
+  left: 50%;
+  margin-left: -87.5px; /* width/2 */
+}
+
+header > a {
+  right: 2em;
 }

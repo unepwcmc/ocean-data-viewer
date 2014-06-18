@@ -26,6 +26,8 @@ group :development, :test do
   gem 'spring'
   gem 'letter_opener'
   gem 'rspec-rails', '~> 3.0.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'pry'
 end
 
 group :development do

@@ -6,7 +6,7 @@ module MockModel
   included do
     include ActiveModel::Conversion
     include ActiveModel::Validations
-    include ActiveModel::MassAssignmentSecurity
+    include ActiveModel::ForbiddenAttributesProtection
   end
 
   def initialize(attributes = {})
@@ -19,7 +19,7 @@ module MockModel
   end
 
   def assign_attributes(values, options = {})
-    sanitize_for_mass_assignment(values, options[:as]).each do |k, v|
+    sanitize_for_mass_assignment(values).each do |k, v|
       send("#{k}=", v)
     end
   end

@@ -1,7 +1,7 @@
 $(function () {
   $('div#scrollable_databases').jScrollPane({
-    scrollbarWidth: 11,
-    autoReinitialise: true
+    autoReinitialise: true,
+    verticalGutter: 0
   });
 
   $('div#scrollable_databases ul li').click(function(ev){

@@ -18,6 +18,7 @@ gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
 gem 'a9n'
 gem 'dependor'
+gem 'active_model_serializers'
 
 gem 'unicorn'
 gem 'therubyracer'
@@ -26,8 +27,6 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'spring'
   gem 'letter_opener'
-  gem 'rspec-rails', '~> 3.0.0'
-  gem "factory_girl_rails", "~> 4.0"
   gem 'pry'
 end
 
@@ -35,4 +34,10 @@ group :development do
   gem 'capistrano', '~> 2.15'
   gem 'rvm-capistrano', '1.2.7'
   gem 'capistrano-unicorn', '~> 0.1.10', require: false
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.0.0'
+  gem "factory_girl_rails", "~> 4.0"
+  gem 'json_spec'
 end

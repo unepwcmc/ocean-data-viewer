@@ -18,7 +18,6 @@ gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
 gem 'a9n'
 gem 'dependor'
-gem 'protected_attributes'
 
 gem 'unicorn'
 gem 'therubyracer'

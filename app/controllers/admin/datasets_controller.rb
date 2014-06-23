@@ -64,7 +64,7 @@ class Admin::DatasetsController < Admin::AdminController
     @dataset = dataset
 
     respond_to do |format|
-      if @dataset.update_attributes(dataset_params)
+      if @dataset.update_attributes!(dataset_params)
         flash[:notice] = 'Dataset was successfully updated.'
         format.html { redirect_to([:admin,@dataset]) }
         format.xml  { head :ok }

@@ -4,7 +4,7 @@ class MapSearchController < ApplicationController
   def create
     search_filters = MapSearch.new(search_params)
     if search_filters.valid?
-      search.query(search_filters)
+      render json: search.query(search_filters)
     end
   end
 

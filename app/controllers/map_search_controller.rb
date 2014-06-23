@@ -4,7 +4,9 @@ class MapSearchController < ApplicationController
   def create
     search_filters = MapSearch.new(search_params)
     if search_filters.valid?
-      render json: search.query(search_filters)
+      render json: search.query(search_filters), each_serializer: DatasetSerializer
+    else
+      render json: {error: 'query not valid'}
     end
   end
 

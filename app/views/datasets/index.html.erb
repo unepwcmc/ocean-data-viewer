@@ -66,7 +66,7 @@
                 -%>
                         <li>
                           <%
-                            datasets_decision = DatasetsDecision.where(:dataset_id => dataset, :decision_id => decision).first
+                            datasets_decision = DatasetsDecision.where(:dataset_id => dataset.id, :decision_id => decision).first
                             if datasets_decision.present? #Only render the cell if link exists
                           %>
                               <div id="info_tooltip">
@@ -107,7 +107,7 @@
                     -%>
                         <li>
                           <%
-                            datasets_decision = DatasetsDecision.where(:dataset_id => dataset, :decision_id => child_decision).first
+                            datasets_decision = DatasetsDecision.where(:dataset_id => dataset.id, :decision_id => child_decision).first
                             if datasets_decision.present? #Only render the cell if link exists
                           %>
                               <div id="info_tooltip">

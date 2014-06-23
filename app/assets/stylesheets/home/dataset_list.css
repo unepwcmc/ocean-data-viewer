@@ -29,6 +29,24 @@
   border: 1px solid #ddd;
 }
 
+.dataset-list a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dataset-list a.title {
+  color: #4295D5;
+  font: 15px 'MuseoSans-500';
+}
+
+.dataset-list li:hover a.title {
+  text-decoration: underline;
+}
+
+.dataset-list li {
+  color: #999;
+}
+
 .dataset-list li + li {
   border-top: none;
 }
@@ -37,49 +55,54 @@
   background-color: white;
 }
 
-.dataset-list li p {
+.dataset-list .dataset-info {
   padding: 1em;
 }
 
-.dataset-list li.active p {
+.dataset-list span {
+  display: inline-block;
+  vertical-align: middle;
+  padding: .15em .25em .15em 0;
+  margin: .25em 0;
+  line-height: 1em;
+}
+
+.dataset-list .categories {
+  border-left: 1px solid #D4D4D4;
+  padding-left: .5em;
+}
+
+.dataset-list li.active .dataset-info {
   border-right: 7px solid;
 }
 
-.dataset-list li p.text {
-  color: #666666;
-}
+.dataset-list li.active.type21 .dataset-info { border-right-color: #734c00; }
 
-.dataset-list li p.text:hover {
-  text-decoration: underline;
-}
+.dataset-list li.active.type22 .dataset-info { border-right-color: #a8a800; }
 
-.dataset-list li.active.type21 p { border-right-color: #734c00; }
+.dataset-list li.active.type13 .dataset-info { border-right-color: #FFAA00; }
 
-.dataset-list li.active.type22 p { border-right-color: #a8a800; }
+.dataset-list li.active.type14 .dataset-info { border-right-color: #A900E6; }
 
-.dataset-list li.active.type13 p { border-right-color: #FFAA00; }
+.dataset-list li.active.type6  .dataset-info { border-right-color: #267300; }
 
-.dataset-list li.active.type14 p { border-right-color: #A900E6; }
+.dataset-list li.active.type7  .dataset-info { border-right-color: #55FF00; }
 
-.dataset-list li.active.type6  p { border-right-color: #267300; }
+.dataset-list li.active.type8  .dataset-info { border-right-color: #E6E600; }
 
-.dataset-list li.active.type7  p { border-right-color: #55FF00; }
+.dataset-list li.active.type11 .dataset-info { border-right-color: #66CC99; }
 
-.dataset-list li.active.type8  p { border-right-color: #E6E600; }
+.dataset-list li.active.type9  .dataset-info { border-right-color: #CD6666; }
 
-.dataset-list li.active.type11 p { border-right-color: #66CC99; }
+.dataset-list li.active.type10 .dataset-info { border-right-color: #A80000; }
 
-.dataset-list li.active.type9  p { border-right-color: #CD6666; }
+.dataset-list li.active.type1  .dataset-info { border-right-color: #CC66CC; }
 
-.dataset-list li.active.type10 p { border-right-color: #A80000; }
+.dataset-list li.active.type17 .dataset-info { border-right-color: #99B3CC; }
 
-.dataset-list li.active.type1  p { border-right-color: #CC66CC; }
+.dataset-list li.active.type16 .dataset-info { border-right-color: #E1E73D; }
 
-.dataset-list li.active.type17 p { border-right-color: #99B3CC; }
-
-.dataset-list li.active.type16 p { border-right-color: #E1E73D; }
-
-.dataset-list li.active.type15 p { border-right-color: #399CF0; }
+.dataset-list li.active.type15 .dataset-info { border-right-color: #399CF0; }
 
 .dataset-list li.active.type4  p{ border-right-color: #98B285; }
 
@@ -87,17 +110,17 @@
 
 .dataset-list li.active.type3  p{ border-right-color: #B3C1D1; }
 
-.dataset-list li.active.type19 p { border-right-color: #109489; }
+.dataset-list li.active.type19 .dataset-info { border-right-color: #109489; }
 
-.dataset-list li.active.type28 p { border-right-color: #ecd906; }
+.dataset-list li.active.type28 .dataset-info { border-right-color: #ecd906; }
 
-.dataset-list li.active.type27 p { border-right-color: #43c2d9; }
+.dataset-list li.active.type27 .dataset-info { border-right-color: #43c2d9; }
 
-.dataset-list li.active.type26 p { border-right-color: #5c83c4; }
+.dataset-list li.active.type26 .dataset-info { border-right-color: #5c83c4; }
 
-.dataset-list li.active.type29 p { border-right-color: #ff0000; }
+.dataset-list li.active.type29 .dataset-info { border-right-color: #ff0000; }
 
-.dataset-list li.active.type30 p { border-right-color: #59c3e2; }
+.dataset-list li.active.type30 .dataset-info { border-right-color: #59c3e2; }
 
 .jspVerticalBar {
   left: 0;

@@ -5,11 +5,6 @@ $(document).ready(function() {
     $(this).tipsy()
   });
 
-  $('div#scrollable_databases').jScrollPane({
-    scrollbarWidth: 11,
-    autoReinitialise: true
-  });
-
   var options = {
     minZoom: 3,
     maxZoom: 18,
@@ -105,27 +100,4 @@ $(document).ready(function() {
     $(this).parent().parent().parent().parent().children('a').removeClass('checked');
     $(this).parent().parent().parent().fadeOut('fast');
   });
-
-  $('div#scrollable_databases ul li').click(function(ev){
-    ev.stopPropagation();
-    ev.preventDefault();
-
-    if ($(this).hasClass('checked')){
-      $(this).removeClass('checked');
-    }
-    else {
-      $(this).addClass('checked');
-    }
-  });
-
-  $('div#scrollable_databases ul li').hover(function(ev) {
-    ev.stopPropagation();
-    ev.preventDefault();
-
-    $(this).children('p.text').addClass('hover');
-    },
-    function(ev){
-      $(this).children('p.text').removeClass('hover');
-  });
-
 });

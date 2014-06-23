@@ -25,9 +25,6 @@ div#scrollable_databases {
 div#scrollable_databases:focus { outline: none; }
 
 div#scrollable_databases ul#list li {
-}
-
-div#scrollable_databases ul#list li:hover {
   cursor: pointer;
 }
 
@@ -35,65 +32,63 @@ div#scrollable_databases ul#list li p {
   padding: 1em;
 }
 
-div#scrollable_databases ul#list li.checked p.text {
-  color: white;
+.active {
+  border-right: 7px solid;
 }
 
 div#scrollable_databases ul#list li p.text {
   color: #666666;
 }
 
-div#scrollable_databases ul#list li p.text.hover {
+div#scrollable_databases ul#list li p.text:hover {
   text-decoration: underline;
 }
 
-div#scrollable_databases ul#list li.unchecked { background-color:white; }
+div#scrollable_databases ul#list li.active.type21 { border-color: #734c00; }
 
-div#scrollable_databases ul#list li.checked.type21 { background-color:#734c00; }
+div#scrollable_databases ul#list li.active.type22 { border-color: #a8a800; }
 
-div#scrollable_databases ul#list li.checked.type22 { background-color:#a8a800; }
+div#scrollable_databases ul#list li.active.type13 { border-color: #FFAA00; }
 
-div#scrollable_databases ul#list li.checked.type13 { background-color:#FFAA00; }
+div#scrollable_databases ul#list li.active.type14 { border-color: #A900E6; }
 
-div#scrollable_databases ul#list li.checked.type14 { background-color:#A900E6; }
+div#scrollable_databases ul#list li.active.type6  { border-color: #267300; }
 
-div#scrollable_databases ul#list li.checked.type6  { background-color:#267300; }
+div#scrollable_databases ul#list li.active.type7  { border-color: #55FF00; }
 
-div#scrollable_databases ul#list li.checked.type7  { background-color:#55FF00; }
+div#scrollable_databases ul#list li.active.type8  { border-color: #E6E600; }
 
-div#scrollable_databases ul#list li.checked.type8  { background-color:#E6E600; }
+div#scrollable_databases ul#list li.active.type11 { border-color: #66CC99; }
 
-div#scrollable_databases ul#list li.checked.type11 { background-color:#66CC99; }
+div#scrollable_databases ul#list li.active.type9  { border-color: #CD6666; }
 
-div#scrollable_databases ul#list li.checked.type9  { background-color:#CD6666; }
+div#scrollable_databases ul#list li.active.type10 { border-color: #A80000; }
 
-div#scrollable_databases ul#list li.checked.type10 { background-color:#A80000; }
+div#scrollable_databases ul#list li.active.type1  { border-color: #CC66CC; }
 
-div#scrollable_databases ul#list li.checked.type1  { background-color:#CC66CC; }
+div#scrollable_databases ul#list li.active.type17 { border-color: #99B3CC; }
 
-div#scrollable_databases ul#list li.checked.type17 { background-color:#99B3CC; }
+div#scrollable_databases ul#list li.active.type16 { border-color: #E1E73D; }
 
-div#scrollable_databases ul#list li.checked.type16 { background-color:#E1E73D; }
+div#scrollable_databases ul#list li.active.type15 { border-color: #399CF0; }
 
-div#scrollable_databases ul#list li.checked.type15 { background-color:#399CF0; }
+div#scrollable_databases ul#list li.active.type4 { border-color: #98B285; }
 
-div#scrollable_databases ul#list li.checked.type4 { background-color:#98B285; }
+div#scrollable_databases ul#list li.active.type5 { border-color: #B9C47A; }
 
-div#scrollable_databases ul#list li.checked.type5 { background-color:#B9C47A; }
+div#scrollable_databases ul#list li.active.type3 { border-color: #B3C1D1; }
 
-div#scrollable_databases ul#list li.checked.type3 { background-color:#B3C1D1; }
+div#scrollable_databases ul#list li.active.type19 { border-color: #109489; }
 
-div#scrollable_databases ul#list li.checked.type19 { background-color:#109489; }
+div#scrollable_databases ul#list li.active.type28 { border-color: #ecd906; }
 
-div#scrollable_databases ul#list li.checked.type28 { background-color:#ecd906; }
+div#scrollable_databases ul#list li.active.type27 { border-color: #43c2d9; }
 
-div#scrollable_databases ul#list li.checked.type27 { background-color:#43c2d9; }
+div#scrollable_databases ul#list li.active.type26 { border-color: #5c83c4; }
 
-div#scrollable_databases ul#list li.checked.type26 { background-color:#5c83c4; }
+div#scrollable_databases ul#list li.active.type29 { border-color: #ff0000; }
 
-div#scrollable_databases ul#list li.checked.type29 { background-color:#ff0000; }
-
-div#scrollable_databases ul#list li.checked.type30 { background-color:#59c3e2; }
+div#scrollable_databases ul#list li.active.type30 { border-color: #59c3e2; }
 
 .jspVerticalBar {
   left: 0;

@@ -18,3 +18,4 @@
 //= require jquery.textshadow
 //= require jquery.tipsy
 //= require bootstrap_app
+//= require dataset-list

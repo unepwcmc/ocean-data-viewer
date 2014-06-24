@@ -9,7 +9,7 @@ describe ObservationType do
     end
 
     it "specific types" do
-      expect(result.map(&:name)).to eq([ 'empirical', 'modeled' ])
+      expect(result.map(&:name)).to eq([ 'empirical', 'modelled' ])
     end
   end
 end

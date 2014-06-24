@@ -21,7 +21,7 @@ describe MapSearch do
 
   it 'validates observation_types' do
     expect(MapSearch.new(sort_by: 'creation_date', observation_types: ['red']).valid?).to eq(false)
-    expect(MapSearch.new(sort_by: 'creation_date', observation_types: ['modeled']).valid?).to eq(true)
+    expect(MapSearch.new(sort_by: 'creation_date', observation_types: ['modelled']).valid?).to eq(true)
   end
 
   it 'validates geographical_ranges' do

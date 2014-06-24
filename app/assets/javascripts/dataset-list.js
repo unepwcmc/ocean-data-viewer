@@ -16,7 +16,7 @@ $(function () {
   $('.arrow-more').click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    $(this).closest('li').find('.additional-info').slideDown();
+    $(this).closest('li').find('.additional-info').slideDown(200);
     $(this).closest('li').find('.arrow-more').hide();
     $(this).closest('li').find('.arrow-less').show();
   });
@@ -24,7 +24,7 @@ $(function () {
   $('.arrow-less').click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    $('.additional-info').slideUp();
+    $('.additional-info').slideUp(200);
     $(this).closest('li').find('.arrow-less').hide();
     $(this).closest('li').find('.arrow-more').removeAttr('style');
     $(this).closest('li').find('.arrow-less').removeAttr('style');

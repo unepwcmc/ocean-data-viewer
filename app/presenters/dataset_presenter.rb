@@ -11,7 +11,7 @@ class DatasetPresenter < SimpleDelegator
 
   def format
     if dataset.format
-      "<span>#{dataset.format.to_s.capitalize}</span>".html_safe
+      "<br/><span>#{dataset.format.to_s.capitalize}</span>".html_safe
     end
   end
 

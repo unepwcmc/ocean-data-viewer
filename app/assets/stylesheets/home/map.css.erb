@@ -5,7 +5,7 @@ div.map {
   z-index: 1;
 }
 
-div#js_map {
+div.js_map {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,7 @@ div#js_map {
   z-index: 1;
 }
 
-div#zoom_buttons {
+div.zoom_buttons {
   position: absolute;
   top: 20px;
   right: 20px;
@@ -23,23 +23,23 @@ div#zoom_buttons {
   height: 27px;
 }
 
-#zoom_buttons a {
+.zoom_buttons a {
   float: left;
   width: 26px;
   height: 26px;
 }
 
-a#zoomIn {
+a.zoomIn {
   margin: 0 11px 0 0;
   background: url(<%= asset_path 'zoom_in_bttn.png' %>) no-repeat 0 0;
 }
 
-a#zoomOut {
+a.zoomOut {
   margin: 0;
   background: url(<%= asset_path 'zoom_out_bttn.png' %>) no-repeat 0 0;
 }
 
-#zoom_buttons a:hover {
+.zoom_buttons a:hover {
   background-position: 0 -26px;
   cursor: pointer;
 }

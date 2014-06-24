@@ -1,42 +1,6 @@
-var map;
-
 $(document).ready(function() {
   $('.tipsy').each(function(){
     $(this).tipsy()
-  });
-
-  var options = {
-    minZoom: 3,
-    maxZoom: 18,
-    zoom: 3,
-    center: new L.latLng(0, 0),
-    scrollWheelZoom: false,
-    zoomControl: false
-  };
-
-  var southWest = L.latLng(-180, -3600),
-    northEast = L.latLng(180, 3600),
-    bounds = L.latLngBounds(southWest, northEast);
-
-  map = new L.map('js_map', options);
-  map.setMaxBounds(bounds);
-
-  L.esri.basemapLayer("Topographic").addTo(map);
-
-  if (typeof(loadWMS) == 'function'){
-    loadWMS();
-  }
-
-  $('div#zoom_buttons a#zoomIn').click(function(ev) {
-    ev.stopPropagation();
-    ev.preventDefault();
-    map.zoomIn();
-  });
-
-  $('div#zoom_buttons a#zoomOut').click(function(ev) {
-    ev.stopPropagation();
-    ev.preventDefault();
-    map.zoomOut();
   });
 
   $('li.title div.text a').hover(function(ev) {

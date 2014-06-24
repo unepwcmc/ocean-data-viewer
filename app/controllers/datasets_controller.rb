@@ -7,7 +7,7 @@ class DatasetsController < ApplicationController
 
   # GET /datasets/1
   def show
-    @dataset = Dataset.find(params[:id])
+    @dataset = DatasetPresenter.new(Dataset.find(params[:id]))
     @customer = Customer.new(params[:customer])
   end
 end

@@ -35,6 +35,8 @@
 }
 
 .dataset-list a.title {
+  display: block;
+  margin: .5em 0 .25em;
   color: #4295D5;
   font: 15px 'MuseoSans-500';
 }
@@ -62,7 +64,7 @@
 .dataset-list span {
   display: inline-block;
   vertical-align: middle;
-  padding: .15em .25em .15em 0;
+  padding: .2em .25em .2em 0;
   margin: .25em 0;
   line-height: 1em;
 }

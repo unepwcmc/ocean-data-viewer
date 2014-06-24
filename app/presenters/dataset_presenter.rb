@@ -5,13 +5,15 @@ class DatasetPresenter < SimpleDelegator
 
   def data_categories
     if dataset.data_categories.present?
-      "<span class='prepend-pipe'>#{dataset.data_categories.map(&:name).join(', ')}</span>".html_safe
+      "<span class='prepend-pipe'>#{dataset.data_categories.map(&:name).join(', ')}</span><br/>".html_safe
     end
   end
 
   def format
-    if dataset.format
-      "<br/><span>#{dataset.format.to_s.capitalize}</span>".html_safe
+    if %w(polygon point raster).include?(dataset.format)
+      "<span class='prepend-symbol #{dataset.format}'>#{dataset.format.to_s.capitalize}</span><br/>".html_safe
+    elsif dataset.format == 'point & polygon'
+      "<span class='prepend-symbol point'>Point + </span><span class='prepend-symbol polygon'>Polygon</span><br/>".html_safe
     end
   end
 
@@ -26,7 +28,7 @@ class DatasetPresenter < SimpleDelegator
   end
 
   def data_provider
-    "<br/><span>Data provider: #{dataset.data_provider}</span>".html_safe if dataset.data_provider
+    "<span>Data provider: #{dataset.data_provider}</span>".html_safe if dataset.data_provider.present?
   end
 
   def dataset

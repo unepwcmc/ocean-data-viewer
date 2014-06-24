@@ -102,7 +102,25 @@ span + .prepend-pipe {
   display: none;
   color: #4295D5;
   float: right;
-  margin-top: .25em;
+  margin-top: -1.45em;
+}
+
+.dataset-list .prepend-symbol {
+  padding-left: 1.4em;
+  background-repeat: no-repeat;
+  background-position: left 37%;
+}
+
+.point {
+  background-image: url(<%= asset_path 'point.svg' %>);
+}
+
+.polygon {
+  background-image: url(<%= asset_path 'polygon.svg' %>);
+}
+
+.raster {
+  background-image: url(<%= asset_path 'raster.svg' %>);
 }
 
 .dataset-list li:hover .arrow-more {

@@ -12,6 +12,7 @@
             <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'active' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
                 <div class="dataset-info">
                   <%= link_to dataset.title, dataset_path(dataset.id), class: 'title' %>
+                  <br/>
                   <%= dataset.creation_date %>
                   <%= dataset.data_categories %>
                   <%= dataset.format %>

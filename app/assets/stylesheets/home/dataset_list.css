@@ -35,7 +35,7 @@
 }
 
 .dataset-list a.title {
-  display: block;
+  display: inline-block;
   margin: .5em 0 .25em;
   color: #4295D5;
   font: 15px 'MuseoSans-500';

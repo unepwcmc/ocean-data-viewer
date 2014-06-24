@@ -59,6 +59,7 @@
 
 .dataset-list .dataset-info {
   padding: 1em;
+  margin-left: 16px;
 }
 
 .dataset-list span {
@@ -126,4 +127,30 @@
 
 .jspVerticalBar {
   left: 0;
+  background: none;
+}
+
+.jspPane {
+  position: absolute;
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+.jspTrack {
+  background: none;
+  padding: 0 5px;
+}
+
+.jspCap {
+  display: block;
+}
+
+.jspVerticalBar .jspCap {
+  height: 5px;
+}
+
+.jspDrag {
+  background: #B7B6B7;
+  border-radius: 20px;
+  width: 10px;
 }

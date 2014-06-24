@@ -37,13 +37,20 @@
     <%= f.text_field :creation_date, value: @dataset.creation_date ? @dataset.creation_date.strftime("%Y-%m-%d") : '', type: :date %>
   </p>
 
+  <p>
+    <%= f.label :time_range_start, 'Time range' %><br/>
+    <%= f.number_field :time_range_start, step: 1, in: 2000...2030 %>
+    -
+    <%= f.number_field :time_range_end, step: 1, in: 2000...2030 %>
+  </p>
+
   <p class="options">
     <%= f.label :data_categories %><br/>
     <%= f.collection_check_boxes :data_category_ids, data_categories, :id, :name %>
   </p>
 
   <p class="options radio">
-    <%= f.label :format, label: 'Data Format' %><br/>
+    <%= f.label :format, 'Data format' %><br/>
     <% data_formats.each do |option| %>
       <%= f.radio_button :format, option.id %>
       <%= f.label :format, option.name.humanize, value: option.id %>
@@ -67,12 +74,17 @@
   </p>
 
   <p>
-    <%= f.label :metadata_html_file%><br/>
+    <%= f.label :data_provider %><br/>
+    <%= f.text_field :data_provider %>
+  <p>
+
+  <p>
+    <%= f.label :metadata_html_file %><br/>
     <%= f.file_field :html%>
   </p>
 
   <p>
-    <%= f.label :metadata_xml_file%><br/>
+    <%= f.label :metadata_xml_file %><br/>
     <%= f.file_field :xml%>
   </p>
 

@@ -12,4 +12,21 @@ $(function () {
       $(this).addClass('active');
     }
   });
+
+  $('.arrow-more').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $(this).closest('li').find('.additional-info').slideDown();
+    $(this).closest('li').find('.arrow-more').hide();
+    $(this).closest('li').find('.arrow-less').show();
+  });
+
+  $('.arrow-less').click(function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    $('.additional-info').slideUp();
+    $(this).closest('li').find('.arrow-less').hide();
+    $(this).closest('li').find('.arrow-more').removeAttr('style');
+    $(this).closest('li').find('.arrow-less').removeAttr('style');
+  });
 });

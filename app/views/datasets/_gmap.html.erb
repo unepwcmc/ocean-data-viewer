@@ -16,7 +16,22 @@
                   <%= dataset.creation_date %>
                   <%= dataset.data_categories %>
                   <%= dataset.format %>
-                  <i class="icon-angle-circled-right"></i>
+                  <% if dataset.time_range || dataset.observation_type || dataset.data_provider %>
+                    <i class="icon-angle-circled-right"></i>
+                    <%= link_to '#', class: 'arrow arrow-more' do %>
+                      <i class="icon-down-open"></i>
+                      More
+                    <% end %>
+                    <%= link_to '#', class: 'arrow arrow-less' do %>
+                      <i class="icon-up-open"></i>
+                      Less
+                    <% end %>
+                    <div class="additional-info">
+                      <%= dataset.time_range %>
+                      <%= dataset.observation_type %>
+                      <%= dataset.data_provider %>
+                    </div>
+                  <% end %>
                 </div>
             </li>
           <% end %>

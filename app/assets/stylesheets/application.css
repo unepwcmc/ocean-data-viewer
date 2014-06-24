@@ -14,6 +14,7 @@
  *= require tipsy
  *= require layout
  *= require webfonts
+ *= require icons
  *= require jscrollpane
  *= require_tree ./home
  */

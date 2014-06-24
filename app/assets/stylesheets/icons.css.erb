@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'fontello';
+  src: url(<%= asset_path 'fontello.eot?41452610' %>);
+  src: url(<%= asset_path 'fontello.eot?41452610#iefix' %>) format('embedded-opentype'),
+       url(<%= asset_path 'fontello.woff?41452610' %>) format('woff'),
+       url(<%= asset_path 'fontello.ttf?41452610' %>) format('truetype'),
+       url(<%= asset_path 'fontello.svg?41452610#fontello' %>) format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* Chrome hack: SVG is rendered more smooth in Windozze. 100% magic, uncomment if you need it. */
+/* Note, that will break hinting! In other OS-es font will be not as sharp as it could be */
+/*
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url(<%= asset_path 'fontello.svg?41452610#fontello') format('svg');
+  }
+}
+*/
+
+ [class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+
+  /* fix buttons height, for twitter bootstrap */
+  line-height: 1em;
+
+  /* Animation center compensation - margins should be symmetric */
+  /* remove if not needed */
+  margin-left: .2em;
+
+  /* you can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+.icon-down-open:before { content: '\e800'; } /* '' */
+.icon-up-open:before { content: '\e801'; } /* '' */
+.icon-filter:before { content: '\e802'; } /* '' */
+.icon-cancel:before { content: '\e803'; } /* '' */
+.icon-ok:before { content: '\e804'; } /* '' */
+.icon-angle-circled-left:before { content: '\e805'; } /* '' */
+.icon-angle-circled-right:before { content: '\e806'; } /* '' */
+.icon-angle-up:before { content: '\e807'; } /* '' */
+.icon-angle-down:before { content: '\e808'; } /* '' */

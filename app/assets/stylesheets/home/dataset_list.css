@@ -39,6 +39,7 @@
   margin: .5em 0 .25em;
   color: #4295D5;
   font: 15px 'MuseoSans-500';
+  max-width: 21em;
 }
 
 .dataset-list li:hover a.title {
@@ -47,6 +48,20 @@
 
 .dataset-list li {
   color: #999;
+  position: relative;
+}
+
+.dataset-list .icon-angle-circled-right {
+  display: none;
+  position: absolute;
+  top: 1.5em;
+  right: 1.5em;
+  color: #4295D5;
+  line-height: 1.75em;
+}
+
+.dataset-list li:hover .icon-angle-circled-right {
+  display: block;
 }
 
 .dataset-list li + li {
@@ -75,55 +90,55 @@
   padding-left: .5em;
 }
 
-.dataset-list li.active .dataset-info {
+.dataset-list li.active .dataset-info, .dataset-list li:hover .dataset-info {
   border-right: 7px solid;
 }
 
-.dataset-list li.active.type21 .dataset-info { border-right-color: #734c00; }
+li.active.type21 .dataset-info, li.type21:hover .dataset-info { border-right-color: #734c00; }
 
-.dataset-list li.active.type22 .dataset-info { border-right-color: #a8a800; }
+li.active.type22 .dataset-info, li.type22:hover .dataset-info { border-right-color: #a8a800; }
 
-.dataset-list li.active.type13 .dataset-info { border-right-color: #FFAA00; }
+li.active.type13 .dataset-info, li.type13:hover .dataset-info { border-right-color: #FFAA00; }
 
-.dataset-list li.active.type14 .dataset-info { border-right-color: #A900E6; }
+li.active.type14 .dataset-info, li.type14:hover .dataset-info { border-right-color: #A900E6; }
 
-.dataset-list li.active.type6  .dataset-info { border-right-color: #267300; }
+li.active.type6  .dataset-info, li.type6:hover  .dataset-info { border-right-color: #267300; }
 
-.dataset-list li.active.type7  .dataset-info { border-right-color: #55FF00; }
+li.active.type7  .dataset-info, li.type7:hover  .dataset-info { border-right-color: #55FF00; }
 
-.dataset-list li.active.type8  .dataset-info { border-right-color: #E6E600; }
+li.active.type8  .dataset-info, li.type8:hover  .dataset-info { border-right-color: #E6E600; }
 
-.dataset-list li.active.type11 .dataset-info { border-right-color: #66CC99; }
+li.active.type11 .dataset-info, li.type11:hover .dataset-info { border-right-color: #66CC99; }
 
-.dataset-list li.active.type9  .dataset-info { border-right-color: #CD6666; }
+li.active.type9  .dataset-info, li.type9:hover  .dataset-info { border-right-color: #CD6666; }
 
-.dataset-list li.active.type10 .dataset-info { border-right-color: #A80000; }
+li.active.type10 .dataset-info, li.type10:hover .dataset-info { border-right-color: #A80000; }
 
-.dataset-list li.active.type1  .dataset-info { border-right-color: #CC66CC; }
+li.active.type1  .dataset-info, li.type1:hover  .dataset-info { border-right-color: #CC66CC; }
 
-.dataset-list li.active.type17 .dataset-info { border-right-color: #99B3CC; }
+li.active.type17 .dataset-info, li.type17:hover .dataset-info { border-right-color: #99B3CC; }
 
-.dataset-list li.active.type16 .dataset-info { border-right-color: #E1E73D; }
+li.active.type16 .dataset-info, li.type16:hover .dataset-info { border-right-color: #E1E73D; }
 
-.dataset-list li.active.type15 .dataset-info { border-right-color: #399CF0; }
+li.active.type15 .dataset-info, li.type15:hover .dataset-info { border-right-color: #399CF0; }
 
-.dataset-list li.active.type4  p{ border-right-color: #98B285; }
+li.active.type4  .dataset-info, li.type4:hover  .dataset-info { border-right-color: #98B285; }
 
-.dataset-list li.active.type5  p{ border-right-color: #B9C47A; }
+li.active.type5  .dataset-info, li.type5:hover  .dataset-info { border-right-color: #B9C47A; }
 
-.dataset-list li.active.type3  p{ border-right-color: #B3C1D1; }
+li.active.type3  .dataset-info, li.type3:hover  .dataset-info { border-right-color: #B3C1D1; }
 
-.dataset-list li.active.type19 .dataset-info { border-right-color: #109489; }
+li.active.type19 .dataset-info, li.type19:hover .dataset-info { border-right-color: #109489; }
 
-.dataset-list li.active.type28 .dataset-info { border-right-color: #ecd906; }
+li.active.type28 .dataset-info, li.type28:hover .dataset-info { border-right-color: #ecd906; }
 
-.dataset-list li.active.type27 .dataset-info { border-right-color: #43c2d9; }
+li.active.type27 .dataset-info, li.type27:hover .dataset-info { border-right-color: #43c2d9; }
 
-.dataset-list li.active.type26 .dataset-info { border-right-color: #5c83c4; }
+li.active.type26 .dataset-info, li.type26:hover .dataset-info { border-right-color: #5c83c4; }
 
-.dataset-list li.active.type29 .dataset-info { border-right-color: #ff0000; }
+li.active.type29 .dataset-info, li.type29:hover .dataset-info { border-right-color: #ff0000; }
 
-.dataset-list li.active.type30 .dataset-info { border-right-color: #59c3e2; }
+li.active.type30 .dataset-info, li.type30:hover .dataset-info { border-right-color: #59c3e2; }
 
 .jspVerticalBar {
   left: 0;

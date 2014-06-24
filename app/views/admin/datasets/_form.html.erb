@@ -39,9 +39,9 @@
 
   <p>
     <%= f.label :time_range_start, 'Time range' %><br/>
-    <%= f.number_field :time_range_start, step: 1, in: 2000...2030 %>
+    <%= f.number_field :time_range_start, step: 1, in: 1900...Time.now.year+1 %>
     -
-    <%= f.number_field :time_range_end, step: 1, in: 2000...2030 %>
+    <%= f.number_field :time_range_end, step: 1, in: 1900...Time.now.year+1 %>
   </p>
 
   <p class="options">

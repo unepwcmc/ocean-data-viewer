@@ -3,3 +3,4 @@
 
 asset 'leaflet'
 asset 'esri-leaflet', '0.0.1-beta.4'
+asset 'angular'

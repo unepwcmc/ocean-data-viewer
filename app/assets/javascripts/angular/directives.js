@@ -1,6 +1,6 @@
 var module = angular.module('directives.map', []);
 
-module.directive('map', [function() {
+module.directive('map', ['$rootScope', function($rootScope) {
   return {
     restrict: 'E',
     template: '<div class="map-directive"><div class="js_map"></div>\
@@ -21,6 +21,20 @@ module.directive('map', [function() {
       $scope.zoomOut = function() {
         $scope.map.zoomOut();
       }
+
+      $rootScope.$on('layerLoaded', function(event, layerName, options) {
+        if ($scope.map.hasLayer(layerName)) {
+          $scope.map.addLayer(layerName, options);
+        }
+      });
+
+      $rootScope.$on('toggleLayer', function(event, layerName) {
+        $scope.map.toggleLayer(layerName);
+      });
+
+      $rootScope.$on('resetMap', function(event) {
+        $scope.map.removeAllLayers();
+      });
 
       $scope.map.plot();
     }

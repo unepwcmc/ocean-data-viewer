@@ -6,7 +6,8 @@ var Map = function(target, baseLayer) {
       center: new L.latLng(0, 0),
       scrollWheelZoom: false,
       zoomControl: false
-    };
+    },
+    layers = {};
 
   this.map = null;
 
@@ -28,4 +29,44 @@ var Map = function(target, baseLayer) {
   this.zoomOut = function() {
     this.map.zoomOut();
   };
+
+  this.hasLayer = function(layerName) {
+    var found = false;
+    $.each(layers, function(name) {
+      if (layerName == name) {
+        found = true;
+      }
+    });
+    return found;
+  };
+
+  this.addLayer = function(layerName, options) {
+    if (options['wms_name'] != '0') {
+      layers[layerName] = new L.tileLayer.wms(options["wms_server"], {
+        layers: options['wms_name'],
+        transparent: true,
+        format: 'image/png'
+      });
+    } else {
+      layers[layerName] = new L.esri.tiledMapLayer(options["wms_server"], {
+        opacity : 1
+      });
+    }
+  }
+
+  this.toggleLayer = function(layerName) {
+    $.each(layers, function(name, layerObject) {
+      if (layerName == name) {
+        if (this.map.hasLayer(layerObject)) {
+          this.map.removeLayer(layerObject);
+        } else {
+          this.map.addLayer(layerObject);
+        }
+      }
+    });
+  }
+
+  this.removeAllLayers = function() {
+    // remove all
+  }
 };

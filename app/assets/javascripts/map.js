@@ -41,14 +41,14 @@ var Map = function(target, baseLayer) {
   };
 
   this.addLayer = function(layerName, options) {
-    if (options['wms_name'] != '0') {
-      layers[layerName] = new L.tileLayer.wms(options["wms_server"], {
-        layers: options['wms_name'],
+    if (options.wmsName != '0') {
+      layers[layerName] = new L.tileLayer.wms(options.wmsServer, {
+        layers: options.wmsName,
         transparent: true,
         format: 'image/png'
       });
     } else {
-      layers[layerName] = new L.esri.tiledMapLayer(options["wms_server"], {
+      layers[layerName] = new L.esri.tiledMapLayer(options.wmsServer, {
         opacity : 1
       });
     }
@@ -63,7 +63,7 @@ var Map = function(target, baseLayer) {
           this.map.addLayer(layerObject);
         }
       }
-    });
+    }.bind(this));
   }
 
   this.removeAllLayers = function() {

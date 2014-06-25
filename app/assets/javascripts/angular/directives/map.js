@@ -18,12 +18,13 @@ module.directive('map', ['$rootScope', function($rootScope) {
       $scope.zoomIn = function() {
         $scope.map.zoomIn();
       }
+
       $scope.zoomOut = function() {
         $scope.map.zoomOut();
       }
 
       $rootScope.$on('layerLoaded', function(event, layerName, options) {
-        if ($scope.map.hasLayer(layerName)) {
+        if (!$scope.map.hasLayer(layerName)) {
           $scope.map.addLayer(layerName, options);
         }
       });

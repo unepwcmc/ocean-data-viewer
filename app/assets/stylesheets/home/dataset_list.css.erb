@@ -91,20 +91,6 @@ span + .prepend-pipe {
   padding-left: .5em;
 }
 
-.dataset-list .additional-info {
-  display: none;
-  border-top: 1px solid #DDD;
-  margin-top: .6em;
-  padding-top: .6em;
-}
-
-.dataset-list .arrow {
-  display: none;
-  color: #4295D5;
-  float: right;
-  margin-top: -1.45em;
-}
-
 .dataset-list .prepend-symbol {
   padding-left: 1.4em;
   background-repeat: no-repeat;
@@ -128,8 +114,56 @@ span + .prepend-pipe.prepend-symbol {
   background-image: url(<%= asset_path 'raster.svg' %>);
 }
 
+.dataset-list .arrow {
+  display: none;
+  color: #4295D5;
+  float: right;
+  margin-top: -1.45em;
+}
+
 .dataset-list li:hover .arrow-more {
   display: block;
+}
+
+.dataset-list .additional-info {
+  display: none;
+  border-top: 1px solid #DDD;
+  margin-top: .6em;
+  padding-top: .6em;
+  position: relative;
+}
+
+.dataset-list .buttons {
+  position: absolute;
+  top: .75em;
+  right: 0;
+  color: #4295D5;
+  font-size: 14px;
+}
+
+.dataset-list .buttons a {
+  display: inline-block;
+  vertical-align: middle;
+  width: 14px;
+  height: 14px;
+  margin: 0 0 0 .25em;
+  transition: all .5s;
+}
+
+.dataset-list .buttons a:hover {
+  color: #377DB4;
+}
+
+.dataset-list .buttons .icon-esri {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background: url(<%= asset_path 'esri-logo.svg' %>) no-repeat center center;
+  transition: none;
+}
+
+.dataset-list .icon-esri:hover {
+  background-image: url(<%= asset_path 'esri-logo-hover.svg' %>);
 }
 
 li.active.type21 .dataset-info, li.type21:hover .dataset-info { border-right-color: #734c00; }

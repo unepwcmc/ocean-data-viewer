@@ -68,6 +68,7 @@
     <div class="content_right">
         <div class="data_set_box">
             <div class="buttons">
+                <a name="download"></a>
                 <% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                   <%= link_to "", @dataset.shp_download, :class=>"download" %>
                 <% elsif /(.*)protectedplanet\.net(.*)/.match @dataset.shp_download -%>
@@ -83,6 +84,7 @@
                 <% end -%>
 
                 <% if @dataset.factsheet.file? %>
+                  <a name="factsheet"></a>
                   <%= link_to "", @dataset.factsheet.url, :class=>"factsheet" %>
                 <% end %>
 

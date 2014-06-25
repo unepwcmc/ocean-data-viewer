@@ -31,7 +31,25 @@
                       <%= dataset.time_range %>
                       <%= dataset.observation_type %>
                       <%= dataset.data_provider %>
-                    </div>
+
+                      <div class="buttons">
+                        <% if dataset.shp_download.present? %>
+                          <%= link_to dataset_path(dataset) + '#download' do %>
+                            <i class='icon-download'></i>
+                          <% end %>
+                        <% end %>
+
+                        <% if dataset.factsheet.file? %>
+                          <%= link_to dataset_path(dataset) + '#factsheet' do %>
+                            <i class='icon-doc-text'></i>
+                          <% end %>
+                        <% end %>
+
+                        <% if dataset.arcgis_link.present? %>
+                          <%= link_to '', dataset.arcgis_link, class: 'icon-esri' %>
+                        <% end %>
+                      </div>
+                    </div> <!-- .additional-info -->
                   <% end %>
                 </div>
             </li>

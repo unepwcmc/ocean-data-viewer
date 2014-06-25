@@ -3,6 +3,7 @@
   "dependencies": {
     "leaflet": "latest",
     "esri-leaflet": "0.0.1-beta.4",
-    "angular": "latest"
+    "angular": "latest",
+    "angularjs-rails-resource": "latest"
   }
 }

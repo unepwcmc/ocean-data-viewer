@@ -12,6 +12,7 @@
 //
 //= require ../../../vendor/assets/bower_components/jquery/dist/jquery
 //= require ../../../vendor/assets/bower_components/angular/angular
+//= require ../../../vendor/assets/bower_components/angularjs-rails-resource/angularjs-rails-resource
 //= require ../../../vendor/assets/bower_components/leaflet/dist/leaflet
 //= require ../../../vendor/assets/bower_components/esri-leaflet/dist/esri-leaflet
 //= require jquery.mousewheel
@@ -22,4 +23,5 @@
 //= require dataset-list
 //= require map
 //= require angular/directives
+//= require angular/resources/datasets
 //= require angular/controllers/map_controller

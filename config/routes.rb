@@ -11,7 +11,7 @@ MarinePortal::Application.routes.draw do
   resources :licences, :only => :show
   resources :factsheets, :only => :index
 
-  resources :map_search, only: [:create]
+  resources :map_search, only: [:index]
 
   namespace :admin do
     match '/', :to => "datasets#index", via: 'get'

@@ -8,7 +8,7 @@ describe MapSearchController do
   end
 
   it 'search for all' do
-    post :create, {search: {sort_by: 'creation_date'}}
+    get :index, {sort_by: 'creation_date'}
 
     expect(response.body).to have_json_path('0/id')
     expect(response.body).to have_json_type(Integer).at_path("0/id")

@@ -1,7 +1,7 @@
 class MapSearchController < ApplicationController
   inject :search
 
-  def create
+  def index
     search_filters = MapSearch.new(search_params)
     if search_filters.valid?
       render json: search.query(search_filters), each_serializer: DatasetSerializer
@@ -13,6 +13,6 @@ class MapSearchController < ApplicationController
   private
 
   def search_params
-    params.require(:search).permit(:sort_by, :formats, :data_categories, :observation_types, :geographical_ranges)
+    params.permit(:sort_by, :formats, :data_categories, :observation_types, :geographical_ranges)
   end
 end

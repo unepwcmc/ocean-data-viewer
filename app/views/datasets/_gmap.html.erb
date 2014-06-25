@@ -1,12 +1,13 @@
 <% content_for :map_controls do %>
   <% display_layers = false if display_layers.nil? %>
+  <div ng-controller="SearchCtrl">
     <h1>
       Displaying
       <%= (datasets.count == 1) ? 'one dataset' : 'all datasets' %>
     </h1>
 
     <!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
-    <div id="scrollable_databases" class="scroll-pane" >
+    <div id="scrollable_databases" class="scroll-pane">
         <ul class="dataset-list">
           <% datasets.each_with_index do |dataset, i| %>
             <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'active' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
@@ -37,6 +38,7 @@
           <% end %>
         </ul>
     </div>
+  </div>
 <% end %>
 
 <script type='text/javascript'>

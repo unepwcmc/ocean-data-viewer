@@ -22,6 +22,6 @@
 //= require bootstrap_app
 //= require dataset-list
 //= require map
-//= require angular/directives
-//= require angular/resources/datasets
+//= require angular/directives/map
+//= require angular/resources/map_search
 //= require angular/controllers/map_controller

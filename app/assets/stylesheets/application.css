@@ -13,6 +13,7 @@
  *= require_tree ../../../vendor/assets/bower_components
  *= require tipsy
  *= require layout
+ *= require layout_old
  *= require webfonts
  *= require icons
  *= require jscrollpane

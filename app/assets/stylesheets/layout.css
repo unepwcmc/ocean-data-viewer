@@ -33,3 +33,7 @@ body * {
 .group:after {
   clear: both;
 }
+
+.capitalize {
+  text-transform: capitalize;
+}

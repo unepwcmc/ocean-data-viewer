@@ -5,7 +5,7 @@ class DatasetPresenter < SimpleDelegator
 
   def data_categories
     if dataset.data_categories.present?
-      "<span class='prepend-pipe'>#{dataset.data_categories.map(&:name).join(', ')}</span><br/>".html_safe
+      "<span class='category prepend-pipe'>#{dataset.data_categories.map(&:name).join(', ')}</span><br/>".html_safe
     end
   end
 

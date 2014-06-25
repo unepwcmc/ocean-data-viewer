@@ -24,7 +24,7 @@ $(function () {
   $('.arrow-less').click(function(e) {
     e.preventDefault();
     e.stopPropagation();
-    $('.additional-info').slideUp(200);
+    $(this).closest('li').find('.additional-info').slideUp(200);
     $(this).closest('li').find('.arrow-less').hide();
     $(this).closest('li').find('.arrow-more').removeAttr('style');
     $(this).closest('li').find('.arrow-less').removeAttr('style');

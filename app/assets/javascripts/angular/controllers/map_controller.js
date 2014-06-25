@@ -14,7 +14,7 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     }
   });
 
-  $scope.toggleLayerVisibility = function(layer) {
-    $scope.$emit('toggleLayer', layer.title);
+  $scope.toggleLayerVisibility = function(title) {
+    $scope.$emit('toggleLayer', title);
   };
 }]);

@@ -10,8 +10,8 @@
     <div id="scrollable_databases" class="scroll-pane">
         <ul class="dataset-list">
           <% datasets.each_with_index do |dataset, i| %>
-            <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'active' if display_layers %>" onclick="toggleLayerVisibility(wms_<%= i %>)" >
-                <div class="dataset-info">
+            <li class="type<%= dataset.id %> <%= 'first' if i ==0 %> <%= 'active' if display_layers %>">
+                <div class="dataset-info" ng-click='toggleLayerVisibility("<%= dataset.title %>")'>
                   <%= link_to dataset.title, dataset_path(dataset.id), class: 'title' %>
                   <br/>
                   <%= dataset.creation_date %>

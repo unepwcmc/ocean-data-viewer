@@ -11,9 +11,9 @@ class DatasetPresenter < SimpleDelegator
 
   def format
     if %w(polygon point raster).include?(dataset.format)
-      "<span class='prepend-symbol #{dataset.format}'>#{dataset.format.to_s.capitalize}</span><br/>".html_safe
+      "<span class='prepend-symbol prepend-pipe #{dataset.format}'>#{dataset.format.to_s.capitalize}</span><br/>".html_safe
     elsif dataset.format == 'point & polygon'
-      "<span class='prepend-symbol point'>Point + </span><span class='prepend-symbol polygon'>Polygon</span><br/>".html_safe
+      "<span class='prepend-symbol prepend-pipe point'>Point + </span><span class='prepend-symbol polygon'>Polygon</span><br/>".html_safe
     end
   end
 

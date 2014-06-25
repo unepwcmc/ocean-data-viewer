@@ -28,7 +28,7 @@ class DatasetPresenter < SimpleDelegator
   end
 
   def data_provider
-    "<span>Data provider: #{dataset.data_provider}</span>".html_safe if dataset.data_provider.present?
+    "<span class='new-line'>Data provider: #{dataset.data_provider}</span>".html_safe if dataset.data_provider.present?
   end
 
   def dataset

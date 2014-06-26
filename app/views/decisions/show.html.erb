@@ -1,76 +1,80 @@
-<div id="data_set_title">
-    <ul>
-        <li class="gray detail">Decision</li>
-        <li class="information <%= (@decision.name.size > 40)? 'two_lines' : '' %>"><%= @decision.name %></li>
-        <li class="gray access">Datasets Covered</li>
-    </ul>
-</div>
-
-<div id="data_set_content">
-    <div class="content_left">
-        <ul>
-            <li class="detail first">
-                <p>Summary</p>
-            </li>
-            <li class="information">
-                <%= RedCloth.new(@decision.description).to_html.html_safe %>
-            </li>
-        </ul>
-        <ul>
-            <li class="detail first">
-                <p>Established</p>
-            </li>
-            <li class="information">
-                <% if @decision.established.present? %>
-                  <%= RedCloth.new(@decision.established).to_html.html_safe %>
-                <% end %>
-            </li>
-        </ul>
-        <ul>
-            <li class="detail first">
-                <p>Key Points</p>
-            </li>
-            <li class="information">
-                <% if @decision.key_points.present? %>
-                  <%= RedCloth.new(@decision.key_points).to_html.html_safe %>
-                <% end %>
-            </li>
-        </ul>
-        <ul>
-            <li class="detail first">
-                <p>Links</p>
-            </li>
-            <li class="information">
-                <% if @decision.links.present? %>
-                  <%= RedCloth.new(@decision.links).to_html.html_safe %>
-                <% end %>
-            </li>
-        </ul>
-        <% unless @decision.categories.empty? %>
-          <ul>
-              <li class="detail">
-                  <p>Categories</p>
-              </li>
-              <li class="information">
-                  <ul>
-                  <% @categories.each do |category|%>
-                      <li><h4><%= category.identifier %> - <%= category.name %></h4></li>
-                  <% end %>
-                  </ul>
-              </li>
-          </ul>
-        <% end %>
-    </div>
-
-    <div class="content_right">
-        <div class="related_datasets">
-            <ul class="links">
-                <% @datasets.each do |dataset| %>
-                  <li>
-                    <%= link_to dataset.title, dataset %>
-                  </li>
-                <% end %>
+<div class="outer-container group">
+    <div class="container">
+        <div class="dataset-title">
+            <ul>
+                <li class="gray detail">Decision</li>
+                <li class="information"><%= @decision.name %></li>
+                <li class="gray access">Datasets Covered</li>
             </ul>
         </div>
-    </div>
-</div>
+
+        <div class="dataset-content">
+            <div class="content-left">
+                <ul>
+                    <li class="detail first">
+                        <p>Summary</p>
+                    </li>
+                    <li class="information">
+                        <%= RedCloth.new(@decision.description).to_html.html_safe %>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="detail first">
+                        <p>Established</p>
+                    </li>
+                    <li class="information">
+                        <% if @decision.established.present? %>
+                          <%= RedCloth.new(@decision.established).to_html.html_safe %>
+                        <% end %>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="detail first">
+                        <p>Key Points</p>
+                    </li>
+                    <li class="information">
+                        <% if @decision.key_points.present? %>
+                          <%= RedCloth.new(@decision.key_points).to_html.html_safe %>
+                        <% end %>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="detail first">
+                        <p>Links</p>
+                    </li>
+                    <li class="information">
+                        <% if @decision.links.present? %>
+                          <%= RedCloth.new(@decision.links).to_html.html_safe %>
+                        <% end %>
+                    </li>
+                </ul>
+                <% unless @decision.categories.empty? %>
+                  <ul>
+                      <li class="detail">
+                          <p>Categories</p>
+                      </li>
+                      <li class="information">
+                          <ul>
+                          <% @categories.each do |category|%>
+                              <li><h4><%= category.identifier %> - <%= category.name %></h4></li>
+                          <% end %>
+                          </ul>
+                      </li>
+                  </ul>
+                <% end %>
+            </div>
+
+            <div class="content-right">
+                <div class="related-datasets">
+                    <ul class="links">
+                        <% @datasets.each do |dataset| %>
+                          <li>
+                            <%= link_to dataset.title, dataset %>
+                          </li>
+                        <% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .container -->
+</div> <!-- .outer-container -->

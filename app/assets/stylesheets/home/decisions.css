@@ -1,0 +1,23 @@
+.related-datasets {
+  padding: 5px 15px 10px;
+}
+
+.related-datasets ul {
+  list-style-type: initial;
+  margin-left: 1em;
+}
+
+.related-datasets ul li {
+  margin: 1em 0;
+  background: url(../images/li_style_info.png) no-repeat 0 5px;
+  font-size: .85em;
+}
+
+.related-datasets ul li a {
+  text-decoration: none;
+  color: #E58600;
+}
+
+.related-datasets ul li a:hover {
+  border-bottom: 1px solid #E58600;
+}

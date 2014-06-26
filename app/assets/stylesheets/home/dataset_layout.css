@@ -14,7 +14,7 @@
 
 .dataset-title ul li.gray {
   width: 200px;
-  padding:20px 0 20px 20px;
+  padding: 20px 0 20px 20px;
   font: 13px 'MuseoSans-700', 'Arial', sans-serif;
   text-transform: uppercase;
   color: #9F9F96;
@@ -22,12 +22,12 @@
   height: 100%;
 }
 
-.dataset-title ul li.information.two_lines {
+.dataset-title ul li.information {
   width: 545px;
   background:#FAFAF7;
   font: 18px 'MuseoSans-500', 'Arial', sans-serif;
-  color:#9F9F96;
-  padding:20px;
+  color: #9F9F96;
+  padding: 20px;
   height: 100%;
 }
 

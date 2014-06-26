@@ -19,13 +19,6 @@ div#info_tooltip span.bottom {float:left; background:url(../images/tooltips/bkg_
 
 /*END - TOOLTIPS*/
 
-div#data_set_content div.content_right div.related_datasets {float:left; width:236px; height:auto; margin:20px 0 0 20px;}
-div#data_set_content div.content_right div.related_datasets h4 {float:left; font:bold 15px ; color:#666666;}
-div#data_set_content div.content_right div.related_datasets ul.links {float:left;}
-div#data_set_content div.content_right div.related_datasets ul li {float:left; margin:15px 10px 0 0; width:171px; background:url(../images/li_style_info.png) no-repeat 0 5px; padding:0 0 0 13px; font:normal 13px ; color:#333333;}
-div#data_set_content div.content_right div.related_datasets ul li a {text-decoration:none; color:#E58600; border-bottom:1px solid #E58600;}
-div#data_set_content div.content_right div.related_datasets ul li a:hover {color:#C87500;}
-
 
 /* LICENCE PAGE */
 div#licence_content {z-index:5; width:945px; height:64px;}

@@ -37,15 +37,3 @@ div#error_flash {
 .olLayerGoogleCopyright {
   top: -100000px;
 }
-
-#factsheets {
-  clear:both;
-  margin-top: 80px;
-  margin-left: 40px;
-  list-style-type: disc;
-}
-
-#factsheets a {
-  text-decoration:none;
-  color: #E58600;
-}

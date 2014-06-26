@@ -3,13 +3,10 @@ MarinePortal::Application.routes.draw do
   root 'datasets#index'
 
   match '/about', :to => "static_contents#about", via: 'get'
-  match '/contact', :to => "static_contents#contact", via: 'get'
-  match '/business', :to => "static_contents#business", via: 'get'
   match '/geo_proxy', :to => "proxy#geo_proxy", via: 'get'
 
   resources :datasets, :only => [:index, :show], :has_many => :customers
   resources :licences, :only => :show
-  resources :factsheets, :only => :index
 
   resources :map_search, only: [:index]
 

@@ -1,14 +1,12 @@
 <% content_for :map_controls do %>
   <% display_layers = false if display_layers.nil? %>
   <div ng-controller="SearchCtrl">
-    <h1>
-      Displaying
-      <span ng-show="layers.length == 1">one dataset</span>
-      <span ng-show="layers.length > 0">all datasets</span>
+    <h1 ng-show="layers.length > 1">
+      Displaying all datasets
     </h1>
 
     <!-- class="jScrollPaneContainer jScrollPaneScrollable" -->
-    <div id="scrollable_databases" class="scroll-pane">
+    <div ng-show="layers.length > 1" id="scrollable_databases" class="scroll-pane">
       <ul class="dataset-list">
         <li ng-repeat="dataset in layers" ng-class="['type' + dataset.id, dataset.visible && 'active']">
             <div class="dataset-info" ng-click="toggleLayerVisibility(dataset)">

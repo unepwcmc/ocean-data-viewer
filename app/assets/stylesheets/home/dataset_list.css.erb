@@ -78,31 +78,33 @@
   border-right: 7px solid transparent;
 }
 
-.dataset-list span {
+.dataset-info span {
   display: inline-block;
   vertical-align: middle;
-  margin: .25em .25em .25em 0;
 }
 
-.dataset-list .category {
+.dataset-info > span, .additional-info > span {
+  margin: .75em .25em .75em 0;
+}
+
+.dataset-info .category {
   max-width: 22em;
 }
 
 span + .prepend-pipe {
   border-left: 1px solid #D4D4D4;
   padding-left: .5em;
-  line-height: 1em;
 }
 
-.dataset-list .prepend-symbol {
+.prepend-symbol {
   padding-left: 1.4em;
   background-repeat: no-repeat;
   background-position: top left;
 }
 
-span + .prepend-pipe.prepend-symbol {
-  background-position: 13% 37%;
-  padding-left: 1.8em;
+span + .prepend-symbol {
+  background-position: 7% top;
+  padding-left: 1.7em;
 }
 
 .point {
@@ -121,7 +123,7 @@ span + .prepend-pipe.prepend-symbol {
   display: none;
   color: #4295D5;
   float: right;
-  margin-top: -1.7em;
+  margin-top: -1.2em;
 }
 
 .dataset-list .arrow span {
@@ -179,14 +181,14 @@ span + .prepend-pipe.prepend-symbol {
   min-height: 2em;
   overflow: visible;
   height: auto;
-  margin-top: .6em;
-  padding-top: .6em;
+  margin-top: 1em;
+  padding-top: .5em;
   opacity: 1;
 }
 
 .dataset-list .buttons {
   position: absolute;
-  top: .8em;
+  top: 1em;
   right: 0;
   color: #4295D5;
   font-size: 14px;

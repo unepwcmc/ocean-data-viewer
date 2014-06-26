@@ -1,10 +1,14 @@
 .related-datasets {
-  padding: 5px 15px 10px;
+  padding: 20px;
+  background: #E4E4DD;
+  border-top: 1px solid #D3D3CA;
+  width: 200px;
+  overflow: hidden;
+  border-bottom-right-radius: 5px;
 }
 
 .related-datasets ul {
-  list-style-type: initial;
-  margin-left: 1em;
+  list-style-type: none;
 }
 
 .related-datasets ul li {
@@ -12,11 +16,21 @@
   font-size: .85em;
 }
 
+.related-datasets ul li:first-child {
+  margin: 0 0 1em 0;
+}
+
+.related-datasets ul li:last-child {
+  margin: 1em 0 0 0;
+}
+
 .related-datasets ul li a {
   text-decoration: none;
-  color: #E58600;
+  color: #4295D5;
+  border-bottom: 1px solid #4295D5;
 }
 
 .related-datasets ul li a:hover {
-  border-bottom: 1px solid #E58600;
+  color: #377DB4;
+  border-bottom: 1px solid #377DB4;
 }

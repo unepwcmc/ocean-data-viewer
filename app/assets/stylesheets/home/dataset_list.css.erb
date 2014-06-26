@@ -82,8 +82,7 @@
   display: inline-block;
   vertical-align: middle;
   padding: .2em .25em .2em 0;
-  margin: .25em 0;
-  line-height: 1em;
+  margin: .05em 0;
 }
 
 .dataset-list .category {
@@ -93,6 +92,7 @@
 span + .prepend-pipe {
   border-left: 1px solid #D4D4D4;
   padding-left: .5em;
+  line-height: 1em;
 }
 
 .dataset-list .prepend-symbol {
@@ -126,7 +126,7 @@ span.new-line {
   display: none;
   color: #4295D5;
   float: right;
-  margin-top: -1.8em;
+  margin-top: -1.7em;
 }
 
 .dataset-list li:hover .arrow {
@@ -208,8 +208,8 @@ span.new-line {
 
 .dataset-list .buttons .icon-esri {
   display: inline-block;
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   background: url(<%= asset_path 'esri-logo.svg' %>) no-repeat center center;
   transition: none;
 }

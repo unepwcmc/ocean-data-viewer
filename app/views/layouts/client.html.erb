@@ -10,7 +10,7 @@
         <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     </head>
 
-    <body>
+    <body class="<%= yield :body_class %>">
         <% if flash[:error].present? %>
           <div id="error_flash">
             <h2>Sorry, there was a problem with your form submission</h2><%= flash[:error] %>

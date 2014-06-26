@@ -14,7 +14,12 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     }
   });
 
-  $scope.toggleLayerVisibility = function(title) {
-    $scope.$emit('toggleLayer', title);
+  $scope.toggleLayerVisibility = function(layer) {
+    $scope.$emit('toggleLayer', layer.title);
+    layer.visible = !layer.visible;
+  };
+
+  $scope.toggleMoreInfo = function(layer) {
+    layer.showingMore = !layer.showingMore;
   };
 }]);

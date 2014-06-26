@@ -14,7 +14,7 @@
 
 <div class="outer-container group">
     <div class="container">
-        <div id="data_set_title">
+        <div class="dataset-title">
             <ul>
                 <li class="gray detail">Dataset detail</li>
                 <li class="information <%= (@dataset.title.size > 38)? 'two_lines' : '' %>"><%= @dataset.title %></li>
@@ -22,8 +22,8 @@
             </ul>
         </div>
 
-        <div id="data_set_content">
-            <div class="content_left">
+        <div class="dataset-content">
+            <div class="content-left">
                 <ul>
                     <li class="detail first">
                         <p>Description</p>
@@ -66,9 +66,9 @@
                     </li>
                 </ul>
             </div>
-            <!-- content_left -->
-            <div class="content_right">
-                <div class="data_set_box">
+            <!-- content-left -->
+            <div class="content-right">
+                <div class="dataset-box">
                     <div class="buttons">
                         <a name="download"></a>
                         <% if session["dataset_#{@dataset.id}"] == "agreed" -%>
@@ -96,18 +96,18 @@
                     </div>
                     <% if @dataset.has_legend? %>
                       <!--
-                      <div class="last_date">
+                      <div class="last-date">
                           <h4>Legend</h4>
                           <%= image_tag "http://ec2-184-73-120-49.compute-1.amazonaws.com:8080/geoserver/wms/?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=#{@dataset.wms_name }&Format=image/png", :width => 200 %>
                       </div>
                       -->
                     <% end %>
-                    <div class="last_date">
+                    <div class="last-date">
                         <h4>LAST UPDATE</h4>
                         <p class="date"><%= @dataset.updated_at.strftime('%d/%m/%y') %></p>
                     </div>
                 </div>
-            </div>  <!-- right -->
-        </div> <!-- data_set_content -->
+            </div>  <!-- .content-right -->
+        </div> <!-- .dataset-content -->
     </div> <!-- .container -->
 </div> <!-- .outer-container -->

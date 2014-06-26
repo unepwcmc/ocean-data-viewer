@@ -1,19 +1,18 @@
-div#data_set_title {
+.dataset-title {
   overflow: hidden;
   width: 945px;
 }
 
-div#data_set_title ul {
+.dataset-title ul {
   overflow: hidden;
   display: table;
 }
 
-div#data_set_title ul li {
+.dataset-title ul li {
   display: table-cell;
 }
 
-
-div#data_set_title ul li.gray {
+.dataset-title ul li.gray {
   width: 200px;
   padding:20px 0 20px 20px;
   font: 13px 'MuseoSans-700', 'Arial', sans-serif;
@@ -23,7 +22,7 @@ div#data_set_title ul li.gray {
   height: 100%;
 }
 
-div#data_set_title ul li.information.two_lines {
+.dataset-title ul li.information.two_lines {
   width: 545px;
   background:#FAFAF7;
   font: 18px 'MuseoSans-500', 'Arial', sans-serif;
@@ -32,18 +31,18 @@ div#data_set_title ul li.information.two_lines {
   height: 100%;
 }
 
-div#data_set_content {
+.dataset-content {
   width: 945px;
 }
 
-div.content_left {
+.content-left {
   width: 745px;
   overflow: hidden;
   float: left;
   background: #fff;
 }
 
-div.content_left ul {
+.content-left ul {
   width: 705px;
   margin: 0 20px;
   padding: 20px 0;
@@ -51,16 +50,16 @@ div.content_left ul {
   overflow: hidden;
 }
 
-div.content_left ul:last-child {
+.content-left ul:last-child {
   padding-bottom: 40px;
   border-bottom: none;
 }
 
-div#data_set_content div.content_right {
+.content-right {
   width: 200px;
 }
 
-div#data_set_content div.content_left ul li.detail {
+.content-left ul li.detail {
   padding: 0 20px 0 0;
   float: left;
   width: 180px;
@@ -69,27 +68,27 @@ div#data_set_content div.content_left ul li.detail {
   color: #ccc;
 }
 
-div#data_set_content div.content_left ul li.information {
+.content-left ul li.information {
   float: right;
   padding: 0 10px 0 20px;
   width: 525px;
   color: #777;
 }
 
-div#data_set_content div.content_left ul li.information p {
+.content-left ul li.information p {
   margin-bottom: 10px;
 }
 
-div#data_set_content div.content_left ul li.information p:last-child {
+.content-left ul li.information p:last-child {
   margin-bottom: 0;
 }
 
-div#data_set_content div.content_right {
+.content-right {
   float: right;
   width: 200px;
 }
 
-div#data_set_content div.content_right div.data_set_box {
+.dataset-box {
   background: #E4E4DD;
   border-top: 1px solid #D3D3CA;
   width: 200px;
@@ -97,37 +96,37 @@ div#data_set_content div.content_right div.data_set_box {
   border-bottom-right-radius: 5px;
 }
 
-div#data_set_content div.content_right div.data_set_box div.buttons {
+.dataset-box div.buttons {
   border-bottom: 1px solid #D3D3CA;
   padding: 20px 0;
   width: 160px;
   margin: auto;
 }
 
-div#data_set_content div.content_right div.data_set_box div.buttons a {
+.dataset-box div.buttons a {
   display: block;
 }
 
-div#data_set_content div.content_right div.data_set_box div.last_date {
+.dataset-box div.last-date {
   width: 160px;
   border-top: 1px solid #E3E3E3;
   margin: auto;
   padding: 15px 0;
 }
 
-div#data_set_content div.content_right div.data_set_box h4 {
+.dataset-box h4 {
   text-transform: uppercase;
   font: 13px 'MuseoSans-700', 'Arial', sans-serif;
   color: #9F9F96;
   margin: 0 0 10px 0;
 }
 
-div#data_set_content div.content_right div.data_set_box p.date {
+.dataset-box p.date {
   font: 27px 'MuseoSans-500', 'Arial', sans-serif;
   color: #999;
 }
 
-div#data_set_content div.content_left ul li.information ul {
+.content-left ul li.information ul {
   width: 100%;
   border-bottom: none;
   background: none;
@@ -136,7 +135,7 @@ div#data_set_content div.content_left ul li.information ul {
   padding: 0;
 }
 
-div#data_set_content div.content_left ul li.information ul li {
+.content-left ul li.information ul li {
   float: left;
   width: 100%;
   font: normal 13px;
@@ -144,22 +143,23 @@ div#data_set_content div.content_left ul li.information ul li {
   padding-bottom: 10px;
 }
 
-div#data_set_content div.content_left ul li.information ul li:last-child {
+.content-left ul li.information ul li:last-child {
   padding-bottom:0;
 }
 
-div#data_set_content div.content_left ul li.information ul li a, div#data_set_content div.content_left ul li.information p a {
+.content-left ul li.information ul li a, .content-left ul li.information p a {
   text-decoration: none;
   color: #4295D5;
   border-bottom: 1px solid #4295D5;
 }
 
-div#data_set_content div.content_left ul li.information ul li a:hover, div#data_set_content div.content_left ul li.information p a:hover {
+.content-left ul li.information ul li a:hover, .content-left ul li.information p a:hover {
   color: #377DB4;
   border-bottom: 1px solid #377DB4;
 }
 
-div#data_set_content div.content_right div.data_set_box a.download, div#data_set_content div.content_right div.data_set_box a.straight_download, div#data_set_content div.content_right div.data_set_box a.factsheet, div#data_set_content div.content_right div.data_set_box a.arcgis {
+.dataset-box a.download, .dataset-box a.straight_download,
+.dataset-box a.factsheet, .dataset-box a.arcgis {
   background: #4295D5;
   width: 160px;
   height: 40px;
@@ -172,7 +172,8 @@ div#data_set_content div.content_right div.data_set_box a.download, div#data_set
   line-height: 40px;
 }
 
-div#data_set_content div.content_right div.data_set_box a.download:hover, div#data_set_content div.content_right div.data_set_box a.factsheet:hover, div#data_set_content div.content_right div.data_set_box a.arcgis:hover {
+.dataset-box a.download:hover, .dataset-box a.factsheet:hover,
+.dataset-box a.arcgis:hover {
   background: #377DB4;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;

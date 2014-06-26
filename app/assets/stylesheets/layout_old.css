@@ -25,14 +25,6 @@ div#info_tooltip span.bottom {float:left; background:url(../images/tooltips/bkg_
 
 /*END - TOOLTIPS*/
 
-div#data_set_content div.content_right div.data_set_box a.download {background:url(../images/download_button.png) no-repeat 0 0; width:185px; height:40px; margin:0;}
-div#data_set_content div.content_right div.data_set_box a.straight_download {background:url(../images/download_button.png) no-repeat 0 0; width:185px; height:40px; margin:0;}
-div#data_set_content div.content_right div.data_set_box a.download:hover {background-position:0 -40px;}
-div#data_set_content div.content_right div.data_set_box a.factsheet {background:url(../images/factsheet_button.png) no-repeat 0 0; width:185px; height:40px; margin: 14px 0 0 0;}
-div#data_set_content div.content_right div.data_set_box a.factsheet:hover {background-position:0 -40px;}
-div#data_set_content div.content_right div.data_set_box a.arcgis {background:url(../images/arcgis_button.png) no-repeat 0 0; width:185px; height:40px; margin:14px 0 0 0;}
-div#data_set_content div.content_right div.data_set_box a.arcgis:hover {background-position:0 -40px;}
-
 div#data_set_content div.content_right div.related_datasets {float:left; width:236px; height:auto; margin:20px 0 0 20px;}
 div#data_set_content div.content_right div.related_datasets h4 {float:left; font:bold 15px ; color:#666666;}
 div#data_set_content div.content_right div.related_datasets ul.links {float:left;}

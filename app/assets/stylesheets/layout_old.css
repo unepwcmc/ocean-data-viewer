@@ -1,9 +1,3 @@
-div#layout {
-  margin:0 auto;
-  width:945px;
-  position:relative;
-}
-
 /*TOOLTIPS*/
 
 div#download_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px ; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}

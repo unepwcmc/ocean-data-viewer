@@ -1,20 +1,3 @@
-div#outer_layout {
-  background: #F8F7F4;
-  position: relative;
-}
-
-div#layout {
-  overflow: hidden;
-  width: 945px;
-  margin-bottom: 60px;
-  border-radius: 5px;
-  font: 15px 'MuseoSans-300', 'Arial', sans-serif;
-  line-height: 20px;
-  position: relative;
-  top: -50px;
-  z-index: 99999;
-}
-
 div#data_set_title {
   overflow: hidden;
   width: 945px;

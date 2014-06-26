@@ -37,3 +37,20 @@ body * {
 .capitalize {
   text-transform: capitalize;
 }
+
+.outer-container {
+  background: #F8F7F4;
+  position: relative;
+}
+
+.container {
+  overflow: hidden;
+  width: 945px;
+  margin: 0 auto 60px;
+  border-radius: 5px;
+  font: 15px 'MuseoSans-300', 'Arial', sans-serif;
+  line-height: 20px;
+  position: relative;
+  top: -50px;
+  z-index: 99999;
+}

@@ -1,10 +1,18 @@
 var module = angular.module("MarineApp", ['directives.map', 'resources.mapSearch']);
 
 module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
-  $scope.layers = [];
 
   MapSearch.query({sort_by: 'creation_date'}).then(function(result) {
-    $scope.layers = result;
+    $scope.$broadcast('searchResults', result);
+  });
+
+}]);
+
+module.controller('DatasetsListingCtrl', ['$scope', function($scope) {
+  $scope.layers = [];
+
+  $scope.$on('searchResults', function(event, datasets) {
+    $scope.layers = datasets;
   });
 
   $scope.$watch('layers', function(layers) {

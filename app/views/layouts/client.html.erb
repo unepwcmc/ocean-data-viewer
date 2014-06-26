@@ -31,11 +31,8 @@
         </div> <!-- map -->
 
         <%= yield :map %>
-        <div id="outer_layout" class="group">
-            <div id="layout">
-                <%= yield %>
-            </div> <!-- layout -->
-        </div> <!-- outer_layout -->
+
+        <%= yield %>
 
         <footer>
             <%= link_to image_tag('proteus_sm.gif'), "http://www.proteuspartners.org/?page_id=100" %>&nbsp;&nbsp;&nbsp;

@@ -19,32 +19,6 @@ div#info_tooltip span.bottom {float:left; background:url(../images/tooltips/bkg_
 
 /*END - TOOLTIPS*/
 
-
-/* LICENCE PAGE */
-div#licence_content {z-index:5; width:945px; height:64px;}
-div#licence_content ul {float:left; width:945px;}
-div#licence_content ul li.gray {padding:20px 0 0 20px; font:bold 21px ; color:white;  height:45px; text-shadow:2px 1px 0px #3D3D3D; }
-div#licence_content ul li.detail {float:left; background:url(../images/left_head_datasets.png) no-repeat 0 0; width:251px; margin:11px 0 0 0;}
-div#licence_content ul li.information {float:left; background:url(../images/bkg_head_content_datasets.png) no-repeat 0 0; width:654px; height:52px; font:bold 24px ; color:#999999; padding:25px 0 0 20px;}
-
-
-div#licence_content_information {float:left; width:945px; margin:3px 0 0 0; height:auto; position:relative; padding:0;}
-div#licence_content_information ul.about {float:left; width:933px; border-bottom:1px solid #CCCCCC; height:auto; background:url(../images/bkg_datasets.jpg) repeat-y; border-top:1px solid #FFFFFF; }
-div#licence_content_information ul.about.first {border-top:none;}
-div#licence_content_information ul.about.last {border-bottom:none;}
-div#licence_content_information ul.about li.title {float:left; height:auto; padding:12px 10px 12px 12px; width:249px; position:relative; height:auto; margin:0;}
-div#licence_content_information ul.about li.title p {font:bold 15px ; color:#666666; width:933px;}
-div#licence_content_information ul.about li.title.first {border:none;}
-div#licence_content_information ul.about li.title span {font:normal 14px Georgia; color:#999999;}
-
-div#licence_content_information ul.about li.information {float:left; width:648px; height:auto; padding:0 0 15px 0;}
-
-div#licence_content_information ul.about li.information p {float:left; font:normal 13px ; color:#666666; margin:10px 0 0 20px; width:633px; height:auto;}
-div#licence_content_information ul.about li.information p.title {font:bold 15px ; color:#999999; /*text-transform:uppercase;*/ margin:18px 0 0 20px;}
-div#licence_content_information ul.about li.information p.first {margin:2px 0 0 20px;}
-div#licence_content_information ul.about li.information p a {text-decoration:none; color:#E58600; /*border-bottom:1px solid #E58600;*/}
-div#licence_content_information ul.about li.information p a:hover {color:#C87500;}
-
 /* ************************* */
 
 div#error_flash {

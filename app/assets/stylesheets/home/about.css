@@ -1,0 +1,53 @@
+.dataset-title.about-title ul li.information {
+  width: 745px;
+}
+
+.about-content {
+  background: #fff;
+}
+
+.about-content ul {
+  float: left;
+  width: 905px;
+  margin: 0 20px;
+  padding: 20px 0;
+}
+
+.about-content ul + ul {
+  border-top: 1px solid #eee;
+}
+
+.about-content ul li.title {
+  float: left;
+  width: 200px;
+}
+
+.about-content ul li.title p, .about-content p.title {
+  font: 15px 'MuseoSans-500', 'Arial', sans-serif;
+}
+
+.about-content ul li.information {
+  float: left;
+  width: 680px;
+}
+
+.about-content ul li.information p {
+  margin: 1em 0;
+}
+
+.about-content ul li.information p.title {
+  color: #9F9F96;
+}
+
+.about-content ul li.information p:first-of-type {
+  margin-top: 0;
+}
+
+.about-content ul li.information p a {
+  text-decoration: none;
+  color: #E58600;
+}
+
+.about-content ul li.information p a:hover {
+  color: #C87500;
+}

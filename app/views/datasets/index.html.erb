@@ -29,7 +29,7 @@
                 <div ng-class="['additional-info', dataset.showingMore && 'visible']">
                   <span ng-show="dataset.timeRangeStart && dataset.timeRangeEnd">Time range: <span ng-bind="dataset.timeRange"></span></span>
                   <span class="prepend-pipe capitalize" ng-show="dataset.observationType" ng-bind="dataset.observationType"></span>
-                  <span class='new-line' ng-show="dataset.dataProvider">Data provider: <span ng-bind="dataset.dataProvider"></span></span>
+                  <div ng-show="dataset.dataProvider">Data provider: <span ng-bind="dataset.dataProvider"></span></div>
                   <div class="buttons">
                     <a ng-show="dataset.shpDownload" ng-href="{{ dataset.url + '#download' }}">
                       <i class='icon-download'></i>

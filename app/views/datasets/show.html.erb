@@ -51,49 +51,49 @@
                         </ul>
                     </li>
                 </ul>
+            </li>
+        </ul>
+    </div>
+    <!-- content_left -->
+    <div class="content_right">
+        <div class="data_set_box">
+            <div class="buttons">
+                <a name="download"></a>
+                <% if session["dataset_#{@dataset.id}"] == "agreed" -%>
+                  <%= link_to "", @dataset.shp_download, :class=>"download" %>
+                <% elsif /(.*)protectedplanet\.net(.*)/.match @dataset.shp_download -%>
+                  <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at protectedplanet.net" %>
+                <% elsif /(.*)iobis\.org(.*)/.match @dataset.shp_download  -%>
+                  <%= link_to image_tag('obis_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at iobis.org" %>
+                <% elsif /(.*)ebsa_illustrations\.kml(.*)/.match @dataset.shp_download  -%>
+                  <%= link_to "Download", @dataset.shp_download, :id => 'Download' , :rel => "", :class=>"straight_download" %>
+                <% elsif @dataset.shp_download == "" -%>
+                  Sorry, there is no data available to download for this dataset
+                <% else -%>
+                  <%= link_to @dataset.shp_download, :class=>"download" do %> <i class="icon-download"></i> Download<% end %>
+                <% end -%>
+
+                <% if @dataset.factsheet.file? %>
+                  <a name="factsheet"></a>
+                  <%= link_to @dataset.factsheet.url, :class=>"factsheet" do %><i class="icon-doc-text"></i> Factsheet<% end %>
+                <% end %>
+
+                <% if @dataset.arcgis_link.present? %>
+                  <%= link_to @dataset.arcgis_link, :class=>"arcgis tipsy", :style => "padding: 0px", :target => '_blank', :title => 'Click here to view this dataset on Arcgis.com. To add other layers from Ocean Data Viewer, click the "Add" button and search for the dataset titles' do %> <span class="icon-esri-white"></span> ArcGIS<% end %>
+                <% end %>
             </div>
-            <!-- content-left -->
-            <div class="content-right">
-                <div class="dataset-box">
-                    <div class="buttons">
-                        <a name="download"></a>
-                        <% if session["dataset_#{@dataset.id}"] == "agreed" -%>
-                          <%= link_to "", @dataset.shp_download, :class=>"download" %>
-                        <% elsif /(.*)protectedplanet\.net(.*)/.match @dataset.shp_download -%>
-                          <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at protectedplanet.net" %>
-                        <% elsif /(.*)iobis\.org(.*)/.match @dataset.shp_download  -%>
-                          <%= link_to image_tag('obis_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at iobis.org" %>
-                        <% elsif /(.*)ebsa_illustrations\.kml(.*)/.match @dataset.shp_download  -%>
-                          <%= link_to "Download", @dataset.shp_download, :id => 'Download' , :rel => "", :class=>"straight_download" %>
-                        <% elsif @dataset.shp_download == "" -%>
-                          Sorry, there is no data available to download for this dataset
-                        <% else -%>
-                          <%= link_to "Download", @dataset.shp_download, :class=>"download" %>
-                        <% end -%>
-
-                        <% if @dataset.factsheet.file? %>
-                          <a name="factsheet"></a>
-                          <%= link_to "Factsheet", @dataset.factsheet.url, :class=>"factsheet" %>
-                        <% end %>
-
-                        <% if @dataset.arcgis_link.present? %>
-                          <%= link_to "ArcGIS", @dataset.arcgis_link, :class=>"arcgis tipsy", :style => "padding: 0px", :target => '_blank', :title => 'Click here to view this dataset on Arcgis.com. To add other layers from Ocean Data Viewer, click the "Add" button and search for the dataset titles' %>
-                        <% end %>
-                    </div>
-                    <% if @dataset.has_legend? %>
-                      <!--
-                      <div class="last-date">
-                          <h4>Legend</h4>
-                          <%= image_tag "http://ec2-184-73-120-49.compute-1.amazonaws.com:8080/geoserver/wms/?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=#{@dataset.wms_name }&Format=image/png", :width => 200 %>
-                      </div>
-                      -->
-                    <% end %>
-                    <div class="last-date">
-                        <h4>LAST UPDATE</h4>
-                        <p class="date"><%= @dataset.updated_at.strftime('%d/%m/%y') %></p>
-                    </div>
-                </div>
-            </div>  <!-- .content-right -->
-        </div> <!-- .dataset-content -->
-    </div> <!-- .container -->
-</div> <!-- .outer-container -->
+            <% if @dataset.has_legend? %>
+              <!--
+              <div class="last_date">
+                  <h4>Legend</h4>
+                  <%= image_tag "http://ec2-184-73-120-49.compute-1.amazonaws.com:8080/geoserver/wms/?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&LAYER=#{@dataset.wms_name }&Format=image/png", :width => 200 %>
+              </div>
+              -->
+            <% end %>
+            <div class="last_date">
+                <h4>LAST UPDATE</h4>
+                <p class="date"><%= @dataset.updated_at.strftime('%d/%m/%y') %></p>
+            </div>
+        </div>
+    </div>  <!-- right -->
+</div> <!-- data_set_content -->

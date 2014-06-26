@@ -1,7 +1,6 @@
 <% content_for :map_controls do %>
   <div ng-controller="SearchCtrl">
-
-    <div class="datasets" ng-controller="DatasetsListingCtrl">
+    <div class="search-results" ng-controller="DatasetsListingCtrl">
       <h1>Displaying all datasets</h1>
 
       <div id="scrollable_databases" class="scroll-pane">
@@ -46,7 +45,41 @@
           </li>
         </ul>
       </div>
-    </div><!-- .datasets -->
+    </div><!-- .search-results -->
+
+    <div class="map-search">
+      <%= form_for @search, url: '' do |f| %>
+        <p>
+          <%= f.label :sort_by %>
+          <select ng-model="filters.sort_by" ng-options="option.value as option.text for option in sortByOptions"></select>
+        </p>
+        <p>
+          <%= f.label :data_categories, label: 'Data category' %>
+          <%= f.collection_check_boxes :data_categories, data_categories, :id, :name do |c| %>
+            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.data_categories["' + c.value.to_s + '"]')}".html_safe } %>
+          <% end %>
+        </p>
+        <p>
+          <%= f.label :formats, label: 'Format' %>
+          <%= f.collection_check_boxes :formats, data_formats, :id, :name  do |c| %>
+            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.formats["' + c.value.to_s + '"]')}".html_safe } %>
+          <% end %>
+        </p>
+        <p>
+          <%= f.label :observation_types, label: 'Observation type' %>
+          <%= f.collection_check_boxes :observation_types, observation_types, :id, :name do |c| %>
+            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.observation_types["' + c.value.to_s + '"]')}".html_safe } %>
+          <% end %>
+        </p>
+        <p>
+          <%= f.label :geographical_ranges, label: 'Geographical range' %>
+          <%= f.collection_check_boxes :geographical_ranges, geographical_ranges, :id, :name do |c| %>
+            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.geographical_ranges["' + c.value.to_s + '"]')}".html_safe } %>
+          <% end %>
+        </p>
+        <button ng-click="doSearch()">Search</button>
+      <% end %>
+    </div>
   </div><!-- SearchCtrl -->
 <% end %>
 

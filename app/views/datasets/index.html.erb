@@ -24,7 +24,7 @@
                   <span ng-bind="dataset.showingMore ? 'Less' : 'More'"></span>
                 </a>
               </div>
-              <div class="additional-info" ng-show="dataset.showingMore">
+              <div ng-class="['additional-info', dataset.showingMore && 'visible']">
                 <span ng-show="dataset.timeRangeStart && dataset.timeRangeEnd">Time range: <span ng-bind="dataset.timeRange"></span></span>
                 <span class="prepend-pipe capitalize" ng-show="dataset.observationType" ng-bind="dataset.observationType"></span>
                 <span class='new-line' ng-show="dataset.dataProvider">Data provider: <span ng-bind="dataset.dataProvider"></span></span>

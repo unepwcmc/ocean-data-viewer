@@ -134,11 +134,26 @@ span.new-line {
 }
 
 .dataset-list .additional-info {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  opacity: 0;
+  -webkit-transition: height 200s,
+    min-height 200ms,
+    margin-top 200ms,
+    padding-top 200ms,
+    overflow 200ms,
+    border-top 200ms,
+    opacity 200ms;
+}
+
+.dataset-list .additional-info.visible {
   border-top: 1px solid #DDD;
+  min-height: 2em;
+  overflow: visible;
   margin-top: .6em;
   padding-top: .6em;
-  position: relative;
-  min-height: 33px;
+  opacity: 1;
 }
 
 .dataset-list .buttons {

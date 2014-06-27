@@ -48,36 +48,49 @@
     </div><!-- .search-results -->
 
     <div class="map-search">
-      <%= form_for @search, url: '' do |f| %>
-        <p>
-          <%= f.label :sort_by %>
-          <select ng-model="filters.sort_by" ng-options="option.value as option.text for option in sortByOptions"></select>
-        </p>
-        <p>
-          <%= f.label :data_categories, label: 'Data category' %>
-          <%= f.collection_check_boxes :data_categories, data_categories, :id, :name do |c| %>
-            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.data_categories["' + c.value.to_s + '"]')}".html_safe } %>
-          <% end %>
-        </p>
-        <p>
-          <%= f.label :formats, label: 'Format' %>
-          <%= f.collection_check_boxes :formats, data_formats, :id, :name  do |c| %>
-            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.formats["' + c.value.to_s + '"]')}".html_safe } %>
-          <% end %>
-        </p>
-        <p>
-          <%= f.label :observation_types, label: 'Observation type' %>
-          <%= f.collection_check_boxes :observation_types, observation_types, :id, :name do |c| %>
-            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.observation_types["' + c.value.to_s + '"]')}".html_safe } %>
-          <% end %>
-        </p>
-        <p>
-          <%= f.label :geographical_ranges, label: 'Geographical range' %>
-          <%= f.collection_check_boxes :geographical_ranges, geographical_ranges, :id, :name do |c| %>
-            <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.geographical_ranges["' + c.value.to_s + '"]')}".html_safe } %>
-          <% end %>
-        </p>
-        <button ng-click="doSearch()">Search</button>
+      <h1>
+        <i class="icon-filter"></i>
+        Dataset filters
+      </h1>
+      <div class="filters">
+        <%= form_for @search, url: '' do |f| %>
+          <p>
+            <%= f.label :sort_by, class: 'first first-level' %>
+            <select ng-model="filters.sort_by" ng-options="option.value as option.text for option in sortByOptions" class="filter-select"><i class="icon-angle-down"></i></select>
+          </p>
+          <p>
+            <%= f.label :data_categories, 'Data category', class: 'first-level' %>
+            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
+            <%= f.collection_check_boxes :data_categories, data_categories, :id, :name do |c| %>
+              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.data_categories["' + c.value.to_s + '"]')}".html_safe } %>
+            <% end %>
+          </p>
+          <p>
+            <%= f.label :formats, 'Format', class: 'first-level' %>
+            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
+            <%= f.collection_check_boxes :formats, data_formats, :id, :name  do |c| %>
+              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.formats["' + c.value.to_s + '"]')}".html_safe } %>
+            <% end %>
+          </p>
+          <p>
+            <%= f.label :observation_types, 'Observation type', class: 'first-level' %>
+            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
+            <%= f.collection_check_boxes :observation_types, observation_types, :id, :name do |c| %>
+              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.observation_types["' + c.value.to_s + '"]')}".html_safe } %>
+            <% end %>
+          </p>
+          <p>
+            <%= f.label :geographical_ranges, 'Geographical range', class: 'first-level' %>
+            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
+            <%= f.collection_check_boxes :geographical_ranges, geographical_ranges, :id, :name do |c| %>
+              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.geographical_ranges["' + c.value.to_s + '"]')}".html_safe } %>
+            <% end %>
+          </p>
+          <button class="btn btn-white">Advanced filters</button>
+          <br/>
+          <button ng-click="doSearch()" class="btn">Search</button>
+          <button class="btn btn-white">Reset</button>
+        </div> <!-- .filters -->
       <% end %>
     </div>
   </div><!-- SearchCtrl -->

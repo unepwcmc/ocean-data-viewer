@@ -19,7 +19,7 @@
 //= require jquery.jscrollpane
 //= require jquery.textshadow
 //= require jquery.tipsy
-//= require bootstrap_app
+//= require tipsy
 //= require dataset-list
 //= require map
 //= require angular/directives/map

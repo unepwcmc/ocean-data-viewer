@@ -13,6 +13,7 @@ function selectedValues(obj) {
 
 module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
 
+  // page load initial search
   MapSearch.query({sort_by: 'creation_date'}).then(function(result) {
     $scope.$broadcast('searchResults', result);
   });
@@ -30,14 +31,12 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     geographical_ranges: {}
   };
 
-  // filters.data_categories = {1: true, 2: false}
-
   $scope.doSearch = function () {
     var queryOptions = {sort_by: $scope.filters.sort_by},
         addToQuery = function (attributeName) {
           var values = selectedValues($scope.filters[attributeName]);
           if (values.length > 0) {
-            queryOptions[attributeName] = values;
+            queryOptions[attributeName + '[]'] = values;
           }
         };
 
@@ -45,8 +44,6 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     addToQuery('formats');
     addToQuery('observation_types');
     addToQuery('geographical_ranges');
-
-    console.log(queryOptions);
 
     MapSearch.query(queryOptions).then(function(result) {
       $scope.$broadcast('searchResults', result);

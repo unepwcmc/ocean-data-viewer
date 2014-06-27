@@ -1,26 +1,3 @@
-/*TOOLTIPS*/
-
-div#download_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px ; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
-div#factsheet_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px ; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
-div#arcgis_tooltip {position:absolute; bottom:15px; left:-32px; background:url(../images/tooltips/bkg_little_tooltip.png) no-repeat 0 0; width:64px; height:32px; padding:9px 5px 5px 5px; font:bold 9px ; color:white; text-transform:uppercase; z-index:100; text-align:center; line-height:9px; display:none;}
-
-div#info_tooltip {position:absolute; bottom:29px; left:-33px; width:160px; height:auto; z-index:500; display:none;}
-div#info_tooltip span.head {float:left; background:url(../images/tooltips/bkg_head_info.png) no-repeat 0 0; width:135px; height:14px; padding:10px 10px 0 15px; position:relative; margin:0;}
-div#info_tooltip span.head a.close {position:absolute; bottom:10px; right:0; width:33px; height:33px; cursor:pointer; z-index:550; background:url(../images/tooltips/close_tooltip_bttn.png) no-repeat 0 0;}
-div#info_tooltip span.head a.close:hover {background-position:0 -33px;}
-div#info_tooltip div.content {float:left; position:relative; width:100%; height:auto; }
-div#info_tooltip span.content {float:left; background:url(../images/tooltips/bkg_content_info.png) repeat-y; height:auto; width:120px; bottom:0; left:0; padding:5px 25px 5px 15px; margin:-1px 0 0 0;}
-div#info_tooltip span.content span.line {float:left; width:123px; background-color:#ECECEC; height:1px; margin:7px 0 0 0;}
-div#info_tooltip span.content a.match {float:left; font:normal 11px ; color:#E58800;  width:auto; height:auto; margin:0 5px 0 0;}
-div#info_tooltip span.content a.match:hover {color:#C87500;}
-div#info_tooltip span.content p.info {font:normal 11px ; color:#666666; width:auto; }
-div#info_tooltip p.title {float:left; font:normal 10px ; color:#BABABA; text-transform:uppercase; width:123px; padding:5px 0 0 0;}
-div#info_tooltip span.bottom {float:left; background:url(../images/tooltips/bkg_bottom_info.png) no-repeat 0 0; height:23px; width:100%; margin:-1px 0 0 0;}
-
-/*END - TOOLTIPS*/
-
-/* ************************* */
-
 div#error_flash {
   background: #FFC;
   border-bottom: 2px solid #F90;

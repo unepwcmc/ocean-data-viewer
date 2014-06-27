@@ -13,6 +13,8 @@
   font: 16px/40px 'MuseoSans-500', sans-serif;
   line-height: 40px;
   padding: .15em 1em 0 1em;
+  border: 1px solid #ddd;
+  border-width: 0 1px 1px 0;
 }
 
 .datasets .search-results {
@@ -31,6 +33,10 @@
 .dataset-list li {
   cursor: pointer;
   border: 1px solid #ddd;
+}
+
+.dataset-list li:first-child {
+  border-top: 0;
 }
 
 .dataset-list a {

@@ -67,6 +67,10 @@ var Map = function(target, baseLayer) {
   }
 
   this.removeAllLayers = function() {
-    // remove all
+    $.each(layers, function(_, layerObject) {
+      if (this.map.hasLayer(layerObject)) {
+        this.map.removeLayer(layerObject);
+      }
+    }.bind(this));
   }
 };

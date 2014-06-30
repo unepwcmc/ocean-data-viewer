@@ -3,14 +3,21 @@
 }
 
 .about-title {
-  background:#E4E4DD;
+  background:#747472;
   padding:20px;
   height: 100%;
 }
 
 .about-title h1 {
   font: 18px 'MuseoSans-500', 'Arial', sans-serif;
-  color:#9F9F96;
+  color: #E4E4DD;
+}
+
+h2 {
+  color: #777;
+  text-transform: uppercase;
+  font: 13px 'MuseoSans-700', 'Arial', sans-serif;
+  padding-top: 10px;
 }
 
 .about-content {

@@ -36,10 +36,15 @@
 }
 
 .content-left {
-  width: 745px;
+  width: 746px;
   overflow: hidden;
   float: left;
   background: #fff;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .content-left ul {
@@ -56,7 +61,13 @@
 }
 
 .content-right {
-  width: 200px;
+  float: right;
+  width: 199px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .content-left ul li.detail {
@@ -83,14 +94,7 @@
   margin-bottom: 0;
 }
 
-.content-right {
-  float: right;
-  width: 200px;
-}
-
 .dataset-box {
-  background: #eee;
-  border-top: 1px solid #D3D3CA;
   width: 200px;
   overflow: hidden;
   border-bottom-right-radius: 5px;

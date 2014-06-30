@@ -2,6 +2,9 @@ var module = angular.module("MarineApp", ['directives.map', 'directives.multiSel
 
 module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
 
+  $scope.showingOptions = false;
+  $scope.showingAdvanced = false;
+
   // page load initial search
   MapSearch.query({sort_by: 'creation_date'}).then(function(result) {
     $scope.$broadcast('searchResults', result);
@@ -24,14 +27,6 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     $scope.filters.sort_by = option;
   };
 
-  $scope.toggleOptions = function() {
-    $scope.showingOptions = !$scope.showingOptions;
-  };
-
-  $scope.toggleAdvanced = function() {
-    $scope.showingAdvanced = !$scope.showingAdvanced;
-  }
-
   $scope.doSearch = function () {
     var queryOptions = {sort_by: $scope.filters.sort_by.value},
         addToQuery = function (attributeName) {
@@ -51,6 +46,16 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     });
   };
 
+  $scope.reset = function() {
+    $scope.filters = {
+      sort_by: $scope.sortByOptions[0],
+      data_categories: {},
+      formats: {},
+      observation_types: {},
+      geographical_ranges: {}
+    };
+    $scope.doSearch();
+  };
 }]);
 
 module.controller('DatasetsListingCtrl', ['$scope', function($scope) {

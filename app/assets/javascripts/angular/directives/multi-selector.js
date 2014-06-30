@@ -4,10 +4,9 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
   return {
     restrict: 'E',
     template: '<div class="multi-selector-widget">\
-               <div class="filter-select">\
-                  <a ng-click="visible=!visible">\
+               <div ng-click="visible=!visible" class="filter-select">\
                   <span ng-bind="titleLabel"></span>\
-                  <i class="icon-angle-down"></i></a>\
+                  <i class="icon-angle-down"></i>\
                </div>\
                    <div ng-show="visible" class="content" ng-transclude></div>\
                </div>',

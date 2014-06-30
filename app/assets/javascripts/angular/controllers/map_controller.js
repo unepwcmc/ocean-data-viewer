@@ -54,6 +54,7 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
       observation_types: {},
       geographical_ranges: {}
     };
+    $scope.$emit('resetMap');
     $scope.doSearch();
   };
 }]);

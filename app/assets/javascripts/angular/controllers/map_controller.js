@@ -13,15 +13,23 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
   ];
 
   $scope.filters = {
-    sort_by: 'creation_date',
+    sort_by: $scope.sortByOptions[0],
     data_categories: {},
     formats: {},
     observation_types: {},
     geographical_ranges: {}
   };
 
+  $scope.select = function(option) {
+    $scope.filters.sort_by = option;
+  };
+
+  $scope.toggleOptions = function() {
+    $scope.showingOptions = !$scope.showingOptions;
+  };
+
   $scope.doSearch = function () {
-    var queryOptions = {sort_by: $scope.filters.sort_by},
+    var queryOptions = {sort_by: $scope.filters.sort_by.value},
         addToQuery = function (attributeName) {
           var values = selectedValues($scope.filters[attributeName]);
           if (values.length > 0) {

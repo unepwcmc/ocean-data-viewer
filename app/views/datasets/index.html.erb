@@ -56,7 +56,13 @@
         <%= form_for @search, url: '' do |f| %>
           <p>
             <%= f.label :sort_by, class: 'first first-level' %>
-            <select ng-model="filters.sort_by" ng-options="option.value as option.text for option in sortByOptions" class="filter-select"><i class="icon-angle-down"></i></select>
+            <div ng-model="filters.sort_by" ng-click="toggleOptions()" class="filter-select">
+              {{ filters.sort_by.text }}
+              <i class="icon-angle-down"></i>
+            </div>
+            <div data-value="{{option.id}}" ng-show="showingOptions" ng-repeat="option in sortByOptions" ng-click="select(option); toggleOptions()">
+              {{ option.text }}
+            </div>
           </p>
           <p>
             <%= f.label :data_categories, 'Data category', class: 'first-level' %>

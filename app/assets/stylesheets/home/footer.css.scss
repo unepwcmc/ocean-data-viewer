@@ -8,7 +8,7 @@ footer > a { margin-right: 10px; }
 
 footer a.wcmc_unep {
   float: right;
-  background: url(<%= asset_path 'wcmc_logo.png' %>) no-repeat 0 0;
+  background: asset-path('wcmc_logo.png') no-repeat 0 0;
   background-size: contain;
   width: 75px;
   height: 39px;

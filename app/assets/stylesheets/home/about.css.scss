@@ -32,11 +32,11 @@
 
 .about-content p a {
   text-decoration: none;
-  color: #4295D5;
-  border-bottom: 1px solid #4295D5; 
+  color: $blue;
+  border-bottom: 1px solid $blue;
 }
 
 .about-content p a:hover {
-  color: #377DB4;
-  border-bottom: 1px solid #377DB4;
+  color: $dark-blue;
+  border-bottom: 1px solid $dark-blue;
 }

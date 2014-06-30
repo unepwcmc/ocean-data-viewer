@@ -149,8 +149,8 @@
 
 .content-left ul li.information ul li a, .content-left ul li.information p a {
   text-decoration: none;
-  color: #4295D5;
-  border-bottom: 1px solid #4295D5;
+  color: $blue;
+  border-bottom: 1px solid $blue;
 }
 
 .content-left ul li.information ul li a:hover, .content-left ul li.information p a:hover {
@@ -174,7 +174,7 @@ span.icon-esri-white {
   display: inline-block;
   width: 15px;
   height: 15px;
-  background: url(<%= asset_path 'esri-logo-white.svg' %>) no-repeat center center;
+  background: image-url('esri-logo-white.svg') no-repeat center center;
   background-size: 100%;
   position: relative;
   top: 2px;

@@ -39,12 +39,12 @@
 
 a.zoomIn {
   margin: 0 11px 0 0;
-  background: url(<%= asset_path 'zoom_in_bttn.png' %>) no-repeat 0 0;
+  background: asset-path('zoom_in_bttn.png') no-repeat 0 0;
 }
 
 a.zoomOut {
   margin: 0;
-  background: url(<%= asset_path 'zoom_out_bttn.png' %>) no-repeat 0 0;
+  background: asset-path('zoom_out_bttn.png') no-repeat 0 0;
 }
 
 .zoom_buttons a:hover {

@@ -47,7 +47,7 @@
 .dataset-list a.title {
   display: inline-block;
   margin: .5em 0 .25em;
-  color: #4295D5;
+  color: $blue;
   font: 15px 'MuseoSans-500';
   max-width: 20em;
 }
@@ -66,7 +66,7 @@
   position: absolute;
   top: 1.5em;
   right: 1.5em;
-  color: #4295D5;
+  color: $blue;
   line-height: 1.75em;
 }
 
@@ -118,20 +118,20 @@ span + .prepend-symbol {
 }
 
 .point {
-  background-image: url(<%= asset_path 'point.svg' %>);
+  background-image: image-url('point.svg');
 }
 
 .polygon {
-  background-image: url(<%= asset_path 'polygon.svg' %>);
+  background-image: image-url('polygon.svg');
 }
 
 .raster {
-  background-image: url(<%= asset_path 'raster.svg' %>);
+  background-image: image-url('raster.svg');
 }
 
 .dataset-list .arrow {
   display: none;
-  color: #4295D5;
+  color: $blue;
   float: right;
   margin-top: -1.2em;
 }
@@ -172,7 +172,7 @@ span + .prepend-symbol {
   position: absolute;
   top: 1em;
   right: 0;
-  color: #4295D5;
+  color: $blue;
   font-size: 14px;
 }
 
@@ -193,12 +193,12 @@ span + .prepend-symbol {
   display: inline-block;
   width: 14px;
   height: 14px;
-  background: url(<%= asset_path 'esri-logo.svg' %>) no-repeat center center;
+  background: image-url('esri-logo.svg') no-repeat center center;
   transition: none;
 }
 
 .dataset-list .icon-esri:hover {
-  background-image: url(<%= asset_path 'esri-logo-hover.svg' %>);
+  background-image: image-url('esri-logo-hover.svg');
 }
 
 li.active.type21 .dataset-info, li.type21:hover .dataset-info { border-right-color: #734c00; }

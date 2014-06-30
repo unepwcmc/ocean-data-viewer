@@ -1,0 +1,159 @@
+.dataset-title
+  overflow: hidden
+  width: 945px
+
+  ul
+    overflow: hidden
+    display: table
+
+    li
+      display: table-cell
+
+      &.gray
+        width: 200px
+        padding: 20px 0 20px 20px
+        font: 13px 'MuseoSans-700', 'Arial', sans-serif
+        text-transform: uppercase
+        color: #E4E4DD
+        background: #747472
+        height: 100%
+
+      &.information
+        width: 545px
+        background: #E4E4DD
+        font: 18px 'MuseoSans-500', 'Arial', sans-serif
+        color: #9F9F96
+        padding: 20px
+        height: 100%
+
+.dataset-content
+  width: 945px
+
+.content-left
+  width: 746px
+  overflow: hidden
+  float: left
+  background: #fff
+  border-left: 1px solid #eee
+  border-right: 1px solid #eee
+  border-bottom: 1px solid #eee
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
+
+  ul
+    width: 705px
+    margin: 0 20px
+    padding: 20px 0
+    border-bottom: 1px solid #eee
+    overflow: hidden
+
+    &:last-child
+      padding-bottom: 40px
+      border-bottom: none
+
+    li
+      &.detail
+        padding: 0 20px 0 0
+        float: left
+        width: 180px
+        text-transform: uppercase
+        font: 13px 'MuseoSans-700', 'Arial', sans-serif
+        color: #ccc
+
+      &.information
+        float: right
+        padding: 0 10px 0 20px
+        width: 525px
+        color: #777
+
+        p
+          margin-bottom: 10px
+
+          &:last-child
+            margin-bottom: 0
+
+        ul
+          width: 100%
+          border-bottom: none
+          background: none
+          width: 525px
+          margin: 0
+          padding: 0
+
+          li
+            float: left
+            width: 100%
+            font: normal 13px
+            color: #333333
+            padding-bottom: 10px
+
+            &:last-child
+              padding-bottom: 0
+
+        ul li a, p a
+          text-decoration: none
+          color: $blue
+          border-bottom: 1px solid $blue
+
+          &:hover
+            color: #377DB4
+            border-bottom: 1px solid #377DB4
+
+        h4
+          color: #777
+
+.content-right
+  float: right
+  width: 199px
+  background: #fff
+  border-right: 1px solid #eee
+  border-bottom: 1px solid #eee
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
+
+.dataset-box
+  width: 200px
+  overflow: hidden
+  border-bottom-right-radius: 5px
+
+  .buttons
+    border-bottom: 1px solid #D3D3CA
+    padding: 20px 0
+    width: 160px
+    margin: auto
+
+    a
+      display: block
+
+  .last-date
+    width: 160px
+    border-top: 1px solid #E3E3E3
+    margin: auto
+    padding: 15px 0
+
+  h4
+    text-transform: uppercase
+    font: 13px 'MuseoSans-700', 'Arial', sans-serif
+    color: #9F9F96
+    margin: 0 0 10px 0
+
+  p.date
+    font: 27px 'MuseoSans-500', 'Arial', sans-serif
+    color: #999
+
+
+.dataset-box a.btn
+  width: 160px
+  height: 40px
+  margin-bottom: 10px
+  font-size: 15px
+  line-height: 40px
+
+span.icon-esri-white
+  display: inline-block
+  width: 15px
+  height: 15px
+  background: image-url('esri-logo-white.svg') no-repeat center center
+  background-size: 100%
+  position: relative
+  top: 2px

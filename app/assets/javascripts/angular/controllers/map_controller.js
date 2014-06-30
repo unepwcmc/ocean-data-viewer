@@ -56,6 +56,7 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     };
     $scope.$emit('resetMap');
     $scope.doSearch();
+    $scope.showingAdvanced = false;
   };
 }]);
 

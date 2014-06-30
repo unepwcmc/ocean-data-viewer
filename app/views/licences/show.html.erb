@@ -1,29 +1,30 @@
 <div class="outer-container group">
     <div class="container">
-        <div class="dataset-title about-title">
+        <div class="dataset-title">
             <ul>
                 <li class="gray detail">Licence</li>
-                <li class="information"><%= @licence.title %></li>
+                <li class="information wide"><%= @licence.title %></li>
             </ul>
         </div>
-
-        <div class="about-content group">
-            <ul>
-                <li class="title">
-                    <p>Description</p>
-                </li>
-                <li class="information">
-                    <p><%= RedCloth.new(@licence.body).to_html.html_safe %></p>
-                </li>
-            </ul>
-            <ul>
-                <li class="title">
-                    <p>Updated at</p>
-                </li>
-                <li class="information">
-                    <p><%= @licence.updated_at.strftime('%d/%m/%y') %></p>
-                </li>
-            </ul>
-        </div>
+        <div class="dataset-content">
+            <div class="content-left wide">
+                <ul>
+                    <li class="detail first">
+                        <p>Description</p>
+                    </li>
+                    <li class="information">
+                        <p><%= RedCloth.new(@licence.body).to_html.html_safe %></p>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="detail">
+                        <p>Updated at</p>
+                    </li>
+                    <li class="information">
+                        <p><%= @licence.updated_at.strftime('%d/%m/%y') %></p>
+                    </li>
+                </ul>
+            </div>
+            <!-- content-left -->
     </div> <!-- .container -->
 </div> <!-- .outer-container -->

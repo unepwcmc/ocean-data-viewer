@@ -49,10 +49,15 @@
   line-height: 30px
   padding: 0 .3em 0 .75em
   cursor: pointer
+  font-family: 'MuseoSans-500'
 
   i
     color: $blue
     float: right
+
+  &.active
+    background: #d3e9f9
+    color: $blue
 
 .check-option label
   text-transform: capitalize
@@ -63,8 +68,17 @@
   border-top: none
 
   .option, label
-    margin: .5em 0
     cursor: pointer
+    font-family: 'MuseoSans-500'
+
+  .option
+    margin: .75em 0
 
   label
-    margin-left: .5em
+    margin: .5em 0 .5em .5em
+    max-width: 15em
+    vertical-align: middle
+    line-height: 1em
+
+  input:checked + label
+    color: $blue

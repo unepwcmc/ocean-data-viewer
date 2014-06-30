@@ -58,7 +58,7 @@
             <%= f.label :sort_by, class: 'first first-level' %>
             <div ng-model="filters.sort_by" ng-click="toggleOptions()" class="filter-select">
               {{ filters.sort_by.text }}
-              <i class="icon-angle-down"></i>
+              <i ng-class="showingOptions ? 'icon-angle-up' : 'icon-angle-down'"></i>
             </div>
             <div ng-show="showingOptions" class="options">
               <div data-value="{{option.id}}" ng-repeat="option in sortByOptions" ng-click="select(option); toggleOptions()" class="option">

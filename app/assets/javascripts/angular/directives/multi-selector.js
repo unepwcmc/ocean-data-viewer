@@ -4,9 +4,9 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
   return {
     restrict: 'E',
     template: '<div class="multi-selector-widget">\
-               <div ng-click="visible=!visible" class="filter-select">\
+               <div ng-click="visible=!visible" ng-class="[\'filter-select\', selected.length >=1 && \'active\' ]">\
                   <span ng-bind="titleLabel"></span>\
-                  <i class="icon-angle-down"></i>\
+                  <i ng-class="visible ? \'icon-angle-up\' : \'icon-angle-down\'"></i>\
                </div>\
                   <div ng-show="visible" class="options" ng-transclude></div>\
                </div>',
@@ -17,13 +17,14 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
       model: '='
     },
     link: function($scope, $element) {
+      $scope.selected = [];
       $scope.visible = false;
       $scope.$watchCollection('model', function(newValue) {
-          var selected = selectedValues(newValue);
-          if (selected.length == 1) {
+          $scope.selected = selectedValues(newValue);
+          if ($scope.selected.length == 1) {
               $scope.titleLabel = "1 category";
-          } else if (selected.length > 1) {
-              $scope.titleLabel = selected.length + " categories";
+          } else if ($scope.selected.length > 1) {
+              $scope.titleLabel = $scope.selected.length + " categories";
           } else {
               $scope.titleLabel = "Any";
           };

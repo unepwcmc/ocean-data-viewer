@@ -60,31 +60,35 @@
           </p>
           <p>
             <%= f.label :data_categories, 'Data category', class: 'first-level' %>
-            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
-            <%= f.collection_check_boxes :data_categories, data_categories, :id, :name do |c| %>
-              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.data_categories["' + c.value.to_s + '"]')}".html_safe } %>
-            <% end %>
+            <multi-selector model="filters.data_categories">
+              <% data_categories.each do |dt| %>
+                <check-option model="<%= 'filters.data_categories["' + dt.id.to_s + '"]' %>" value="<%= dt.id %>"><%= dt.name %></check-option>
+              <% end %>
+            </multi-selector>
           </p>
           <p>
             <%= f.label :formats, 'Format', class: 'first-level' %>
-            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
-            <%= f.collection_check_boxes :formats, data_formats, :id, :name  do |c| %>
-              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.formats["' + c.value.to_s + '"]')}".html_safe } %>
-            <% end %>
+            <multi-selector model="filters.formats">
+              <% data_formats.each do |fo| %>
+                <check-option model="<%= 'filters.formats["' + fo.id.to_s + '"]' %>" value="<%= fo.id %>"><%= fo.name %></check-option>
+              <% end %>
+            </multi-selector>
           </p>
           <p>
             <%= f.label :observation_types, 'Observation type', class: 'first-level' %>
-            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
-            <%= f.collection_check_boxes :observation_types, observation_types, :id, :name do |c| %>
-              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.observation_types["' + c.value.to_s + '"]')}".html_safe } %>
-            <% end %>
+            <multi-selector model="filters.observation_types">
+              <% observation_types.each do |ot| %>
+                <check-option model="<%= 'filters.observation_types["' + ot.id.to_s + '"]' %>" value="<%= ot.id %>"><%= ot.name %></check-option>
+              <% end %>
+            </multi-selector>
           </p>
           <p>
             <%= f.label :geographical_ranges, 'Geographical range', class: 'first-level' %>
-            <div class="filter-select">Any<i class="icon-angle-down"></i></div>
-            <%= f.collection_check_boxes :geographical_ranges, geographical_ranges, :id, :name do |c| %>
-              <% c.label { "#{c.text} #{c.check_box('ng-model' => 'filters.geographical_ranges["' + c.value.to_s + '"]')}".html_safe } %>
-            <% end %>
+            <multi-selector model="filters.geographical_ranges">
+              <% geographical_ranges.each do |gr| %>
+                <check-option model="<%= 'filters.geographical_ranges["' + gr.id.to_s + '"]' %>" value="<%= gr.id %>"><%= gr.name %></check-option>
+              <% end %>
+            </multi-selector>
           </p>
           <button class="btn btn-white">Advanced filters</button>
           <br/>

@@ -1,15 +1,4 @@
-var module = angular.module("MarineApp", ['directives.map', 'resources.mapSearch']);
-
-// needs transform the :key's to an array keeping only then ones which the :value is true
-function selectedValues(obj) {
-  var keysWithTrueValue = [];
-  for (var key in obj) {
-    if (obj[key]) {
-      keysWithTrueValue.push(key);
-    }
-  }
-  return keysWithTrueValue;
-}
+var module = angular.module("MarineApp", ['directives.map', 'directives.multiSelector', 'resources.mapSearch']);
 
 module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
 

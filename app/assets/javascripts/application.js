@@ -23,5 +23,17 @@
 //= require dataset-list
 //= require map
 //= require angular/directives/map
+//= require angular/directives/multi-selector
 //= require angular/resources/map_search
 //= require angular/controllers/map_controller
+
+// needs transform the :key's to an array keeping only then ones which the :value is true
+function selectedValues(obj) {
+  var keysWithTrueValue = [];
+  for (var key in obj) {
+    if (obj[key]) {
+      keysWithTrueValue.push(key);
+    }
+  }
+  return keysWithTrueValue;
+}

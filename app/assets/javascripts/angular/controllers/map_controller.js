@@ -28,6 +28,10 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     $scope.showingOptions = !$scope.showingOptions;
   };
 
+  $scope.toggleAdvanced = function() {
+    $scope.showingAdvanced = !$scope.showingAdvanced;
+  }
+
   $scope.doSearch = function () {
     var queryOptions = {sort_by: $scope.filters.sort_by.value},
         addToQuery = function (attributeName) {

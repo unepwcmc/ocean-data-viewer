@@ -8,7 +8,7 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
                   <span ng-bind="titleLabel"></span>\
                   <i class="icon-angle-down"></i>\
                </div>\
-                   <div ng-show="visible" class="content" ng-transclude></div>\
+                  <div ng-show="visible" class="options" ng-transclude></div>\
                </div>',
     replace: false,
     transclude: true,

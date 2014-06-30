@@ -23,7 +23,6 @@
   label
     display: inline-block
     color: #999
-    margin: .5em 0
 
     &.first-level
       margin: 1.5em 0 .5em
@@ -54,3 +53,18 @@
   i
     color: $blue
     float: right
+
+.check-option label
+  text-transform: capitalize
+
+.options
+  padding: .5em 1em
+  border: 1px solid #ddd
+  border-top: none
+
+  .option, label
+    margin: .5em 0
+    cursor: pointer
+
+  label
+    margin-left: .5em

@@ -24,7 +24,7 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
       var numberMaxOfCharecters = 26;
 
       var getName = function(categoryKey) {
-        return $element.find('input[id="' + categoryKey + '-id"] + label').text();
+        return $element.find('input[id="' + categoryKey + '-id"] + .checkbox + label').text();
       };
 
       $scope.$watchCollection('model', function(newValue) {

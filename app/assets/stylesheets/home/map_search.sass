@@ -80,10 +80,36 @@
     margin: .75em 0
 
   label
-    margin: .5em 0 .5em .5em
+    margin: .5em 0 .5em -.75em
     max-width: 15em
     vertical-align: middle
     line-height: 1em
 
-  input:checked + label
+  input
+    opacity: 0
+
+    &:checked + label
+      color: $blue
+
+.checkbox
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  top: -1px
+  right: 15px
+  width: 12px
+  height: 12px
+  background: #F8F7F4
+  border: 1px solid #ddd
+  border-radius: 2px
+
+  i
     color: $blue
+    position: absolute
+    top: -2.5px
+    left: -2.6px
+    display: none
+    line-height: 0
+
+input:checked + .checkbox i
+  display: initial

@@ -38,6 +38,7 @@ module.directive('checkOption', ['$compile', '$rootScope', function($compile, $r
     restrict: 'E',
       template: '<div class="check-option">\
           <input id="{{value}}-id" type="checkbox" name="{{name}}" value="{{value}}" ng-model="model" />\
+          <div class="checkbox"><i class="icon-ok"></i></div>\
           <label for="{{value}}-id" ng-transclude></label></div>',
     replace: true,
     transclude: true,

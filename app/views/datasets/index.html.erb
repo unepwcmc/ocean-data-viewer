@@ -1,7 +1,8 @@
 <% content_for :map_controls do %>
   <div ng-controller="SearchCtrl">
     <div class="search-results" ng-controller="DatasetsListingCtrl">
-      <h1>Displaying all datasets</h1>
+      <h1 ng-hide="showingSearchResults">Displaying all datasets</h1>
+      <h1 ng-show="showingSearchResults">Displaying search results</h1>
 
       <div id="scrollable_databases" class="scroll-pane">
         <ul class="dataset-list">
@@ -114,7 +115,7 @@
             </div>
             <button ng-hide="showingAdvanced" ng-click="showingAdvanced=!showingAdvanced" class="btn btn-white">Advanced filters</button>
             <br/>
-            <button ng-click="doSearch()" class="btn">Search</button>
+            <button ng-click="doSearch({isUserSearch: true})" class="btn">Search</button>
             <button ng-click="reset()" class="btn btn-white">Reset</button>
           <% end %>
         </div> <!-- .filters-container -->

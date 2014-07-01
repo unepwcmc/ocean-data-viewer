@@ -4,6 +4,7 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
 
   $scope.showingOptions = false;
   $scope.showingAdvanced = false;
+  $scope.showingSearchResults = false;
 
   // page load initial search
   MapSearch.query({sort_by: 'creation_date'}).then(function(result) {
@@ -33,7 +34,7 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     $scope.showingOptions = !$scope.showingOptions;
   };
 
-  $scope.doSearch = function () {
+  $scope.doSearch = function (options) {
     var queryOptions = {sort_by: $scope.filters.sort_by.value},
         addToQuery = function (attributeName) {
           var values = selectedValues($scope.filters[attributeName]);
@@ -50,14 +51,19 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     MapSearch.query(queryOptions).then(function(result) {
       $scope.$emit('resetMap');
       $scope.$broadcast('searchResults', result);
+
+      if (options) {
+        $scope.showingSearchResults = options.isUserSearch;
+      }
     });
   };
 
   $scope.reset = function() {
     $scope.filters = angular.copy($scope.defaultFilters, {});
     $scope.$emit('resetMap');
-    $scope.doSearch();
+    $scope.doSearch({isUserSearch: false});
     $scope.showingAdvanced = false;
+    $scope.showingSearchResults = false;
   };
 
   $scope.shouldShowResetButton = function() {

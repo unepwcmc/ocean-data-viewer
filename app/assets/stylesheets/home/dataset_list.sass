@@ -44,12 +44,15 @@
     text-decoration: none
     color: inherit
 
-    &.title
-      display: inline-block
-      margin: .5em 0 .25em
-      color: $blue
-      font: 15px 'MuseoSans-500'
-      max-width: 20em
+  .title a
+    display: inline-block
+    margin: .5em 0 .75em
+    color: $blue
+    font: 15px 'MuseoSans-500'
+    max-width: 20em
+
+  .format
+    margin-top: .75em
 
   li:hover a.title
     text-decoration: underline
@@ -83,14 +86,12 @@
   .arrow
     display: none
     color: $blue
-    float: right
-    margin-top: -1.2em
 
     span
       vertical-align: initial
 
   li:hover .arrow
-    display: block
+    display: initial
 
   .additional-info
     position: relative
@@ -136,12 +137,16 @@
       &:hover
         background-image: image-url('esri-logo-hover.svg')
 
-.dataset-info > span, .additional-info > span
+.additional-info > span
   margin: .75em .25em .75em 0
 
-span + .prepend-pipe
+span:not(.ng-hide) ~ .prepend-pipe
   border-left: 1px solid #D4D4D4
   padding-left: .5em
+  margin-left: .25em
+
+  &.arrow
+    padding-left: .25em
 
 .prepend-symbol
   padding-left: 1.4em

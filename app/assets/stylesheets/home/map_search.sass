@@ -67,10 +67,22 @@
 .check-option label
   text-transform: capitalize
 
-.options
+.options-container
   padding: .5em 1em
   border: 1px solid #ddd
   border-top: none
+
+.options
+  width: 100%
+  overflow: hidden
+  max-height: 0
+  opacity: 0
+  transition: max-height 200ms, opacity 200ms
+
+  &.visible
+    overflow: visible
+    max-height: 500px
+    opacity: 1
 
   .option, label
     cursor: pointer

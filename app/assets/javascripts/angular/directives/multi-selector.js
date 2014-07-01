@@ -4,11 +4,13 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
   return {
     restrict: 'E',
     template: '<div class="multi-selector-widget">\
-               <div ng-click="visible=!visible" ng-class="[\'filter-select\', selected.length >=1 && \'active\' ]">\
-                  <span ng-bind="titleLabel"></span>\
-                  <i ng-class="visible ? \'icon-angle-up\' : \'icon-angle-down\'"></i>\
-               </div>\
-                  <div ng-show="visible" class="options" ng-transclude></div>\
+                 <div ng-click="visible=!visible" ng-class="[\'filter-select\', selected.length >=1 && \'active\' ]">\
+                    <span ng-bind="titleLabel"></span>\
+                    <i ng-class="visible ? \'icon-angle-up\' : \'icon-angle-down\'"></i>\
+                 </div>\
+                  <div ng-class="[\'options\', visible && \'visible\']">\
+                    <div class="options-container" ng-transclude></div>\
+                  </div>\
                </div>',
     replace: false,
     transclude: true,

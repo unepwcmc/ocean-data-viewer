@@ -61,9 +61,11 @@
               {{ filters.sort_by.text }}
               <i ng-class="showingOptions ? 'icon-angle-up' : 'icon-angle-down'"></i>
             </div>
-            <div ng-show="showingOptions" class="options">
-              <div data-value="{{option.id}}" ng-repeat="option in sortByOptions" ng-click="select(option); toggleOptions()" class="option">
-                {{ option.text }}
+            <div ng-class="['options', showingOptions && 'visible']">
+              <div class="options-container">
+                <div data-value="{{option.id}}" ng-repeat="option in sortByOptions" ng-click="select(option); toggleOptions()" class="option">
+                  {{ option.text }}
+                </div>
               </div>
             </div>
           </p>

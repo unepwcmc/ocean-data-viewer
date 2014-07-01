@@ -31,13 +31,14 @@
     color: $blue
     float: right
 
-.filters
-  background: #fff
+.filters-container
+  width: 286px
   padding: 1.5em
-  border-radius: 0
   border: 1px solid #DDD
   border-width: 0 1px 1px 0
+  background: #fff
 
+.filters
   label
     display: inline-block
     color: #999
@@ -58,6 +59,25 @@
 
     & + .btn-white
       float: right
+
+.filters, h1.close-filters
+  max-width: 0
+  overflow: hidden
+  padding: 0
+  opacity: 0
+  transition: all 200ms
+
+  &.visible
+    max-width: 286px
+    opacity: 1
+
+h1.close-filters
+  border: none
+
+  &.visible
+    padding: 0.15em 1em 0 1em
+    border-right: 1px solid #ddd
+    border-bottom: 1px solid #ddd
 
 .filter-select
   background: #F8F7F4

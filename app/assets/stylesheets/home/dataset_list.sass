@@ -23,6 +23,7 @@
   height: 590px /* 630px - 40px (h1 height) */
   background-color: #F8F7F4
   overflow: auto
+  border-right: 1px solid #ddd
 
   &:focus
     outline: none
@@ -30,7 +31,7 @@
 .dataset-list
   li
     cursor: pointer
-    border: 1px solid #ddd
+    border-bottom: 1px solid #ddd
     color: #999
     position: relative
 
@@ -42,11 +43,9 @@
 
   a
     text-decoration: none
-    color: inherit
 
-  .title a
-    display: inline-block
-    margin: .5em 0 .75em
+  .title
+    margin: 0 0 .75em
     color: $blue
     font: 15px 'MuseoSans-500'
     max-width: 20em
@@ -69,7 +68,7 @@
     border-top: none
 
   .dataset-info
-    padding: 1em
+    padding: 1.5em 1em
     margin-left: 16px
     border-right: 7px solid transparent
 
@@ -81,7 +80,7 @@
       max-width: 22em
 
   .arrow
-    display: none
+    opacity: 0
     color: $blue
     text-transform: uppercase
     font-family: 'MuseoSans-500'
@@ -94,6 +93,16 @@
       bottom: 1px
 
   li:hover .arrow
+    opacity: 1
+
+  a.btn-white
+    display: none
+    float: right
+    padding: .3em .5em .1em
+    position: relative
+    bottom: .35em
+
+  li.active .btn-white
     display: initial
 
   .additional-info
@@ -120,6 +129,7 @@
     font-size: 14px
 
     a
+      color: $blue
       display: inline-block
       vertical-align: middle
       width: 14px

@@ -45,7 +45,9 @@ var Map = function(target, baseLayer) {
       layers[layerName] = new L.tileLayer.wms(options.wmsServer, {
         layers: options.wmsName,
         transparent: true,
-        format: 'image/png'
+        format: 'image/png',
+        styles: options.styles,
+        viewParams: options.viewParams
       });
     } else {
       layers[layerName] = new L.esri.tiledMapLayer(options.wmsServer, {

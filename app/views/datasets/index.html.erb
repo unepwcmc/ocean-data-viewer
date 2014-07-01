@@ -57,7 +57,7 @@
         <%= form_for @search, url: '' do |f| %>
           <p>
             <%= f.label :sort_by, class: 'first first-level' %>
-            <div ng-model="filters.sort_by" ng-click="showingOptions=!showingOptions" class="filter-select">
+            <div ng-model="filters.sort_by" ng-click="toggleOptions()" class="filter-select">
               {{ filters.sort_by.text }}
               <i ng-class="showingOptions ? 'icon-angle-up' : 'icon-angle-down'"></i>
             </div>

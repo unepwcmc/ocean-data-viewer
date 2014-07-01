@@ -27,6 +27,10 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     $scope.filters.sort_by = option;
   };
 
+  $scope.toggleOptions = function() {
+    $scope.showingOptions = !$scope.showingOptions;
+  };
+
   $scope.doSearch = function () {
     var queryOptions = {sort_by: $scope.filters.sort_by.value},
         addToQuery = function (attributeName) {

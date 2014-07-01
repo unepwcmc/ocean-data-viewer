@@ -1,4 +1,9 @@
-var module = angular.module("MarineApp", ['directives.map', 'directives.multiSelector', 'resources.mapSearch']);
+var module = angular.module("MarineApp", [
+  'directives.map',
+  'directives.multiSelector',
+  'directives.clickAnywhereButHere',
+  'resources.mapSearch'
+]);
 
 module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
 
@@ -68,7 +73,11 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
 
   $scope.shouldShowResetButton = function() {
     return !$scope.showingFilters && !angular.equals($scope.filters, $scope.defaultFilters);
-  }
+  };
+
+  $scope.closeFilters = function() {
+    $scope.showingFilters = false;
+  };
 }]);
 
 module.controller('DatasetsListingCtrl', ['$scope', function($scope) {

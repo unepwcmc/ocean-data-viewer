@@ -24,6 +24,7 @@
 //= require map
 //= require angular/directives/map
 //= require angular/directives/multi-selector
+//= require angular/directives/click-anywhere-but-here
 //= require angular/resources/map_search
 //= require angular/controllers/map_controller
 

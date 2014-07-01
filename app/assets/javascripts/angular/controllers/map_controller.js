@@ -42,6 +42,7 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     addToQuery('geographical_ranges');
 
     MapSearch.query(queryOptions).then(function(result) {
+      $scope.$emit('resetMap');
       $scope.$broadcast('searchResults', result);
     });
   };

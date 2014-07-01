@@ -48,12 +48,20 @@
     </div><!-- .search-results -->
 
     <div class="map-search">
-      <h1>
+      <h1 ng-show="!showingFilters" ng-click="showingFilters=!showingFilters" class="open-filters">
+        <i class="icon-filter"></i>
+        Filter
+      </h1>
+      <h1 ng-show="shouldShowResetButton()" ng-click="reset()" class="reset-filters">
+        <i class="icon-cancel"></i>
+        Reset active filters
+      </h1>
+      <h1 ng-show="showingFilters" ng-click="showingFilters=!showingFilters">
         <i class="icon-filter"></i>
         Dataset filters
         <i class="icon-angle-circled-left"></i>
       </h1>
-      <div class="filters">
+      <div ng-show="showingFilters" class="filters">
         <%= form_for @search, url: '' do |f| %>
           <p>
             <%= f.label :sort_by, class: 'first first-level' %>

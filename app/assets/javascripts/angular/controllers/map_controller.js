@@ -15,13 +15,15 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
     {text: 'Title', value: 'title'}
   ];
 
-  $scope.filters = {
+  $scope.defaultFilters = {
     sort_by: $scope.sortByOptions[0],
     data_categories: {},
     formats: {},
     observation_types: {},
     geographical_ranges: {}
   };
+
+  $scope.filters = angular.copy($scope.defaultFilters, {});
 
   $scope.select = function(option) {
     $scope.filters.sort_by = option;
@@ -52,17 +54,15 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
   };
 
   $scope.reset = function() {
-    $scope.filters = {
-      sort_by: $scope.sortByOptions[0],
-      data_categories: {},
-      formats: {},
-      observation_types: {},
-      geographical_ranges: {}
-    };
+    $scope.filters = angular.copy($scope.defaultFilters, {});
     $scope.$emit('resetMap');
     $scope.doSearch();
     $scope.showingAdvanced = false;
   };
+
+  $scope.shouldShowResetButton = function() {
+    return !$scope.showingFilters && !angular.equals($scope.filters, $scope.defaultFilters);
+  }
 }]);
 
 module.controller('DatasetsListingCtrl', ['$scope', function($scope) {

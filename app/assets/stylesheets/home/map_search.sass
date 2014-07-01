@@ -1,9 +1,6 @@
 .map-search
   float: left
   width: 286px
-  background: #fff
-  border: 1px solid #ddd
-  border-width: 0 1px 1px 0
   color: #6B6B6A
 
   h1
@@ -11,19 +8,35 @@
     font-size: 13px
     border-right: none
     cursor: pointer
+    border-right: 1px solid #ddd
     font-family: 'MuseoSans-700'
+    transition: background .5s
+
+    &.open-filters, &.reset-filters
+      color: $blue
+
+    &.open-filters
+      text-transform: uppercase
+      float: left
+
+    &.reset-filters
+      text-align: center
+      font-family: 'MuseoSans-500'
+      background: $light-blue
 
     &:hover
-      background: #d3e9f9
+      background: $light-blue
 
   .icon-angle-circled-left
     color: $blue
     float: right
 
 .filters
+  background: #fff
   padding: 1.5em
   border-radius: 0
-  -webkit-appearance: none
+  border: 1px solid #DDD
+  border-width: 0 1px 1px 0
 
   label
     display: inline-block
@@ -61,7 +74,7 @@
     float: right
 
   &.active
-    background: #d3e9f9
+    background: $light-blue
     color: $blue
 
 .check-option label

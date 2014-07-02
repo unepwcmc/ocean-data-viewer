@@ -56,7 +56,7 @@
   .icon-angle-circled-right
     display: none
     position: absolute
-    top: 1.5em
+    top: 1.45em
     right: 1.5em
     color: $blue
     line-height: 1.75em
@@ -67,17 +67,17 @@
   li + li
     border-top: none
 
-  .dataset-info
-    padding: 1.5em 1em
-    margin-left: 16px
-    border-right: 7px solid transparent
+.dataset-info
+  padding: 1.5em 1em
+  margin-left: 16px
+  border-right: 7px solid transparent
 
-    span
-      display: inline-block
-      vertical-align: middle
+  span
+    display: inline-block
+    vertical-align: middle
 
-    .category
-      max-width: 22em
+  .categories
+    max-width: 22em
 
   .arrow
     opacity: 0
@@ -105,21 +105,21 @@
   li.active .btn-white
     display: initial
 
-  .additional-info
-    position: relative
-    overflow: hidden
-    height: 0
-    opacity: 0
-    transition: all 200ms
+.additional-info
+  position: relative
+  overflow: hidden
+  height: 0
+  opacity: 0
+  transition: all 200ms
 
-    &.visible
-      border-top: 1px solid #DDD
-      min-height: 2em
-      overflow: visible
-      height: auto
-      margin-top: 1em
-      padding-top: .5em
-      opacity: 1
+  &.visible
+    border-top: 1px solid #DDD
+    min-height: 2em
+    overflow: visible
+    height: auto
+    margin-top: 1em
+    padding-top: .5em
+    opacity: 1
 
   .buttons
     position: absolute
@@ -179,6 +179,59 @@ span + .prepend-symbol
 .raster
   background-image: image-url('raster.svg')
 
+// Tooltips
+
+.dataset-info
+  .tooltip
+    position: relative
+    background: #ffffff
+    border: 1px solid #ddd
+    box-shadow: 0 1px 3px #ddd
+    border-radius: 4px
+    padding: .5em .75em
+    min-width: 11em
+    z-index: 1
+    display: none
+
+    &:after, &:before
+      top: 100%
+      left: 50%
+      border: solid transparent
+      content: " "
+      height: 0
+      width: 0
+      position: absolute
+      pointer-events: none
+
+    &:after
+      border-color: rgba(255, 255, 255, 0)
+      border-top-color: #ffffff
+      border-width: 5px
+      margin-left: -5px
+
+    &:before
+      border-color: rgba(221, 221, 221, 0)
+      border-top-color: #ddd
+      border-width: 6px
+      margin-left: -6px
+
+  .category
+    position: relative
+    transition: color .5s
+
+    &:hover
+      color: $blue
+
+      .tooltip
+        color: #999
+        display: inline-block
+
+  .tooltip-container
+    position: absolute
+    bottom: 1.5em
+    left: -2em
+
+// Colourful right borders on hover/active
 
 li.active.type21 .dataset-info, li.type21:hover .dataset-info
   border-right-color: #734c00
@@ -248,6 +301,8 @@ li.active.type29 .dataset-info, li.type29:hover .dataset-info
 
 li.active.type30 .dataset-info, li.type30:hover .dataset-info
   border-right-color: #59c3e2
+
+// Scrollbar
 
 .jspVerticalBar
   left: 0

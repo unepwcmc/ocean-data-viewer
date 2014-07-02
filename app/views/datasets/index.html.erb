@@ -12,7 +12,14 @@
                   {{ dataset.title }}
                 </div>
                 <span ng-show="dataset.creationDate" ng-bind="dataset.creationDate"></span>
-                <span ng-show="dataset.categoriesNames" ng-bind="dataset.categoriesNames" class="category prepend-pipe"></span>
+                <span class="categories prepend-pipe">
+                  <span ng-show="dataset.dataCategories" ng-repeat="category in dataset.dataCategories" class="category">
+                    {{ category.name }}{{ $last ? '' : ',&nbsp;' }}
+                    <span class="tooltip-container">
+                      <span class="tooltip">Kitty ipsum dolor sit amet, bat sleep on your face chase the red dot tail flick eat the grass.</span>
+                    </span>
+                  </span>
+                </span>
                 <div class="format">
                   <span ng-show="dataset.format == 'polygon' || dataset.format == 'point' || dataset.format == 'raster'" ng-class="['capitalize', 'prepend-symbol', dataset.format]" ng-bind="dataset.format"></span>
                   <span ng-show="dataset.format == 'point & polygon'" class="capitalize">

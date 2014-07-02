@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140701134813) do
+ActiveRecord::Schema.define(version: 20140702135653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,14 +76,6 @@ ActiveRecord::Schema.define(version: 20140701134813) do
     t.integer  "licence_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "html_file_name"
-    t.string   "html_content_type"
-    t.integer  "html_file_size"
-    t.datetime "html_updated_at"
-    t.string   "xml_file_name"
-    t.string   "xml_content_type"
-    t.integer  "xml_file_size"
-    t.datetime "xml_updated_at"
     t.string   "wms_name"
     t.string   "arcgis_link"
     t.integer  "order_number"

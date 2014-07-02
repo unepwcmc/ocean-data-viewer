@@ -1,5 +1,5 @@
 class MapSearchController < ApplicationController
-  inject :search
+  inject :search, :datasets_repository
 
   def index
     search_filters = MapSearch.new(search_params)
@@ -8,6 +8,10 @@ class MapSearchController < ApplicationController
     else
       render json: {error: 'query not valid'}
     end
+  end
+
+  def show
+    render json: datasets_repository.find(params[:id])
   end
 
   private

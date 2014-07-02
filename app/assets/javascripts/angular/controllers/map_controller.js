@@ -103,3 +103,14 @@ module.controller('DatasetsListingCtrl', ['$scope', function($scope) {
     layer.showingMore = !layer.showingMore;
   };
 }]);
+
+module.controller('ShowDatasetCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
+
+  $scope.showDataset = function(dataset_id) {
+    MapSearch.get(dataset_id).then(function(result) {
+      $scope.$emit('layerLoaded', result.title, result);
+      $scope.$emit('toggleLayer', result.title);
+    });
+  };
+
+}]);

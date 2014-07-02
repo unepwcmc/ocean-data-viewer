@@ -8,7 +8,7 @@ MarinePortal::Application.routes.draw do
   resources :datasets, :only => [:index, :show], :has_many => :customers
   resources :licences, :only => :show
 
-  resources :map_search, only: [:index]
+  resources :map_search, only: [:index, :show]
 
   namespace :admin do
     match '/', :to => "datasets#index", via: 'get'

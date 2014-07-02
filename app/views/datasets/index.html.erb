@@ -12,8 +12,8 @@
                   {{ dataset.title }}
                 </div>
                 <span ng-show="dataset.creationDate" ng-bind="dataset.creationDate"></span>
-                <span class="categories prepend-pipe">
-                  <span ng-show="dataset.dataCategories" ng-repeat="category in dataset.dataCategories" class="category">
+                <span ng-show="dataset.dataCategories" class="categories prepend-pipe">
+                  <span ng-repeat="category in dataset.dataCategories" class="category">
                     {{ category.name }}{{ $last ? '' : ',&nbsp;' }}
                     <span class="tooltip-container">
                       <span class="tooltip">Kitty ipsum dolor sit amet, bat sleep on your face chase the red dot tail flick eat the grass.</span>

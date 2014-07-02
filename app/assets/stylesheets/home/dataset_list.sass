@@ -67,18 +67,6 @@
   li + li
     border-top: none
 
-.dataset-info
-  padding: 1.5em 1em
-  margin-left: 16px
-  border-right: 7px solid transparent
-
-  span
-    display: inline-block
-    vertical-align: middle
-
-  .categories
-    max-width: 22em
-
   .arrow
     opacity: 0
     color: $blue
@@ -104,6 +92,20 @@
 
   li.active .btn-white
     display: initial
+
+  .categories
+    max-width: 22em
+
+.dataset-info
+  padding: 1.5em 1em
+  margin-left: 16px
+  border-right: 7px solid transparent
+
+  span
+    display: inline-block
+
+  .prepend-pipe
+    display: inline
 
 .additional-info
   position: relative
@@ -165,19 +167,22 @@ span:not(.ng-hide) ~ .prepend-pipe
   padding-left: 1.4em
   background-repeat: no-repeat
   background-position: top left
+  height: 14px
+  line-height: 17px
 
 span + .prepend-symbol
   background-position: 7% top
   padding-left: 1.7em
 
 .point
-  background-image: image-url('point.svg')
+  background-image: image-url('point.png')
+  padding-left: 1.2em
 
 .polygon
-  background-image: image-url('polygon.svg')
+  background-image: image-url('polygon.png')
 
 .raster
-  background-image: image-url('raster.svg')
+  background-image: image-url('raster.png')
 
 // Tooltips
 

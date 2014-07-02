@@ -19,18 +19,6 @@
 </p>
 
 <p>
-  <b>HTML file:</b>
-  <%= link_to "HTML file", @dataset.html.url if @dataset.html.file? %>
-</p>
-
-
-<p>
-  <b>XML file:</b>
-  <%= link_to "XML file", @dataset.xml.url if @dataset.xml.file? %>
-</p>
-
-
-<p>
   <b>Shp download:</b>
   <%=h @dataset.shp_download %>
 </p>
@@ -43,6 +31,16 @@
 <p>
   <b>Wms server:</b>
   <%=h @dataset.wms_server %>
+</p>
+
+<p>
+  <b>Styles:</b>
+  <%=h @dataset.styles %>
+</p>
+
+<p>
+  <b>View params:</b>
+  <%=h @dataset.view_params %>
 </p>
 
 <p>

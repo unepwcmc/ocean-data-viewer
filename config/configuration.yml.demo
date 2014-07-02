@@ -1,4 +1,6 @@
 development: &development
+  attachment_url: "/pdfs/:id/:filename"
+  attachment_path: "/pdfs/:id/:filename"
   email_from: "Marine Portal <mailer@tinypla.net>"
   app_host: "localhost:3000"
   delivery_method: "letter_opener"

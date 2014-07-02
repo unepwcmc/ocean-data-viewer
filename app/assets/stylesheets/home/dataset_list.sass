@@ -143,11 +143,11 @@
       display: inline-block
       width: 14px
       height: 14px
-      background: image-url('esri-logo.svg') no-repeat center center
+      background: url('esri-logo.svg') no-repeat center center
       transition: none
 
       &:hover
-        background-image: image-url('esri-logo-hover.svg')
+        background-image: url('esri-logo-hover.svg')
 
 .additional-info > span
   margin: .75em .25em .75em 0
@@ -172,14 +172,26 @@ span + .prepend-symbol
   padding-left: 1.7em
 
 .point
-  background-image: image-url('point.png')
+  background-image: url('point.png')
   padding-left: 1.2em
 
+  @media #{$retina}
+    background-image: url('point@2x.png')
+    background-size: 11px 14px
+
 .polygon
-  background-image: image-url('polygon.png')
+  background-image: url('polygon.png')
+
+  @media #{$retina}
+    background-image: url('polygon@2x.png')
+    background-size: 14px 14px
 
 .raster
-  background-image: image-url('raster.png')
+  background-image: url('raster.png')
+
+  @media #{$retina}
+    background-image: url('raster@2x.png')
+    background-size: 14px 14px
 
 // Tooltips
 

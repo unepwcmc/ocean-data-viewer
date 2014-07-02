@@ -14,6 +14,10 @@ header
     height: 38px
     background: url('logo.png') no-repeat
 
+    @media #{$retina}
+      background-image: url('logo@2x.png')
+      background-size: 75px 38px
+
   a
     color: white
     text-decoration: none

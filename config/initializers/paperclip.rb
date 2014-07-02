@@ -1,2 +1,2 @@
-Paperclip::Attachment.default_options[:url] = ':s3_domain_url'
-Paperclip::Attachment.default_options[:path] = 'resources/:class/:attachment/:id_partition/:style_:filename'
+Paperclip::Attachment.default_options[:url] = A9n.attachment_url
+Paperclip::Attachment.default_options[:path] = ":rails_root/public#{A9n.attachment_path}"

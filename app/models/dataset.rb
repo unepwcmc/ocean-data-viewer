@@ -15,9 +15,6 @@ class Dataset < ActiveRecord::Base
   accepts_nested_attributes_for :data_categories
 
   has_attached_file :factsheet
-
-  do_not_validate_attachment_file_type :html
-  do_not_validate_attachment_file_type :xml
   do_not_validate_attachment_file_type :factsheet
 
   private

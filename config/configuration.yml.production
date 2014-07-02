@@ -1,4 +1,6 @@
 production:
+  attachment_url: "/pdfs/:id/:filename"
+  attachment_path: "/pdfs/:id/:filename"
   email_from: "Marine Portal <mailer@tinypla.net>"
   app_host: ""
   delivery_method: "smtp"

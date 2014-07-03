@@ -233,14 +233,18 @@ span + .prepend-symbol
 
   .category
     position: relative
-    transition: color .5s
 
-    &:hover
-      color: $blue
+    &.with-tooltip
+      .name
+        transition: color .5s
 
-      .tooltip
-        color: #999
-        display: inline-block
+      &:hover
+        .name
+          color: $blue
+
+        .tooltip
+          color: #999
+          display: inline-block
 
   .tooltip-container
     position: absolute

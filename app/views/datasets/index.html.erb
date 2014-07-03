@@ -13,8 +13,8 @@
                 </div>
                 <span ng-show="dataset.creationDate" ng-bind="dataset.creationDate"></span>
                 <span ng-show="dataset.dataCategories" class="categories prepend-pipe">
-                  <span ng-repeat="category in dataset.dataCategories" class="category">
-                    {{ category.name }}{{ $last ? '' : ',&nbsp;' }}
+                  <span ng-repeat="category in dataset.dataCategories" ng-class="['category', category.description && 'with-tooltip']">
+                    <span class="name">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
                     <span ng-show="category.description" class="tooltip-container">
                       <span class="tooltip">{{ category.description }}</span>
                     </span>

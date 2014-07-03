@@ -64,24 +64,29 @@
 </p>
 
 <p>
+  <b>Time range:</b>
+  <%= @dataset.time_range_start %>-<%= @dataset.time_range_end %>
+</p>
+
+<p>
   <b>Data categories:</b>
   <%= @dataset.data_categories.map(&:name).join(', ') %>
 </p>
 
 <p>
   <b>Format:</b>
-  <%= @dataset.format.capitalize %>
+  <%= @dataset.format.to_s.capitalize %>
 </p>
 
 <p>
   <b>Geographical range:</b>
-  <%= @dataset.geographical_range.capitalize %>
+  <%= @dataset.geographical_range.to_s.capitalize %>
 </p>
 
 
 <p>
   <b>Observation type:</b>
-  <%= @dataset.observation_type.capitalize %>
+  <%= @dataset.observation_type.to_s.capitalize %>
 </p>
 
 

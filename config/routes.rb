@@ -15,6 +15,7 @@ MarinePortal::Application.routes.draw do
     resources :customers
     resources :licences
     resources :categories
+    resources :data_categories
     resources :datasets_decisions
 
     resources :datasets do

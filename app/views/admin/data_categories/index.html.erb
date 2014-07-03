@@ -1,0 +1,22 @@
+<h1>Listing data categories</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Description</th>
+  </tr>
+
+<% @data_categories.each do |data_category| %>
+  <tr>
+    <td><%= data_category.name %></td>
+    <td><%= truncate(data_category.description, lenght: 300) %></td>
+    <td><%= link_to 'Show', [:admin,data_category] %></td>
+    <td><%= link_to 'Edit', edit_admin_data_category_path(data_category) %></td>
+    <td><%= link_to 'Destroy', [:admin,data_category], :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Data Category', new_admin_data_category_path, :class=> "button" %>

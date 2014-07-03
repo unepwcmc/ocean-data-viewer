@@ -1,0 +1,11 @@
+<p>
+  <b>Name:</b>
+  <%= @data_category.name %>
+</p>
+<p>
+  <b>Description:</b>
+  <%= @data_category.description %>
+</p>
+
+<%= link_to 'Edit', edit_admin_data_category_path(@data_category), :class=> "button" %>
+<%= link_to 'Back', admin_data_categories_path, :class=> "button" %>

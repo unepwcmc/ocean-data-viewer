@@ -1,0 +1,26 @@
+<h1>Editing data category</h1>
+
+<%= form_for([:admin,@data_category]) do |f| %>
+  <% if @data_category.errors.any? %>
+    <ul>
+      <% @data_category.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+	<p>
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', [:admin,@data_category], :class=> "button" %>
+<%= link_to 'Back', admin_data_categories_path, :class=> "button" %>

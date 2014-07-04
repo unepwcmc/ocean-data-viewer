@@ -3,7 +3,7 @@
 }
 
 .options input {
-  position: initial;
+  position: static;
   margin: 1.5em 0;
 }
 

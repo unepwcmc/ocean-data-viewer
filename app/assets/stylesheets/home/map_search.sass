@@ -129,9 +129,7 @@ h1.close-filters
     margin: .75em 0
 
   label
-    margin: .5em 0 .5em -.75em
-    max-width: 14.5em
-    vertical-align: middle
+    margin: .5em 0
     line-height: 1em
 
   input
@@ -144,13 +142,14 @@ h1.close-filters
   display: inline-block
   vertical-align: middle
   position: relative
-  top: -1px
+  top: -1.5px
   right: 15px
   width: 12px
   height: 12px
   background: #F8F7F4
   border: 1px solid #ddd
   border-radius: 2px
+  margin-right: -.6em
 
   i
     color: $blue
@@ -160,5 +159,14 @@ h1.close-filters
     display: none
     line-height: 0
 
-input:checked + .checkbox i
+.label-text
+  display: inline-block
+  vertical-align: middle
+  max-width: 15em
+  transition: color .5s
+
+  &:hover
+    color: $blue
+
+input:checked + label .checkbox i
   display: initial

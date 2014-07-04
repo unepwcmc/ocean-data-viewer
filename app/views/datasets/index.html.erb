@@ -72,7 +72,7 @@
         <div class="filters-container">
           <%= form_for @search, url: '' do |f| %>
             <p>
-              <%= f.label :sort_by, class: 'first first-level' %>
+              <%= f.label 'Sort by', class: 'first first-level' %>
               <div ng-model="filters.sort_by" ng-click="toggleOptions()" class="filter-select">
                 {{ filters.sort_by.text }}
                 <i ng-class="showingOptions ? 'icon-angle-up' : 'icon-angle-down'"></i>
@@ -86,7 +86,7 @@
               </div>
             </p>
             <p>
-              <%= f.label :data_categories, 'Data category', class: 'first-level' %>
+              <%= f.label 'Data category', class: 'first-level' %>
               <multi-selector model="filters.data_categories">
                 <% data_categories.each do |dt| %>
                   <check-option model="<%= 'filters.data_categories["' + dt.id.to_s + '"]' %>" value="<%= dt.id %>"><%= dt.name %></check-option>
@@ -94,7 +94,7 @@
               </multi-selector>
             </p>
             <p>
-              <%= f.label :formats, 'Format', class: 'first-level' %>
+              <%= f.label 'Format', class: 'first-level' %>
               <multi-selector model="filters.formats">
                 <% data_formats.each do |fo| %>
                   <check-option model="<%= 'filters.formats["' + fo.id.to_s + '"]' %>" value="<%= fo.id %>"><%= fo.name %></check-option>
@@ -103,7 +103,7 @@
             </p>
             <div ng-show="showingAdvanced">
               <p>
-                <%= f.label :observation_types, 'Observation type', class: 'first-level' %>
+                <%= f.label 'Observation type', class: 'first-level' %>
                 <multi-selector model="filters.observation_types">
                   <% observation_types.each do |ot| %>
                     <check-option model="<%= 'filters.observation_types["' + ot.id.to_s + '"]' %>" value="<%= ot.id %>"><%= ot.name %></check-option>
@@ -111,7 +111,7 @@
                 </multi-selector>
               </p>
               <p>
-                <%= f.label :geographical_ranges, 'Geographical range', class: 'first-level' %>
+                <%= f.label 'Geographical range', class: 'first-level' %>
                 <multi-selector model="filters.geographical_ranges">
                   <% geographical_ranges.each do |gr| %>
                     <check-option model="<%= 'filters.geographical_ranges["' + gr.id.to_s + '"]' %>" value="<%= gr.id %>"><%= gr.name %></check-option>

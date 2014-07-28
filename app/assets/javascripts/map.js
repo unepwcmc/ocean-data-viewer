@@ -1,6 +1,6 @@
 var Map = function(target, baseLayer) {
   var options = {
-      minZoom: 3,
+      minZoom: 2,
       maxZoom: 18,
       zoom: 3,
       center: new L.latLng(0, 0),
@@ -24,6 +24,7 @@ var Map = function(target, baseLayer) {
 
   this.zoomIn = function() {
     this.map.zoomIn();
+    debugger;
   };
 
   this.zoomOut = function() {

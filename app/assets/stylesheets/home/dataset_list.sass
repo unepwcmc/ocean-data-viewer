@@ -126,7 +126,7 @@
     font-size: 14px
 
     a
-      color: $blue
+      color: #999
       display: inline-block
       vertical-align: middle
       width: 14px
@@ -134,18 +134,16 @@
       margin: 0 0 0 .25em
       transition: all .5s
 
-      &:hover
-        color: #377DB4
-
     .icon-esri
       display: inline-block
       width: 14px
       height: 14px
       background: image-url('esri-logo.svg') no-repeat center center
       transition: none
-
-      &:hover
-        background-image: image-url('esri-logo-hover.svg')
+      -webkit-filter: grayscale(100%)
+      -moz-filter: grayscale(100%)
+      -ms-filter: grayscale(100%)
+      filter: url('filters.svg#grayscale')
 
 .additional-info > span
   margin: .75em .25em .75em 0

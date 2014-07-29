@@ -32,15 +32,15 @@
                   <span class="prepend-pipe capitalize" ng-show="dataset.observationType" ng-bind="dataset.observationType"></span>
                   <div ng-show="dataset.dataProvider">Data provider: <span ng-bind="dataset.dataProvider"></span></div>
                   <div class="buttons">
-                    <a ng-show="dataset.shpDownload" ng-href="{{ dataset.url + '#download' }}">
+                    <a ng-show="dataset.shpDownload" href="#">
                       <i class='icon-download'></i>
                     </a>
 
-                    <a ng-show="dataset.factsheetUrl" ng-href="{{ dataset.url + '#factsheet' }}">
+                    <a ng-show="dataset.factsheetUrl" href="#">
                       <i class='icon-doc-text'></i>
                     </a>
 
-                    <a ng-show="dataset.arcgisLink" ng-href="{{ dataset.arcgisLink }}" class="icon-esri"></a>
+                    <a ng-show="dataset.arcgisLink" href="#" class="icon-esri"></a>
                   </div>
                 </div> <!-- .additional-info -->
               </div> <!-- .dataset-info -->

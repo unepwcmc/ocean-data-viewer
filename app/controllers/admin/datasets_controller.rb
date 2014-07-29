@@ -95,6 +95,6 @@ class Admin::DatasetsController < Admin::AdminController
       :licence_id, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
       :has_legend, :html, :xml, :factsheet, :creation_date, :time_range_start,
       :time_range_end, :data_provider, :format, :observation_type, :geographical_range,
-      data_category_ids: [])
+      :image, data_category_ids: [])
   end
 end

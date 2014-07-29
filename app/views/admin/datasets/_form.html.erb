@@ -140,6 +140,15 @@
     <%= f.label 'Use constraints' %><br />
     <%= collection_select(:dataset, :licence_id, licences, :id, :title, {:prompt => true})%>
   </p>
+
+  <p>
+    <%= f.label :image %><br />
+    <%= f.file_field :image %><br/>
+    <small>Current image:</small>
+    <%= image_tag @dataset.image.url if @dataset.image.present? %>
+  </p>
+
+  </p>
   <p>
     <%= f.submit 'Submit' %>
   </p>

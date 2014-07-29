@@ -5,7 +5,9 @@ var module = angular.module("MarineApp", [
   'resources.mapSearch'
 ]);
 
-module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
+module.controller('SearchCtrl',
+    ['$scope', 'MapSearch',
+    function($scope, MapSearch) {
 
   $scope.showingOptions = false;
   $scope.showingAdvanced = false;
@@ -80,7 +82,10 @@ module.controller('SearchCtrl', ['$scope', 'MapSearch', function($scope, MapSear
   };
 }]);
 
-module.controller('DatasetsListingCtrl', ['$scope', function($scope) {
+module.controller('DatasetsListingCtrl',
+    ['$scope',
+    function($scope) {
+
   $scope.layers = [];
 
   $scope.$on('searchResults', function(event, datasets) {
@@ -97,14 +102,14 @@ module.controller('DatasetsListingCtrl', ['$scope', function($scope) {
   $scope.toggleLayerVisibility = function(layer) {
     $scope.$emit('toggleLayer', layer.title);
     layer.visible = !layer.visible;
-  };
-
-  $scope.toggleMoreInfo = function(layer) {
     layer.showingMore = !layer.showingMore;
   };
+
 }]);
 
-module.controller('ShowDatasetCtrl', ['$scope', 'MapSearch', function($scope, MapSearch) {
+module.controller('ShowDatasetCtrl',
+    ['$scope', 'MapSearch',
+    function($scope, MapSearch) {
 
   $scope.showDataset = function(dataset_id) {
     MapSearch.get(dataset_id).then(function(result) {

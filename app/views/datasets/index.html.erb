@@ -25,10 +25,6 @@
                   <span ng-show="dataset.format == 'point & polygon'" class="capitalize">
                     <span class="prepend-symbol point">Point + </span><span class='prepend-symbol polygon'>Polygon</span>
                   </span>
-                  <a ng-show="dataset.timeRange || dataset.observationType || dataset.dataProvider" ng-click="toggleMoreInfo(dataset); $event.stopPropagation();" ng-class="['arrow', 'prepend-pipe', dataset.showingMore ? 'arrow-less' : 'arrow-more']">
-                    <i ng-class="dataset.showingMore ? 'icon-up-open' : 'icon-down-open'"></i>
-                    <span ng-bind="dataset.showingMore ? 'Less' : 'More'"></span>
-                  </a>
                   <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
                 </div>
                 <div ng-class="['additional-info', dataset.showingMore && 'visible']">

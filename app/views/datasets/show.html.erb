@@ -20,7 +20,7 @@
                 </ul>
                 <ul>
                     <li class="detail">
-                        <p>Metadata</p>
+                        <p>Citation</p>
                     </li>
                     <li class="information">
                         <p class="first"><%= RedCloth.new(@dataset.metadata_description).to_html.html_safe %></p>
@@ -28,7 +28,7 @@
                 </ul>
                 <ul>
                     <li class="detail">
-                        <p>Licence</p>
+                        <p>Use constraints</p>
                     </li>
                     <li class="information">
                         <p>The <%= @dataset.title %> is licenced under the <%= @dataset.licence.title %> licence.</p>

@@ -28,7 +28,7 @@
   </p>
 
   <p>
-    <%= f.label :metadata_description %><br />
+    <%= f.label 'Citation' %><br />
     <%= f.text_area :metadata_description %>
   </p>
 
@@ -134,7 +134,7 @@
   </p>
 
   <p>
-    <%= f.label :licence %><br />
+    <%= f.label 'Use constraints' %><br />
     <%= collection_select(:dataset, :licence_id, licences, :id, :title, {:prompt => true})%>
   </p>
   <p>

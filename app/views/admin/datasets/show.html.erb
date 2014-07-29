@@ -5,17 +5,17 @@
 
 <p>
   <b>Short desc:</b>
-  <%=h @dataset.short_desc %>
+  <%= RedCloth.new(@dataset.short_desc).to_html.html_safe %>
 </p>
 
 <p>
   <b>Long desc:</b>
-  <%=h @dataset.long_desc %>
+  <%= RedCloth.new(@dataset.long_desc).to_html.html_safe %>
 </p>
 
 <p>
   <b>Citation:</b>
-  <%=h @dataset.metadata_description %>
+  <%= RedCloth.new(@dataset.metadata_description).to_html.html_safe %>
 </p>
 
 <p>

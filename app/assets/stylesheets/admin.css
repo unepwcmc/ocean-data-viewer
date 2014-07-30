@@ -1,6 +1,7 @@
 /*
 *= require blueprint/screen
 *= require blueprint/plugins/buttons/screen
+*= require spectrum/spectrum
 *= require tipsy
 *= require marine
 *= require admin/forms

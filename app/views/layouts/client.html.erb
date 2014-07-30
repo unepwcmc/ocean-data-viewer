@@ -9,6 +9,14 @@
         <%= csrf_meta_tags %>
         <%= stylesheet_link_tag 'application' %>
         <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+        <style type="text/css">
+          <% Dataset.all.each do |dataset| %>
+          li.active.type<%= dataset.id %> .dataset-info {
+            /* auto generated */
+            border-right-color: <%= dataset.layer_color || '999' %>;
+          }
+          <% end %>
+        </style>
     </head>
 
     <body class="<%= yield :body_class %>">

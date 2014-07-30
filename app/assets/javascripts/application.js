@@ -15,6 +15,7 @@
 //= require ../../../vendor/assets/bower_components/angularjs-rails-resource/angularjs-rails-resource
 //= require ../../../vendor/assets/bower_components/leaflet/dist/leaflet
 //= require ../../../vendor/assets/bower_components/esri-leaflet/dist/esri-leaflet
+//= require ../../../vendor/assets/bower_components/spectrum/spectrum
 //= require jquery.mousewheel
 //= require jquery.jscrollpane
 //= require jquery.textshadow

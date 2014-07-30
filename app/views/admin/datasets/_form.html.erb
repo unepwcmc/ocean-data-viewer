@@ -110,18 +110,27 @@
     <%= f.label :wms_server %><br />
     <%= f.text_field :wms_server, class: 'long-text' %>
   </p>
+
   <p>
     <%= f.label :wms_name %><br />
     <%= f.text_field :wms_name %>
   </p>
+
   <p>
     <%= f.label :styles, label: 'Map Style Parameter' %><br />
     <%= f.text_field :styles %>
   </p>
+
   <p>
     <%= f.label :view_params %><br />
     <%= f.text_field :view_params %>
   </p>
+
+  <p>
+    <%= f.label :layer_color %><br />
+    <%= f.text_field :layer_color, type: 'color' %>
+  </p>
+
   <p>
     <%= f.label :wfs %><br />
     <%= f.text_field :wfs %>

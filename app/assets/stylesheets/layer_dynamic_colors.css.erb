@@ -1,0 +1,7 @@
+<% Dataset.all.each do |dataset| %>
+li.active.type<%= dataset.id %> .dataset-info {
+  /* auto generated */
+  border-right-color: <%= dataset.layer_color || '999' %>;
+  text-color: blue;
+}
+<% end %>

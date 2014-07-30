@@ -199,7 +199,6 @@ span + .prepend-symbol
     box-shadow: 0 1px 3px #ddd
     border-radius: 4px
     padding: .6em .75em
-    min-width: 11em
     z-index: 1
     display: none
 
@@ -225,7 +224,7 @@ span + .prepend-symbol
       border-width: 6px
       margin-left: -6px
 
-  .category
+  .category, .buttons a
     position: relative
 
     &.with-tooltip:hover
@@ -235,8 +234,16 @@ span + .prepend-symbol
 
   .tooltip-container
     position: absolute
+    z-index: 999
     bottom: 1.6em
     left: -2em
+
+    &.right-bottom-corner
+      left: -3.8em
+
+      .tooltip
+        &:after, &:before
+          left: 80%
 
 // Colourful right borders on hover/active
 

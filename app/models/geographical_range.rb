@@ -2,6 +2,6 @@ class GeographicalRange
   include FakeBasicModel
 
   def self.allowed_values
-    [ 'global', 'regional' ].freeze
+    [ 'global', 'other' ].freeze
   end
 end

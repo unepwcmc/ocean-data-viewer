@@ -9,7 +9,7 @@ describe GeographicalRange do
     end
 
     it "specific types" do
-      expect(result.map(&:name)).to eq([ 'global', 'regional' ])
+      expect(result.map(&:name)).to eq([ 'global', 'other' ])
     end
   end
 end

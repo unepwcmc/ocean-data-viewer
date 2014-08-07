@@ -3,8 +3,8 @@ require 'rails_helper'
 describe MapSearchController do
 
   before do
-    create :dataset, title: 'first', creation_date: Date.new(2014,6,10)
-    create :dataset, title: 'second', creation_date: Date.new(2014,6,14)
+    create :dataset, title: 'first', creation_date: 2013
+    create :dataset, title: 'second', creation_date: 2014
   end
 
   it 'search for all' do

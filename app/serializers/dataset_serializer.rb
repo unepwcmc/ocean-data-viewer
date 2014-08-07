@@ -9,10 +9,6 @@ class DatasetSerializer < ActiveModel::Serializer
     dataset_url object
   end
 
-  def creation_date
-    object.creation_date.strftime("%Y") if object.creation_date
-  end
-
   def time_range
     [object.time_range_start, object.time_range_end].join('-')
   end

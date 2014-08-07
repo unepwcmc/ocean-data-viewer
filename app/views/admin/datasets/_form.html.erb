@@ -37,7 +37,7 @@
 
   <p>
     <%= f.label :creation_date %><br/>
-    <%= f.text_field :creation_date %>
+    <%= f.number_field :creation_date, step: 1, in: 1900...Time.now.year+1 %>
   </p>
 
   <p>

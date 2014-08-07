@@ -28,7 +28,7 @@
                   <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
                 </div>
                 <div ng-class="['additional-info', dataset.showingMore && 'visible']">
-                  <span ng-show="dataset.timeRangeStart && dataset.timeRangeEnd">Time range: <span ng-bind="dataset.timeRange"></span></span>
+                  <span ng-show="dataset.timeRangeStart || dataset.timeRangeEnd">Time range: <span ng-bind="dataset.timeRange"></span></span>
                   <span class="prepend-pipe capitalize" ng-show="dataset.observationType" ng-bind="dataset.observationType"></span>
                   <div ng-show="dataset.dataProvider">Data provider: <span ng-bind="dataset.dataProvider"></span></div>
                   <div class="buttons">

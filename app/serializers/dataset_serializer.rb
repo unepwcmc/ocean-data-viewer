@@ -10,6 +10,8 @@ class DatasetSerializer < ActiveModel::Serializer
   end
 
   def time_range
+    return object.time_range_start if object.time_range_start && !object.time_range_end
+    return object.time_range_end if object.time_range_end && !object.time_range_start
     [object.time_range_start, object.time_range_end].join('-')
   end
 

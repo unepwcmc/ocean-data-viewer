@@ -2,6 +2,6 @@ class ObservationType
   include FakeBasicModel
 
   def self.allowed_values
-    [ 'empirical', 'modelled' ].freeze
+    [ 'empirical', 'modelled', 'metric', 'classification' ].freeze
   end
 end

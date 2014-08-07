@@ -16,7 +16,8 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
     transclude: true,
     scope: {
       bind: '=',
-      model: '='
+      model: '=',
+      name: '@'
     },
     link: function($scope, $element) {
       $scope.selected = [];
@@ -24,7 +25,7 @@ module.directive('multiSelector', ['$compile', '$rootScope', function($compile, 
       var numberMaxOfCharecters = 26;
 
       var getName = function(categoryKey) {
-        return $element.find('label[for="' + categoryKey + '-id"] .label-text').text();
+        return $element.find('label[for="' + $scope.name + '-' + categoryKey + '-id"] .label-text').text();
       };
 
       $scope.$watchCollection('model', function(newValue) {
@@ -62,8 +63,8 @@ module.directive('checkOption', ['$compile', '$rootScope', function($compile, $r
   return {
     restrict: 'E',
       template: '<div class="check-option">\
-          <input id="{{value}}-id" type="checkbox" name="{{name}}" value="{{value}}" ng-model="model" />\
-          <label for="{{value}}-id">\
+          <input id="{{name}}-{{value}}-id" type="checkbox" name="{{name}}" value="{{value}}" ng-model="model" />\
+          <label for="{{name}}-{{value}}-id">\
             <span class="checkbox"><i class="icon-ok"></i></span>\
             <span class="label-text" ng-transclude></span>\
           </label></div>',
@@ -71,6 +72,7 @@ module.directive('checkOption', ['$compile', '$rootScope', function($compile, $r
     transclude: true,
     scope: {
       model: '=',
+      name: '@',
       value: '@'
     }
   };

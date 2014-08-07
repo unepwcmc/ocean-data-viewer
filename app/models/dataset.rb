@@ -3,6 +3,7 @@ class Dataset < ActiveRecord::Base
   has_many :datasets_decisions
   has_many :decisions, through: :datasets_decisions
   has_and_belongs_to_many :data_categories
+  has_and_belongs_to_many :observation_types
 
   include DatasetFixedFieldsValidation
 
@@ -12,6 +13,7 @@ class Dataset < ActiveRecord::Base
   before_save :strip_urls
 
   accepts_nested_attributes_for :data_categories
+  accepts_nested_attributes_for :observation_types
 
   has_attached_file :factsheet
   do_not_validate_attachment_file_type :factsheet

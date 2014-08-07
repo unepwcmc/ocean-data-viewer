@@ -70,7 +70,7 @@
 
 <p>
   <b>Data categories:</b>
-  <%= @dataset.data_categories.map(&:name).join(', ') %>
+  <%= @dataset.data_categories.map(&:name).map(&:capitalize).join(', ') %>
 </p>
 
 <p>
@@ -85,8 +85,8 @@
 
 
 <p>
-  <b>Observation type:</b>
-  <%= @dataset.observation_type.to_s.capitalize %>
+  <b>Observation types:</b>
+  <%= @dataset.observation_types.map(&:name).map(&:capitalize).join(', ') %>
 </p>
 
 

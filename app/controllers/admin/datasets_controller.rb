@@ -94,7 +94,7 @@ class Admin::DatasetsController < Admin::AdminController
       :metadata_description, :shp_download, :wms_server, :wfs, :meta_download,
       :licence_desc, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
       :has_legend, :html, :xml, :factsheet, :creation_date, :time_range_start,
-      :time_range_end, :data_provider, :format, :observation_type, :geographical_range,
-      :image, :layer_color, data_category_ids: [])
+      :time_range_end, :data_provider, :format, :geographical_range,
+      :image, :layer_color, data_category_ids: [], observation_type_ids: [])
   end
 end

@@ -8,7 +8,6 @@ class MapSearch
 
   validates :sort_by, inclusion: { in: SORT_BY_OPTIONS }
   validate :validate_formats
-  validate :validate_observation_types
   validate :validate_geographical_ranges
 
   def advanced_search?
@@ -20,7 +19,6 @@ class MapSearch
 
   {
     formats: DataFormat,
-    observation_types: ObservationType,
     geographical_ranges: GeographicalRange
   }.each do |attr_name, related_class|
     define_method "validate_#{attr_name}" do

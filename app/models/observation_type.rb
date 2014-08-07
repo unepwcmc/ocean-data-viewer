@@ -1,7 +1,3 @@
-class ObservationType
-  include FakeBasicModel
-
-  def self.allowed_values
-    [ 'empirical', 'modelled', 'metric', 'classification' ].freeze
-  end
+class ObservationType < ActiveRecord::Base
+  has_and_belongs_to_many :datasets
 end

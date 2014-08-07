@@ -17,3 +17,11 @@
 
   DataCategory.create!(name: name)
 end
+
+[ 'empirical',
+  'modelled',
+  'metric',
+  'classification'
+  ].each do |name|
+  ObservationType.create!(name: name)
+end

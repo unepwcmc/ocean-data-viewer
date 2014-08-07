@@ -61,11 +61,8 @@
   </p>
 
   <p class="options radio">
-    <%= f.label :observation_type %><br/>
-    <% observation_types.each do |option| %>
-      <%= f.radio_button :observation_type, option.id %>
-      <%= f.label :observation_type, option.name.humanize, value: option.id %>
-    <% end %>
+    <%= f.label :observation_types %><br/>
+    <%= f.collection_check_boxes :observation_type_ids, observation_types, :id, :name %>
   </p>
 
   <p class="options radio">

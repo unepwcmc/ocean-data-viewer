@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140807124032) do
+ActiveRecord::Schema.define(version: 20140807134507) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(version: 20140807124032) do
     t.integer  "factsheet_file_size"
     t.datetime "factsheet_updated_at"
     t.string   "format"
-    t.string   "observation_type"
     t.string   "geographical_range"
     t.integer  "time_range_start"
     t.integer  "time_range_end"
@@ -109,6 +108,11 @@ ActiveRecord::Schema.define(version: 20140807124032) do
     t.integer "category_id"
   end
 
+  create_table "datasets_observation_types", force: true do |t|
+    t.integer "dataset_id"
+    t.integer "observation_type_id"
+  end
+
   create_table "decisions", force: true do |t|
     t.string   "name"
     t.text     "short_name"
@@ -127,6 +131,12 @@ ActiveRecord::Schema.define(version: 20140807124032) do
     t.string   "title"
     t.text     "short_desc"
     t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "observation_types", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

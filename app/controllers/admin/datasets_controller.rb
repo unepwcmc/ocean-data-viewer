@@ -1,6 +1,6 @@
 class Admin::DatasetsController < Admin::AdminController
-  inject :dataset, :data_categories, :data_formats, :observation_types, :geographical_ranges, :licences
-  helper_method :data_categories, :data_formats, :observation_types, :geographical_ranges, :licences
+  inject :dataset, :data_categories, :data_formats, :observation_types, :geographical_ranges
+  helper_method :data_categories, :data_formats, :observation_types, :geographical_ranges
 
   # GET /datasets
   # GET /datasets.xml
@@ -92,7 +92,7 @@ class Admin::DatasetsController < Admin::AdminController
   def dataset_params
     params.require(:dataset).permit(:title, :short_desc, :long_desc,
       :metadata_description, :shp_download, :wms_server, :wfs, :meta_download,
-      :licence_id, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
+      :licence_desc, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
       :has_legend, :html, :xml, :factsheet, :creation_date, :time_range_start,
       :time_range_end, :data_provider, :format, :observation_type, :geographical_range,
       :image, :layer_color, data_category_ids: [])

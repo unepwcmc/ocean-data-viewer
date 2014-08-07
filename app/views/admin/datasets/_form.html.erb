@@ -147,7 +147,8 @@
 
   <p>
     <%= f.label 'Use constraints' %><br />
-    <%= collection_select(:dataset, :licence_id, licences, :id, :title, {:prompt => true})%>
+    <%= f.text_area :licence_desc %>
+    <br /><small>To add links, use the format "text":http://example.com</small>
   </p>
 
   <p>

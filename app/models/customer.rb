@@ -1,5 +1,4 @@
 class Customer < ActiveRecord::Base
-  belongs_to :licence
   belongs_to :dataset
   
   validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :message => "must be a valid email address"

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 describe MapSearchService do
-  let (:licence) { create(:licence) }
   let (:datasets_repository) { Dataset }
 
   before do

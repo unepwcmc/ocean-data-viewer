@@ -15,8 +15,6 @@ class Injector
 
   service (:geographical_ranges) { GeographicalRange.all }
 
-  service (:licences) { Licence.all.order("title ASC") }
-
   service (:search) { MapSearchService.new(datasets_repository) }
 
   private

@@ -1,7 +1,3 @@
-class DataFormat
-  include FakeBasicModel
-
-  def self.allowed_values
-   [ 'point', 'polygon', 'raster' ].freeze
-  end
+class DataFormat < ActiveRecord::Base
+  has_and_belongs_to_many :datasets
 end

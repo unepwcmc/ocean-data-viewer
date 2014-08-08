@@ -4,6 +4,7 @@ class Dataset < ActiveRecord::Base
   has_many :decisions, through: :datasets_decisions
   has_and_belongs_to_many :data_categories
   has_and_belongs_to_many :observation_types
+  has_and_belongs_to_many :data_formats
 
   include DatasetFixedFieldsValidation
 
@@ -14,6 +15,7 @@ class Dataset < ActiveRecord::Base
 
   accepts_nested_attributes_for :data_categories
   accepts_nested_attributes_for :observation_types
+  accepts_nested_attributes_for :data_formats
 
   has_attached_file :factsheet
   do_not_validate_attachment_file_type :factsheet

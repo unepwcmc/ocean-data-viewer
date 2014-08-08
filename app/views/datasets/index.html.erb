@@ -21,9 +21,8 @@
                   </span>
                 </span>
                 <div class="format">
-                  <span ng-show="dataset.format == 'polygon' || dataset.format == 'point' || dataset.format == 'raster'" ng-class="['capitalize', 'prepend-symbol', dataset.format]" ng-bind="dataset.format"></span>
-                  <span ng-show="dataset.format == 'point & polygon'" class="capitalize">
-                    <span class="prepend-symbol point">Point + </span><span class='prepend-symbol polygon'>Polygon</span>
+                  <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats">
+                    <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
                   </span>
                   <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
                 </div>

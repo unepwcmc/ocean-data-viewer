@@ -54,10 +54,7 @@
 
   <p class="options radio">
     <%= f.label :format, 'Data format' %><br/>
-    <% data_formats.each do |option| %>
-      <%= f.radio_button :format, option.id %>
-      <%= f.label :format, option.name.humanize, value: option.id %>
-    <% end %>
+    <%= f.collection_check_boxes :data_format_ids, data_formats, :id, :name %>
   </p>
 
   <p class="options radio">

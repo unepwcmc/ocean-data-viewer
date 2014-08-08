@@ -74,8 +74,8 @@
 </p>
 
 <p>
-  <b>Format:</b>
-  <%= @dataset.format.to_s.capitalize %>
+  <b>Formats:</b>
+  <%= @dataset.data_formats.map(&:name).map(&:capitalize).join(', ') %>
 </p>
 
 <p>

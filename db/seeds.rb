@@ -15,7 +15,7 @@
   'Species Habitat'
   ].each do |name|
 
-  DataCategory.create!(name: name)
+  DataCategory.find_or_create_by(name: name)
 end
 
 [ 'empirical',
@@ -23,5 +23,12 @@ end
   'metric',
   'classification'
   ].each do |name|
-  ObservationType.create!(name: name)
+  ObservationType.find_or_create_by(name: name)
+end
+
+[ 'point',
+  'polygon',
+  'raster'
+  ].each do |name|
+  DataFormat.find_or_create_by(name: name)
 end

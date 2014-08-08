@@ -91,7 +91,7 @@
     bottom: .35em
 
   .categories
-    max-width: 22em
+    max-width: 15.7em
     vertical-align: middle
 
 .dataset-info
@@ -109,6 +109,10 @@
   opacity: 0
   transition: all 200ms
 
+  .observation-types
+    max-width: 11em
+    vertical-align: middle
+
   &.visible
     border-top: 1px solid #DDD
     min-height: 2em
@@ -117,33 +121,6 @@
     margin-top: 1em
     padding-top: .5em
     opacity: 1
-
-  .buttons
-    position: absolute
-    top: 1em
-    right: 0
-    color: $blue
-    font-size: 14px
-
-    a
-      color: #999
-      display: inline-block
-      vertical-align: middle
-      width: 14px
-      height: 14px
-      margin: 0 0 0 .25em
-      transition: all .5s
-
-    .icon-esri
-      display: inline-block
-      width: 14px
-      height: 14px
-      background: image-url('esri-logo.svg') no-repeat center center
-      transition: none
-      -webkit-filter: grayscale(100%)
-      -moz-filter: grayscale(100%)
-      -ms-filter: grayscale(100%)
-      filter: url('filters.svg#grayscale')
 
 .additional-info > span
   margin: .75em .25em .75em 0

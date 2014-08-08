@@ -98,7 +98,6 @@ ActiveRecord::Schema.define(version: 20140807134507) do
     t.datetime "image_updated_at"
     t.string   "layer_color"
     t.string   "licence_desc"
-    t.integer  "creation_year"
     t.integer  "creation_date"
   end
 

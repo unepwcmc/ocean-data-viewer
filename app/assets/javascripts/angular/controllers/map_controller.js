@@ -88,6 +88,13 @@ module.controller('DatasetsListingCtrl',
 
   $scope.layers = [];
 
+  $scope.label = function() {
+    if ($scope.layers.length == 1)
+      return 'dataset'
+    else
+      return 'datasets'
+  }
+
   $scope.$on('searchResults', function(event, datasets) {
     $scope.layers = datasets;
   });

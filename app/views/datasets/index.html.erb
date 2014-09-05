@@ -1,8 +1,7 @@
 <% content_for :map_controls do %>
   <div ng-controller="SearchCtrl">
     <div class="search-results" ng-controller="DatasetsListingCtrl">
-      <h1 ng-hide="showingSearchResults">Displaying all datasets</h1>
-      <h1 ng-show="showingSearchResults">Displaying <span ng-bind="layers.length"></span> datasets</h1>
+      <h1>Displaying <span ng-bind="layers.length"></span> {{label()}}</h1>
 
       <div id="scrollable_databases" class="scroll-pane">
         <ul class="dataset-list">

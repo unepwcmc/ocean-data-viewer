@@ -10,30 +10,30 @@
                 <div class="title">
                   {{ dataset.title }}
                 </div>
-                <span ng-show="dataset.creationDate">Creation Date: <span ng-bind="dataset.creationDate"></span></span>
-                <span ng-show="dataset.dataCategories" class="categories prepend-pipe">
+                <p ng-show="dataset.dataCategories" class="categories">
                   <span ng-repeat="category in dataset.dataCategories" ng-class="['category', category.description && 'with-tooltip']">
-                    <span class="name">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
+                    <span class="name">{{ category.name }}</span>{{ $last ? '' : ',' }}
                     <span ng-show="category.description" class="tooltip-container">
                       <span class="tooltip">{{ category.description }}</span>
                     </span>
                   </span>
-                </span>
+                </p>
+                <p ng-show="dataset.creationDate"><span class="bold">Creation Date:</span> <span ng-bind="dataset.creationDate"></span></p>
                 <div class="format">
-                  <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats">
+                  <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats.reverse()">
                     <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
                   </span>
                   <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
                 </div>
                 <div ng-class="['additional-info', dataset.showingMore && 'visible']">
-                  <span ng-show="dataset.timeRangeStart || dataset.timeRangeEnd">Temporal range: <span ng-bind="dataset.timeRange"></span></span>
-                  <span ng-show="dataset.observationTypes" class="prepend-pipe capitalize observation-types">
-                    Observation Type:
+                  <p ng-show="dataset.timeRangeStart || dataset.timeRangeEnd"><span class="label">Temporal range:</span> <span ng-bind="dataset.timeRange"></span></p>
+                  <p ng-show="dataset.observationTypes" class="prepend-pipe capitalize">
+                    <span class="label">Observation Type:</span>
                     <span ng-repeat="otype in dataset.observationTypes" class="category">
-                      <span class="name">{{ otype.name }}</span>{{ $last ? '' : ',&nbsp;' }}
+                      {{ otype.name }}{{ $last ? '' : ',' }}
                     </span>
-                  </span>
-                  <div ng-show="dataset.dataProvider">Data Provider: <span ng-bind="dataset.dataProvider"></span></div>
+                  </p>
+                  <p ng-show="dataset.dataProvider"><span class="label">Data Provider:</span> <span ng-bind="dataset.dataProvider"></span></p>
                 </div> <!-- .additional-info -->
               </div> <!-- .dataset-info -->
           </li>

@@ -19,6 +19,23 @@ footer
     height: 4px
     margin-right: 30px
 
+  .disclaimer
+    text-align: center
+    width: 500px
+    overflow: hidden
+    position: relative
+    display: inline-block
+    left: calc(50% - 450px) //basing on other elements in footer and disclaimer width
+
+    @media screen and (min-width: 768px) and (max-width: 1024px)
+      width: 290px
+      left: calc(50% - 350px)
+
+    @media screen and (max-width: 768px)
+      width: 90%
+      position: initial
+      margin: 10px 5%
+
   p, a.terms
     float: right
     margin: 0

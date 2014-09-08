@@ -76,7 +76,7 @@
 
                         <% if @dataset.factsheet.file? %>
                           <a name="factsheet"></a>
-                          <%= link_to @dataset.factsheet.url, :class=>"btn" do %><i class="icon-doc-text"></i> Metadata<% end %>
+                          <%= link_to @dataset.factsheet.url, :class=>"btn", :target=> "_blank" do %><i class="icon-doc-text"></i> Metadata<% end %>
                         <% end %>
 
                         <% if @dataset.arcgis_link.present? %>

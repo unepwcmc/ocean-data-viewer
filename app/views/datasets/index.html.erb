@@ -73,7 +73,7 @@
               </div>
             </p>
             <p>
-              <%= f.label 'Data category', class: 'first-level' %>
+              <%= f.label 'Category', class: 'first-level' %>
               <multi-selector name="datcat" model="filters.data_categories">
                 <% data_categories.each do |dt| %>
                   <check-option name="datcat" model="<%= 'filters.data_categories["' + dt.id.to_s + '"]' %>" value="<%= dt.id %>"><%= dt.name %></check-option>

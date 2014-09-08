@@ -14,12 +14,12 @@ module.controller('SearchCtrl',
   $scope.showingSearchResults = false;
 
   // page load initial search
-  MapSearch.query({sort_by: 'creation_date'}).then(function(result) {
+  MapSearch.query({sort_by: 'creation_date DESC'}).then(function(result) {
     $scope.$broadcast('searchResults', result);
   });
 
   $scope.sortByOptions = [
-    {text: 'Creation date', value: 'creation_date'},
+    {text: 'Creation date', value: 'creation_date DESC'},
     {text: 'Title', value: 'title'}
   ];
 

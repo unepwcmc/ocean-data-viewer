@@ -4,9 +4,9 @@ describe MapSearchService do
   let (:datasets_repository) { Dataset }
 
   before do
-    create(:dataset, title: 'b', format: 'point', observation_type: 'modelled', geographical_range: 'regional')
-    create(:dataset, title: 'c', format: 'polygon', observation_type: 'empirical', geographical_range: 'global')
-    create(:dataset, title: 'a', format: 'point', observation_type: 'empirical', geographical_range: 'global')
+    create(:dataset, title: 'b', data_formats: ['point'], observation_type: 'modelled', geographical_range: 'regional')
+    create(:dataset, title: 'c', data_formats: ['polygon'], observation_type: 'empirical', geographical_range: 'global')
+    create(:dataset, title: 'a', data_formats: ['point'], observation_type: 'empirical', geographical_range: 'global')
   end
 
   it 'orders the datasets' do

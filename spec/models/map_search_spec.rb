@@ -14,26 +14,21 @@ describe MapSearch do
     end
   end
 
-  it 'validates formats' do
-    expect(MapSearch.new(sort_by: 'creation_date', formats: ['blue']).valid?).to eq(false)
-    expect(MapSearch.new(sort_by: 'creation_date', formats: ['polygon']).valid?).to eq(true)
-  end
-
-  it 'validates observation_types' do
-    expect(MapSearch.new(sort_by: 'creation_date', observation_types: ['red']).valid?).to eq(false)
-    expect(MapSearch.new(sort_by: 'creation_date', observation_types: ['modelled']).valid?).to eq(true)
+  it 'validates sorting' do
+    expect(MapSearch.new(sort_by: 'something').valid?).to eq(false)
+    expect(MapSearch.new(sort_by: 'creation_date DESC').valid?).to eq(true)
   end
 
   it 'validates geographical_ranges' do
-    expect(MapSearch.new(sort_by: 'creation_date', geographical_ranges: ['green']).valid?).to eq(false)
-    expect(MapSearch.new(sort_by: 'creation_date', geographical_ranges: ['global', 'regional']).valid?).to eq(true)
+    expect(MapSearch.new(sort_by: 'creation_date DESC', geographical_ranges: ['green']).valid?).to eq(false)
+    expect(MapSearch.new(sort_by: 'creation_date DESC', geographical_ranges: ['global', 'other']).valid?).to eq(true)
   end
 
   describe "#advanced_search?" do
     let (:advanced_search) {
-      MapSearch.new(sort_by: :creation_date, observation_types: ['empirical']) }
+      MapSearch.new(sort_by: 'creation_date DESC', observation_types: ['empirical']) }
 
-    let (:non_advanced_search) { MapSearch.new(sort_by: :creation_date) }
+    let (:non_advanced_search) { MapSearch.new(sort_by: 'creation_date DESC') }
 
     it 'should be an advanced search' do
       expect(advanced_search.advanced_search?).to eq(true)

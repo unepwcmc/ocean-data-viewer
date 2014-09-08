@@ -1,7 +1,7 @@
 class MapSearch
   include MockModel
 
-  SORT_BY_OPTIONS = ['title', 'creation_date'].freeze
+  SORT_BY_OPTIONS = ['title', 'creation_date DESC'].freeze
 
   attr_accessor :sort_by, :formats, :data_categories,
     :observation_types, :geographical_ranges

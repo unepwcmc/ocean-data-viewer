@@ -79,6 +79,10 @@
                           <%= link_to @dataset.factsheet.url, :class=>"btn", :target=> "_blank" do %><i class="icon-doc-text"></i> Metadata<% end %>
                         <% end %>
 
+                        <% if @dataset.factsheet_url %>
+                          <%= link_to @dataset.factsheet_url, class: 'btn', target: '_blank' do %><span class="icon-esri-white"></span> Factsheet<% end %>
+                        <% end %>
+
                         <% if @dataset.arcgis_link.present? %>
                           <%= link_to @dataset.arcgis_link, :class=>"btn tipsy", :style => "padding: 0px", :target => '_blank', :title => 'Click here to view this dataset on Arcgis.com. To add other layers from Ocean Data Viewer, click the "Add" button and search for the dataset titles' do %> <span class="icon-esri-white"></span> ArcGIS<% end %>
                         <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140808124524) do
+ActiveRecord::Schema.define(version: 20140909093019) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20140808124524) do
     t.string   "layer_color"
     t.string   "licence_desc"
     t.integer  "creation_date"
+    t.string   "factsheet_url"
   end
 
   create_table "datasets_decisions", force: true do |t|

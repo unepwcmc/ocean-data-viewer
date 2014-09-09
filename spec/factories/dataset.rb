@@ -9,4 +9,13 @@ FactoryGirl.define do
     wfs 'http://www.example.com'
     meta_download 'http://www.example.com'
   end
+
+  factory :observation_type do
+    sequence(:name) { |n| "observation_type_#{n}" }
+  end
+
+  factory :data_format do
+    sequence(:name) { |n| "format_#{n}" }
+  end
 end
+

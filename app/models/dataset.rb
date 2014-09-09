@@ -23,6 +23,9 @@ class Dataset < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
+  attr_accessor :delete_image
+  before_save -> { image.clear if delete_image == '1' }
+
   private
 
   def strip_urls

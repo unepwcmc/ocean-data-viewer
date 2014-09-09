@@ -142,6 +142,11 @@
     <%= image_tag @dataset.image.url if @dataset.image.present? %>
   </p>
 
+  <p>
+  <%= f.label :delete_image %><br />
+    <%= f.check_box :delete_image %>
+  </p>
+
   </p>
   <p>
     <%= f.submit 'Submit' %>

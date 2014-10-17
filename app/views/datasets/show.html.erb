@@ -63,7 +63,7 @@
                         <% if session["dataset_#{@dataset.id}"] == "agreed" -%>
                           <%= link_to "", @dataset.shp_download, :class=>"download" %>
                         <% elsif /(.*)protectedplanet\.net(.*)/.match @dataset.shp_download -%>
-                          <%= link_to image_tag('protected_planet_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at protectedplanet.net" %>
+                          <%= link_to image_tag('pp_link-for-ODV.gif'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at protectedplanet.net" %>
                         <% elsif /(.*)iobis\.org(.*)/.match @dataset.shp_download  -%>
                           <%= link_to image_tag('obis_logo.png'), @dataset.shp_download, :id => 'Download', :class => 'tipsy', :title => "Download this dataset at iobis.org" %>
                         <% elsif /(.*)ebsa_illustrations\.kml(.*)/.match @dataset.shp_download  -%>

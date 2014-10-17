@@ -28,7 +28,8 @@ end
 
 [ 'point',
   'polygon',
-  'raster'
+  'raster',
+  'other'
   ].each do |name|
   DataFormat.find_or_create_by(name: name)
 end

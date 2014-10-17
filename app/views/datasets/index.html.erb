@@ -18,7 +18,7 @@
                     </span>
                   </span>
                 </p>
-                <p ng-show="dataset.creationDate"><span class="bold">Creation Date:</span> <span ng-bind="dataset.creationDate"></span></p>
+                <p ng-show="dataset.creationDate"><span class="bold">Publication date:</span> <span ng-bind="dataset.creationDate"></span></p>
                 <div class="format">
                   <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats.reverse()">
                     <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
@@ -28,12 +28,12 @@
                 <div ng-class="['additional-info', dataset.showingMore && 'visible']">
                   <p ng-show="dataset.timeRangeStart || dataset.timeRangeEnd"><span class="label">Temporal range:</span> <span ng-bind="dataset.timeRange"></span></p>
                   <p ng-show="dataset.observationTypes" class="prepend-pipe capitalize">
-                    <span class="label">Observation Type:</span>
+                    <span class="label">Data type:</span>
                     <span ng-repeat="otype in dataset.observationTypes" class="category">
                       {{ otype.name }}{{ $last ? '' : ',' }}
                     </span>
                   </p>
-                  <p ng-show="dataset.dataProvider"><span class="label">Data Provider:</span> <span ng-bind="dataset.dataProvider"></span></p>
+                  <p ng-show="dataset.dataProvider"><span class="label">Contact organisation:</span> <span ng-bind="dataset.dataProvider"></span></p>
                 </div> <!-- .additional-info -->
               </div> <!-- .dataset-info -->
           </li>

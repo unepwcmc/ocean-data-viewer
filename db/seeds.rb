@@ -18,10 +18,11 @@
   DataCategory.find_or_create_by(name: name)
 end
 
-[ 'empirical',
-  'modelled',
-  'metric',
-  'classification'
+[ 'Empirical observation',
+  'Model',
+  'Metric',
+  'Classification',
+  'Other'
   ].each do |name|
   ObservationType.find_or_create_by(name: name)
 end

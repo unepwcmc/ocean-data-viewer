@@ -28,7 +28,8 @@ class Admin::DatasetsDecisionsController < Admin::AdminController
   # GET /decisions/1/edit
   def edit
     @datasets_decision = DatasetsDecision.find(params[:id])
-    @decisions = Decision.all(:order => "name ASC")
+    binding.pry
+    @decisions = Decision.all
     @categories = @datasets_decision.try(:decision).try(:categories)
     @categories ||= []
   end

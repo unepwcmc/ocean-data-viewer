@@ -24,3 +24,7 @@ Create the database:
 ```
 rake db:setup
 ```
+Backup
+------
+
+Necessary to backup /public folder and the DB daily.

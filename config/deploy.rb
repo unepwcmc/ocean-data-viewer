@@ -101,6 +101,19 @@ end
 after "deploy:setup", :setup_production_database_configuration
 
 
+after 'deploy:symlink_shared'
+
+namespace :deploy do
+  desc "Symlink shared files/directories"
+  task :symlink_shared do
+    fetch(:shared_files).each do |file|
+      run "ln -nfs #{shared_path}/#{file} #{release_path}/#{file}"
+    end
+    run "cp #{fetch(:release_path)}/config/configuration.yml.#{fetch(:stage)} #{fetch(:release_path)}/config/configuration.yml"
+    run "ln -nfs #{shared_path}/public/pdfs #{release_path}/public/pdfs"
+  end
+end
+
 
 
 

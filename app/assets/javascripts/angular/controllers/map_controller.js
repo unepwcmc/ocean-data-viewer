@@ -19,7 +19,7 @@ module.controller('SearchCtrl',
   });
 
   $scope.sortByOptions = [
-    {text: 'Creation date', value: 'creation_date DESC'},
+    {text: 'Publication date', value: 'creation_date DESC'},
     {text: 'Title', value: 'title'}
   ];
 

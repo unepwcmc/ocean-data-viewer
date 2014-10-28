@@ -118,13 +118,15 @@
 
 <% @linked_decisions.each do |datasets_decision| %>
   <tr>
-    <td><%= link_to datasets_decision.decision.name, [:admin, datasets_decision.decision] %></td>
-    <td><%= (link_to datasets_decision.category.try(:name), [:admin, datasets_decision.category]) if datasets_decision.category.present? %></td>
-    <td>
-      <%= link_to 'Show', [:admin, datasets_decision] %>
-      <%= link_to 'Edit', edit_admin_datasets_decision_path(datasets_decision) %>
-      <%= link_to 'Destroy', [:admin,datasets_decision], :confirm => 'Are you sure?', :method => :delete %>
-    </td>
+    <% if datasets_decision.decision %>
+      <td><%= link_to datasets_decision.decision.name, [:admin, datasets_decision.decision] %></td>
+      <td><%= (link_to datasets_decision.category.try(:name), [:admin, datasets_decision.category]) if datasets_decision.category.present? %></td>
+      <td>
+        <%= link_to 'Show', [:admin, datasets_decision] %>
+        <%= link_to 'Edit', edit_admin_datasets_decision_path(datasets_decision) %>
+        <%= link_to 'Destroy', [:admin,datasets_decision], :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+    <% end %>
   </tr>
 <% end %>
 </table>

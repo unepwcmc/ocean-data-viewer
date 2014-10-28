@@ -47,8 +47,10 @@
                         <ul>
                           <% @dataset.datasets_decisions.each do |datasets_decision| -%>
                             <li>
-                              <%= link_to datasets_decision.decision.name, datasets_decision.decision %>
-                              <%= "(#{datasets_decision.try(:category).try(:name)})" if datasets_decision.category.present? %>
+                              <% if datasets_decision.decision %>
+                                <%= link_to datasets_decision.decision.name, datasets_decision.decision %>
+                                <%= "(#{datasets_decision.try(:category).try(:name)})" if datasets_decision.category.present? %>
+                              <% end %>
                             </li>
                           <% end -%>
                         </ul>

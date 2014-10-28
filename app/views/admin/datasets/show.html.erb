@@ -74,6 +74,11 @@
 </p>
 
 <p>
+  <b>Publication date:</b>
+  <%= @dataset.creation_date %>
+</p>
+
+<p>
   <b>Time range:</b>
   <%= @dataset.time_range_start %>-<%= @dataset.time_range_end %>
 </p>
@@ -95,7 +100,7 @@
 
 
 <p>
-  <b>Observation types:</b>
+  <b>Data types:</b>
   <%= @dataset.observation_types.map(&:name).map(&:capitalize).join(', ') %>
 </p>
 

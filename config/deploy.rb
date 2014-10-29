@@ -101,7 +101,7 @@ end
 after "deploy:setup", :setup_production_database_configuration
 
 
-after 'deploy:symlink_shared'
+after "deploy:setup", :symlink_shared
 
 namespace :deploy do
   desc "Symlink shared files/directories"

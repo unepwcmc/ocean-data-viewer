@@ -90,7 +90,7 @@
             </p>
             <div ng-show="showingAdvanced">
               <p>
-                <%= f.label 'Observation type', class: 'first-level' %>
+                <%= f.label 'Data type', class: 'first-level' %>
                 <multi-selector name="otypes" model="filters.observation_types">
                   <% observation_types.each do |ot| %>
                     <check-option name="otypes" model="<%= 'filters.observation_types["' + ot.id.to_s + '"]' %>" value="<%= ot.id %>"><%= ot.name %></check-option>

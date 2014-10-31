@@ -1,6 +1,6 @@
 class Dataset < ActiveRecord::Base
   has_many :customers
-  has_many :datasets_decisions
+  has_many :datasets_decisions, dependent: :destroy
   has_many :decisions, through: :datasets_decisions
   has_and_belongs_to_many :data_categories
   has_and_belongs_to_many :observation_types

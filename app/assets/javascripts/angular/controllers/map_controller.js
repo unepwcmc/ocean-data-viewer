@@ -50,6 +50,7 @@ module.controller('SearchCtrl',
           }
         };
 
+    queryOptions["text_search"] = $scope.filters["text_search"]
     addToQuery('data_categories');
     addToQuery('formats');
     addToQuery('observation_types');

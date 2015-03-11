@@ -3,7 +3,7 @@ class MapSearch
 
   SORT_BY_OPTIONS = ['title', 'creation_date DESC'].freeze
 
-  attr_accessor :sort_by, :formats, :data_categories,
+  attr_accessor :text_search, :sort_by, :formats, :data_categories,
     :observation_types, :geographical_ranges
 
   validates :sort_by, inclusion: { in: SORT_BY_OPTIONS }

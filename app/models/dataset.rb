@@ -10,7 +10,7 @@ class Dataset < ActiveRecord::Base
   include PgSearch
 
   pg_search_scope :search_by_text, :using => { :tsearch => {:prefix => true} },
-    :against => [:title, :short_desc]
+    :against => [:title]
 
   validates_presence_of :title, :short_desc, :long_desc, :metadata_description
   validates_format_of :wms_server, :wfs, :meta_download, :with => /\A((http|https):\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z0-9]{1,5}(:[0-9]{1,5})?(\/.*)?\z/, :allow_blank => true

@@ -20,7 +20,7 @@
                 </p>
                 <p ng-show="dataset.creationDate"><span class="bold">Publication date:</span> <span ng-bind="dataset.creationDate"></span></p>
                 <div class="format">
-                  <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats.reverse()">
+                  <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats">
                     <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
                   </span>
                   <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
@@ -44,20 +44,24 @@
     <div class="map-search" click-anywhere-but-here="closeFilters()">
       <h1 ng-show="!showingFilters" ng-click="showingFilters=!showingFilters" class="open-filters">
         <i class="icon-filter"></i>
-        Filter
+        Search & Filter
       </h1>
       <h1 ng-show="shouldShowResetButton()" ng-click="reset()" class="reset-filters">
         <i class="icon-cancel"></i>
-        Reset active filters
+        Reset filters
       </h1>
       <h1 ng-class="['close-filters', showingFilters && 'visible']" ng-click="showingFilters=!showingFilters">
         <i class="icon-filter"></i>
-        Dataset filters
+        Dataset search & filters
         <i class="icon-angle-circled-left"></i>
       </h1>
       <div ng-class="['filters', showingFilters && 'visible']">
         <div class="filters-container">
           <%= form_for @search, url: '' do |f| %>
+            <p>
+              <%= f.label "Search", class: 'first-level'%>
+              <input type="text" ng-model="filters.text_search" class='search-filter'>
+            </p>
             <p>
               <%= f.label 'Sort by', class: 'first first-level' %>
               <div ng-model="filters.sort_by" ng-click="toggleOptions()" class="filter-select">
@@ -106,7 +110,7 @@
                 </multi-selector>
               </p>
             </div>
-            <button ng-hide="showingAdvanced" ng-click="showingAdvanced=!showingAdvanced" class="btn btn-white">Advanced filters</button>
+            <button type="button" ng-hide="showingAdvanced" ng-click="showingAdvanced=!showingAdvanced" class="btn btn-white">Advanced filters</button>
             <br/>
             <button ng-click="doSearch({isUserSearch: true})" class="btn">Search</button>
             <button ng-click="reset()" class="btn btn-white">Reset</button>

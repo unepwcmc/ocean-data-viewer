@@ -17,6 +17,6 @@ class MapSearchController < ApplicationController
   private
 
   def search_params
-    params.permit(:sort_by, formats: [], data_categories: [], observation_types: [], geographical_ranges: [])
+    params.permit(:text_search, :sort_by, formats: [], data_categories: [], observation_types: [], geographical_ranges: [])
   end
 end

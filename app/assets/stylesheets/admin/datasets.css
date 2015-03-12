@@ -9,3 +9,7 @@
   padding: 5px;
   text-decoration: none;
 }
+
+.tag-field {
+  width: 200px;
+}

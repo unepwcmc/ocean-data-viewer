@@ -22,6 +22,7 @@ gem 'active_model_serializers', '0.8.1'
 gem 'unicorn'
 gem 'therubyracer'
 gem 'pg_search'
+gem 'select2-rails'
 
 group :development, :test do
   gem 'dotenv-rails'

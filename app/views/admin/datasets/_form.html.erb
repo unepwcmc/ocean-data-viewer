@@ -14,7 +14,8 @@
 
   <p>
     <%= f.label :tags_array, 'Alternate Search Keywords' %><br />
-    <%= f.text_field :tags_array %>
+    <%= f.text_area :tags_array, class: 'tag-field' %><br>
+    <i>Tag this dataset with alternate keywords that will be picked up on in the search</i>
   </p>
 
   <p>

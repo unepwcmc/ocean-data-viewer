@@ -5,4 +5,5 @@
 *= require tipsy
 *= require marine
 *= require admin/forms
+*= require admin/datasets
 */

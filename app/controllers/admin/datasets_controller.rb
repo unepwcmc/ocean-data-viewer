@@ -90,7 +90,7 @@ class Admin::DatasetsController < Admin::AdminController
   private
 
   def dataset_params
-    params.require(:dataset).permit(:title, :short_desc, :long_desc,
+    params.require(:dataset).permit(:title, :short_desc, :long_desc, :tags_array,
       :metadata_description, :shp_download, :wms_server, :wfs, :meta_download,
       :licence_desc, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
       :has_legend, :html, :xml, :factsheet, :creation_date, :time_range_start,

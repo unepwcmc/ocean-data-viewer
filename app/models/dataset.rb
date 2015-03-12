@@ -30,6 +30,15 @@ class Dataset < ActiveRecord::Base
   attr_accessor :delete_image
   before_save -> { image.clear if delete_image == '1' }
 
+  def tags_array
+    tags.join(',')
+  end
+
+  def tags_array=(params)
+    self.tags = params.gsub(' ', '').split(',')
+    self.save
+  end
+
   private
 
   def strip_urls

@@ -24,6 +24,10 @@ describe MapSearch do
     expect(MapSearch.new(sort_by: 'creation_date DESC', geographical_ranges: ['global', 'other']).valid?).to eq(true)
   end
 
+  it 'validates search by text' do
+    expect(MapSearch.new(sort_by: 'creation_date DESC', text_search: 'global').valid?).to eq(true)
+  end
+
   describe "#advanced_search?" do
     let (:advanced_search) {
       MapSearch.new(sort_by: 'creation_date DESC', observation_types: ['empirical']) }

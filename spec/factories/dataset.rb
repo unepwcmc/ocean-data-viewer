@@ -8,6 +8,7 @@ FactoryGirl.define do
     wms_server 'http://www.example.com'
     wfs 'http://www.example.com'
     meta_download 'http://www.example.com'
+    tags ['example', 'marine']
   end
 
   factory :observation_type do

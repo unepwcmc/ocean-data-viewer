@@ -2,6 +2,8 @@ class Admin::DatasetsController < Admin::AdminController
   inject :dataset, :data_categories, :data_formats, :observation_types, :geographical_ranges
   helper_method :data_categories, :data_formats, :observation_types, :geographical_ranges
 
+  before_action :get_existing_tags, only: [:new, :edit]
+
   # GET /datasets
   # GET /datasets.xml
   def index
@@ -89,8 +91,12 @@ class Admin::DatasetsController < Admin::AdminController
 
   private
 
+  def get_existing_tags
+    @tags = Dataset.pluck(:tags).flatten.compact.uniq.sort || []
+  end
+
   def dataset_params
-    params.require(:dataset).permit(:title, :short_desc, :long_desc,
+    params.require(:dataset).permit(:title, :short_desc, :long_desc, :tags_array,
       :metadata_description, :shp_download, :wms_server, :wfs, :meta_download,
       :licence_desc, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
       :has_legend, :html, :xml, :factsheet, :creation_date, :time_range_start,

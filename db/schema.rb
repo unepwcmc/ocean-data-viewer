@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141022122748) do
+ActiveRecord::Schema.define(version: 20150311171246) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -110,6 +110,7 @@ ActiveRecord::Schema.define(version: 20141022122748) do
     t.text     "licence_desc"
     t.integer  "creation_date"
     t.string   "factsheet_url"
+    t.text     "tags",                   default: [], array: true
   end
 
   create_table "datasets_decisions", force: true do |t|

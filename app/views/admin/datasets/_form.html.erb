@@ -14,7 +14,7 @@
 
   <p>
     <%= f.label :tags_array, 'Alternate Search Keywords' %><br />
-    <%= f.text_area :tags_array, class: 'tag-field', data: {tags: @tags.map{|t| {id: t, text: t}} } %><br>
+    <%= f.text_area :tags_array, class: 'tag-field', data: {tags: @tags.try(:map) {|t| {id: t, text: t}} } %><br>
     <i>Tag this dataset with alternate keywords that will be picked up on in the search</i>
   </p>
 

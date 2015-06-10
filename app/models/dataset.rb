@@ -24,7 +24,7 @@ class Dataset < ActiveRecord::Base
   has_attached_file :factsheet
   do_not_validate_attachment_file_type :factsheet
 
-  has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :image, :styles => { :medium => "500x500>", :thumb => "400x400>" }
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 
   attr_accessor :delete_image

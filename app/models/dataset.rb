@@ -39,9 +39,13 @@ class Dataset < ActiveRecord::Base
     self.save
   end
 
+  def recently_updated?
+    self.updated_at > 30.days.ago
+  end
+
   private
 
   def strip_urls
-    [wms_name, wms_server].each {|s| s.strip!}
+    [wms_name, wms_server].each {|s| s.try(:strip!)}
   end
 end

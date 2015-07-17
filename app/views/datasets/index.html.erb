@@ -19,6 +19,7 @@
                   </span>
                 </p>
                 <p ng-show="dataset.creationDate"><span class="bold">Publication date:</span> <span ng-bind="dataset.creationDate"></span></p>
+                <p ng-show="dataset.version"><span class="bold">Version:</span> <span ng-bind="dataset.version"></span></p>
                 <div class="format">
                   <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats">
                     <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}

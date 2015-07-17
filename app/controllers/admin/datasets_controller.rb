@@ -101,7 +101,7 @@ class Admin::DatasetsController < Admin::AdminController
       :licence_desc, :wms_name, :styles, :view_params, :arcgis_link, :order_number,
       :has_legend, :html, :xml, :factsheet, :creation_date, :time_range_start,
       :time_range_end, :data_provider, :geographical_range, :image, :delete_image,
-      :layer_color, :factsheet_url,
+      :layer_color, :factsheet_url, :version,
       data_category_ids: [], observation_type_ids: [], data_format_ids: [])
   end
 end

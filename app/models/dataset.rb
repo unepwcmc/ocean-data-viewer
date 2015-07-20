@@ -43,6 +43,10 @@ class Dataset < ActiveRecord::Base
     self.updated_at > 30.days.ago
   end
 
+  def recently_created?
+    self.created_at > 30.days.ago
+  end
+
   private
 
   def strip_urls

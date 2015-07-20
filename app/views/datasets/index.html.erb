@@ -8,7 +8,7 @@
           <li ng-repeat="dataset in layers" ng-class="['type' + dataset.id, dataset.visible && 'active']">
               <div class="dataset-info" ng-click="toggleLayerVisibility(dataset)">
                 <div class="title">
-                  {{ dataset.title }} <div ng-show="dataset.recentlyUpdated">NEW</div>
+                  {{ dataset.title }} <div ng-show="dataset.recentlyUpdated">(Updated)</div><div ng-show="dataset.recentlyCreated">(New)</div>
                 </div>
                 <p ng-show="dataset.dataCategories" class="categories">
                   <span ng-repeat="category in dataset.dataCategories" ng-class="['category', category.description && 'with-tooltip']">

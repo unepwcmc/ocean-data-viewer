@@ -3,7 +3,7 @@ class DatasetSerializer < ActiveModel::Serializer
       :has_legend, :data_formats, :observation_types, :geographical_range,
       :creation_date, :url, :data_categories, :time_range_start,
       :time_range_end, :time_range, :data_provider, :shp_download,
-      :factsheet_url, :arcgis_link, :styles, :view_params, :recently_updated
+      :factsheet_url, :arcgis_link, :styles, :view_params, :recently_updated, :recently_created
 
   def url
     dataset_url object
@@ -21,5 +21,9 @@ class DatasetSerializer < ActiveModel::Serializer
 
   def recently_updated
     object.recently_updated?
+  end
+
+  def recently_created
+    object.recently_created?
   end
 end

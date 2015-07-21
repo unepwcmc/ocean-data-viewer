@@ -3,7 +3,7 @@ class DatasetSerializer < ActiveModel::Serializer
       :has_legend, :data_formats, :observation_types, :geographical_range,
       :creation_date, :url, :data_categories, :time_range_start,
       :time_range_end, :time_range, :data_provider, :shp_download,
-      :factsheet_url, :arcgis_link, :styles, :view_params
+      :factsheet_url, :arcgis_link, :styles, :view_params, :version
 
   def url
     dataset_url object

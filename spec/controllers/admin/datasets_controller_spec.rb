@@ -10,10 +10,7 @@ describe Admin::DatasetsController do
 
   describe "#index" do
     subject { get :index }
-
-    it "should be successful" do
-      expect(subject).to be_successful
-    end
+    it { is_expected.to be_successful }
   end
 
   describe "#create" do

@@ -40,7 +40,7 @@ class Dataset < ActiveRecord::Base
   end
 
   def recently_updated?
-    self.updated_at > 30.days.ago
+    self.updated_at > 30.days.ago && self.updated_at != self.created_at
   end
 
   def recently_created?

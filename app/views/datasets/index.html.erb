@@ -8,7 +8,7 @@
           <li ng-repeat="dataset in layers" ng-class="['type' + dataset.id, dataset.visible && 'active']">
               <div class="dataset-info" ng-click="toggleLayerVisibility(dataset)">
                 <div class="title">
-                  {{ dataset.title }} <div ng-show="dataset.recentlyUpdated">(Updated)</div><div ng-show="dataset.recentlyCreated">(New)</div>
+                  {{ dataset.title }}
                 </div>
                 <p ng-show="dataset.dataCategories" class="categories">
                   <span ng-repeat="category in dataset.dataCategories" ng-class="['category', category.description && 'with-tooltip']">
@@ -20,6 +20,8 @@
                 </p>
                 <p ng-show="dataset.creationDate"><span class="bold">Publication date:</span> <span ng-bind="dataset.creationDate"></span></p>
                 <div class="format">
+                  <div ng-show="dataset.recentlyUpdated" class="label label-updated">Updated</div>
+                  <div ng-show="dataset.recentlyCreated" class="label label-new">New</div>
                   <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats">
                     <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
                   </span>

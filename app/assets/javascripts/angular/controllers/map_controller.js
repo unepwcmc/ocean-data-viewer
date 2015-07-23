@@ -15,6 +15,8 @@ module.controller('SearchCtrl',
 
   // page load initial search
   MapSearch.query({sort_by: 'creation_date DESC'}).then(function(result) {
+    console.log(result)
+
     $scope.$broadcast('searchResults', result);
   });
 

@@ -21,12 +21,16 @@
                 <p ng-show="dataset.creationDate"><span class="bold">Publication date:</span> <span ng-bind="dataset.creationDate"></span></p>
                 <p ng-show="dataset.version"><span class="bold">Version:</span> <span ng-bind="dataset.version"></span></p>
                 <div class="format">
+                  <div ng-show="dataset.recentlyUpdated" class="tag tag-updated">Updated</div>
+                  <div ng-show="dataset.recentlyCreated" class="tag tag-new">New</div>
                   <span ng-show="dataset.dataFormats" ng-repeat="category in dataset.dataFormats">
                     <span ng-class="['capitalize', 'prepend-symbol', category.name]">{{ category.name }}</span>{{ $last ? '' : ',&nbsp;' }}
                   </span>
-                  <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
                 </div>
+
                 <div ng-class="['additional-info', dataset.showingMore && 'visible']">
+
+                  <a ng-href="{{ dataset.url }}" class="btn btn-white">View dataset detail</a>
                   <p ng-show="dataset.timeRangeStart || dataset.timeRangeEnd"><span class="label">Temporal range:</span> <span ng-bind="dataset.timeRange"></span></p>
                   <p ng-show="dataset.observationTypes" class="prepend-pipe capitalize">
                     <span class="label">Data type:</span>

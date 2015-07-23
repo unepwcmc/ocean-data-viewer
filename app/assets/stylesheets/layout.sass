@@ -1,6 +1,8 @@
 $blue: #4295d5
 $dark-blue: #377db4
 $light-blue: #d3e9f9
+$grey: #999999
+$white: #ffffff
 $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
 
 *
@@ -55,3 +57,14 @@ body *
   position: relative
   top: -50px
   z-index: 99999
+
+.tag
+  color: $white
+  padding: 0.25em 0.35em
+  display: inline-block
+  margin: 0.25em 0
+  margin-right: 0.50em
+  &.tag-new
+    background-color: $blue
+  &.tag-updated
+    background-color: $grey

@@ -19,7 +19,10 @@ var Map = function(target, baseLayer) {
     this.map = new L.map(target, options);
     this.map.setMaxBounds(bounds);
 
-    L.esri.basemapLayer(baseLayer).addTo(this.map);
+    var accessToken = "pk.eyJ1IjoidW5lcHdjbWMiLCJhIjoiRXg1RERWRSJ9.taTsSWwtAfFX_HMVGo2Cug"
+    L.tileLayer('https://api.mapbox.com/v4/unepwcmc.np8b6gmk/{z}/{x}/{y}.png?access_token=' + accessToken, {
+      attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+    }).addTo(this.map);
   };
 
   this.zoomIn = function() {

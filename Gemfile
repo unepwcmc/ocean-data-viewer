@@ -35,6 +35,7 @@ group :development do
   gem 'capistrano', '~> 2.15'
   gem 'rvm-capistrano', '1.2.7'
   gem 'capistrano-unicorn', '~> 0.1.10', require: false
+  gem 'brightbox'
 end
 
 group :test do

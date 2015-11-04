@@ -44,7 +44,7 @@ namespace :deploy do
     fetch(:shared_files).each do |file|
       run "ln -nfs #{shared_path}/#{file} #{release_path}/#{file}"
     end
-    run "cp #{fetch(:release_path)}/config/configuration.yml.#{fetch(:stage)} #{fetch(:release_path)}/config/configuration.yml"
+
     run "ln -nfs #{shared_path}/public/pdfs #{release_path}/public/pdfs"
   end
 end

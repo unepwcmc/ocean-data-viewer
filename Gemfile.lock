@@ -2,7 +2,6 @@ GEM
   remote: https://rubygems.org/
   specs:
     RedCloth (4.2.9)
-    a9n (0.3.3)
     actionmailer (4.2.4)
       actionpack (= 4.2.4)
       actionview (= 4.2.4)
@@ -234,7 +233,6 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  a9n
   active_model_serializers (= 0.8.1)
   bower-rails (~> 0.7.3)
   capistrano (~> 2.15)

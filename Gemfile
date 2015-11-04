@@ -15,7 +15,6 @@ gem 'jbuilder', '~> 2.0'
 gem 'paperclip', '~> 4.3.1'
 gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
-gem 'a9n'
 gem 'dependor'
 gem 'active_model_serializers', '0.8.1'
 

@@ -6,7 +6,7 @@ gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '~> 2.7.2'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
+gem 'jquery-rails', '~> 4.0.5'
 gem 'jscrollpane-rails'
 gem 'jquery-mousewheel-rails'
 gem 'turbolinks'
@@ -38,7 +38,7 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem 'rspec-rails', '~> 3.1'
   gem "factory_girl_rails", "~> 4.0"
   gem 'json_spec'
 end

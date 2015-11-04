@@ -36,6 +36,7 @@ group :development do
 end
 
 group :test do
+  gem 'rake', '~> 10.4.2'
   gem 'rspec-rails', '~> 3.1'
   gem "factory_girl_rails", "~> 4.0"
   gem 'json_spec'

@@ -250,6 +250,7 @@ DEPENDENCIES
   pg_search (~> 0.7.3)
   pry
   rails (~> 4.2.4)
+  rake (~> 10.4.2)
   rspec-rails (~> 3.1)
   rvm-capistrano (= 1.2.7)
   sass-rails (~> 5.0.4)

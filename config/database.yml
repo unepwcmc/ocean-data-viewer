@@ -1,0 +1,23 @@
+default: &default
+  host: localhost
+  encoding: unicode
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: postgres
+
+development:
+  <<: *default
+  database: marine_portal_development
+
+test:
+  <<: *default
+  database: marine_portal_test
+
+production:
+  <<: *default
+  database: marine_portal_production
+
+staging:
+  <<: *default
+  database: marine_portal_staging

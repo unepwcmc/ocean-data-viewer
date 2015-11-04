@@ -3,7 +3,7 @@ Ocean Data Viewer
 
 [![Code Climate](https://codeclimate.com/github/unepwcmc/marine-portal/badges/gpa.svg)](https://codeclimate.com/github/unepwcmc/marine-portal)
 [![Test Coverage](https://codeclimate.com/github/unepwcmc/marine-portal/badges/coverage.svg)](https://codeclimate.com/github/unepwcmc/marine-portal/coverage)
-[![Test Coverage](https://codeclimate.com/github/unepwcmc/marine-portal/badges/coverage.svg)](https://codeclimate.com/github/unepwcmc/marine-portal/coverage)
+[![Dependency Status](https://gemnasium.com/unepwcmc/marine-portal.svg)](https://gemnasium.com/unepwcmc/marine-portal)
 
 **Deploy**
 

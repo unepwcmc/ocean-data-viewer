@@ -7,5 +7,5 @@ class Decision < ActiveRecord::Base
 
   validates_presence_of :name, :short_name
 
-  scope :roots, :conditions => {:parent_id => nil}
+  scope :roots, -> { where(parent_id: nil) }
 end

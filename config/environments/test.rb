@@ -20,6 +20,10 @@ Rails.application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
+  # Define the order the tests are run with. Can also be
+  # `random`
+  config.active_support.test_order = :sorted
+
   # Raise exceptions instead of rendering exception templates.
   config.action_dispatch.show_exceptions = false
 

@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.7'
+gem 'rails', '~> 4.2.4'
 
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
@@ -28,6 +28,7 @@ group :development, :test do
   gem 'spring'
   gem 'letter_opener'
   gem 'pry'
+  gem 'web-console', '~> 2.2'
 end
 
 group :development do

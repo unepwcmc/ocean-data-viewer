@@ -20,7 +20,6 @@ gem 'dependor'
 gem 'active_model_serializers', '0.8.1'
 
 gem 'unicorn'
-gem 'therubyracer'
 gem 'pg_search'
 gem 'select2-rails'
 
@@ -32,8 +31,8 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 2.15'
-  gem 'rvm-capistrano', '1.2.7'
+  gem 'capistrano', '~> 2.15', require: false
+  gem 'rvm-capistrano', '1.2.7', require: false
   gem 'capistrano-unicorn', '~> 0.1.10', require: false
 end
 

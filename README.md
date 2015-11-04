@@ -6,7 +6,7 @@ README
 Once changes have been merged into master, merge into Brightbox branch, then deploy from here.
 
 
-Ruby version: 2.1.1
+Ruby version: 2.2.3
 Rails version: 4.1.1
 
 Setup

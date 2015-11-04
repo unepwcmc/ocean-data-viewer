@@ -8,16 +8,16 @@ default: &default
 
 development:
   <<: *default
-  database: marine_portal_development
+  database: ocean_data_viewer_development
 
 test:
   <<: *default
-  database: marine_portal_test
+  database: ocean_data_viewer_test
 
 production:
   <<: *default
-  database: marine_portal_production
+  database: ocean_data_viewer_production
 
 staging:
   <<: *default
-  database: marine_portal_staging
+  database: ocean_data_viewer_staging

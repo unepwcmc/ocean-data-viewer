@@ -3,8 +3,6 @@
 <% end -%>
 
 <div class="span-24 datasets">
-	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
-	
   <table style="width:96%;">
     <tr>
       <th style="border-left:black 1px;"></th>
@@ -12,7 +10,7 @@
         <th class='matrix_title' title='<%= decision.short_desc %>'><%= link_to decision.name, decision %></th>
       <% end %>
     </tr>
-    <% @datasets.each do |dataset| %>  
+    <% @datasets.each do |dataset| %>
         <tr>
             <td>
                 <h2 style="font-size:16px" id><%= truncate(dataset.title,80) %></h2>
@@ -35,19 +33,17 @@
 
 <h2 style="font-size:20px;">Other Marine Assessment And Decision Support Sites</h2>
 <div class="span-17 datasets">
-	<!--<h2 style="font-size:30px;">Our Marine Datasets</h2>-->
-
 <div style="margin-bottom:2em;border-bottom:1px solid #eee;margin-right:30px;" class="span-8">
 	<h3>WDPA Marine</h3>
 	<p>The World Database on Protected Areas Marine is a foundation dataset for conservation decision making.</p>
-	
+
 	<p>The UNEP-WCMC Protected Areas Data Unit was set up in 1981 to compile information on the world's protected areas, and to be a resource for those requiring such information.
-	<%= link_to "more..", "http://www.wdpa-marine.org" %></p>	
+	<%= link_to "more..", "http://www.wdpa-marine.org" %></p>
 </div>
 
 <div style="margin-bottom:2em;border-bottom:1px solid #eee;" class="span-8">
 	<h3>Coral Disease Database</h3>
-	<p>The first version of the GCDD was launched in 2000 and was populated with some 2000 points of data from 155 references, mostly peer reviewed scientific literature. <%= link_to "more..", "http://gcdd.tinypla.net" %></p>	
+	<p>The first version of the GCDD was launched in 2000 and was populated with some 2000 points of data from 155 references, mostly peer reviewed scientific literature. <%= link_to "more..", "http://gcdd.tinypla.net" %></p>
 </div>
 </div>
 
@@ -58,8 +54,8 @@
 	<h3>Marine Assessment And Decision Support</h3>
 	<%= link_to image_tag('wcmc_logo.png', :style=>"float:right;margin:0 0 0 1em;"), "http://www.unep-wcmc.org"%>
 	<p>Synthesis, analysis and dissemination of marine and coastal biodiversity knowledge.</p>
-		
-	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal) %>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p> 
+
+	<p>We currently offer <%= pluralize Dataset.count, "dataset" %> for viewing and download, and last updated our holdings on <%= Dataset.first(:order => "updated_at DESC").updated_at.to_s(:long_ordinal) %>. </p><p><%= pluralize Customer.count, "person" %> have used this site to download our marine datasets.</p>
 	<p>For more information on the Marine Assessment And Decision Support team, <%= link_to "click here", "http://www.unep-wcmc.org/marine/" %>.</p>
 	</div>
 </div>

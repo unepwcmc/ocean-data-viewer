@@ -11,12 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311171246) do
+ActiveRecord::Schema.define(version: 20150717153253) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
-  create_table "backup", force: true do |t|
+  create_table "backup", force: :cascade do |t|
     t.string   "storage"
     t.string   "trigger"
     t.string   "adapter"
@@ -27,7 +28,7 @@ ActiveRecord::Schema.define(version: 20150311171246) do
     t.datetime "updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.text     "identifier"
     t.text     "short_desc"
@@ -37,7 +38,7 @@ ActiveRecord::Schema.define(version: 20150311171246) do
     t.datetime "updated_at"
   end
 
-  create_table "customers", force: true do |t|
+  create_table "customers", force: :cascade do |t|
     t.string   "title"
     t.string   "first_name"
     t.string   "last_name"
@@ -53,30 +54,30 @@ ActiveRecord::Schema.define(version: 20150311171246) do
     t.boolean  "understand_collaboration"
   end
 
-  create_table "data_categories", force: true do |t|
+  create_table "data_categories", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "description"
   end
 
-  create_table "data_categories_datasets", force: true do |t|
+  create_table "data_categories_datasets", force: :cascade do |t|
     t.integer "dataset_id"
     t.integer "data_category_id"
   end
 
-  create_table "data_formats", force: true do |t|
+  create_table "data_formats", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "data_formats_datasets", force: true do |t|
+  create_table "data_formats_datasets", force: :cascade do |t|
     t.integer "dataset_id"
     t.integer "data_format_id"
   end
 
-  create_table "datasets", force: true do |t|
+  create_table "datasets", force: :cascade do |t|
     t.string   "title"
     t.text     "short_desc"
     t.text     "long_desc"
@@ -110,21 +111,22 @@ ActiveRecord::Schema.define(version: 20150311171246) do
     t.text     "licence_desc"
     t.integer  "creation_date"
     t.string   "factsheet_url"
-    t.text     "tags",                   default: [], array: true
+    t.text     "tags",                   default: [],   array: true
+    t.string   "version",                default: "NA"
   end
 
-  create_table "datasets_decisions", force: true do |t|
+  create_table "datasets_decisions", force: :cascade do |t|
     t.integer "dataset_id"
     t.integer "decision_id"
     t.integer "category_id"
   end
 
-  create_table "datasets_observation_types", force: true do |t|
+  create_table "datasets_observation_types", force: :cascade do |t|
     t.integer "dataset_id"
     t.integer "observation_type_id"
   end
 
-  create_table "decisions", force: true do |t|
+  create_table "decisions", force: :cascade do |t|
     t.string   "name"
     t.text     "short_name"
     t.text     "short_desc"
@@ -138,7 +140,7 @@ ActiveRecord::Schema.define(version: 20150311171246) do
     t.integer  "order_number"
   end
 
-  create_table "licences", force: true do |t|
+  create_table "licences", force: :cascade do |t|
     t.string   "title"
     t.text     "short_desc"
     t.text     "body"
@@ -146,13 +148,13 @@ ActiveRecord::Schema.define(version: 20150311171246) do
     t.datetime "updated_at"
   end
 
-  create_table "observation_types", force: true do |t|
+  create_table "observation_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "site_links", force: true do |t|
+  create_table "site_links", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
     t.string   "link"

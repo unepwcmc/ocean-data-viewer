@@ -1,9 +1,9 @@
 Ocean Data Viewer
 ======
 
-[![Code Climate](https://codeclimate.com/github/unepwcmc/marine-portal/badges/gpa.svg)](https://codeclimate.com/github/unepwcmc/marine-portal)
-[![Test Coverage](https://codeclimate.com/github/unepwcmc/marine-portal/badges/coverage.svg)](https://codeclimate.com/github/unepwcmc/marine-portal/coverage)
-[![Dependency Status](https://gemnasium.com/unepwcmc/marine-portal.svg)](https://gemnasium.com/unepwcmc/marine-portal)
+[![Code Climate](https://codeclimate.com/github/unepwcmc/ocean-data-viewer/badges/gpa.svg)](https://codeclimate.com/github/unepwcmc/ocean-data-viewer)
+[![Test Coverage](https://codeclimate.com/github/unepwcmc/ocean-data-viewer/badges/coverage.svg)](https://codeclimate.com/github/unepwcmc/ocean-data-viewer/coverage)
+[![Dependency Status](https://gemnasium.com/unepwcmc/ocean-data-viewer.svg)](https://gemnasium.com/unepwcmc/ocean-data-viewer)
 
 # Installation
 

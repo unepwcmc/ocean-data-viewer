@@ -20,9 +20,9 @@ gem 'active_model_serializers', '0.8.1'
 
 gem 'pg_search', '~> 0.7.3'
 gem 'select2-rails', '~> 4.0.0'
+gem 'dotenv-rails', '~> 2.0.2'
 
 group :development, :test do
-  gem 'dotenv-rails'
   gem 'spring'
   gem 'letter_opener'
   gem 'pry'

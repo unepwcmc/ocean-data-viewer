@@ -14,9 +14,6 @@ require 'dependor/shorty'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-A9n.root = File.expand_path('../..', __FILE__)
-A9n.load
-
 module MarinePortal
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

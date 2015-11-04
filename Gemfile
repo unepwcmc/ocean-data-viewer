@@ -2,12 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 4.2.4'
 
-gem 'pg'
+gem 'pg', '~> 0.18.3'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '~> 2.7.2'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails', '~> 4.0.5'
-gem 'jscrollpane-rails'
+gem 'jscrollpane-rails', '~> 2.0.22'
 gem 'jquery-mousewheel-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
@@ -18,9 +18,8 @@ gem 'bower-rails', '~> 0.7.3'
 gem 'dependor'
 gem 'active_model_serializers', '0.8.1'
 
-gem 'unicorn'
-gem 'pg_search'
-gem 'select2-rails'
+gem 'pg_search', '~> 0.7.3'
+gem 'select2-rails', '~> 4.0.0'
 
 group :development, :test do
   gem 'dotenv-rails'
@@ -40,4 +39,8 @@ group :test do
   gem 'rspec-rails', '~> 3.1'
   gem "factory_girl_rails", "~> 4.0"
   gem 'json_spec'
+end
+
+group :production do
+  gem 'unicorn', '~> 5.0.0'
 end

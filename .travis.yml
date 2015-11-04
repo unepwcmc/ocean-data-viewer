@@ -1,2 +1,4 @@
 language: ruby
 bundler_args: --without production
+before_script:
+  - cp config/database.yml.travis config/database.yml

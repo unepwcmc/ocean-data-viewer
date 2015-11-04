@@ -1,31 +1,20 @@
-README
+Ocean Data Viewer
 ======
 
-**Deploy**
+[![Code Climate](https://codeclimate.com/github/unepwcmc/marine-portal/badges/gpa.svg)](https://codeclimate.com/github/unepwcmc/marine-portal)
+[![Test Coverage](https://codeclimate.com/github/unepwcmc/marine-portal/badges/coverage.svg)](https://codeclimate.com/github/unepwcmc/marine-portal/coverage)
+[![Dependency Status](https://gemnasium.com/unepwcmc/marine-portal.svg)](https://gemnasium.com/unepwcmc/marine-portal)
 
-Once changes have been merged into master, merge into Brightbox branch, then deploy from here.
+# Installation
 
-
-Ruby version: 2.2.3
-Rails version: 4.1.1
-
-Setup
------
-
-Install the dependencies:
-
+Ocean Data Viewer is a pretty standard Rails application, backed by a Postgres database. To install Ocean Data Viewer, proceed with the usual commands:
 ```
-bundle install
+$ git clone https://github.com/unepwcmc/ocean-data-viewer.git ocean-data-viewer
+$ cd ocean-data-viewer
+$ bundle install
+$ bundle exec rake db:setup
 ```
 
-Create the `database.yml` file based on the `database.yml.example`
+## dotenv
 
-```
-cp config/database.yml.example config/database.yml
-```
-
-Create the database:
-
-```
-rake db:setup
-```
+Ocean Data Viewer uses the `dotenv` gem to manage environment variables. Before starting the server, create a copy of the file `.env.example` (removing the `.example` bit) and edit the needed variables. After this final step, `bundle exec rails server` should work like a charm.

@@ -22,6 +22,8 @@ gem 'pg_search', '~> 0.7.3'
 gem 'select2-rails', '~> 4.0.0'
 gem 'dotenv-rails', '~> 2.0.2'
 
+gem 'newrelic_rpm', '~> 3.14.0.305'
+
 group :development, :test do
   gem 'spring'
   gem 'letter_opener'

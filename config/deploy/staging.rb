@@ -1,7 +1,7 @@
 set :stage, :staging
 
 server "web-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web}
-#server "db-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{db}
+server "db-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{db}, no_release: true
 
 set :application, "ocean-data-viewer"
 set :server_name, "ocean-data-viewer.web-staging.linode.unep-wcmc.org"

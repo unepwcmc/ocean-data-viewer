@@ -1,13 +1,21 @@
 var Map = function(target, baseLayer) {
+
   var options = {
       minZoom: 2,
-      maxZoom: 18,
+      maxZoom: 8,
       zoom: 3,
       center: new L.latLng(0, 0),
       scrollWheelZoom: false,
       zoomControl: false
-    },
-    layers = {};
+  },
+  layers = {};
+
+
+  var accessToken = "pk.eyJ1IjoidW5lcHdjbWMiLCJhIjoiRXg1RERWRSJ9.taTsSWwtAfFX_HMVGo2Cug";
+
+  var mapLabels = L.tileLayer('https://api.mapbox.com/v4/unepwcmc.o308nbjb/{z}/{x}/{y}.png?access_token=' + accessToken, {
+    attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+  });
 
   this.map = null;
 
@@ -19,15 +27,16 @@ var Map = function(target, baseLayer) {
     this.map = new L.map(target, options);
     this.map.setMaxBounds(bounds);
 
-    var accessToken = "pk.eyJ1IjoidW5lcHdjbWMiLCJhIjoiRXg1RERWRSJ9.taTsSWwtAfFX_HMVGo2Cug"
-    L.tileLayer('https://api.mapbox.com/v4/unepwcmc.np8b6gmk/{z}/{x}/{y}.png?access_token=' + accessToken, {
-      attribution: '<a href="http://www.mapbox.com/about/maps/" target="_blank">Terms &amp; Feedback</a>'
+    L.tileLayer.wms("http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?", {
+      layers: 'GEBCO_LATEST',
+      format: 'image/png',
     }).addTo(this.map);
+
+    mapLabels.addTo(this.map);
   };
 
   this.zoomIn = function() {
     this.map.zoomIn();
-    debugger;
   };
 
   this.zoomOut = function() {
@@ -67,6 +76,7 @@ var Map = function(target, baseLayer) {
           this.map.removeLayer(layerObject);
         } else {
           this.map.addLayer(layerObject);
+          mapLabels.bringToFront();
         }
       }
     }.bind(this));

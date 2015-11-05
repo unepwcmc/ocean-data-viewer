@@ -21,8 +21,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_model_serializers (0.8.1)
-      activemodel (>= 3.0)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
     activejob (4.2.4)
       activesupport (= 4.2.4)
       globalid (>= 0.3.0)
@@ -45,6 +45,7 @@ GEM
       debug_inspector (>= 0.0.1)
     bower-rails (0.7.3)
     builder (3.2.2)
+    byebug (6.0.2)
     capistrano (3.4.0)
       i18n
       rake (>= 10.0.0)
@@ -239,8 +240,9 @@ PLATFORMS
 
 DEPENDENCIES
   RedCloth
-  active_model_serializers (= 0.8.1)
+  active_model_serializers (~> 0.9.3)
   bower-rails (~> 0.7.3)
+  byebug
   capistrano (~> 3.4.0)
   capistrano-bundler (~> 1.1)
   capistrano-passenger (~> 0.1.1)

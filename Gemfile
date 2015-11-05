@@ -16,7 +16,7 @@ gem 'paperclip', '~> 4.3.1'
 gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
 gem 'dependor'
-gem 'active_model_serializers', '0.8.1'
+gem 'active_model_serializers', '~> 0.9.3'
 
 gem 'pg_search', '~> 0.7.3'
 gem 'select2-rails', '~> 4.0.0'
@@ -25,6 +25,7 @@ gem 'dotenv-rails', '~> 2.0.2'
 gem 'newrelic_rpm', '~> 3.14.0.305'
 
 group :development, :test do
+  gem 'byebug'
   gem 'spring'
   gem 'letter_opener'
   gem 'pry'

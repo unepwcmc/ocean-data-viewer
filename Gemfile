@@ -32,9 +32,11 @@ group :development, :test do
 end
 
 group :development do
-  gem 'capistrano', '~> 2.15', require: false
-  gem 'rvm-capistrano', '1.2.7', require: false
-  gem 'capistrano-unicorn', '~> 0.1.10', require: false
+  gem 'capistrano-rvm',   '~> 0.1', require: false
+  gem 'capistrano', '~> 3.4.0', require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-passenger', '~> 0.1.1', require: false
 end
 
 group :test do
@@ -45,6 +47,3 @@ group :test do
   gem 'json_spec'
 end
 
-group :production do
-  gem 'unicorn', '~> 5.0.0'
-end

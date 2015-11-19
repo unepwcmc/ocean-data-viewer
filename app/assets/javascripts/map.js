@@ -10,6 +10,7 @@ var Map = function(target, baseLayer) {
   },
   layers = {};
 
+  var backgroundOpacity = 0.5;
 
   var accessToken = "pk.eyJ1IjoidW5lcHdjbWMiLCJhIjoiRXg1RERWRSJ9.taTsSWwtAfFX_HMVGo2Cug";
 
@@ -30,6 +31,7 @@ var Map = function(target, baseLayer) {
     L.tileLayer.wms("http://www.gebco.net/data_and_products/gebco_web_services/web_map_service/mapserv?", {
       layers: 'GEBCO_LATEST',
       format: 'image/png',
+      opacity: backgroundOpacity
     }).addTo(this.map);
 
     mapLabels.addTo(this.map);

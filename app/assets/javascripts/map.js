@@ -10,7 +10,7 @@ var Map = function(target, baseLayer) {
   },
   layers = {};
 
-  var backgroundOpacity = 0.5;
+  var backgroundOpacity = 0.3;
 
   var accessToken = "pk.eyJ1IjoidW5lcHdjbWMiLCJhIjoiRXg1RERWRSJ9.taTsSWwtAfFX_HMVGo2Cug";
 

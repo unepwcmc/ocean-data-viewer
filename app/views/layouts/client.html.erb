@@ -1,60 +1,66 @@
 <!doctype html>
 <html lang="en" ng-app="MarineApp">
-    <head>
-        <meta charset="utf-8">
-        <title>Ocean Data Viewer</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <%= csrf_meta_tags %>
-        <%= stylesheet_link_tag 'application' %>
-        <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-        <style type="text/css">
-          <% Dataset.all.each do |dataset| %>
-          li.active.type<%= dataset.id %> .dataset-info {
-            /* auto generated */
-            border-right-color: <%= dataset.layer_color || '999' %>;
-          }
-          <% end %>
-        </style>
-        <%= render 'layouts/google_analytics' %>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <title>Ocean Data Viewer</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag 'application' %>
+    <style type="text/css">
+      <% Dataset.all.each do |dataset| %>
+        li.active.type<%= dataset.id %> .dataset-info {
+          /* auto generated */
+          border-right-color: <%= dataset.layer_color || '999' %>;
+        }
+      <% end %>
+    </style>
+  </head>
 
-    <body class="<%= yield :body_class %>">
-        <% if flash[:error].present? %>
-          <div id="error_flash">
-            <h2>Sorry, there was a problem with your form submission</h2><%= flash[:error] %>
-          </div>
-        <% end %>
-        <header>
-            <div class="logo"></div>
-            <h1><a href="/">Ocean Data Viewer</a></h1>
-            <%= link_to "About the site", about_path %>
-        </header>
+  <body class="<%= yield :body_class %>">
+    <% if flash[:error].present? %>
+      <div id="error_flash">
+        <h2>Sorry, there was a problem with your form submission</h2><%= flash[:error] %>
+      </div>
+    <% end %>
+    <header>
+      <div class="logo"></div>
+      <h1><a href="/">Ocean Data Viewer</a></h1>
+      <%= link_to "About the site", about_path %>
+    </header>
 
-        <div class="map">
-            <map base-layer="Oceans"></map>
+    <div class="map">
+      <map base-layer="Oceans"></map>
 
-            <div class="datasets">
-                <%= yield :map_controls %>
-            </div>
-        </div> <!-- map -->
+      <div class="datasets">
+        <%= yield :map_controls %>
+      </div>
+    </div> <!-- map -->
 
-        <%= yield :map %>
+    <%= yield :map %>
 
-        <%= yield %>
+    <%= yield %>
 
-        <footer>
-            <%= link_to image_tag('proteus_sm.gif'), "http://www.proteuspartners.org/?page_id=100" %>&nbsp;&nbsp;&nbsp;
-            <a href="http://www.unep-wcmc.org/" target="_blank" class="wcmc_unep"></a>
-            <div class="reserved">
-                <p>All rights reserved.</p>
-                <p>UNEP</p>
-                <p><a class="terms" href="http://beta.unep-wcmc.org/terms-and-conditions">Terms and Conditions</a></p>
-            </div>
-            <div class="disclaimer">
-              <p>the designations employed and the presentation of material on this map do not imply the expression of any opinion whatsoever on the part of the Secretariat of the United Nations concerning the legal status of any country, territory, city or area or of its authorities, or concerning the delimitation of its frontiers or boundaries.</p>
-            </div>
-        </footer>
-    </body>
+    <footer>
+      <%= link_to image_tag('proteus_sm.gif'), "http://www.proteuspartners.org/?page_id=100" %>&nbsp;&nbsp;&nbsp;
+      <a href="http://www.unep-wcmc.org/" target="_blank" class="wcmc_unep"></a>
+      <div class="reserved">
+        <p>All rights reserved.</p>
+        <p>UNEP</p>
+        <p><a class="terms" href="http://beta.unep-wcmc.org/terms-and-conditions">Terms and Conditions</a></p>
+      </div>
+      <div class="disclaimer">
+        <p>The designations employed and the presentation of material on this
+          map do not imply the expression of any opinion whatsoever on the part
+          of the Secretariat of the United Nations concerning the legal status of
+          any country, territory, city or area or of its authorities, or concerning
+          the delimitation of its frontiers or boundaries.
+        </p>
+      </div>
+    </footer>
+
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= render 'layouts/google_analytics' %>
+  </body>
 </html>

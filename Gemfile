@@ -1,44 +1,50 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.1.7'
+gem 'rails', '~> 4.2.4'
 
-gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
-gem 'uglifier', '>= 1.3.0'
+gem 'pg', '~> 0.18.3'
+gem 'sass-rails', '~> 5.0.4'
+gem 'uglifier', '~> 2.7.2'
 gem 'coffee-rails', '~> 4.0.0'
-gem 'jquery-rails'
-gem 'jscrollpane-rails'
+gem 'jquery-rails', '~> 4.0.5'
+gem 'jscrollpane-rails', '~> 2.0.22'
 gem 'jquery-mousewheel-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
-gem 'paperclip', '~> 4.1'
+gem 'paperclip', '~> 4.3.1'
 gem 'RedCloth'
 gem 'bower-rails', '~> 0.7.3'
-gem 'a9n'
 gem 'dependor'
-gem 'active_model_serializers', '0.8.1'
+gem 'active_model_serializers', '~> 0.9.3'
 
-gem 'unicorn'
-gem 'therubyracer'
-gem 'pg_search'
-gem 'select2-rails'
+gem 'pg_search', '~> 0.7.3'
+gem 'select2-rails', '~> 4.0.0'
+gem 'dotenv-rails', '~> 2.0.2'
+
+gem 'newrelic_rpm', '~> 3.14.0.305'
 
 group :development, :test do
-  gem 'dotenv-rails'
+  gem 'byebug'
   gem 'spring'
   gem 'letter_opener'
   gem 'pry'
+  gem 'web-console', '~> 2.2'
 end
 
 group :development do
-  gem 'capistrano', '~> 2.15'
-  gem 'rvm-capistrano', '1.2.7'
-  gem 'capistrano-unicorn', '~> 0.1.10', require: false
+  gem 'capistrano-rvm',   '~> 0.1', require: false
+  gem 'capistrano', '~> 3.4.0', require: false
+  gem 'capistrano-rails',   '~> 1.1', require: false
+  gem 'capistrano-bundler', '~> 1.1', require: false
+  gem 'capistrano-passenger', '~> 0.1.1', require: false
 end
 
 group :test do
-  gem 'rspec-rails', '~> 3.0.0'
+  gem "codeclimate-test-reporter", require: nil
+  gem 'rake', '~> 10.4.2'
+  gem 'rspec-rails', '~> 3.1'
   gem "factory_girl_rails", "~> 4.0"
   gem 'json_spec'
 end
+

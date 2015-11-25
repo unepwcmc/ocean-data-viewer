@@ -13,7 +13,6 @@ capybara-*.html
 rerun.txt
 pickle-email-*.html
 .rvmrc
-/config/database.yml
 .env
 /resources
 public/pdfs/*

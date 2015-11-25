@@ -1,4 +1,4 @@
-MarinePortal::Application.routes.draw do
+OceanDataViewer::Application.routes.draw do
 
   root 'datasets#index'
 

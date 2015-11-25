@@ -1,73 +1,58 @@
-set :application, 'unep-marine'
+# config valid only for current version of Capistrano
+lock '3.4.0'
 
-set :stages, %w(demo)
-set :default_stage, 'demo'
-require 'capistrano/ext/multistage'
+set :application, 'ocean-data-viewer'
+set :repo_url, 'git@github.com:unepwcmc/ocean-data-viewer.git'
 
-set :deploy_via, :remote_cache
+# Default branch is :master
+# ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-set :rails_env, 'production'
-set :deploy_env, 'production'
 
+set :branch, 'server-migration'
+
+set :deploy_user, 'wcmc'
+
+
+# Default deploy_to directory is /var/www/my_app_name
+set :deploy_to, "/home/#{fetch(:deploy_user)}/#{fetch(:application)}"
+
+# Default value for :scm is :git
 set :scm, :git
-set :repository, "git@github.com:unepwcmc/marine-portal.git"
-set :copy_exclude, [".git"]
-set :use_sudo, false
-ssh_options[:forward_agent] = true
+set :scm_username, "unepwcmc-read"
 
-set :user, "lunar"
-set(:deploy_to) { "/home/#{fetch(:user)}/apps/#{fetch(:application)}" }
 
-set :rvm_type, :system
-set(:rvm_ruby_string) { "2.1.1@#{fetch(:application)}" }
-set(:bundle_dir) { File.join(fetch(:rvm_path), "gems/ruby-#{fetch(:rvm_ruby_string)}") }
-set(:bundle_cmd) { File.join(fetch(:rvm_path), "wrappers/ruby-#{fetch(:rvm_ruby_string)}/bundle") }
+set :rvm_type, :user
+set :rvm_ruby_version, '2.2.3'
 
-set :shared_files, %w(config/database.yml config/unicorn.rb)
 
-set :whenever_command, "bundle exec whenever"
-set :whenever_environment, defer { stage }
 
-require 'rvm/capistrano'
-require 'capistrano-unicorn'
-require 'bundler/capistrano'
+set :ssh_options, {
+  forward_agent: true,
+}
 
-set :keep_releases, 3
-after "deploy:update_code", "deploy:cleanup"
-before 'deploy:assets:precompile', 'deploy:symlink_shared'
 
-after 'deploy:restart', 'unicorn:reload'
+# Default value for :format is :pretty
+# set :format, :pretty
 
-namespace :deploy do
-  desc "Symlink shared files/directories"
-  task :symlink_shared do
-    fetch(:shared_files).each do |file|
-      run "ln -nfs #{shared_path}/#{file} #{release_path}/#{file}"
-    end
+# Default value for :log_level is :debug
+#set :log_level, :debug
 
-    run "ln -nfs #{shared_path}/public/pdfs #{release_path}/public/pdfs"
-  end
-end
+# Default value for :pty is false
+set :pty, true
 
-namespace :unicorn do
-  task :restart, :roles => :app, :except => {:no_release => true} do
-    unicorn.stop
-    unicorn.start
-  end
-end
+# Default value for :linked_files is []
 
-# Changes HUP to USR2
-namespace :unicorn do
-  desc 'Reload Unicorn'
-  task :reload, :roles => :app, :except => {:no_release => true} do
-    run <<-END
-      set -x;
-      if #{unicorn_is_running?}; then
-        echo "Reloading Unicorn...";
-        #{unicorn_send_signal('USR2')};
-      else
-        #{start_unicorn}
-      fi;
-    END
-  end
-end
+set :linked_files, %w{config/database.yml .env}
+
+# Default value for linked_dirs is []
+set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/pdfs')
+
+
+# Default value for default_env is {}
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+
+# Default value for keep_releases is 5
+set :keep_releases, 5
+
+set :passenger_restart_with_touch, false
+

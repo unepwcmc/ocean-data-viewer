@@ -1,0 +1,23 @@
+default: &default
+  host: localhost
+  encoding: unicode
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+  username: postgres
+
+development:
+  <<: *default
+  database: ocean_data_viewer_development
+
+test:
+  <<: *default
+  database: ocean_data_viewer_test
+
+production:
+  <<: *default
+  database: ocean_data_viewer_production
+
+staging:
+  <<: *default
+  database: ocean_data_viewer_staging

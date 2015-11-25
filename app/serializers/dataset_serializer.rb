@@ -7,7 +7,7 @@ class DatasetSerializer < ActiveModel::Serializer
       :recently_created, :version
 
   def url
-    dataset_url object
+    dataset_path object
   end
 
   def time_range

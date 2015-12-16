@@ -7,9 +7,6 @@ set :repo_url, 'git@github.com:unepwcmc/ocean-data-viewer.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
-
-set :branch, 'server-migration'
-
 set :deploy_user, 'wcmc'
 
 

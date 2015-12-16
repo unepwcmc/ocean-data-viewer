@@ -5,7 +5,7 @@ class Admin::AdminController < ApplicationController
 
   def verify_access
     authenticate_or_request_with_http_basic("LOGIN") do |username, password|
-      username == "oneocean" && password == "conserveworld"
+      username == Rails.application.secrets.admin["username"] && password == Rails.application.secrets.admin["password"]
     end
   end
 end

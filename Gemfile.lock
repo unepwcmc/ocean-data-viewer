@@ -256,7 +256,7 @@ DEPENDENCIES
   active_model_serializers (~> 0.9.3)
   bower-rails (~> 0.7.3)
   byebug
-  capistrano (~> 3.4.0)
+  capistrano (~> 3.4.1)
   capistrano-bundler (~> 1.1)
   capistrano-passenger (~> 0.1.1)
   capistrano-rails (~> 1.1)

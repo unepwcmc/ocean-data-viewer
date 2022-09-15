@@ -1,5 +1,4 @@
 set :stage, :staging
-set :branch, 'update-about-page'
 
 server "web-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
 server "db-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{bkp}, no_release: true

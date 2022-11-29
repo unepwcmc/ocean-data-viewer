@@ -1,3 +1,7 @@
+### 0.1.3
+
+* Added hotjar script
+
 ### 0.1.2
 
 **Update the about page:**

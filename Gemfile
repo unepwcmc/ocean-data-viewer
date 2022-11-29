@@ -31,7 +31,6 @@ group :development, :test do
   gem 'spring'
   gem 'letter_opener'
   gem 'pry'
-  gem 'web-console', '~> 2.2'
 end
 
 group :development do
@@ -40,6 +39,7 @@ group :development do
   gem 'capistrano-rails',   '~> 1.1', require: false
   gem 'capistrano-bundler', '~> 1.1', require: false
   gem 'capistrano-passenger', '~> 0.1.1', require: false
+  gem 'web-console', '~> 2.2'
 end
 
 group :test do

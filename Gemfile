@@ -26,6 +26,9 @@ gem 'dotenv-rails', '~> 2.0.2'
 
 gem 'newrelic_rpm', '~> 3.14.0.305'
 
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'ed25519', '>= 1.2', '< 2.0'
+
 group :development, :test do
   gem 'byebug'
   gem 'spring'

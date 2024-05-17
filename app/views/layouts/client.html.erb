@@ -38,6 +38,18 @@
         <h2>Sorry, there was a problem with your form submission</h2><%= flash[:error] %>
       </div>
     <% end %>
+    <div class="banner-background">
+      <div class="banner">
+        <div class="banner__title">
+          <p class="banner__text"> <%= image_tag("triangle-alert.svg", class: "banner__alert") %>  Changes to Ocean Data Viewer </p>
+        </div>
+        <div class="banner__content">
+          <p> UNEP-WCMC are planning to restructure the Ocean Data Viewer platform by the end of 2024. Many of the datasets currently available to download on Ocean Data Viewer will instead be available to visualise and download through the following platforms: <%= link_to "UNEP-WCMC GIS Portal", 'https://data-gis.unep-wcmc.org/portal/home/index.html', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>,
+            <%= link_to "UNEP-WCMC Resources page", 'https://resources.unep-wcmc.org/', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>, <%= link_to "UN Biodiversity Lab", 'https://unbiodiversitylab.org/en/', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>  and  <%= link_to "Ocean + Habitats", 'https://habitats.oceanplus.org/', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>.<br>
+              We would love your feedback on this proposed restructure in the <strong>survey pop-up below</strong>.</p>
+        </div>
+      </div>
+    </div>
     <header>
       <div class="logo"></div>
       <h1><a href="/">Ocean Data Viewer</a></h1>

@@ -1,3 +1,7 @@
+### 0.1.4
+
+* Add divestment banner
+
 ### 0.1.3
 
 * Added hotjar script

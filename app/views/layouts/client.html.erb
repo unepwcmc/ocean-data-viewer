@@ -41,12 +41,31 @@
     <div class="banner-background">
       <div class="banner">
         <div class="banner__title">
-          <p class="banner__text"> <%= image_tag("triangle-alert.svg", class: "banner__alert") %>  Changes to Ocean Data Viewer </p>
+          <p class="banner__text"> <%= image_tag("triangle-alert.svg", class: "banner__alert") %>  Changes to Ocean+ Data Viewer </p>
         </div>
         <div class="banner__content">
-          <p> UNEP-WCMC are planning to restructure the Ocean Data Viewer platform by the end of 2024. Many of the datasets currently available to download on Ocean Data Viewer will instead be available to visualise and download through the following platforms: <%= link_to "UNEP-WCMC GIS Portal", 'https://data-gis.unep-wcmc.org/portal/home/index.html', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>,
-            <%= link_to "UNEP-WCMC Resources page", 'https://resources.unep-wcmc.org/', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>, <%= link_to "UN Biodiversity Lab", 'https://unbiodiversitylab.org/en/', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>  and  <%= link_to "Ocean + Habitats", 'https://habitats.oceanplus.org/', class: "banner__content", style: "text-decoration: underline", target: "_blank" %>.<br>
-              We would love your feedback on this proposed restructure in the <strong>survey pop-up below</strong>.</p>
+          <p>
+            Ocean+ Data Viewer will be retired in 2025. To learn more about these changes, please read our <a href="#faqs">frequently asked questions</a>.
+          </p>
+          <%= render 'layouts/banner_faqs_modal' %>
+          <p>
+            Almost all datasets on Ocean+ Data Viewer will remain available under the
+            <%=
+              link_to "Ocean+ tag on the UNEP-WCMC GIS Portal", 'https://data-gis.unep-wcmc.org/portal/home/gallery.html?view=grid&sortOrder=desc&sortField=relevance&tags=ocean%2B', target: "_blank"
+            %>, apart from a small minority whose replacements are listed in our
+            <a href="#faqs">frequently asked questions</a>.
+          </p>
+
+          <p>
+            To keep visualising the most up-to-date marine and terrestrial data layers, please visit the
+            <%= link_to "UN Biodiversity Lab", 'https://unbiodiversitylab.org/en/', target: "_blank" %>.
+          </p>
+
+          <p>
+            For the latest authoritative information on the status and conservation of the world’s coastal habitats, please visit
+            <%= link_to "Ocean+ Habitats", 'https://habitats.oceanplus.org/', target: "_blank" %>,
+            which will continue to be updated.
+          </p>
         </div>
       </div>
     </div>

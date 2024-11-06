@@ -2,7 +2,7 @@ set :stage, :staging
 set :branch, ENV['CAP_BRANCH'] || "master"
 
 server "web-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
-server "db-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{bkp}, no_release: true
+# server "db-staging.linode.unep-wcmc.org", user: 'wcmc', roles: %w{bkp}, no_release: true
 
 set :application, "ocean-data-viewer"
 set :server_name, "ocean-data-viewer.web-staging.linode.unep-wcmc.org"

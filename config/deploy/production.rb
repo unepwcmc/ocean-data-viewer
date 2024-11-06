@@ -1,4 +1,5 @@
 set :stage, :production
+set :branch, ENV['CAP_BRANCH'] || "master"
 
 server "web-production.linode.unep-wcmc.org", user: 'wcmc', roles: %w{app web db}
 server "db-production.linode.unep-wcmc.org", user: 'wcmc', roles: %w{bkp}, no_release: true

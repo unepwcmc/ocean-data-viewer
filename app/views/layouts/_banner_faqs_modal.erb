@@ -1,0 +1,54 @@
+<div
+  id="faqs"
+  class="wcmc-ct-modal-wrapper visible-when-target"
+>
+  <div
+    ref="content"
+    tabindex="0"
+    class="wcmc-ct-modal-wrapper__content"
+    onClick="window.navigation.navigate('#')"
+  >
+    <div style="margin: 0 auto" onClick="event.stopPropagation()">
+      <div
+        role="dialog"
+        class="wcmc-ct-modal-panel wcmc-ct-modal-panel--size-to-page"
+      >
+        <div
+          class="wcmc-ct-modal-panel__header"
+        >
+          <div
+            class="wcmc-ct-modal-panel__header-content"
+          >
+            <h2>Frequently asked questions</h2>
+          </div>
+          <div
+            class="wcmc-ct-modal-panel__header-controls"
+          >
+            <slot
+              name="modalHeaderControls"
+              v-bind="childSlotProps"
+            >
+              <button
+                type="button"
+                class="wcmc-ct-modal-panel__header-control wcmc-ct-modal-panel__header-control--for-close"
+                onClick="window.navigation.navigate('#')"
+              >
+                &#215;
+              </button>
+            </slot>
+          </div>
+        </div>
+        <div
+          class="wcmc-ct-modal-panel__body wcmc-ct-modal-panel__body--size-to-page"
+        >
+          <%= render 'layouts/banner_faqs_content' %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="wcmc-ct-modal-wrapper__overlay"
+    onClick="window.navigation.navigate('#')"
+  >
+  </div>
+</div>
